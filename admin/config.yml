@@ -2,8 +2,6 @@ backend:
   name: github
   repo: LongFi-Solutions/longfi-solutions.github.io
   branch: main
-  auth_type: pkce
-  app_id: Ov23liLlJaV6nS1Mb2GI
 
 media_folder: docs/assets/images
 public_folder: /assets/images
