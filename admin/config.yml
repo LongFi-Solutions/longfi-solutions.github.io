@@ -1,0 +1,46 @@
+backend:
+  name: github
+  repo: LongFi-Solutions/longfi-solutions.github.io
+  branch: main
+  auth_type: pkce
+  app_id: Ov23liLlJaV6nS1Mb2GI
+
+media_folder: docs/assets/images
+public_folder: /assets/images
+
+collections:
+  - name: "home"
+    label: "Home Page"
+    files:
+      - label: "Home"
+        name: "home"
+        file: "docs/index.md"
+        fields:
+          - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "best-practices"
+    label: "Best Practices"
+    folder: "docs/best-practices"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "vendor"
+    label: "Vendor Configuration"
+    folder: "docs/vendor"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "deployment"
+    label: "Deployment Guides"
+    folder: "docs/deployment"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
