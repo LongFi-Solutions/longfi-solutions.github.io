@@ -1,1 +1,41 @@
-site_name: My Docs
+site_name: LongFi Solutions Documentation
+site_url: https://longfi-solutions.github.io
+site_description: Deployment guides, vendor configuration, and best practices for LongFi OpenRoaming and Passpoint infrastructure.
+repo_url: https://github.com/LongFi-Solutions/longfi-solutions.github.io
+repo_name: LongFi-Solutions/longfi-solutions.github.io
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: indigo
+    accent: light blue
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - toc.integrate
+    - search.highlight
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - attr_list
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Vendor Configuration:
+    - UniFi: vendor/unifi.md
+  - Best Practices:
+    - Overview: best-practices/index.md
+  - Deployment Guides:
+    - Overview: deployment/index.md
