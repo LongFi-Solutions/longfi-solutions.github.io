@@ -1,17 +1,17 @@
-# Welcome to MkDocs
+---
+title: Home
+---
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+# LongFi Solutions Documentation
 
-## Commands
+Welcome to the LongFi Solutions technical documentation. This site covers deployment guides, vendor-specific configuration, and best practices for OpenRoaming and Passpoint infrastructure.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+## Sections
 
-## Project layout
+- **[Best Practices](best-practices/index.md)** — Recommendations for configuring your network for Passpoint and carrier offload
+- **[Vendor Configuration](vendor/unifi.md)** — Vendor-specific AP and controller configuration
+- **[Deployment Guides](deployment/index.md)** — Step-by-step guides for deploying LongFi services
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## Getting Help
+
+Contact [LongFi Solutions](https://www.longfisolutions.com/) support for assistance beyond what's covered here.
