@@ -11,7 +11,7 @@ This guide provides a brief overview of primary recommendations and best practic
 !!! note
     These are general recommendations; you are ultimately responsible for your own network configuration, performance, capacity, and security.
 
----
+***
 
 ## 02 Wi-Fi Hardware Requirements
 
@@ -26,14 +26,14 @@ Your Wi-Fi equipment must support:
 
     Certain vendors (e.g. Meraki, Mist) may have some native support for RadSec, but require mutual certificate management. If this is the case, and you cannot host a server locally or via VPN tunnels, please inquire about alternate RadSec solutions.
 
----
+***
 
 ## 03 Minimum Network Requirements
 
 In most cases, Passpoint Wi-Fi will use less than 10% of your available bandwidth. However, to ensure seamless operations, your network should meet the following minimum requirements:
 
 | Requirement | Minimum |
-|---|---|
+| --- | --- |
 | Download Speed | 25 Mbps |
 | Upload Speed | 10 Mbps |
 | Latency | <100ms |
@@ -43,7 +43,7 @@ In most cases, Passpoint Wi-Fi will use less than 10% of your available bandwidt
 
 A dedicated VLAN for Passpoint Wi-Fi is highly recommended for security, capacity, and monitoring. This can be the same VLAN as your existing Guest Wi-Fi. LTE or Satellite ISPs are not recommended, and Double NAT is not recommended.
 
----
+***
 
 ## 04 LongFi Passpoint Network Architecture
 
@@ -60,7 +60,7 @@ Our Passpoint-based solutions offer the following features to enhance the mobile
 - Enhanced WPA3™ security
 - Monetized cellular network convergence with Wi-Fi
 
----
+***
 
 ## 05 Wired Network Design & Configuration
 
@@ -89,7 +89,7 @@ Passpoint offers much better security than normal open or captive portal guest W
 - As your Passpoint usage grows, you can adjust this limit based on observed traffic and performance. There is no minimum commitment to start, and the Passpoint Wi-Fi may be easily disabled at any time.
 - To support more traffic and increase revenue while preserving bandwidth for business-critical traffic, consider upgrading your ISP account or adding a lower-cost residential-class ISP account and modem connected to a new WAN interface on your firewall
 
----
+***
 
 ## 06 Wireless Network Configuration & Optimization
 
@@ -155,8 +155,8 @@ Passpoint offers much better security than normal open or captive portal guest W
 ### Roaming & Wi-Fi Calling Enhancements
 
 - Enable 802.11r Secure Fast Roaming
-- Enable 802.11k Neighbor List Reporting *(optional — may affect legacy clients)*
-- Enable 802.11v BSS Transition Management *(optional — may affect legacy clients)*
+- Enable 802.11k Neighbor List Reporting _(optional — may affect legacy clients)_
+- Enable 802.11v BSS Transition Management _(optional — may affect legacy clients)_
 
 ### Other Wi-Fi Enhancements
 
@@ -173,6 +173,6 @@ We notice lower airtime usage, better performance, lower latency, and faster con
 - Do not override QoS settings (allow QoS, allow/trust DSCP on wireless and wired network segments)
 - Ignore Probe Requests (in high density environments)
 
----
+***
 
 Have questions? [LongFi Solutions Engineers are here to help!](https://www.longfisolutions.com/)
