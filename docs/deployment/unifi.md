@@ -64,7 +64,7 @@ For the profile name enter **LongFi RadSec**.
     - Press Upload next to CA Certificate, choose the path to the file containing the extension .ca, for example longfi-ca-chain.ca.pem
     - \*Note: these names and extensions may differ slightly based on your operating system (ie. longfi.cer.pem)
 
-{ .img-md }
+![](/assets/images/3%20-%20Configure%20RADIUS%201.png){ .img-md }
 
 - Specify **Authentication Servers**:
     - Enter IP Address: **136.107.123.32** Port: **2083** Shared Secret: **radsec**. Click Add.
