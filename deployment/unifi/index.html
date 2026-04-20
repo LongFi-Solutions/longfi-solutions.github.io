@@ -75,11 +75,11 @@
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#high-level-steps">High Level Steps</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#submit-nas-id-obtain-radsec-certificates">Submit NAS ID, Obtain RadSec Certificates</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#configure-unifi-network-controller">Configure UniFi Network Controller</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#submit-nas-id-obtain-radsec-certificates">Submit NAS ID, Obtain RadSec Certificates</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#configure-unifi-network-controller">Configure UniFi Network Controller</a>
-    </li>
     <li class="toctree-l3"><a class="reference internal" href="#create-a-radius-profile">Create a RADIUS Profile</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#configure-radius-properties">Configure RADIUS properties:</a>
@@ -146,13 +146,13 @@
 </li>
 </ol>
 <hr />
-<h4 id="submit-nas-id-obtain-radsec-certificates">Submit NAS ID, Obtain RadSec Certificates<a class="headerlink" href="#submit-nas-id-obtain-radsec-certificates" title="Permanent link">&para;</a></h4>
+<h3 id="submit-nas-id-obtain-radsec-certificates">Submit NAS ID, Obtain RadSec Certificates<a class="headerlink" href="#submit-nas-id-obtain-radsec-certificates" title="Permanent link">&para;</a></h3>
 <p>Every Passpoint network requires a unique Network Access Server Identifier (NAS ID).  We normally use the MAC address of the controller, gateway, or a single AP on the network.</p>
 <p>Log into your UniFi network.  Navigate to UniFi Devices, choose your Network Controller, Gateway, or AP, and copy the MAC Address.</p>
 <p><img alt="" class="img-md" src="/assets/images/1%20-%20UniFi%20NAS%20ID%20get%20MAC.png" /></p>
 <p>Submit this MAC address during your site Onboarding &amp; Activation, and return to this guide after the network is onboarded and RadSec certificates have been delivered.</p>
 <hr />
-<h4 id="configure-unifi-network-controller">Configure UniFi Network Controller<a class="headerlink" href="#configure-unifi-network-controller" title="Permanent link">&para;</a></h4>
+<h3 id="configure-unifi-network-controller">Configure UniFi Network Controller<a class="headerlink" href="#configure-unifi-network-controller" title="Permanent link">&para;</a></h3>
 <p>After retrieving certificates, configuring the network controller for Passpoint is a two-part process. First, create the RADIUS profile, then apply the profile to a newly created WiFi SSID called 'LongFi Passpoint'.</p>
 <h4 id="create-a-radius-profile">Create a RADIUS Profile<a class="headerlink" href="#create-a-radius-profile" title="Permanent link">&para;</a></h4>
 <p>Configure a TLS connection to LongFi Connect AAA servers, which performs Authentication, Authorization, and Accounting for the end customers. Enabling RADIUS communication over TLS (RadSec) increases the level of security for authentication that is carried out across the cloud network.</p>
