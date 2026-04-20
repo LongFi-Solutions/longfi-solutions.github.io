@@ -82,6 +82,8 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#create-a-radius-profile">Create a RADIUS Profile</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#configure-radius-properties">Configure RADIUS properties:</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -155,6 +157,27 @@
 <p>In the sidebar, choose Settings, then Profiles, then RADIUS, then click <strong>Create New</strong>:</p>
 <p>[IMAGE HERE]</p>
 <p>For the profile name enter <strong>LongFi RadSec</strong>.</p>
+<h4 id="configure-radius-properties">Configure RADIUS properties:<a class="headerlink" href="#configure-radius-properties" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Under Radius Settings, check the TLS box.<ul>
+<li>Press Upload next to Client Certificate, choose the path to the file containing the extension .cert, for example your-site.cert.pem</li>
+<li>Press Upload next to Private Key, choose the path to the file containing the extension .key, for example your-site.key.pem</li>
+<li>Keep Private Key Password empty</li>
+<li>Press Upload next to CA Certificate, choose the path to the file containing the extension .ca, for example longfi-ca-chain.ca.pem</li>
+<li>*Note: these names and extensions may differ slightly based on your operating system (ie. longfi.cer.pem)</li>
+</ul>
+</li>
+</ul>
+<p>[IMAGE HERE]</p>
+<ul>
+<li>Specify <strong>Authentication Servers</strong>:<ul>
+<li>Enter IP Address: <strong>136.107.123.32</strong> Port: <strong>2083</strong> Shared Secret: <strong>radsec</strong>. Click Add.</li>
+<li>Enter IP Address: <strong>34.174.6.104</strong> Port: <strong>2083</strong> Shared Secret: <strong>radsec</strong>. Click Add.</li>
+</ul>
+</li>
+<li>Check the Accounting Servers checkbox. RADIUS Accounting Server settings will appear. (*Note: in some versions of UniFi, you may have to click <strong>Add</strong> to save the RADIUS Profile and click to edit the profile again before you can enable Accounting Servers.</li>
+<li>Specify the following Accounting Servers (same as above):</li>
+</ul>
               
             </div>
           </div><footer>
