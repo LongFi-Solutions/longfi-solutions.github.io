@@ -32,7 +32,7 @@ nav:
     - RadSec: overview/radsec.md
     - OpenRoaming: overview/openroaming.md
   - Best Practices:
-    - Overview: best-practices/index.md
+    - Best Practices & Considerations for Passpoint: best-practices/index.md
   - Deployment Guides:
     - Overview: deployment/index.md
     - UniFi: deployment/unifi.md
