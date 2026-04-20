@@ -29,7 +29,7 @@ LongFi Connect configuration requires the Passpoint protocol. Please ensure your
 
 ***
 
-#### Submit NAS ID, Obtain RadSec Certificates
+### Submit NAS ID, Obtain RadSec Certificates
 
 Every Passpoint network requires a unique Network Access Server Identifier (NAS ID).  We normally use the MAC address of the controller, gateway, or a single AP on the network.
 
@@ -41,7 +41,7 @@ Submit this MAC address during your site Onboarding & Activation, and return to 
 
 ***
 
-#### Configure UniFi Network Controller
+### Configure UniFi Network Controller
 
 After retrieving certificates, configuring the network controller for Passpoint is a two-part process. First, create the RADIUS profile, then apply the profile to a newly created WiFi SSID called 'LongFi Passpoint'.
 
