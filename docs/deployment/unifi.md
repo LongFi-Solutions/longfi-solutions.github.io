@@ -35,7 +35,7 @@ Every Passpoint network requires a unique Network Access Server Identifier (NAS 
 
 Log into your UniFi network.  Navigate to UniFi Devices, choose your Network Controller, Gateway, or AP, and copy the MAC Address.
 
-[IMAGE HERE]
+![](/assets/images/UniFi%20NAS%20ID%20get%20MAC-1.png)
 
 Submit this MAC address during your site Onboarding & Activation, and return to this guide after the network is onboarded and RadSec certificates have been delivered.
 
@@ -54,3 +54,20 @@ In the sidebar, choose Settings, then Profiles, then RADIUS, then click **Create
 [IMAGE HERE]
 
 For the profile name enter **LongFi RadSec**.
+
+#### Configure RADIUS properties:
+
+- Under Radius Settings, check the TLS box.
+    - Press Upload next to Client Certificate, choose the path to the file containing the extension .cert, for example your-site.cert.pem
+    - Press Upload next to Private Key, choose the path to the file containing the extension .key, for example your-site.key.pem
+    - Keep Private Key Password empty
+    - Press Upload next to CA Certificate, choose the path to the file containing the extension .ca, for example longfi-ca-chain.ca.pem
+    - \*Note: these names and extensions may differ slightly based on your operating system (ie. longfi.cer.pem)
+
+[IMAGE HERE]
+
+- Specify **Authentication Servers**:
+    - Enter IP Address: **136.107.123.32** Port: **2083** Shared Secret: **radsec**. Click Add.
+    - Enter IP Address: **34.174.6.104** Port: **2083** Shared Secret: **radsec**. Click Add.
+- Check the Accounting Servers checkbox. RADIUS Accounting Server settings will appear. (\*Note: in some versions of UniFi, you may have to click **Add** to save the RADIUS Profile and click to edit the profile again before you can enable Accounting Servers.
+- Specify the following Accounting Servers (same as above):
