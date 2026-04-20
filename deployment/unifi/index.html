@@ -84,6 +84,8 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#configure-radius-properties">Configure RADIUS properties:</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#create-the-longfi-passpoint-ssid">Create the LongFi Passpoint SSID</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -176,8 +178,19 @@
 </ul>
 </li>
 <li>Check the Accounting Servers checkbox. RADIUS Accounting Server settings will appear. (*Note: in some versions of UniFi, you may have to click <strong>Add</strong> to save the RADIUS Profile and click to edit the profile again before you can enable Accounting Servers.</li>
-<li>Specify the following Accounting Servers (same as above):</li>
+<li>Specify the following Accounting Servers (same as above):<ul>
+<li>Enter IP Address: <strong>136.107.123.32</strong> Port: <strong>2083</strong> Shared Secret: <strong>radsec</strong>. Click Add.</li>
+<li>Enter IP Address: <strong>34.174.6.104</strong> Port: <strong>2083</strong> Shared Secret: <strong>radsec</strong>. Click Add.</li>
 </ul>
+</li>
+<li>Check Interim Update Interval box.</li>
+<li>Specify Interim Update Interval with 300 Sec.</li>
+</ul>
+<p>[IMAGE HERE]</p>
+<p>Click <strong>Add</strong> to create the new RADIUS Profile.</p>
+<hr />
+<h4 id="create-the-longfi-passpoint-ssid">Create the LongFi Passpoint SSID<a class="headerlink" href="#create-the-longfi-passpoint-ssid" title="Permanent link">&para;</a></h4>
+<p>*Note: If you do not yet have a UniFi AP connected to your Network App controller, you will not be able to choose the option for Passpoint when creating a new WiFi network. Please connect a UniFi AP before continuing.</p>
               
             </div>
           </div><footer>
