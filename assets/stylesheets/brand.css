@@ -14,3 +14,11 @@
   max-width: 100%;
   height: auto;
 }
+
+/* Image size utility classes
+   Usage in Markdown: ![alt](image.png){ .img-sm }
+*/
+.rst-content img.img-sm  { width: 25%; }
+.rst-content img.img-md  { width: 50%; }
+.rst-content img.img-lg  { width: 75%; }
+.rst-content img.img-full { width: 100%; }
