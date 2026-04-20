@@ -35,7 +35,7 @@ Every Passpoint network requires a unique Network Access Server Identifier (NAS 
 
 Log into your UniFi network.  Navigate to UniFi Devices, choose your Network Controller, Gateway, or AP, and copy the MAC Address.
 
-![](/assets/images/UniFi%20NAS%20ID%20get%20MAC-1.png)
+![](/assets/images/UniFi%20NAS%20ID%20get%20MAC-1.png){ .img-sm }
 
 Submit this MAC address during your site Onboarding & Activation, and return to this guide after the network is onboarded and RadSec certificates have been delivered.
 
