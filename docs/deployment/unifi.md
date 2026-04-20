@@ -49,7 +49,7 @@ After retrieving certificates, configuring the network controller for Passpoint 
 
 Configure a TLS connection to LongFi Connect AAA servers, which performs Authentication, Authorization, and Accounting for the end customers. Enabling RADIUS communication over TLS (RadSec) increases the level of security for authentication that is carried out across the cloud network.
 
-In the sidebar, choose Settings, then Profiles, then RADIUS, then click **Create New**:
+In the sidebar, choose **Settings > Networks > scroll down > RADIUS Servers** then click **Create New**:
 
 ![](/assets/images/2%20-%20Create%20a%20RADIUS%20Profile.png){ .img-md }
 
