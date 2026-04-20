@@ -28,7 +28,7 @@ nav:
   - Overview:
     - Introduction: overview/index.md
     - Onboarding & Activation: overview/onboarding-activation.md
-    - Passpoint: overview/passpoint.md
+    - Passpoint & Carrier Offload: overview/passpoint.md
     - RadSec: overview/radsec.md
     - OpenRoaming: overview/openroaming.md
   - Best Practices:
