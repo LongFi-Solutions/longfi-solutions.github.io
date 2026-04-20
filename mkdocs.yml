@@ -27,6 +27,10 @@ nav:
   - Home: index.md
   - Overview:
     - Overview: overview/index.md
+    - Onboarding & Activation: overview/onboarding-activation.md
+    - Passpoint: overview/passpoint.md
+    - RadSec: overview/radsec.md
+    - OpenRoaming: overview/openroaming.md
   - Best Practices:
     - Overview: best-practices/index.md
   - Deployment Guides:
