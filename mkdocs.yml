@@ -1,6 +1,6 @@
 site_name: LongFi Solutions Documentation
 site_url: https://longfi-solutions.github.io
-site_description: Deployment guides, vendor configuration, and best practices for LongFi OpenRoaming and Passpoint infrastructure.
+site_description: Deployment guides, vendor configuration, and best practices for LongFi Passpoint and OpenRoaming infrastructure.
 repo_url: https://github.com/LongFi-Solutions/longfi-solutions.github.io
 repo_name: LongFi-Solutions/longfi-solutions.github.io
 
@@ -25,8 +25,14 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Overview: overview/index.md
-  - Best Practices: best-practices/index.md
+  - Overview:
+    - Overview: overview/index.md
+  - Best Practices:
+    - Overview: best-practices/index.md
   - Deployment Guides:
     - Overview: deployment/index.md
     - UniFi: deployment/unifi.md
+    - Meraki: deployment/meraki.md
+    - Aruba: deployment/aruba.md
+    - Ruckus: deployment/ruckus.md
+    - Cambium: deployment/cambium.md
