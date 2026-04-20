@@ -69,10 +69,20 @@
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">UniFi</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#you-will-also-need">You will also need:</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#high-level-steps">High Level Steps</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#submit-nas-id-obtain-radsec-certificates">Submit NAS ID, Obtain RadSec Certificates</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#submit-nas-id-obtain-radsec-certificates">Submit NAS ID, Obtain RadSec Certificates</a>
+    <li class="toctree-l3"><a class="reference internal" href="#configure-unifi-network-controller">Configure UniFi Network Controller</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#create-a-radius-profile">Create a RADIUS Profile</a>
+    </li>
+        </ul>
     </li>
     </ul>
                   </li>
@@ -114,8 +124,8 @@
 <p>For support please contact: networks@longfisolutions.com</p>
 <hr />
 <h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
-<p>LongFi Connect configuration requires the Passpoint protocol. Please ensure your Ubiquiti network is using UniFi Network Controller version 8.4.54 or higher and AP firmware version 6.6.77 or AP firmware version 7.0.66 or higher, depending on hardware release track.  </p>
-<p>You will also need:</p>
+<p>LongFi Connect configuration requires the Passpoint protocol. Please ensure your Ubiquiti network is using UniFi Network Controller version 8.4.54 or higher and AP firmware version 6.6.77 or AP firmware version 7.0.66 or higher, depending on hardware release track.  You can verify that your APs support <strong>Passpoint (Hotspot 2.0)</strong> and <strong>RADIUS over TLS (RadSec)</strong> at <a href="https://techspecs.ui.com/unifi/wifi">https://techspecs.ui.com/unifi/wifi</a></p>
+<h5 id="you-will-also-need">You will also need:<a class="headerlink" href="#you-will-also-need" title="Permanent link">&para;</a></h5>
 <ol>
 <li>The NAS ID and RadSec certificates obtained during your site Onboarding &amp; Activation</li>
 <li>A guest VLAN with the appropriate network segmentation, security, traffic shaping, and firewall policies for your requirements.</li>
@@ -132,7 +142,19 @@
 </li>
 </ol>
 <hr />
-<h3 id="submit-nas-id-obtain-radsec-certificates">Submit NAS ID, Obtain RadSec Certificates<a class="headerlink" href="#submit-nas-id-obtain-radsec-certificates" title="Permanent link">&para;</a></h3>
+<h4 id="submit-nas-id-obtain-radsec-certificates">Submit NAS ID, Obtain RadSec Certificates<a class="headerlink" href="#submit-nas-id-obtain-radsec-certificates" title="Permanent link">&para;</a></h4>
+<p>Every Passpoint network requires a unique Network Access Server Identifier (NAS ID).  We normally use the MAC address of the controller, gateway, or a single AP on the network.</p>
+<p>Log into your UniFi network.  Navigate to UniFi Devices, choose your Network Controller, Gateway, or AP, and copy the MAC Address.</p>
+<p>[IMAGE HERE]</p>
+<p>Submit this MAC address during your site Onboarding &amp; Activation, and return to this guide after the network is onboarded and RadSec certificates have been delivered.</p>
+<hr />
+<h4 id="configure-unifi-network-controller">Configure UniFi Network Controller<a class="headerlink" href="#configure-unifi-network-controller" title="Permanent link">&para;</a></h4>
+<p>After retrieving certificates, configuring the network controller for Passpoint is a two-part process. First, create the RADIUS profile, then apply the profile to a newly created WiFi SSID called 'LongFi Passpoint'.</p>
+<h4 id="create-a-radius-profile">Create a RADIUS Profile<a class="headerlink" href="#create-a-radius-profile" title="Permanent link">&para;</a></h4>
+<p>Configure a TLS connection to LongFi Connect AAA servers, which performs Authentication, Authorization, and Accounting for the end customers. Enabling RADIUS communication over TLS (RadSec) increases the level of security for authentication that is carried out across the cloud network.</p>
+<p>In the sidebar, choose Settings, then Profiles, then RADIUS, then click <strong>Create New</strong>:</p>
+<p>[IMAGE HERE]</p>
+<p>For the profile name enter <strong>LongFi RadSec</strong>.</p>
               
             </div>
           </div><footer>
