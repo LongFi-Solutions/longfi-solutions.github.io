@@ -55,7 +55,7 @@ In the sidebar, choose **Settings > Networks > scroll down > RADIUS Servers** th
 
 For the profile name enter **LongFi RadSec**.
 
-#### Configure RADIUS properties:
+##### Configure RADIUS properties
 
 - Under Radius Settings, check the TLS box.
     - Press Upload next to Client Certificate, choose the path to the file containing the extension .cert, for example your-site.cert.pem
@@ -85,3 +85,19 @@ Click **Add** to create the new RADIUS Profile.
 #### Create the LongFi Passpoint SSID
 
 \*Note: If you do not yet have a UniFi AP connected to your Network App controller, you will not be able to choose the option for Passpoint when creating a new WiFi network. Please connect a UniFi AP before continuing.
+
+Navigate to the Settings in the sidebar, choose WiFi, then press Create New
+
+[IMAGE HERE]
+
+**Configure settings for the new network:**
+
+- Set the **Name** of the SSID to **LongFi Passpoint**
+- Leave the password blank
+- Select the **Network** (vlan) you want to use for Passpoint WiFi clients
+- Under **Application** choose **Hotspot**
+- Under **Hotspot Type** choose **Passpoint**
+- **\*Note:** we normally disable 2.4 GHz as most modern clients will avoid 2.4, and this band is not voice-grade
+- Set **Advanced** to **Manual**
+
+![](/assets/images/5%20-%20Create%20SSID%201.png)
