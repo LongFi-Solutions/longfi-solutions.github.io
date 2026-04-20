@@ -100,4 +100,4 @@ Navigate to the Settings in the sidebar, choose WiFi, then press Create New
 - **\*Note:** we normally disable 2.4 GHz as most modern clients will avoid 2.4, and this band is not voice-grade
 - Set **Advanced** to **Manual**
 
-![](/assets/images/5%20-%20Create%20SSID%201.png)
+![](/assets/images/5%20-%20Create%20SSID%201.png){ .img-md }
