@@ -25,9 +25,8 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Vendor Configuration:
-    - UniFi: vendor/unifi.md
-  - Best Practices:
-    - Overview: best-practices/index.md
+  - Overview: overview/index.md
+  - Best Practices: best-practices/index.md
   - Deployment Guides:
     - Overview: deployment/index.md
+    - UniFi: deployment/unifi.md

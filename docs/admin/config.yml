@@ -16,18 +16,18 @@ collections:
         fields:
           - { label: "Body", name: "body", widget: "markdown" }
 
-  - name: "best-practices"
-    label: "Best Practices"
-    folder: "docs/best-practices"
+  - name: "overview"
+    label: "Overview"
+    folder: "docs/overview"
     create: true
     slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
 
-  - name: "vendor"
-    label: "Vendor Configuration"
-    folder: "docs/vendor"
+  - name: "best-practices"
+    label: "Best Practices"
+    folder: "docs/best-practices"
     create: true
     slug: "{{slug}}"
     fields:

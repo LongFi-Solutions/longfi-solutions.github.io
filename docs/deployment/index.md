@@ -4,4 +4,8 @@ title: Deployment Guides
 
 # Deployment Guides
 
-Step-by-step guides for deploying LongFi services.
+Vendor-specific implementation guides for deploying LongFi OpenRoaming and Passpoint services.
+
+## Available Guides
+
+- **[UniFi](unifi.md)** — Ubiquiti UniFi access points and controllers
