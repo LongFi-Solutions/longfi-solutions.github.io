@@ -8,3 +8,9 @@
 /* .wy-side-nav-search {
   background: #244899;
 } */
+
+/* Constrain images to content width */
+.rst-content img {
+  max-width: 100%;
+  height: auto;
+}
