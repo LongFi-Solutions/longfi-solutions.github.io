@@ -71,3 +71,17 @@ For the profile name enter **LongFi RadSec**.
     - Enter IP Address: **34.174.6.104** Port: **2083** Shared Secret: **radsec**. Click Add.
 - Check the Accounting Servers checkbox. RADIUS Accounting Server settings will appear. (\*Note: in some versions of UniFi, you may have to click **Add** to save the RADIUS Profile and click to edit the profile again before you can enable Accounting Servers.
 - Specify the following Accounting Servers (same as above):
+    - Enter IP Address: **136.107.123.32** Port: **2083** Shared Secret: **radsec**. Click Add.
+    - Enter IP Address: **34.174.6.104** Port: **2083** Shared Secret: **radsec**. Click Add.
+- Check Interim Update Interval box.
+- Specify Interim Update Interval with 300 Sec.
+
+[IMAGE HERE]
+
+Click **Add** to create the new RADIUS Profile.
+
+***
+
+#### Create the LongFi Passpoint SSID
+
+\*Note: If you do not yet have a UniFi AP connected to your Network App controller, you will not be able to choose the option for Passpoint when creating a new WiFi network. Please connect a UniFi AP before continuing.
