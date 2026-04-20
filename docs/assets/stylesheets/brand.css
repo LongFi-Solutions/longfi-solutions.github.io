@@ -1,0 +1,79 @@
+/* LongFi Solutions Brand Colors
+   Dark Blue:   #2C2C6E
+   Medium Blue: #244899
+*/
+
+/* Sidebar background */
+.wy-nav-side {
+  background: #2C2C6E;
+}
+
+/* Sidebar search box area */
+.wy-side-nav-search {
+  background: #244899;
+}
+
+.wy-side-nav-search input[type=text] {
+  border-color: #2C2C6E;
+}
+
+/* Sidebar nav links */
+.wy-menu-vertical a {
+  color: #d0d8f0;
+}
+
+.wy-menu-vertical a:hover {
+  background: #244899;
+  color: #ffffff;
+}
+
+/* Current/active nav item */
+.wy-menu-vertical li.current > a,
+.wy-menu-vertical li.current > a:hover {
+  background: #244899;
+  color: #ffffff;
+}
+
+.wy-menu-vertical li.current {
+  background: #1e1e5a;
+}
+
+/* Mobile top navigation bar */
+.wy-nav-top {
+  background: #2C2C6E;
+}
+
+/* In-page links */
+.rst-content a {
+  color: #244899;
+}
+
+.rst-content a:hover {
+  color: #2C2C6E;
+}
+
+/* Breadcrumb links */
+.wy-breadcrumbs a {
+  color: #244899;
+}
+
+/* Version/project name in sidebar */
+.wy-side-nav-search > a,
+.wy-side-nav-search .wy-dropdown > a {
+  color: #ffffff;
+}
+
+/* Buttons */
+.btn-neutral {
+  background: #244899 !important;
+  color: #ffffff !important;
+}
+
+.btn-neutral:hover {
+  background: #2C2C6E !important;
+}
+
+/* Section headers in sidebar */
+.wy-menu-vertical p.caption {
+  color: #a0b0d0;
+}

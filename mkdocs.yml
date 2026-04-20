@@ -5,18 +5,10 @@ repo_url: https://github.com/LongFi-Solutions/longfi-solutions.github.io
 repo_name: LongFi-Solutions/longfi-solutions.github.io
 
 theme:
-  name: material
-  palette:
-    scheme: slate
-    primary: indigo
-    accent: light blue
-  features:
-    - navigation.tabs
-    - navigation.sections
-    - navigation.expand
-    - toc.integrate
-    - search.highlight
-    - content.code.copy
+  name: readthedocs
+
+extra_css:
+  - assets/stylesheets/brand.css
 
 markdown_extensions:
   - admonition
