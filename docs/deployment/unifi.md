@@ -51,7 +51,7 @@ Configure a TLS connection to LongFi Connect AAA servers, which performs Authent
 
 In the sidebar, choose Settings, then Profiles, then RADIUS, then click **Create New**:
 
-[IMAGE HERE]
+![](/assets/images/2%20-%20Create%20a%20RADIUS%20Profile.png){ .img-md }
 
 For the profile name enter **LongFi RadSec**.
 
