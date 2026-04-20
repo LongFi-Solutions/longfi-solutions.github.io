@@ -77,8 +77,10 @@
     <li class="toctree-l2"><a class="reference internal" href="#configure-unifi-network-controller">Configure UniFi Network Controller</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#create-a-radius-profile">Create a RADIUS Profile</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#configure-radius-properties">Configure RADIUS properties</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#configure-radius-properties">Configure RADIUS properties:</a>
+        </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#create-the-longfi-passpoint-ssid">Create the LongFi Passpoint SSID</a>
     </li>
@@ -155,7 +157,7 @@
 <p>In the sidebar, choose <strong>Settings &gt; Networks &gt; scroll down &gt; RADIUS Servers</strong> then click <strong>Create New</strong>:</p>
 <p><img alt="" class="img-md" src="/assets/images/2%20-%20Create%20a%20RADIUS%20Profile.png" /></p>
 <p>For the profile name enter <strong>LongFi RadSec</strong>.</p>
-<h4 id="configure-radius-properties">Configure RADIUS properties:<a class="headerlink" href="#configure-radius-properties" title="Permanent link">&para;</a></h4>
+<h5 id="configure-radius-properties">Configure RADIUS properties<a class="headerlink" href="#configure-radius-properties" title="Permanent link">&para;</a></h5>
 <ul>
 <li>Under Radius Settings, check the TLS box.<ul>
 <li>Press Upload next to Client Certificate, choose the path to the file containing the extension .cert, for example your-site.cert.pem</li>
@@ -187,6 +189,19 @@
 <hr />
 <h4 id="create-the-longfi-passpoint-ssid">Create the LongFi Passpoint SSID<a class="headerlink" href="#create-the-longfi-passpoint-ssid" title="Permanent link">&para;</a></h4>
 <p>*Note: If you do not yet have a UniFi AP connected to your Network App controller, you will not be able to choose the option for Passpoint when creating a new WiFi network. Please connect a UniFi AP before continuing.</p>
+<p>Navigate to the Settings in the sidebar, choose WiFi, then press Create New</p>
+<p>[IMAGE HERE]</p>
+<p><strong>Configure settings for the new network:</strong></p>
+<ul>
+<li>Set the <strong>Name</strong> of the SSID to <strong>LongFi Passpoint</strong></li>
+<li>Leave the password blank</li>
+<li>Select the <strong>Network</strong> (vlan) you want to use for Passpoint WiFi clients</li>
+<li>Under <strong>Application</strong> choose <strong>Hotspot</strong></li>
+<li>Under <strong>Hotspot Type</strong> choose <strong>Passpoint</strong></li>
+<li><strong>*Note:</strong> we normally disable 2.4 GHz as most modern clients will avoid 2.4, and this band is not voice-grade</li>
+<li>Set <strong>Advanced</strong> to <strong>Manual</strong></li>
+</ul>
+<p><img alt="" src="/assets/images/5%20-%20Create%20SSID%201.png" /></p>
               
             </div>
           </div><footer>
