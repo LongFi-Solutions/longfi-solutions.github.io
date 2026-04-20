@@ -21,7 +21,7 @@
    ![alt](image.png){ .img-sm }
 
 */
-.rst-content p.img-sm img  { width: 25%; }
-.rst-content p.img-md img  { width: 50%; }
-.rst-content p.img-lg img  { width: 75%; }
-.rst-content p.img-full img { width: 100%; }
+.rst-content p.img-sm img, .rst-content img.img-sm   { width: 25%; }
+.rst-content p.img-md img, .rst-content img.img-md   { width: 50%; }
+.rst-content p.img-lg img, .rst-content img.img-lg   { width: 75%; }
+.rst-content p.img-full img, .rst-content img.img-full { width: 100%; }
