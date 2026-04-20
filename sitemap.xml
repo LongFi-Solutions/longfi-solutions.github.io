@@ -13,6 +13,22 @@
          <lastmod>2026-04-20</lastmod>
     </url>
     <url>
+         <loc>https://longfi-solutions.github.io/deployment/aruba/</loc>
+         <lastmod>2026-04-20</lastmod>
+    </url>
+    <url>
+         <loc>https://longfi-solutions.github.io/deployment/cambium/</loc>
+         <lastmod>2026-04-20</lastmod>
+    </url>
+    <url>
+         <loc>https://longfi-solutions.github.io/deployment/meraki/</loc>
+         <lastmod>2026-04-20</lastmod>
+    </url>
+    <url>
+         <loc>https://longfi-solutions.github.io/deployment/ruckus/</loc>
+         <lastmod>2026-04-20</lastmod>
+    </url>
+    <url>
          <loc>https://longfi-solutions.github.io/deployment/unifi/</loc>
          <lastmod>2026-04-20</lastmod>
     </url>
@@ -21,7 +37,19 @@
          <lastmod>2026-04-20</lastmod>
     </url>
     <url>
-         <loc>https://longfi-solutions.github.io/vendor/unifi/</loc>
+         <loc>https://longfi-solutions.github.io/overview/onboarding-activation/</loc>
+         <lastmod>2026-04-20</lastmod>
+    </url>
+    <url>
+         <loc>https://longfi-solutions.github.io/overview/openroaming/</loc>
+         <lastmod>2026-04-20</lastmod>
+    </url>
+    <url>
+         <loc>https://longfi-solutions.github.io/overview/passpoint/</loc>
+         <lastmod>2026-04-20</lastmod>
+    </url>
+    <url>
+         <loc>https://longfi-solutions.github.io/overview/radsec/</loc>
          <lastmod>2026-04-20</lastmod>
     </url>
 </urlset>
