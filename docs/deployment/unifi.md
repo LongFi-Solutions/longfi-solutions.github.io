@@ -90,14 +90,31 @@ Navigate to the Settings in the sidebar, choose WiFi, then press Create New
 
 [IMAGE HERE]
 
-**Configure settings for the new network:**
+**Configure settings for the new SSID:**
 
 - Set the **Name** of the SSID to **LongFi Passpoint**
 - Leave the password blank
 - Select the **Network** (vlan) you want to use for Passpoint WiFi clients
 - Under **Application** choose **Hotspot**
 - Under **Hotspot Type** choose **Passpoint**
-- **\*Note:** we normally disable 2.4 GHz as most modern clients will avoid 2.4, and this band is not voice-grade
+- **\*Note:** we normally disable 2.4 GHz in all but the highest density environments (large public venue) as most modern clients will avoid 2.4, and this band is not voice-grade
 - Set **Advanced** to **Manual**
 
 ![](/assets/images/5%20-%20Create%20SSID%201.png){ .img-md }
+
+- Under **Venue Name** give your venue a friendly name
+- Specify **Venue Type** as the option that best matches your site
+- Set **Network Type** to **Chargeable Public Network**
+- Set **IP Address Type Availability**:
+    - Set **IPv4** to **Single NATed private IPv4**.
+    - \*Note: choose **Double NATed private IPv4** if your router is behind another router such as an ISP modem/router and has a private IP address (double NAT is not recommended for voice-grade networks).  
+    - Set **IPv6** to **Unavailable**
+
+![](/assets/images/6%20-%20Create%20SSID%202%20-%20Passpoint%20Settings.png){ .img-md }
+
+- Add **NAI Realms** with the following entries:
+    - Name: **longfisolutions.com** EAP Method: **EAP-TLS** Sub-Methods: **Certificate**
+    - Name: **freedomfi.com** EAP Method: **EAP-TLS** Sub-Methods: **Certificate**
+    - Name: **hellohelium.com** EAP Method: **EAP-TLS** Sub-Methods: **Certificate**
+
+![](/assets/images/7%20-%20Create%20SSID%203%20-%20NAI%20Realms.png){ .img-md }
