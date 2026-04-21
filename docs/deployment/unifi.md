@@ -4,7 +4,7 @@ title: UniFi Passpoint Conversion Guide
 
 # UniFi Passpoint Conversion Guide
 
-For support please contact: [networks@longfisolutions.com](mailto: networks@longfisolutions.com)
+For support please contact: networks@longfisolutions.com
 
 ***
 
