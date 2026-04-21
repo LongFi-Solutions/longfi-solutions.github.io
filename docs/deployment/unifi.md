@@ -148,3 +148,17 @@ Navigate to the Settings in the sidebar, choose WiFi, then press Create New
 **Congratulations!**
 
 Your LongFi Passpoint SSID is now configured and broadcasting.  You can test access by forgetting any nearby Wi-Fi networks on your device (or disable auto-join and toggle wifi on/off).  You do not need to manually select the **LongFi Passpoint** SSID from your device.  If you have a device with a compatible SIM plan, it will connect automatically.
+
+***
+
+### Other Recommended Settings
+
+In order to best optimize your **LongFi Passpoint** SSID in a UniFi environment, here are some of the settings we recommend.  You may want to edit your SSID configuration to perform further optimizations for Passpoint Wi-Fi:
+
+- **Roaming Assistance** > set **Fast Roaming (802.11r)** to enabled
+    - 802.11r allows clients to be pre-authorized with neighboring APs, reducing the time it takes for a device to roam
+- **Hi-Capacity Tuning:**
+    - Enable **Minimum Data Rate (Basic & Multicast)** and set this to **12 Mbps** on all bands.
+        - Minimum Data Rate control defines the lowest speed allowable for client connections on an SSID, forcing "sticky" clients to roam sooner, and reducing airtime wasted by slow, distant devices
+        - In very high density environments, with many users and many APs, increasing this setting to 24 Mbps will further balance clients across APs and prevent sticky clients
+    -
