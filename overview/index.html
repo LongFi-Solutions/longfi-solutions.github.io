@@ -49,6 +49,12 @@
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Introduction</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#passpoint">Passpoint</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#technical-architecture">Technical Architecture</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#security-architecture">Security Architecture</a>
+    </li>
+        </ul>
     </li>
     </ul>
                   </li>
@@ -115,6 +121,25 @@
 <p><strong>Wireless Broadband Alliance - OpenRoaming:</strong></p>
 <p><a href="https://wballiance.com/openroaming/">https://wballiance.com/openroaming/</a></p>
 <h2 id="passpoint">Passpoint<a class="headerlink" href="#passpoint" title="Permanent link">&para;</a></h2>
+<p>Wi-Fi CERTIFIED Passpoint® (also known as Hotspot 2.0) is a Wi-Fi Alliance standard that enables seamless, secure, and automatic authentication to public Wi-Fi networks.  It eliminates manual login, captive portals, and password entry, providing cellular-like roaming for Wi-Fi. </p>
+<h3 id="technical-architecture">Technical Architecture<a class="headerlink" href="#technical-architecture" title="Permanent link">&para;</a></h3>
+<p>Passpoint relies on the <a href="https://en.wikipedia.org/wiki/IEEE_802.11u">802.11u</a> amendment to the 802.11 standard, providing wireless clients with a streamlined mechanism to discover and authenticate to non-home networks.  The 802.11u beacon is a Wi-Fi management frame that includes inter-networking elements, allowing Access Points (APs) to broadcast support for cellular-like, automatic network discovery and connection.  These beacons allow devices to identify provider networks, venue types, and roaming capabilities before associating, eliminating manual login procedures.</p>
+<p>Simplified, there are 4 primary components to a Passpoint network:</p>
+<ul>
+<li>A network segment (guest VLAN, DHCP, and guest policies)</li>
+<li>A RADIUS profile (RadSec over TCP secured by TLS)</li>
+<li>A Passpoint/Hotspot profile that advertises roaming identities</li>
+<li>A Wi-Fi SSID (in some vendors the SSID and Hotspot profile are combined</li>
+</ul>
+<p>The minimum requirements for Passpoint, OpenRoaming, and Carrier Offload are that your Wi-Fi equipment and management software must support:</p>
+<ul>
+<li>Passpoint (Hotspot 2.0)</li>
+<li>WPA2-Enterprise (802.1X) with RADIUS (WPA3 recommended)</li>
+<li>RadSec (RADIUS over TLS and TCP)</li>
+</ul>
+<p>If your equipment does not support RadSec natively, there are alternative solutions.  Please see the RadSec section in the Docs.  </p>
+<h3 id="security-architecture">Security Architecture<a class="headerlink" href="#security-architecture" title="Permanent link">&para;</a></h3>
+<p>Passpoint uses enterprise-grade encryption for over-the-air connections, significantly enhancing safety over open guest networks.</p>
               
             </div>
           </div><footer>
