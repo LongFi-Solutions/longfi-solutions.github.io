@@ -84,8 +84,6 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#other-recommended-settings">Other Recommended Settings</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#in-very-high-density-environments-with-many-users-and-many-aps-increasing-this-setting-to-24-mbps-will-further-balance-clients-across-aps-and-prevent-sticky-clients">In very high density environments, with many users and many APs, increasing this setting to 24 Mbps will further balance clients across APs and prevent sticky clients</a>
-    </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../meraki/">Meraki</a>
@@ -257,6 +255,10 @@
 <h3 id="other-recommended-settings">Other Recommended Settings<a class="headerlink" href="#other-recommended-settings" title="Permanent link">&para;</a></h3>
 <p>In order to best optimize your <strong>LongFi Passpoint</strong> SSID in a UniFi environment, here are some of the settings we recommend.  You may want to edit your SSID configuration to perform further optimizations for Passpoint Wi-Fi:</p>
 <ul>
+<li>Disable <strong>2.4 GHz</strong> <ul>
+<li>We only enable 2.4 GHz on the Passpoint SSID in all the most dense environments (stadium, arena) where support for many users is required and 2.4 GHz is unavoidable.  This band is already crowded with IoT devices, there are only 3 non-overlapping channels, and most modern  SIM based devices will avoid 2.4 GHz except as a last resort.  We see very little data offload benefit from enabling 2.4 GHz, and this band is discouraged by the carriers as it is not voice-grade.</li>
+</ul>
+</li>
 <li><strong>Roaming Assistance</strong> &gt; set <strong>Fast Roaming (802.11r)</strong> to enabled<ul>
 <li>802.11r allows clients to be pre-authorized with neighboring APs, reducing the time it takes for a device to roam</li>
 </ul>
@@ -264,9 +266,30 @@
 <li><strong>Hi-Capacity Tuning:</strong><ul>
 <li>Enable <strong>Minimum Data Rate (Basic &amp; Multicast)</strong> and set this to <strong>12 Mbps</strong> on all bands.<ul>
 <li>Minimum Data Rate control defines the lowest speed allowable for client connections on an SSID, forcing "sticky" clients to roam sooner, and reducing airtime wasted by slow, distant devices</li>
-<li>
-<h2 id="in-very-high-density-environments-with-many-users-and-many-aps-increasing-this-setting-to-24-mbps-will-further-balance-clients-across-aps-and-prevent-sticky-clients">In very high density environments, with many users and many APs, increasing this setting to 24 Mbps will further balance clients across APs and prevent sticky clients<a class="headerlink" href="#in-very-high-density-environments-with-many-users-and-many-aps-increasing-this-setting-to-24-mbps-will-further-balance-clients-across-aps-and-prevent-sticky-clients" title="Permanent link">&para;</a></h2>
+<li>In very high density environments, with many users and many APs in close proximity , increasing this setting to 24 Mbps will further balance clients across APs and prevent sticky clients</li>
+</ul>
 </li>
+<li>Enable <strong>Multicast and Broadcast Blocker</strong>.  If you have a UniFi gateway, it will automatically be added to the allow list.<ul>
+<li><strong>*Imporant:</strong> if you do not have a UniFi gateway, you will need to add the MAC address of the LAN facing interface of your gateway (and any separate DHCP or DNS server) to the allowlist.  Otherwise important broadcast and multicast messages such as DHCP request may be blocked.</li>
+<li>This setting is designed to improved Wi-Fi performance by preventing excessive broadcast and multicast messages from flooding all wireless clients.  The clients do not need to talk to other clients on a guest network segment, they only need to talk to the gateway, DHCP server, and DNS server.</li>
+<li>Do not enable <strong>Multicast to Unicast</strong>, that setting will cancel out <strong>Multicast and Broadcast Blocker</strong> and cause major issues.</li>
+</ul>
+</li>
+<li>Enable <strong>Proxy ARP</strong><ul>
+<li>This setting greatly reduces airtime usage (that's good) and improves latency by allowing the APs to proxy ARP messages as unicast.</li>
+</ul>
+</li>
+<li>Enable <strong>Client Device Isolation</strong><ul>
+<li>A critical security setting for Guest &amp; Passpoint Wi-Fi</li>
+</ul>
+</li>
+<li>Leave <strong>Band Steering</strong> disabled<ul>
+<li>This setting should only be used in the most high density environments where APs have up to 100 clients per AP and enabling 2.4 GHz is unavoidable.  Think a basketball or football stadium with hundreds of APs and thousands of users.</li>
+</ul>
+</li>
+<li>Enable <strong>BSS Transition</strong><ul>
+<li>This setting assists roaming by providing a list of nearby APs so the clients know where to look</li>
+<li>This setting manages the transition by suggesting or steering clients to better APs</li>
 </ul>
 </li>
 </ul>
