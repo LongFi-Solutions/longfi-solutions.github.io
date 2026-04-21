@@ -155,10 +155,24 @@ Your LongFi Passpoint SSID is now configured and broadcasting.  You can test acc
 
 In order to best optimize your **LongFi Passpoint** SSID in a UniFi environment, here are some of the settings we recommend.  You may want to edit your SSID configuration to perform further optimizations for Passpoint Wi-Fi:
 
+- Disable **2.4 GHz** 
+    - We only enable 2.4 GHz on the Passpoint SSID in all the most dense environments (stadium, arena) where support for many users is required and 2.4 GHz is unavoidable.  This band is already crowded with IoT devices, there are only 3 non-overlapping channels, and most modern  SIM based devices will avoid 2.4 GHz except as a last resort.  We see very little data offload benefit from enabling 2.4 GHz, and this band is discouraged by the carriers as it is not voice-grade.
 - **Roaming Assistance** > set **Fast Roaming (802.11r)** to enabled
     - 802.11r allows clients to be pre-authorized with neighboring APs, reducing the time it takes for a device to roam
 - **Hi-Capacity Tuning:**
     - Enable **Minimum Data Rate (Basic & Multicast)** and set this to **12 Mbps** on all bands.
         - Minimum Data Rate control defines the lowest speed allowable for client connections on an SSID, forcing "sticky" clients to roam sooner, and reducing airtime wasted by slow, distant devices
-        - In very high density environments, with many users and many APs, increasing this setting to 24 Mbps will further balance clients across APs and prevent sticky clients
-    -
+        - In very high density environments, with many users and many APs in close proximity , increasing this setting to 24 Mbps will further balance clients across APs and prevent sticky clients
+    - Enable **Multicast and Broadcast Blocker**.  If you have a UniFi gateway, it will automatically be added to the allow list.
+        - **\*Imporant:** if you do not have a UniFi gateway, you will need to add the MAC address of the LAN facing interface of your gateway (and any separate DHCP or DNS server) to the allowlist.  Otherwise important broadcast and multicast messages such as DHCP request may be blocked.
+        - This setting is designed to improved Wi-Fi performance by preventing excessive broadcast and multicast messages from flooding all wireless clients.  The clients do not need to talk to other clients on a guest network segment, they only need to talk to the gateway, DHCP server, and DNS server.
+        - Do not enable **Multicast to Unicast**, that setting will cancel out **Multicast and Broadcast Blocker** and cause major issues.
+    - Enable **Proxy ARP**
+        - This setting greatly reduces airtime usage (that's good) and improves latency by allowing the APs to proxy ARP messages as unicast.
+    - Enable **Client Device Isolation**
+        - A critical security setting for Guest & Passpoint Wi-Fi
+    - Leave **Band Steering** disabled
+        - This setting should only be used in the most high density environments where APs have up to 100 clients per AP and enabling 2.4 GHz is unavoidable.  Think a basketball or football stadium with hundreds of APs and thousands of users.
+    - Enable **BSS Transition**
+        - This setting assists roaming by providing a list of nearby APs so the clients know where to look
+        - This setting manages the transition by suggesting or steering clients to better APs
