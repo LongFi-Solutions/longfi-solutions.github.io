@@ -156,7 +156,7 @@ Your LongFi Passpoint SSID is now configured and broadcasting.  You can test acc
 In order to best optimize your **LongFi Passpoint** SSID in a UniFi environment, here are some of the settings we recommend.  You may want to edit your SSID configuration to perform further optimizations for Passpoint Wi-Fi:
 
 - Disable **2.4 GHz** 
-    - We only enable 2.4 GHz on the Passpoint SSID in all the most dense environments (stadium, arena) where support for many users is required and 2.4 GHz is unavoidable.  This band is already crowded with IoT devices, there are only 3 non-overlapping channels, and most modern  SIM based devices will avoid 2.4 GHz except as a last resort.  We see very little data offload benefit from enabling 2.4 GHz, and this band is discouraged by the carriers as it is not voice-grade.
+    - We disable 2.4 GHz on the Passpoint SSID in all but the most dense environments (ie. stadium, arena).  This band is already crowded with IoT devices, there are only 3 non-overlapping channels, and most modern  SIM based devices will avoid 2.4 GHz except as a last resort.  We see very little data offload benefit from enabling 2.4 GHz, and this band is discouraged by the carriers as it is not voice-grade.
 - **Roaming Assistance** > set **Fast Roaming (802.11r)** to enabled
     - 802.11r allows clients to be pre-authorized with neighboring APs, reducing the time it takes for a device to roam
 - **Hi-Capacity Tuning:**
