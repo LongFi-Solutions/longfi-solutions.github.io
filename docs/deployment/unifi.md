@@ -118,3 +118,5 @@ Navigate to the Settings in the sidebar, choose WiFi, then press Create New
     - Name: **hellohelium.com** EAP Method: **EAP-TLS** Sub-Methods: **Certificate**
 
 ![](/assets/images/7%20-%20Create%20SSID%203%20-%20NAI%20Realms.png){ .img-md }
+
+- Add the additional carrier **NAI Realms** and **EAP Methods** provided in your **Carrier Offload Approval Email**.  These may only be activated for approved sites.
