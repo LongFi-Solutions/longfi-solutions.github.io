@@ -143,7 +143,7 @@ Navigate to the Settings in the sidebar, choose WiFi, then press Create New
 - Here you will enter the **NAS ID** you provided during registration and onboarding.  This can also be found in your Carrier Offload Approval Email
 - At the bottom of the page hit **Apply Changes** to create the new **LongFi Passpoint SSID**
 
-{ .img-md }
+![](/assets/images/11%20-%20Create%20SSID%207%20-%20NAS%20ID.png){ .img-md }
 
 **Congratulations!**
 
