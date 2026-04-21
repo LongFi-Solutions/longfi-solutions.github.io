@@ -82,6 +82,10 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#other-recommended-settings">Other Recommended Settings</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#in-very-high-density-environments-with-many-users-and-many-aps-increasing-this-setting-to-24-mbps-will-further-balance-clients-across-aps-and-prevent-sticky-clients">In very high density environments, with many users and many APs, increasing this setting to 24 Mbps will further balance clients across APs and prevent sticky clients</a>
+    </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../meraki/">Meraki</a>
@@ -249,6 +253,25 @@
 <p><img alt="" class="img-md" src="/assets/images/11%20-%20Create%20SSID%207%20-%20NAS%20ID.png" /></p>
 <p><strong>Congratulations!</strong></p>
 <p>Your LongFi Passpoint SSID is now configured and broadcasting.  You can test access by forgetting any nearby Wi-Fi networks on your device (or disable auto-join and toggle wifi on/off).  You do not need to manually select the <strong>LongFi Passpoint</strong> SSID from your device.  If you have a device with a compatible SIM plan, it will connect automatically.</p>
+<hr />
+<h3 id="other-recommended-settings">Other Recommended Settings<a class="headerlink" href="#other-recommended-settings" title="Permanent link">&para;</a></h3>
+<p>In order to best optimize your <strong>LongFi Passpoint</strong> SSID in a UniFi environment, here are some of the settings we recommend.  You may want to edit your SSID configuration to perform further optimizations for Passpoint Wi-Fi:</p>
+<ul>
+<li><strong>Roaming Assistance</strong> &gt; set <strong>Fast Roaming (802.11r)</strong> to enabled<ul>
+<li>802.11r allows clients to be pre-authorized with neighboring APs, reducing the time it takes for a device to roam</li>
+</ul>
+</li>
+<li><strong>Hi-Capacity Tuning:</strong><ul>
+<li>Enable <strong>Minimum Data Rate (Basic &amp; Multicast)</strong> and set this to <strong>12 Mbps</strong> on all bands.<ul>
+<li>Minimum Data Rate control defines the lowest speed allowable for client connections on an SSID, forcing "sticky" clients to roam sooner, and reducing airtime wasted by slow, distant devices</li>
+<li>
+<h2 id="in-very-high-density-environments-with-many-users-and-many-aps-increasing-this-setting-to-24-mbps-will-further-balance-clients-across-aps-and-prevent-sticky-clients">In very high density environments, with many users and many APs, increasing this setting to 24 Mbps will further balance clients across APs and prevent sticky clients<a class="headerlink" href="#in-very-high-density-environments-with-many-users-and-many-aps-increasing-this-setting-to-24-mbps-will-further-balance-clients-across-aps-and-prevent-sticky-clients" title="Permanent link">&para;</a></h2>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
               
             </div>
           </div><footer>
