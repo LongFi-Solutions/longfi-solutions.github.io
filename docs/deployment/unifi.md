@@ -55,7 +55,7 @@ In the sidebar, choose **Settings > Networks > scroll down > RADIUS Servers** th
 
 For the profile name enter **LongFi RadSec**.
 
-##### Configure RADIUS properties
+**Configure RADIUS properties**
 
 - Under Radius Settings, check the TLS box.
     - Press Upload next to Client Certificate, choose the path to the file containing the extension .cert, for example your-site.cert.pem
