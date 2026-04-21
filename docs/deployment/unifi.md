@@ -125,3 +125,9 @@ Navigate to the Settings in the sidebar, choose WiFi, then press Create New
 ![](/assets/images/8%20-%20Create%20SSID%204%20-%20RCOIs.png){ .img-md }
 
 - Add the additional carrier **3GPP Cellular Network** **MCC** and **MNC** codes provided in your **Carrier Offload Approval Email**.  These may only be activated for approved sites.
+- Add **Domain List:**
+    - add **longfisolutions.com**
+    - add **freedomfi.com**
+- Set the **Operator Friendly Name** to **LONGFISOLUTIONS:US**
+
+![](/assets/images/9%20-%20Create%20SSID%205%20-%20Domains%20and%20Operator.png){ .img-md }
