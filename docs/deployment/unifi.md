@@ -131,3 +131,20 @@ Navigate to the Settings in the sidebar, choose WiFi, then press Create New
 - Set the **Operator Friendly Name** to **LONGFISOLUTIONS:US**
 
 ![](/assets/images/9%20-%20Create%20SSID%205%20-%20Domains%20and%20Operator.png){ .img-md }
+
+- Scroll down to the **Security** settings.  Set **Security Protocol** to **WPA3 Enterprise**
+- Enable the option for **External RADIUS Server**
+- Under **RADIUS Profile** choose the **LongFi RadSec** server we created earlier
+- Scroll down and make sure that **Client Device Isolation** is enabled
+
+![](/assets/images/10%20-%20Create%20SSID%206%20-%20Security.png){ .img-md }
+
+- Scroll down to the settings for **NAS ID** and choose **Custom**
+- Here you will enter the **NAS ID** you provided during registration and onboarding.  This can also be found in your Carrier Offload Approval Email
+- At the bottom of the page hit **Apply Changes** to create the new **LongFi Passpoint SSID**
+
+{ .img-md }
+
+**Congratulations!**
+
+Your LongFi Passpoint SSID is now configured and broadcasting.  You can test access by forgetting any nearby Wi-Fi networks on your device (or disable auto-join and toggle wifi on/off).  You do not need to manually select the **LongFi Passpoint** SSID from your device.  If you have a device with a compatible SIM plan, it will connect automatically.
