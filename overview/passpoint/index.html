@@ -84,6 +84,28 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="passpoint">Passpoint<a class="headerlink" href="#passpoint" title="Permanent link">&para;</a></h1>
+<p>Wi-Fi CERTIFIED Passpoint® (also known as Hotspot 2.0) is a Wi-Fi Alliance standard that enables seamless, secure, and automatic authentication to public Wi-Fi networks.  It eliminates manual login, captive portals, and password entry, providing cellular-like roaming for Wi-Fi. </p>
+<hr />
+<h3 id="minimum-requirements">Minimum Requirements<a class="headerlink" href="#minimum-requirements" title="Permanent link">&para;</a></h3>
+<p>In order to enable Passpoint, Carrier Offload, or OpenRoaming, your Wi-Fi equipment (and controller software) must support:</p>
+<ul>
+<li>Passpoint (Hotspot 2.0, 802.11u)</li>
+<li>WPA2-Enterprise (802.1X) with RADIUS (WPA3 recommended)</li>
+<li>RadSec (RADIUS over TLS and TCP)</li>
+</ul>
+<p>If your equipment does not support RadSec natively, there are alternative solutions.  Please see the RadSec section in the Docs.  </p>
+<hr />
+<h3 id="technical-architecture">Technical Architecture<a class="headerlink" href="#technical-architecture" title="Permanent link">&para;</a></h3>
+<p>Simplified, there are 3 main components to a Passpoint network:</p>
+<ul>
+<li>A guest network segment</li>
+<li>A RADIUS profile</li>
+<li>A Wi-Fi SSID with a Hotspot profile</li>
+</ul>
+<p>Getting deeper, Passpoint relies on the <a href="https://en.wikipedia.org/wiki/IEEE_802.11u">802.11u</a> amendment to the 802.11 standard, providing wireless clients with a streamlined mechanism to discover and authenticate to non-home networks.  The 802.11u beacon is a Wi-Fi management frame that includes inter-networking elements, allowing APs to broadcast support for cellular-like, automatic network discovery and connection.  These beacons allow devices to identify provider networks, venue types, and roaming capabilities before associating, eliminating manual login procedures, and convergence between technologies and identity providers.</p>
+<p>The other component of a Passpoint network is a client device with a Passpoint-enabled identity, for example a cell phone with an active SIM plan, or a device that has been enrolled in OpenRoaming.</p>
+<h3 id="security-architecture">Security Architecture<a class="headerlink" href="#security-architecture" title="Permanent link">&para;</a></h3>
+<p>Passpoint uses enterprise-grade encryption for over-the-air connections, significantly enhancing safety over open guest networks.</p>
               
             </div>
           </div><footer>
