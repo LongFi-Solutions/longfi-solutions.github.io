@@ -46,6 +46,8 @@ Simplified, there are 3 main components to a Passpoint network:
 
 Getting deeper, Passpoint relies on the [802.11u](https://en.wikipedia.org/wiki/IEEE_802.11u) amendment to the 802.11 standard, providing wireless clients with a streamlined mechanism to discover and authenticate to non-home networks.  The 802.11u beacon is a Wi-Fi management frame that includes inter-networking elements, allowing APs to broadcast support for cellular-like, automatic network discovery and connection.  These beacons allow devices to identify provider networks, venue types, and roaming capabilities before associating, eliminating manual login procedures, and convergence between technologies and identity providers.
 
+The other component of a Passpoint network is a client device with a Passpoint-enabled identity, for example a cell phone with an active SIM plan, or a device that has been enrolled in OpenRoaming.
+
 ### Security Architecture
 
 Passpoint uses enterprise-grade encryption for over-the-air connections, significantly enhancing safety over open guest networks.
