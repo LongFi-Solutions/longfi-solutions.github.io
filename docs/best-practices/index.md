@@ -32,7 +32,7 @@ Your Wi-Fi equipment, firmware, and controller must support:
 
 ### Bandwidth Requirements
 
-In most cases, Passpoint Wi-Fi will use less than 10% of your available bandwidth. However, to ensure seamless operations, your network should meet the following minimum requirements:
+In many cases, Passpoint Wi-Fi will use less than 10% of your available bandwidth. However, to ensure seamless operations, your network should meet the following minimum requirements:
 
 | Requirement | Minimum |
 | --- | --- |
@@ -43,7 +43,15 @@ In most cases, Passpoint Wi-Fi will use less than 10% of your available bandwidt
 | Packet Loss | <5% |
 | Wi-Fi Rate Limiting | >5 Mbps per client device |
 
-You will need a dedicated VLAN for Passpoint Wi-Fi. This can be the same VLAN as your existing Guest Wi-Fi, but we strongly recommend a dedicated VLAN for security, capacity, and monitoring. LTE or Satellite ISPs are not recommended, and Double NAT is not recommended.
+### VLAN Requirements
+
+You will need a dedicated VLAN for Passpoint Wi-Fi. This can be the same VLAN as your existing Guest Wi-Fi, but we strongly recommend a dedicated VLAN for security, capacity, and monitoring. 
+
+### ISP Requirements
+
+Carriers expect and demand Voice-Grade networking to allow carrier offload onto Wi-Fi.  Voice-grade networks require low latency (<150ms), minimal jitter (<20-30ms), and near-zero packet loss (<1%) to ensure high-quality audio. Bandwidth needs are low, generally requiring as little as 128 Kbps (upload/download) per concurrent call, with robust Wi-Fi signal strength at -65 dBm or better for voice over Wi-Fi.  The "industry standard" commonly documented as "under 150 ms latency one-way" is a somewhat legacy expectation, with 50 ms or better being more of a modern standard for reliable and acceptable quality voice.
+
+While LTE or Satellite ISPs can be successful for Passpoint deployments, a low latency wired connection is highly recommended.  LEO Satellite (Starlink) can be successful; high-latency Satellite (ie HughesNet) will not be successful.  High-latency connections are not voice-grade, and traffic may be rejected by the carriers.  Double NAT is not recommended, as voice-grade networking requires IPSec encapsulation remain intact from end to end.  Double NAT can break that encapsulation and UDP services over Wi-Fi (Wi-Fi Calling) will be degraded or disconnected.
 
 ***
 
