@@ -6,7 +6,7 @@ title: Best Practices for Passpoint and Mobile Offloading
 
 ## 01 Introduction
 
-This guide provides a brief overview of primary recommendations and best practices for configuring your network for Passpoint (Hotspot 2.0) and carrier offload.
+This guide provides a brief overview of primary recommendations and best practices for configuring your network for Passpoint (Hotspot 2.0) and carrier offload.  Please view this guide as considerations and guardrails as opposed to hard requirements.
 
 !!! note
     These are general recommendations; you are ultimately responsible for your own network configuration, performance, capacity, and security.
@@ -15,7 +15,7 @@ This guide provides a brief overview of primary recommendations and best practic
 
 ## 02 Wi-Fi Hardware Requirements
 
-Your Wi-Fi equipment must support:
+Your Wi-Fi equipment, firmware, and controller must support:
 
 - Passpoint (Hotspot 2.0)
 - WPA2-Enterprise (802.1X) with RADIUS (WPA3 recommended)
@@ -30,6 +30,8 @@ Your Wi-Fi equipment must support:
 
 ## 03 Minimum Network Requirements
 
+### Bandwidth Requirements
+
 In most cases, Passpoint Wi-Fi will use less than 10% of your available bandwidth. However, to ensure seamless operations, your network should meet the following minimum requirements:
 
 | Requirement | Minimum |
@@ -41,7 +43,7 @@ In most cases, Passpoint Wi-Fi will use less than 10% of your available bandwidt
 | Packet Loss | <5% |
 | Wi-Fi Rate Limiting | >5 Mbps per client device |
 
-A dedicated VLAN for Passpoint Wi-Fi is highly recommended for security, capacity, and monitoring. This can be the same VLAN as your existing Guest Wi-Fi. LTE or Satellite ISPs are not recommended, and Double NAT is not recommended.
+You will need a dedicated VLAN for Passpoint Wi-Fi. This can be the same VLAN as your existing Guest Wi-Fi, but we strongly recommend a dedicated VLAN for security, capacity, and monitoring. LTE or Satellite ISPs are not recommended, and Double NAT is not recommended.
 
 ***
 
