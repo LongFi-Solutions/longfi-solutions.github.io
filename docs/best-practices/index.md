@@ -45,7 +45,7 @@ In many cases, Passpoint Wi-Fi will use less than 10% of your available bandwidt
 
 ### VLAN Requirements
 
-You will need a dedicated VLAN for Passpoint Wi-Fi. This can be the same VLAN as your existing Guest Wi-Fi, but we strongly recommend a dedicated VLAN for security, capacity, and monitoring. 
+You will need a dedicated VLAN for Passpoint Wi-Fi. This can be the same VLAN as your existing Guest Wi-Fi, but we strongly recommend a dedicated VLAN for security, capacity, and monitoring.  You will need a much larger DHCP pool than a normal Guest Wi-Fi network, more on this below. 
 
 ### ISP Requirements
 
