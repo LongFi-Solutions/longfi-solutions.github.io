@@ -61,7 +61,7 @@ While LTE or Satellite ISPs can be successful for Passpoint deployments, a low l
 
 Passpoint® streamlines Wi-Fi access, eliminating the need for users to find and authenticate to a network each time they visit. Passpoint automates the entire process of network authentication, enabling more seamless Wi-Fi connectivity between Wi-Fi networks, cellular networks, and mobile devices.
 
-<!-- Add topology diagram: ![LongFi Passpoint Topology](../../assets/images/longfi-passpoint-topology.png) -->
+![LongFi Passpoint Topology](/assets/images/LongFi%20Passpoint%20Topology%20v1.0.png) { .img-md}
 
 Our Passpoint-based solutions offer the following features to enhance the mobile experience:
 
