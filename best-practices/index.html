@@ -58,6 +58,10 @@
     <li class="toctree-l2"><a class="reference internal" href="#02-wi-fi-hardware-requirements">02 Wi-Fi Hardware Requirements</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#03-minimum-network-requirements">03 Minimum Network Requirements</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#bandwidth-requirements">Bandwidth Requirements</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#04-longfi-passpoint-network-architecture">04 LongFi Passpoint Network Architecture</a>
         <ul>
@@ -124,14 +128,14 @@
               
                 <h1 id="best-practices-for-passpoint-and-mobile-offloading">Best Practices for Passpoint and Mobile Offloading<a class="headerlink" href="#best-practices-for-passpoint-and-mobile-offloading" title="Permanent link">&para;</a></h1>
 <h2 id="01-introduction">01 Introduction<a class="headerlink" href="#01-introduction" title="Permanent link">&para;</a></h2>
-<p>This guide provides a brief overview of primary recommendations and best practices for configuring your network for Passpoint (Hotspot 2.0) and carrier offload.</p>
+<p>This guide provides a brief overview of primary recommendations and best practices for configuring your network for Passpoint (Hotspot 2.0) and carrier offload.  Please view this guide as considerations and guardrails as opposed to hard requirements.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>These are general recommendations; you are ultimately responsible for your own network configuration, performance, capacity, and security.</p>
 </div>
 <hr />
 <h2 id="02-wi-fi-hardware-requirements">02 Wi-Fi Hardware Requirements<a class="headerlink" href="#02-wi-fi-hardware-requirements" title="Permanent link">&para;</a></h2>
-<p>Your Wi-Fi equipment must support:</p>
+<p>Your Wi-Fi equipment, firmware, and controller must support:</p>
 <ul>
 <li>Passpoint (Hotspot 2.0)</li>
 <li>WPA2-Enterprise (802.1X) with RADIUS (WPA3 recommended)</li>
@@ -144,6 +148,7 @@
 </div>
 <hr />
 <h2 id="03-minimum-network-requirements">03 Minimum Network Requirements<a class="headerlink" href="#03-minimum-network-requirements" title="Permanent link">&para;</a></h2>
+<h3 id="bandwidth-requirements">Bandwidth Requirements<a class="headerlink" href="#bandwidth-requirements" title="Permanent link">&para;</a></h3>
 <p>In most cases, Passpoint Wi-Fi will use less than 10% of your available bandwidth. However, to ensure seamless operations, your network should meet the following minimum requirements:</p>
 <table>
 <thead>
@@ -179,7 +184,7 @@
 </tr>
 </tbody>
 </table>
-<p>A dedicated VLAN for Passpoint Wi-Fi is highly recommended for security, capacity, and monitoring. This can be the same VLAN as your existing Guest Wi-Fi. LTE or Satellite ISPs are not recommended, and Double NAT is not recommended.</p>
+<p>You will need a dedicated VLAN for Passpoint Wi-Fi. This can be the same VLAN as your existing Guest Wi-Fi, but we strongly recommend a dedicated VLAN for security, capacity, and monitoring. LTE or Satellite ISPs are not recommended, and Double NAT is not recommended.</p>
 <hr />
 <h2 id="04-longfi-passpoint-network-architecture">04 LongFi Passpoint Network Architecture<a class="headerlink" href="#04-longfi-passpoint-network-architecture" title="Permanent link">&para;</a></h2>
 <h3 id="wi-fi-certified-passpoint">Wi-Fi Certified Passpoint®<a class="headerlink" href="#wi-fi-certified-passpoint" title="Permanent link">&para;</a></h3>
