@@ -58,6 +58,10 @@ Omada Controller v5.15.24 supports Hotspot 2.0 but not RadSec, and the EAP6xx ge
 - EAP620 HD, EAP623-Outdoor HD, EAP625-Outdoor HD
 - EAP610, EAP610-Outdoor
 
+Omada Networks Firmware Download:
+
+[https://support.omadanetworks.com/us/download/firmware/](https://support.omadanetworks.com/us/download/firmware/)
+
 ***
 
 ## High Level Steps
@@ -80,7 +84,7 @@ From the Omada Dashboard go to **Configuration > Network Config > Profile > Cert
 
 **IMAGE HERE**
 
-Click the button to **+ Add Certificate**
+Click the button to **+ Add Certificate**![](/assets/images/Omada-1-Config-Certificate-Profile-1.png)
 
 **IMAGE HERE**
 
