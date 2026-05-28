@@ -10,11 +10,15 @@ For support please contact: [networks@longfisolutions.com](emailto:networks@long
 
 ## **Prerequisites**
 
+***
+
 ### Network Requirements:
 
 - The NAS ID and RadSec certificates obtained during your site Onboarding & Activation
 - A guest VLAN with the appropriate network segmentation, security, traffic shaping, and firewall policies for your requirements.
 - The guest VLAN needs a large DHCP pool with a short lease time. Passpoint clients can automatically discover and join a network, and there will be many more "transient client" connections than a normal guest wifi network.
+
+***
 
 ### **Omada Official Documentation:**
 
@@ -23,6 +27,8 @@ For support please contact: [networks@longfisolutions.com](emailto:networks@long
 **_\*Please Note:_**
 
 Depending on your organizational structure and your Omada hardware, software, and firmware versions, you may be able to configure Certificates, the RADIUS profile, and the Passpoint Wi-Fi SSID at the Global level.  This can save you a lot of time by allowing the configs to be applied to multiple sites at once.  The NAS ID must be unique at the site level, but the certificates, RADIUS RadSec profile, and most SSID settings will be the same at every site.  We made this guide using a single Omada AP and controller, with a single site, and the Global configuration options were not available.
+
+***
 
 ### **Supported Hardware & Firmwares (as of May 2026):**
 
