@@ -22,6 +22,10 @@ For support please contact: [networks@longfisolutions.com](emailto:networks@long
 
 [How to Configure Hotspot 2.0 Wi-Fi on Omada Controller](https://support.omadanetworks.com/cac/document/110379/)
 
+**_\*Please Note:_**
+
+Depending on your organizational structure and your Omada hardware, software, and firmware versions, you may be able to configure Certificates, the RADIUS profile, and the Passpoint Wi-Fi SSID at the Global level.  This can save you a lot of time by allowing the configs to be applied to multiple sites at once.  The NAS ID must be unique at the site level, but the certificates, RADIUS RadSec profile, and most SSID settings will be the same at every site.  We made this guide using a single Omada AP and controller, with a single site, and the Global configuration options were not available.
+
 ### **Supported Hardware & Firmwares (as of May 2026):**
 
 **Controllers**
@@ -55,5 +59,16 @@ Omada Controller v5.15.24 supports Hotspot 2.0 but not RadSec, and the EAP6xx ge
 - EAP690E HD
 - EAP620 HD, EAP623-Outdoor HD, EAP625-Outdoor HD
 - EAP610, EAP610-Outdoor
+
+***
+
+## High Level Steps
+
+1. Submit NAS ID, Obtain RadSec Certificates, complete Prerequisites
+2. Configure TP-Link Omada Controller and AP
+    a. Configure Certificate Profile
+    b. Configure RADIUS Profile
+    c. Configure WLAN Passpoint Wi-Fi SSID
+    d. Profit
 
 ***
