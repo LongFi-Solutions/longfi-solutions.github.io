@@ -145,8 +145,57 @@
 <p><strong>IMAGE HERE</strong></p>
 <p>Click the button to <strong>+ Add Certificate</strong></p>
 <p><strong>IMAGE HERE</strong></p>
-<p>In the <strong>Add Certificate</strong> window, set the <strong>Certificate Name</strong> to <strong>LongFi Connect CA</strong></p>
+<ul>
+<li>In the <strong>Add Certificate</strong> window, set the <strong>Certificate Name</strong> to <strong>LongFi Connect CA</strong></li>
+<li>Set the <strong>Certificate Type</strong> to <strong>CA Certificate</strong></li>
+<li>Set the <strong>Certificate Format</strong> to <strong>X.509(PEM)</strong></li>
+<li>Click the <strong>Import</strong> button to <strong>Upload Certificate</strong></li>
+<li>Upload the <strong>LongFi CA</strong> certificate file provided in your onboarding email.  This will usually be called <strong>longfi_connect.ca.pem</strong></li>
+<li>Click <strong>Apply</strong> to add the CA Certificate</li>
+</ul>
 <p><strong>IMAGE HERE</strong></p>
+<p>Click the button once more to <strong>+ Add Certificate</strong></p>
+<ul>
+<li>In the Add Certificate window, set the <strong>Certificate Name</strong> to <strong>LongFi Connect Client Certs</strong></li>
+<li>Set the <strong>Certificate Type</strong> to <strong>Client Certificate</strong></li>
+<li>Click the <strong>Import</strong> button to upload the <strong>Client Private Key</strong></li>
+<li>Upload the <strong>key.pem</strong> certificate file provided in your onboarding email.  This will usually be named using your company name such as <strong>mycompany.key.pem</strong></li>
+<li>Leave the password blank</li>
+<li>Set the <strong>Certificate Format</strong> to <strong>X.509(PEM)</strong></li>
+<li>Click the <strong>Import</strong> button next to <strong>Upload Certificate</strong> to upload the client certificate</li>
+<li>Upload the <strong>cert.pem</strong> certificate file provided in your onboarding email.  This will usually be named using your company name such as <strong>mycompany.cert.pem</strong></li>
+<li>Click <strong>Apply</strong> to add the new client certificate and private key</li>
+</ul>
+<p><strong>IMAGE HERE of Client Cert + Key Window</strong></p>
+<p><strong>IMAGE HERE of finished Certificates Window</strong></p>
+<hr />
+<h3 id="configure-a-radius-profile"><strong>Configure a RADIUS Profile</strong><a class="headerlink" href="#configure-a-radius-profile" title="Permanent link">&para;</a></h3>
+<p>*Please Note: you may receive an error message saying that one or more devices does not support RadSec.  If you have a Controller or AP model that supports RadSec, you will need to update the firmware before proceeding.  The Omada dashboard may show that your Controller or APs are "Up To Date" or "Latest Version", but that may not be the case.  Visit the firmware page and follow the instructions to get the newest firmware for your devices:</p>
+<p><a href="https://support.omadanetworks.com/us/download/firmware/">https://support.omadanetworks.com/us/download/firmware/</a></p>
+<hr />
+<p>From the Omada Dashboard go to <strong>Configuration &gt; Network Config &gt; Profile &gt; RADIUS Profile</strong></p>
+<p><strong>IMAGE HERE of main dashboard</strong></p>
+<p>Click the button to <strong>+ Create New RADIUS Profile</strong></p>
+<p><strong>IMAGE HERE of RADIUS Profile dashboard</strong></p>
+<ul>
+<li>Name the profile <strong>LongFi Connect RadSec</strong></li>
+<li>Under <strong>Authentication Server 1</strong>, set the <strong>Authentication Server IP/URL</strong> to <strong>connect.longfisolutions.com</strong></li>
+<li>Check the <strong>Enable</strong> box to enable <strong>RadSec</strong></li>
+<li>For the <strong>CA Certificate</strong> select the <strong>LongFi Connect CA</strong> as the <strong>Certificate Profile</strong></li>
+<li>For the <strong>Client Certificate</strong> select the <strong>LongFi Connect Client Certs</strong> as the <strong>Certificate Profile</strong></li>
+<li>For the <strong>Authentication Port</strong> enter <strong>2083</strong></li>
+<li>For the <strong>Authentication Password</strong> enter <strong>radsec</strong></li>
+<li>Under <strong>Accounting Server</strong> check the box to <strong>Enable</strong> the <strong>RADIUS Accounting</strong> server</li>
+<li>Under <strong>Interim Update</strong> check the box to <strong>Enable</strong> the <strong>Interim Update</strong></li>
+<li>For the <strong>Interim Update Interval</strong> set the value to <strong>300 Seconds</strong></li>
+<li>Under <strong>Accounting Server 1</strong> set the <strong>Accounting Server IP/URL</strong> to <strong>connect.longfisolutions.com</strong></li>
+<li>Check the <strong>Enable</strong> box to enable <strong>RadSec</strong></li>
+<li>For the <strong>CA Certificate</strong> select the <strong>LongFi Connect CA</strong> as the <strong>Certificate Profile</strong></li>
+<li>For the <strong>Client Certificate</strong> select the <strong>LongFi Connect Client Certs</strong> as the <strong>Certificate Profile</strong></li>
+<li>For the <strong>Accounting Port</strong> enter <strong>2083</strong></li>
+<li>For the <strong>Accounting Password</strong> enter <strong>radsec</strong></li>
+</ul>
+<p><strong>IMAGE HERE of the finished RADIUS Profile</strong></p>
               
             </div>
           </div><footer>
