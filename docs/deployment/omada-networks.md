@@ -6,7 +6,7 @@ title: Omada Networks by TP-Link
 
 For support please contact: [networks@longfisolutions.com](emailto:networks@longfisolutions.com)
 
-##
+***
 
 ## **Prerequisites**
 
@@ -55,3 +55,5 @@ Omada Controller v5.15.24 supports Hotspot 2.0 but not RadSec, and the EAP6xx ge
 - EAP690E HD
 - EAP620 HD, EAP623-Outdoor HD, EAP625-Outdoor HD
 - EAP610, EAP610-Outdoor
+
+***
