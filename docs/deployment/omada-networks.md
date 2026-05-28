@@ -74,9 +74,9 @@ Omada Networks Firmware Download:
 
 1. Submit NAS ID, Obtain RadSec Certificates, complete Prerequisites
 2. Configure TP-Link Omada Controller and AP
-    a. Configure Certificate Profile
-    b. Configure RADIUS Profile
-    c. Configure the Passpoint Wi-Fi SSID WLAN
+    1. Configure Certificate Profile
+    2. Configure RADIUS Profile
+    3. Configure the Passpoint Wi-Fi SSID WLAN
 
 ***
 
