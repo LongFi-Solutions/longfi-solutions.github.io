@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://longfi-solutions.github.io/deployment/omada-networks/" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Omada Networks - LongFi Solutions Documentation</title>
+    <title>Omada Networks by TP-Link - LongFi Solutions Documentation</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,7 +13,7 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Omada Networks";
+        var mkdocs_page_name = "Omada Networks by TP-Link";
         var mkdocs_page_input_path = "deployment/omada-networks.md";
         var mkdocs_page_url = "/deployment/omada-networks/";
       </script>
@@ -73,7 +73,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Omada Networks</li>
+      <li class="breadcrumb-item active">Omada Networks by TP-Link</li>
     <li class="wy-breadcrumbs-aside">
           <a href="https://github.com/LongFi-Solutions/longfi-solutions.github.io/edit/master/docs/deployment/omada-networks.md">Edit on LongFi-Solutions/longfi-solutions.github.io</a>
     </li>
@@ -83,7 +83,50 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <p>test</p>
+                <h1 id="longfi-connect-omada-networks-by-tp-link-passpoint-implementation-guide"><strong>LongFi Connect - Omada Networks by TP-Link Passpoint Implementation Guide</strong><a class="headerlink" href="#longfi-connect-omada-networks-by-tp-link-passpoint-implementation-guide" title="Permanent link">&para;</a></h1>
+<p>For support please contact: <a href="emailto:networks@longfisolutions.com">networks@longfisolutions.com</a></p>
+<h2 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites"><strong>Prerequisites</strong><a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<h3 id="_2"><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h3 id="network-requirements">Network Requirements:<a class="headerlink" href="#network-requirements" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The NAS ID and RadSec certificates obtained during your site Onboarding &amp; Activation</li>
+<li>A guest VLAN with the appropriate network segmentation, security, traffic shaping, and firewall policies for your requirements.</li>
+<li>The guest VLAN needs a large DHCP pool with a short lease time. Passpoint clients can automatically discover and join a network, and there will be many more "transient client" connections than a normal guest wifi network.</li>
+</ul>
+<h3 id="omada-official-documentation"><strong>Omada Official Documentation:</strong><a class="headerlink" href="#omada-official-documentation" title="Permanent link">&para;</a></h3>
+<p><a href="https://support.omadanetworks.com/cac/document/110379/">How to Configure Hotspot 2.0 Wi-Fi on Omada Controller</a></p>
+<h3 id="supported-hardware-firmwares-as-of-may-2026"><strong>Supported Hardware &amp; Firmwares (as of May 2026):</strong><a class="headerlink" href="#supported-hardware-firmwares-as-of-may-2026" title="Permanent link">&para;</a></h3>
+<p><strong>Controllers</strong></p>
+<ul>
+<li>OC200 / OC300 / OC400 (hardware) — Passpoint: v5.15+, RadSec: v6.1+</li>
+<li>Omada Software Controller — same version thresholds</li>
+<li>Cloud-Based Controller (CBC) — Passpoint supported; RadSec status unclear, RadSec is not yet available for Built-in RADIUS, RADIUS Proxy, Portal, or SSL-VPN and CBC has additional restrictions Omada Network</li>
+</ul>
+<p><strong>APs — full stack (Passpoint + 802.1X + RadSec)</strong></p>
+<p><strong>These EAP7xx models are fully adapted to controller v6.2 with RadSec support:</strong></p>
+<ul>
+<li>EAP720 V1 — firmware 1.3.x (current 1.3.2)</li>
+<li>EAP723 V1/V2 — firmware 1.3.x / 1.5.x</li>
+<li>EAP770 V2 — firmware 1.5.x</li>
+<li>EAP772 V2 — firmware 1.5.x</li>
+<li>EAP772-Outdoor V1 — firmware 1.5.x</li>
+<li>EAP775-Wall V1 — firmware 1.5.x</li>
+<li>EAP787 V1 — firmware 1.5.x</li>
+<li>EAP725-Wall V1 — firmware 1.3.x</li>
+</ul>
+<p><strong>APs — Passpoint + 802.1X only (no RadSec confirmed)</strong></p>
+<p>Omada Controller v5.15.24 supports Hotspot 2.0 but not RadSec, and the EAP6xx generation received v6.1 controller adaptation but RadSec support has not been confirmed in their firmware release notes: Omada Network</p>
+<ul>
+<li>EAP650, EAP650-Wall, EAP650-Outdoor</li>
+<li>EAP653, EAP653 UR</li>
+<li>EAP660 HD</li>
+<li>EAP670, EAP673</li>
+<li>EAP680, EAP683 LR, EAP683 UR</li>
+<li>EAP690E HD</li>
+<li>EAP620 HD, EAP623-Outdoor HD, EAP625-Outdoor HD</li>
+<li>EAP610, EAP610-Outdoor</li>
+</ul>
               
             </div>
           </div><footer>
