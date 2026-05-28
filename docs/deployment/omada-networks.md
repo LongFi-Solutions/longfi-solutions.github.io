@@ -10,8 +10,6 @@ For support please contact: [networks@longfisolutions.com](emailto:networks@long
 
 ## **Prerequisites**
 
-### 
-
 ### Network Requirements:
 
 - The NAS ID and RadSec certificates obtained during your site Onboarding & Activation
@@ -68,7 +66,24 @@ Omada Controller v5.15.24 supports Hotspot 2.0 but not RadSec, and the EAP6xx ge
 2. Configure TP-Link Omada Controller and AP
     a. Configure Certificate Profile
     b. Configure RADIUS Profile
-    c. Configure WLAN Passpoint Wi-Fi SSID
-    d. Profit
+    c. Configure the Passpoint Wi-Fi SSID WLAN
 
 ***
+
+## **Configure TP-Link Omada Controller and/or APs**
+
+***
+
+### **Configure a Certificate Profile**
+
+From the Omada Dashboard go to **Configuration > Network Config > Profile > Certificate Profile**
+
+**IMAGE HERE**
+
+Click the button to **+ Add Certificate**
+
+**IMAGE HERE**
+
+In the **Add Certificate** window, set the **Certificate Name** to **LongFi Connect CA**
+
+**IMAGE HERE**
