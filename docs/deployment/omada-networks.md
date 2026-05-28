@@ -84,7 +84,7 @@ From the Omada Dashboard go to **Configuration > Network Config > Profile > Cert
 
 **IMAGE HERE**
 
-Click the button to **+ Add Certificate**![](/assets/images/Omada-1-Config-Certificate-Profile-1.png)
+Click the button to **+ Add Certificate**![](/assets/images/Omada-1-Config-Certificate-Profile-1.png){ .img-md }
 
 **IMAGE HERE**
 
