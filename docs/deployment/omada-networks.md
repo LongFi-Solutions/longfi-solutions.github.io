@@ -150,6 +150,10 @@ Click the button to **+ Create New RADIUS Profile**
 
 ### **Configure the Passpoint Wi-Fi SSID**
 
+**\*Please Note:** this guide covers configurations related to Passpoint only.  For general recommendations and best practices on other Wi-Fi settings (ie. 802.11r, Multicast/Broadcast filtering, disabling 2.4 GHz, etc) please visit the Best Practices documentation
+
+***
+
 From the Omada Dashboard, go to **Configuration > Network Config > Network Settings > WLAN**
 
 **IMAGE HERE of the main dashboard**
