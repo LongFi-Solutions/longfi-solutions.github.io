@@ -84,6 +84,64 @@ Click the button to **+ Add Certificate**
 
 **IMAGE HERE**
 
-In the **Add Certificate** window, set the **Certificate Name** to **LongFi Connect CA**
+- In the **Add Certificate** window, set the **Certificate Name** to **LongFi Connect CA**
+- Set the **Certificate Type** to **CA Certificate**
+- Set the **Certificate Format** to **X.509(PEM)**
+- Click the **Import** button to **Upload Certificate**
+- Upload the **LongFi CA** certificate file provided in your onboarding email.  This will usually be called **longfi_connect.ca.pem**
+- Click **Apply** to add the CA Certificate
 
 **IMAGE HERE**
+
+Click the button once more to **+ Add Certificate**
+
+- In the Add Certificate window, set the **Certificate Name** to **LongFi Connect Client Certs**
+- Set the **Certificate Type** to **Client Certificate**
+- Click the **Import** button to upload the **Client Private Key**
+- Upload the **key.pem** certificate file provided in your onboarding email.  This will usually be named using your company name such as **mycompany.key.pem**
+- Leave the password blank
+- Set the **Certificate Format** to **X.509(PEM)**
+- Click the **Import** button next to **Upload Certificate** to upload the client certificate
+- Upload the **cert.pem** certificate file provided in your onboarding email.  This will usually be named using your company name such as **mycompany.cert.pem**
+- Click **Apply** to add the new client certificate and private key
+
+**IMAGE HERE of Client Cert + Key Window**
+
+**IMAGE HERE of finished Certificates Window**
+
+***
+
+### **Configure a RADIUS Profile**
+
+\*Please Note: you may receive an error message saying that one or more devices does not support RadSec.  If you have a Controller or AP model that supports RadSec, you will need to update the firmware before proceeding.  The Omada dashboard may show that your Controller or APs are "Up To Date" or "Latest Version", but that may not be the case.  Visit the firmware page and follow the instructions to get the newest firmware for your devices:
+
+[https://support.omadanetworks.com/us/download/firmware/](https://support.omadanetworks.com/us/download/firmware/)
+
+***
+
+From the Omada Dashboard go to **Configuration > Network Config > Profile > RADIUS Profile**
+
+**IMAGE HERE of main dashboard**
+
+Click the button to **+ Create New RADIUS Profile**
+
+**IMAGE HERE of RADIUS Profile dashboard**
+
+- Name the profile **LongFi Connect RadSec**
+- Under **Authentication Server 1**, set the **Authentication Server IP/URL** to **connect.longfisolutions.com**
+- Check the **Enable** box to enable **RadSec**
+- For the **CA Certificate** select the **LongFi Connect CA** as the **Certificate Profile**
+- For the **Client Certificate** select the **LongFi Connect Client Certs** as the **Certificate Profile**
+- For the **Authentication Port** enter **2083**
+- For the **Authentication Password** enter **radsec**
+- Under **Accounting Server** check the box to **Enable** the **RADIUS Accounting** server
+- Under **Interim Update** check the box to **Enable** the **Interim Update**
+- For the **Interim Update Interval** set the value to **300 Seconds**
+- Under **Accounting Server 1** set the **Accounting Server IP/URL** to **connect.longfisolutions.com**
+- Check the **Enable** box to enable **RadSec**
+- For the **CA Certificate** select the **LongFi Connect CA** as the **Certificate Profile**
+- For the **Client Certificate** select the **LongFi Connect Client Certs** as the **Certificate Profile**
+- For the **Accounting Port** enter **2083**
+- For the **Accounting Password** enter **radsec**
+
+**IMAGE HERE of the finished RADIUS Profile**
