@@ -88,9 +88,9 @@ Omada Networks Firmware Download:
 
 From the Omada Dashboard go to **Configuration > Network Config > Profile > Certificate Profile**
 
-**IMAGE HERE**
+![](/assets/images/Omada-1-Config-Certificate-Profile-1.png){ .img-md }
 
-Click the button to **+ Add Certificate**![](/assets/images/Omada-1-Config-Certificate-Profile-1.png){ .img-md }
+Click the button to **+ Add Certificate**
 
 **IMAGE HERE**
 
