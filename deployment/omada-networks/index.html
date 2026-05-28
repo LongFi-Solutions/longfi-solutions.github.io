@@ -96,6 +96,8 @@
 </ul>
 <h3 id="omada-official-documentation"><strong>Omada Official Documentation:</strong><a class="headerlink" href="#omada-official-documentation" title="Permanent link">&para;</a></h3>
 <p><a href="https://support.omadanetworks.com/cac/document/110379/">How to Configure Hotspot 2.0 Wi-Fi on Omada Controller</a></p>
+<p><strong><em>*Please Note:</em></strong></p>
+<p>Depending on your organizational structure and your Omada hardware, software, and firmware versions, you may be able to configure Certificates, the RADIUS profile, and the Passpoint Wi-Fi SSID at the Global level.  This can save you a lot of time by allowing the configs to be applied to multiple sites at once.  The NAS ID must be unique at the site level, but the certificates, RADIUS RadSec profile, and most SSID settings will be the same at every site.  We made this guide using a single Omada AP and controller, with a single site, and the Global configuration options were not available.</p>
 <h3 id="supported-hardware-firmwares-as-of-may-2026"><strong>Supported Hardware &amp; Firmwares (as of May 2026):</strong><a class="headerlink" href="#supported-hardware-firmwares-as-of-may-2026" title="Permanent link">&para;</a></h3>
 <p><strong>Controllers</strong></p>
 <ul>
@@ -127,6 +129,16 @@
 <li>EAP620 HD, EAP623-Outdoor HD, EAP625-Outdoor HD</li>
 <li>EAP610, EAP610-Outdoor</li>
 </ul>
+<hr />
+<h2 id="high-level-steps">High Level Steps<a class="headerlink" href="#high-level-steps" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Submit NAS ID, Obtain RadSec Certificates, complete Prerequisites</li>
+<li>Configure TP-Link Omada Controller and AP
+    a. Configure Certificate Profile
+    b. Configure RADIUS Profile
+    c. Configure WLAN Passpoint Wi-Fi SSID
+    d. Profit</li>
+</ol>
 <hr />
               
             </div>
