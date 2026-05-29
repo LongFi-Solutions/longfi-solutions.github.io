@@ -125,7 +125,7 @@ Once finished uploading the CA and Client certificates, your Certificate Profile
 
 ### **Configure a RADIUS Profile**
 
-\*Please Note: you may receive an error message saying that one or more devices does not support RadSec.  If you have a Controller or AP model that supports RadSec, you will need to update the firmware before proceeding.  The Omada dashboard may show that your Controller or APs are "Up To Date" or "Latest Version", but that may not be the case.  Visit the firmware page and follow the instructions to get the newest firmware for your devices:
+**\*Please Note:** you may receive an error message saying that one or more devices does not support RadSec.  If you have a Controller or AP model that supports RadSec, you will need to update the firmware before proceeding.  The Omada dashboard may show that your Controller or APs are "Up To Date" or "Latest Version", but that may not be the case.  Visit the firmware page and follow the instructions to get the newest firmware for your devices:
 
 [https://support.omadanetworks.com/us/download/firmware/](https://support.omadanetworks.com/us/download/firmware/)
 
@@ -133,7 +133,7 @@ Once finished uploading the CA and Client certificates, your Certificate Profile
 
 From the Omada Dashboard go to **Configuration > Network Config > Profile > RADIUS Profile**
 
-**IMAGE HERE of main dashboard**
+![](/assets/images/Omada-6-Create-RADIUS-Profile-1.jpg){ .img-lg }
 
 Click the button to **+ Create New RADIUS Profile**
 
