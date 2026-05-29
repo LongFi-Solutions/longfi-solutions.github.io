@@ -88,11 +88,11 @@ Omada Networks Firmware Download:
 
 From the Omada Dashboard go to **Configuration > Network Config > Profile > Certificate Profile**
 
-![](/assets/images/Omada-1-Config-Certificate-Profile-1.png){ .img-md }
+![](/assets/images/Omada-1-Config-Certificate-Profile-1.png){ .img-lg }
 
 Click the button to **+ Add Certificate**
 
-![](/assets/images/Omada-2-Add-Certificate.png){ .img-md }
+![](/assets/images/Omada-2-Add-Certificate.png){ .img-lg }
 
 - In the **Add Certificate** window, set the **Certificate Name** to **LongFi Connect CA**
 - Set the **Certificate Type** to **CA Certificate**
