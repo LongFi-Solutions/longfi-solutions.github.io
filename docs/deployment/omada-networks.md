@@ -146,6 +146,11 @@ Click the button to **+ Create New RADIUS Profile**
 - For the **Client Certificate** select the **LongFi Connect Client Certs** as the **Certificate Profile**
 - For the **Authentication Port** enter **2083**
 - For the **Authentication Password** enter **radsec**
+
+![](/assets/images/Omada-8-Config-RADIUS-1.png){ .img-lg }
+
+Scroll down to the **Accounting Server** settings
+
 - Under **Accounting Server** check the box to **Enable** the **RADIUS Accounting** server
 - Under **Interim Update** check the box to **Enable** the **Interim Update**
 - For the **Interim Update Interval** set the value to **300 Seconds**
@@ -155,8 +160,9 @@ Click the button to **+ Create New RADIUS Profile**
 - For the **Client Certificate** select the **LongFi Connect Client Certs** as the **Certificate Profile**
 - For the **Accounting Port** enter **2083**
 - For the **Accounting Password** enter **radsec**
+- Click **Save** to save the RADIUS Profile
 
-**IMAGE HERE of the finished RADIUS Profile**
+![](/assets/images/Omada-9-Configure-RADIUS-2.jpg){ .img-lg }
 
 ***
 
