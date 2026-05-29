@@ -101,7 +101,7 @@ Click the button to **+ Add Certificate**
 - Upload the **LongFi CA** certificate file provided in your onboarding email.  This will usually be called **longfi_connect.ca.pem**
 - Click **Apply** to add the CA Certificate
 
-**IMAGE HERE**
+![](/assets/images/Omada-3-CA-Certificate.png){ .img-lg }
 
 Click the button once more to **+ Add Certificate**
 
@@ -115,7 +115,7 @@ Click the button once more to **+ Add Certificate**
 - Upload the **cert.pem** certificate file provided in your onboarding email.  This will usually be named using your company name such as **mycompany.cert.pem**
 - Click **Apply** to add the new client certificate and private key
 
-**IMAGE HERE of Client Cert + Key Window**
+![](/assets/images/Omada-4-Client-Certs.png)
 
 **IMAGE HERE of finished Certificates Window**
 
