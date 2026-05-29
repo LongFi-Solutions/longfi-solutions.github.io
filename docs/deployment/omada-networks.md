@@ -137,7 +137,7 @@ From the Omada Dashboard go to **Configuration > Network Config > Profile > RADI
 
 Click the button to **+ Create New RADIUS Profile**
 
-**IMAGE HERE of RADIUS Profile dashboard**
+![](/assets/images/Omada-7-Create-New-RADIUS-Profile.png){ .img-lg }
 
 - Name the profile **LongFi Connect RadSec**
 - Under **Authentication Server 1**, set the **Authentication Server IP/URL** to **connect.longfisolutions.com**
