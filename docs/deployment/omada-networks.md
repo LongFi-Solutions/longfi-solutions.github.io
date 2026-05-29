@@ -115,9 +115,11 @@ Click the button once more to **+ Add Certificate**
 - Upload the **cert.pem** certificate file provided in your onboarding email.  This will usually be named using your company name such as **mycompany.cert.pem**
 - Click **Apply** to add the new client certificate and private key
 
-![](/assets/images/Omada-4-Client-Certs.png)
+![](/assets/images/Omada-4-Client-Certs.png){ .img-lg }
 
-**IMAGE HERE of finished Certificates Window**
+Once finished uploading the CA and Client certificates, your Certificate Profile window should look like this:
+
+![](/assets/images/Omada-5-Certs-Profile-Done.png){ .img-lg }
 
 ***
 
