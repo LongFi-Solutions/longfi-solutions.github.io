@@ -17,6 +17,8 @@ theme:
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
+  logo: assets/images/LongFi-Icon-Only-PNG.png
+  favicon: assets/images/LongFi-Icon-Only-PNG.png
   features:
     - navigation.tabs
     - navigation.sections
