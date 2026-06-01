@@ -149,9 +149,12 @@ Click the button to **+ Create New RADIUS Profile**
 - For the **Authentication Port** enter **2083**
 - For the **Authentication Password** enter **radsec**
 - Click **+ Add New Authentication Server** to add a second server IP
+
+![](/assets/images/Omada-8-2-Config-RADIUS-IP-1.png){ .img-lg }
+
 - Repeat the exact same steps as above and  set the **Authentication Server IP/URL** to **136.107.123.32**
 
-![](/assets/images/Omada-8-Config-RADIUS-1.png){ .img-lg }
+![](/assets/images/Omada-8-2-Config-RADIUS-IP-2.png){ .img-lg }
 
 Scroll down to the **Accounting Server** settings
 
