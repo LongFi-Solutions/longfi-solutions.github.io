@@ -1,16 +1,24 @@
 /* LongFi Solutions Brand Colors
    Dark Blue:   #2C2C6E
    Medium Blue: #244899
-   Uncomment sections below to apply brand styling.
 */
 
-/* Top left header / site name area */
-/* .wy-side-nav-search {
-  background: #244899;
-} */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color:        #2C2C6E;
+  --md-primary-fg-color--light: #244899;
+  --md-primary-fg-color--dark:  #1e1e4a;
+  --md-accent-fg-color:         #244899;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:        #244899;
+  --md-primary-fg-color--light: #2C2C6E;
+  --md-primary-fg-color--dark:  #1e1e4a;
+  --md-accent-fg-color:         #4a6fd4;
+}
 
 /* Constrain images to content width */
-.rst-content img {
+.md-content img {
   max-width: 100%;
   height: auto;
 }
@@ -21,7 +29,7 @@
    ![alt](image.png){ .img-sm }
 
 */
-.rst-content p.img-sm img, .rst-content img.img-sm   { width: 25%; }
-.rst-content p.img-md img, .rst-content img.img-md   { width: 50%; }
-.rst-content p.img-lg img, .rst-content img.img-lg   { width: 75%; }
-.rst-content p.img-full img, .rst-content img.img-full { width: 100%; }
+.md-content p.img-sm img,  .md-content img.img-sm  { width: 25%; }
+.md-content p.img-md img,  .md-content img.img-md  { width: 50%; }
+.md-content p.img-lg img,  .md-content img.img-lg  { width: 75%; }
+.md-content p.img-full img, .md-content img.img-full { width: 100%; }
