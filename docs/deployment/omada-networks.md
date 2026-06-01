@@ -253,3 +253,7 @@ From the **SSID** tab hit the button to **+ Create New Wireless Network**
     - Realm Encoding: **RFC4282**
     - EAP Method: **None**
     - Authentication param: **Credential Type > None**
+
+Scroll down to the bottom of the main window and hit **Apply** to save the new **LongFi Passpoint** WLAN.  Congratulations, you have configured LongFi Connect Passpoint Wi-Fi for Carrier Offload!
+
+You can check in the Clients section to see if nearby SIM based devices are connecting.
