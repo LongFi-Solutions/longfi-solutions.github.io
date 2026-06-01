@@ -217,14 +217,21 @@ From the **SSID** tab hit the button to **+ Create New Wireless Network**
 
 ![](/assets/images/Omada-14-Hotspot-Profile-1.png){ .img-lg }
 
+- Scroll down to **Venue Info**
 - Under **Venue Info** choose an appropriate **Venue Group** and **Venue Type**, ie. **Assembly** and **Convention Center**
 - Under **Venue Name** give your venue a name
 - Under **NAI Realm List** click the button to **+ Add New Realm**.  You will enter at least 3-4 and as many as 8-10 NAI Realms each with unique EAP settings.  The NAI Realms will be provided in your onboarding and activation emails.  Again, NAI Realms may only be configured once the network has been registered and approved for activation.
+
+![](/assets/images/Omada-15-Venue-and-Realms.png){ .img-lg }
+
 - The following realms may be configured with or without additional carrier approval:
 - Realm Name: **connect.longfisolutions.com**
     - Realm Encoding: **RFC4282**
     - EAP Method: **EAP-TLS**
     - Authentication param: **Credential Type, Certificate**
+
+![](/assets/images/Omada-16-NAI-Realms-1.png){ .img-lg }
+
 - Realm Name: **wifi.fi.google.com**
     - Realm Encoding: **RFC4282**
     - EAP Method: **EAP-TLS**
@@ -238,6 +245,9 @@ From the **SSID** tab hit the button to **+ Create New Wireless Network**
     - EAP Method: **EAP-TLS**
     - Authentication param: **Credential Type, Certificate**
 - Your dashboard should look like this now:
+
+![](/assets/images/Omada-17-NAI-Realms-Preapproved.png){ .img-lg }
+
 - Additional Carrier Realms will normally configured as follows (please check your onboarding and activation emails for any deviations):
 - Realm Name: wlan.mnc123.mcc456.3gppnetwork.org (fake example)
     - Realm Encoding: **RFC4282**
