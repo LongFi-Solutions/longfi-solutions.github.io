@@ -191,13 +191,14 @@ From the **SSID** tab hit the button to **+ Create New Wireless Network**
 
 ![](/assets/images/Omada-12-Create-SSID-3.png){ .img-lg }
 
-- Enable **Load Balance**
-- Disable **Band Steering**
+- Scroll down and expand the **+ Advanced Settings** 
 - Set the **VLAN** to **Custom** and choose your **Guest/Passpoint Wi-Fi VLAN**
     - Please note that a separate VLAN with a large DHCP pool and short DHCP lease time is required for Passpoint Wi-Fi.  This is a prerequisite that must be set up in advance of following this guide, and is not covered by this guide.
+    - Please note: we used a 3rd party gateway while creating this guide, if you have an Omada gateway your VLAN settings may be different here.
 - Set the **WPA Mode** to **WPA3-Enterprise / Transition Mode-CCMP-128** (this mode is mostly backward compatible with WPA2 devices)
-- Set **PMF** to **Capable** (applies to 6 GHz)
-- Set **802.11r** to **Enable**
+
+![](/assets/images/Omada-13-Create-SSID-4.png)
+
 - Expand the **Hotspot 2.0** menu and set **Hotspot 2.0** to **Enable**
 - Set the **Network Type** to **Chargeable Public Network**
 - Under **PLMN ID**, enter all of the 3GPP MCC/MNC codes provided in your onboarding and activation emails.  
