@@ -1,8 +1,6 @@
 site_name: LongFi Solutions Documentation
 site_url: https://longfi-solutions.github.io
 site_description: Deployment guides, vendor configuration, and best practices for LongFi Passpoint and OpenRoaming infrastructure.
-repo_url: https://github.com/LongFi-Solutions/longfi-solutions.github.io
-repo_name: LongFi-Solutions/longfi-solutions.github.io
 
 theme:
   name: material
