@@ -1044,19 +1044,18 @@
 <li>Upload the <strong>cert.pem</strong> certificate file provided in your onboarding email.  This will usually be named using your company name such as <strong>mycompany.cert.pem</strong></li>
 <li>Click <strong>Apply</strong> to add the new client certificate and private key</li>
 </ul>
-<p><img alt="" class="img-lg" src="/assets/images/Omada-4-Client-Certs.png" /></p>
+<p><img alt="" src="/assets/images/Omada-4-Client-Certs.png" /></p>
 <p>Once finished uploading the CA and Client certificates, your Certificate Profile window should look like this:</p>
-<p><img alt="" class="img-lg" src="/assets/images/Omada-5-Certs-Profile-Done.png" /></p>
+<p><img alt="" src="/assets/images/Omada-5-Certs-Profile-Done.png" /></p>
 <hr />
 <h3 id="configure-a-radius-profile"><strong>Configure a RADIUS Profile</strong><a class="headerlink" href="#configure-a-radius-profile" title="Permanent link">&para;</a></h3>
 <p><strong>*Please Note:</strong> you may receive an error message saying that one or more devices does not support RadSec.  If you have a Controller or AP model that supports RadSec, you will need to update the firmware before proceeding.  The Omada dashboard may show that your Controller or APs are "Up To Date" or "Latest Version", but that may not be the case.  Visit the firmware page and follow the instructions to get the newest firmware for your devices:</p>
 <p><a href="https://support.omadanetworks.com/us/download/firmware/">https://support.omadanetworks.com/us/download/firmware/</a></p>
 <hr />
 <p>From the Omada Dashboard go to <strong>Configuration &gt; Network Config &gt; Profile &gt; RADIUS Profile</strong></p>
-<p><img alt="" class="img-lg" src="/assets/images/Omada-6-Create-RADIUS-Profile-1.jpg" /></p>
+<p><img alt="" src="/assets/images/Omada-6-Create-RADIUS-Profile-1.jpg" /></p>
 <p>Click the button to <strong>+ Create New RADIUS Profile</strong></p>
-<p><img alt="" class="img-lg" src="/assets/images/Omada-7-Create-New-RADIUS-Profile.png" /></p>
-<p><strong>*Please Note:</strong> Omada shows some support for using a DNS URL as the RADIUS <strong>Authentication</strong> and <strong>Accounting Server IP/URL</strong>.  At the time of this guide, FQDN RADIUS profiles are restricted to EKMS/PPSK and switch 802.1X use cases only.  We much prefer using the URL of <strong>connect.longfisolutions.com</strong> as this allows us to scale our services.  Please check if your version of Omada allows using the single server endpoint <strong>connect.longfisolutions.com</strong> for both the authentication and accounting servers.  This will require a bit more effort up front, but much less effort in the future if more regions are added to our AAA infrastructure, as you will not have to add or reconfigure IP addresses.  If you receive the error, this will happen during the WLAN creation, so it is best to create two RADIUS profiles before having to exit out of the WLAN configuration.</p>
+<p><img alt="" src="/assets/images/Omada-7-Create-New-RADIUS-Profile.png" /></p>
 <ul>
 <li>Name the profile <strong>LongFi Connect RadSec</strong></li>
 <li>Under <strong>Authentication Server 1</strong>, set the <strong>Authentication Server IP/URL</strong> to <strong>34.174.6.104</strong></li>
@@ -1067,11 +1066,11 @@
 <li>For the <strong>Authentication Password</strong> enter <strong>radsec</strong></li>
 <li>Click <strong>+ Add New Authentication Server</strong> to add a second server IP</li>
 </ul>
-<p><img alt="" class="img-lg" src="/assets/images/Omada-8-2-Config-RADIUS-IP-1.png" /></p>
+<p><img alt="" src="/assets/images/Omada-8-2-Config-RADIUS-IP-1.png" /></p>
 <ul>
 <li>Repeat the exact same steps as above and  set the <strong>Authentication Server IP/URL</strong> to <strong>136.107.123.32</strong></li>
 </ul>
-<p><img alt="" class="img-lg" src="/assets/images/Omada-8-2-Config-RADIUS-IP-2.png" /></p>
+<p><img alt="" src="/assets/images/Omada-8-2-Config-RADIUS-IP-2.png" /></p>
 <p>Scroll down to the <strong>Accounting Server</strong> settings</p>
 <ul>
 <li>Under <strong>Accounting Server</strong> check the box to <strong>Enable</strong> the <strong>RADIUS Accounting</strong> server</li>
@@ -1085,20 +1084,20 @@
 <li>For the <strong>Accounting Password</strong> enter <strong>radsec</strong></li>
 <li>Click <strong>+ Add New Accounting Server</strong> to add the second server</li>
 </ul>
-<p><img alt="" class="img-lg" src="/assets/images/Omada-9-2-Config-RADIUS-IP-1.png" /></p>
+<p><img alt="" src="/assets/images/Omada-9-2-Config-RADIUS-IP-1.png" /></p>
 <ul>
 <li>Repeat the exact same steps as above and  set the <strong>Accounting Server IP/URL</strong> to <strong>136.107.123.32</strong></li>
 <li>Click <strong>Save</strong> to save the RADIUS Profile</li>
 </ul>
-<p><img alt="" class="img-lg" src="/assets/images/Omada-9-2-Config-RADIUS-IP-2.png" /></p>
+<p><img alt="" src="/assets/images/Omada-9-2-Config-RADIUS-IP-2.png" /></p>
 <hr />
 <h3 id="configure-the-passpoint-wi-fi-ssid"><strong>Configure the Passpoint Wi-Fi SSID</strong><a class="headerlink" href="#configure-the-passpoint-wi-fi-ssid" title="Permanent link">&para;</a></h3>
 <p><strong>*Please Note:</strong> this guide covers configurations related to Passpoint only.  For general recommendations and best practices on other Wi-Fi settings (ie. 802.11r, Multicast/Broadcast filtering, disabling 2.4 GHz, etc) please visit the Best Practices documentation</p>
 <hr />
 <p>From the Omada Dashboard, go to <strong>Configuration &gt; Network Config &gt; Network Settings &gt; WLAN</strong></p>
-<p><img alt="" class="img-lg" src="/assets/images/Omada-10-Create-SSID-1.png" /></p>
+<p><img alt="" src="/assets/images/Omada-10-Create-SSID-1.png" /></p>
 <p>From the <strong>SSID</strong> tab hit the button to <strong>+ Create New Wireless Network</strong></p>
-<p><img alt="" class="img-lg" src="/assets/images/Omada-11-Create-SSID-2.png" /></p>
+<p><img alt="" src="/assets/images/Omada-11-Create-SSID-2.png" /></p>
 <ul>
 <li>Under <strong>Network Name (SSID)</strong> set the name to <strong>LongFi Passpoint</strong></li>
 <li>Choose the appropriate Device Type (EAP or Gateway), we used EAP for this guide</li>
@@ -1111,7 +1110,7 @@
 <li>For the <strong>RADIUS Profile</strong> choose the <strong>LongFi Connect RadSec</strong> profile we created earlier</li>
 <li>For the <strong>NAS ID</strong> choose <strong>Custom</strong> and enter the NAS ID that was registered during your onboarding and activation emails.  This will usually be a MAC address from one of your APs such as 11:22:33:AA:BB:CC</li>
 </ul>
-<p><img alt="" class="img-lg" src="/assets/images/Omada-12-Create-SSID-3.png" /></p>
+<p><img alt="" src="/assets/images/Omada-12-Create-SSID-3.png" /></p>
 <ul>
 <li>Scroll down and expand the <strong>+ Advanced Settings</strong> </li>
 <li>Set the <strong>VLAN</strong> to <strong>Custom</strong> and choose your <strong>Guest/Passpoint Wi-Fi VLAN</strong><ul>
@@ -1121,7 +1120,7 @@
 </li>
 <li>Set the <strong>WPA Mode</strong> to <strong>WPA3-Enterprise / Transition Mode-CCMP-128</strong> (this mode is mostly backward compatible with WPA2 devices)</li>
 </ul>
-<p><img alt="" class="img-lg" src="/assets/images/Omada-13-Create-SSID-4.png" /></p>
+<p><img alt="" src="/assets/images/Omada-13-Create-SSID-4.png" /></p>
 <ul>
 <li>Expand the <strong>Hotspot 2.0</strong> menu and set <strong>Hotspot 2.0</strong> to <strong>Enable</strong></li>
 <li>Set the <strong>Network Type</strong> to <strong>Chargeable Public Network</strong></li>
@@ -1147,14 +1146,14 @@
 </li>
 <li>Set the <strong>Network Availability IPv6</strong> to <strong>Address type not available</strong></li>
 </ul>
-<p><img alt="" class="img-lg" src="/assets/images/Omada-14-Hotspot-Profile-1.png" /></p>
+<p><img alt="" src="/assets/images/Omada-14-Hotspot-Profile-1.png" /></p>
 <ul>
 <li>Scroll down to <strong>Venue Info</strong></li>
 <li>Under <strong>Venue Info</strong> choose an appropriate <strong>Venue Group</strong> and <strong>Venue Type</strong>, ie. <strong>Assembly</strong> and <strong>Convention Center</strong></li>
 <li>Under <strong>Venue Name</strong> give your venue a name</li>
 <li>Under <strong>NAI Realm List</strong> click the button to <strong>+ Add New Realm</strong>.  You will enter at least 3-4 and as many as 8-10 NAI Realms each with unique EAP settings.  The NAI Realms will be provided in your onboarding and activation emails.  Again, NAI Realms may only be configured once the network has been registered and approved for activation.</li>
 </ul>
-<p><img alt="" class="img-lg" src="/assets/images/Omada-15-Venue-and-Realms.png" /></p>
+<p><img alt="" src="/assets/images/Omada-15-Venue-and-Realms.png" /></p>
 <ul>
 <li>The following realms may be configured with or without additional carrier approval:</li>
 <li>Realm Name: <strong>connect.longfisolutions.com</strong><ul>
@@ -1164,7 +1163,7 @@
 </ul>
 </li>
 </ul>
-<p><img alt="" class="img-lg" src="/assets/images/Omada-16-NAI-Realms-1.png" /></p>
+<p><img alt="" src="/assets/images/Omada-16-NAI-Realms-1.png" /></p>
 <ul>
 <li>Realm Name: <strong>wifi.fi.google.com</strong><ul>
 <li>Realm Encoding: <strong>RFC4282</strong></li>
@@ -1186,7 +1185,7 @@
 </li>
 <li>Your dashboard should look like this now:</li>
 </ul>
-<p><img alt="" class="img-lg" src="/assets/images/Omada-17-NAI-Realms-Preapproved.png" /></p>
+<p><img alt="" src="/assets/images/Omada-17-NAI-Realms-Preapproved.png" /></p>
 <ul>
 <li>Additional Carrier Realms will normally configured as follows (please check your onboarding and activation emails for any deviations):</li>
 <li>Realm Name: wlan.mnc123.mcc456.3gppnetwork.org (fake example)<ul>
