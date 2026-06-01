@@ -167,6 +167,10 @@ Scroll down to the **Accounting Server** settings
 - For the **Client Certificate** select the **LongFi Connect Client Certs** as the **Certificate Profile**
 - For the **Accounting Port** enter **2083**
 - For the **Accounting Password** enter **radsec**
+- Click **+ Add New Accounting Server** to add the second server
+
+![](/assets/images/Omada-9-2-Config-RADIUS-IP-1.png){ .img-lg }
+
 - Repeat the exact same steps as above and  set the **Accounting Server IP/URL** to **136.107.123.32**
 - Click **Save** to save the RADIUS Profile
 
