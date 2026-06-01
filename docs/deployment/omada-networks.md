@@ -139,6 +139,8 @@ Click the button to **+ Create New RADIUS Profile**
 
 ![](/assets/images/Omada-7-Create-New-RADIUS-Profile.png){ .img-lg }
 
+**\*Please Note:** Omada shows some support for using a DNS URL as the RADIUS **Authentication** and **Accounting Server IP/URL**.  At the time of this guide, FQDN RADIUS profiles are restricted to EKMS/PPSK and switch 802.1X use cases only.  We much prefer using the URL of **connect.longfisolutions.com** as this allows us to scale our services.  Please check if your version of Omada allows using the single server endpoint **connect.longfisolutions.com** for both the authentication and accounting servers.  This will require a bit more effort up front, but much less effort in the future if more regions are added to our AAA infrastructure, as you will not have to add or reconfigure IP addresses.  If you receive the error, this will happen during the WLAN creation, so it is best to create two RADIUS profiles before having to exit out of the WLAN configuration.
+
 - Name the profile **LongFi Connect RadSec**
 - Under **Authentication Server 1**, set the **Authentication Server IP/URL** to **connect.longfisolutions.com**
 - Check the **Enable** box to enable **RadSec**
