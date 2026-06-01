@@ -174,7 +174,7 @@ Scroll down to the **Accounting Server** settings
 - Repeat the exact same steps as above and  set the **Accounting Server IP/URL** to **136.107.123.32**
 - Click **Save** to save the RADIUS Profile
 
-![](/assets/images/Omada-9-Configure-RADIUS-2.jpg){ .img-lg }
+![](/assets/images/Omada-9-2-Config-RADIUS-IP-2.png){ .img-lg }
 
 ***
 
