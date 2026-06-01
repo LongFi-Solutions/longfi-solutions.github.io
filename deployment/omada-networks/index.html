@@ -215,12 +215,14 @@
 <p><strong>*Please Note:</strong> Omada shows some support for using a DNS URL as the RADIUS <strong>Authentication</strong> and <strong>Accounting Server IP/URL</strong>.  At the time of this guide, FQDN RADIUS profiles are restricted to EKMS/PPSK and switch 802.1X use cases only.  We much prefer using the URL of <strong>connect.longfisolutions.com</strong> as this allows us to scale our services.  Please check if your version of Omada allows using the single server endpoint <strong>connect.longfisolutions.com</strong> for both the authentication and accounting servers.  This will require a bit more effort up front, but much less effort in the future if more regions are added to our AAA infrastructure, as you will not have to add or reconfigure IP addresses.  If you receive the error, this will happen during the WLAN creation, so it is best to create two RADIUS profiles before having to exit out of the WLAN configuration.</p>
 <ul>
 <li>Name the profile <strong>LongFi Connect RadSec</strong></li>
-<li>Under <strong>Authentication Server 1</strong>, set the <strong>Authentication Server IP/URL</strong> to <strong>connect.longfisolutions.com</strong></li>
+<li>Under <strong>Authentication Server 1</strong>, set the <strong>Authentication Server IP/URL</strong> to <strong>34.174.6.104</strong></li>
 <li>Check the <strong>Enable</strong> box to enable <strong>RadSec</strong></li>
 <li>For the <strong>CA Certificate</strong> select the <strong>LongFi Connect CA</strong> as the <strong>Certificate Profile</strong></li>
 <li>For the <strong>Client Certificate</strong> select the <strong>LongFi Connect Client Certs</strong> as the <strong>Certificate Profile</strong></li>
 <li>For the <strong>Authentication Port</strong> enter <strong>2083</strong></li>
 <li>For the <strong>Authentication Password</strong> enter <strong>radsec</strong></li>
+<li>Click <strong>+ Add New Authentication Server</strong> to add a second server IP</li>
+<li>Repeat the exact same steps as above and  set the <strong>Authentication Server IP/URL</strong> to <strong>136.107.123.32</strong></li>
 </ul>
 <p><img alt="" class="img-lg" src="/assets/images/Omada-8-Config-RADIUS-1.png" /></p>
 <p>Scroll down to the <strong>Accounting Server</strong> settings</p>
@@ -228,12 +230,13 @@
 <li>Under <strong>Accounting Server</strong> check the box to <strong>Enable</strong> the <strong>RADIUS Accounting</strong> server</li>
 <li>Under <strong>Interim Update</strong> check the box to <strong>Enable</strong> the <strong>Interim Update</strong></li>
 <li>For the <strong>Interim Update Interval</strong> set the value to <strong>300 Seconds</strong></li>
-<li>Under <strong>Accounting Server 1</strong> set the <strong>Accounting Server IP/URL</strong> to <strong>connect.longfisolutions.com</strong></li>
+<li>Under <strong>Accounting Server 1</strong> set the <strong>Accounting Server IP/URL</strong> to <strong>34.174.6.104</strong></li>
 <li>Check the <strong>Enable</strong> box to enable <strong>RadSec</strong></li>
 <li>For the <strong>CA Certificate</strong> select the <strong>LongFi Connect CA</strong> as the <strong>Certificate Profile</strong></li>
 <li>For the <strong>Client Certificate</strong> select the <strong>LongFi Connect Client Certs</strong> as the <strong>Certificate Profile</strong></li>
 <li>For the <strong>Accounting Port</strong> enter <strong>2083</strong></li>
 <li>For the <strong>Accounting Password</strong> enter <strong>radsec</strong></li>
+<li>Repeat the exact same steps as above and  set the <strong>Accounting Server IP/URL</strong> to <strong>136.107.123.32</strong></li>
 <li>Click <strong>Save</strong> to save the RADIUS Profile</li>
 </ul>
 <p><img alt="" class="img-lg" src="/assets/images/Omada-9-Configure-RADIUS-2.jpg" /></p>
