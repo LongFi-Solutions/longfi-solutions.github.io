@@ -266,11 +266,11 @@
 </li>
 <li>Set the <strong>WPA Mode</strong> to <strong>WPA3-Enterprise / Transition Mode-CCMP-128</strong> (this mode is mostly backward compatible with WPA2 devices)</li>
 </ul>
-<p><img alt="" src="/assets/images/Omada-13-Create-SSID-4.png" /></p>
+<p><img alt="" class="img-lg" src="/assets/images/Omada-13-Create-SSID-4.png" /></p>
 <ul>
 <li>Expand the <strong>Hotspot 2.0</strong> menu and set <strong>Hotspot 2.0</strong> to <strong>Enable</strong></li>
 <li>Set the <strong>Network Type</strong> to <strong>Chargeable Public Network</strong></li>
-<li>Under <strong>PLMN ID</strong>, enter all of the 3GPP MCC/MNC codes provided in your onboarding and activation emails.  <ul>
+<li>Under <strong>PLMN ID</strong>, enter all of the 3GPP MCC/MNC codes provided in your onboarding and activation emails.  (the PLMN IDs shown here are for demonstration purposes only and are not real PLMN IDs, refer to the email)<ul>
 <li><strong>*Important Note:</strong> PLMN IDs, RCOIs, and NAI Realms may only be configured once the network has been registered and approved for activation.  Activation of any unapproved sites constitutes a breach of your carrier offload agreement.</li>
 <li><strong>*Please Note:</strong> We provide PLMN IDs in the 3GPP MCC|MNC format.  Most network vendors prefer this format, such as MCC: 123, MNC: 456.  TPLink Omada prefers the PLMN ID format.  The PLMN ID is simply the combination of those two codes such as 123456.  If you received the 3GPP MCC|MNC codes of 234 and 567, enter the PLMN ID of 234567</li>
 </ul>
@@ -291,6 +291,9 @@
 </ul>
 </li>
 <li>Set the <strong>Network Availability IPv6</strong> to <strong>Address type not available</strong></li>
+</ul>
+<p><img alt="" class="img-lg" src="/assets/images/Omada-14-Hotspot-Profile-1.png" /></p>
+<ul>
 <li>Under <strong>Venue Info</strong> choose an appropriate <strong>Venue Group</strong> and <strong>Venue Type</strong>, ie. <strong>Assembly</strong> and <strong>Convention Center</strong></li>
 <li>Under <strong>Venue Name</strong> give your venue a name</li>
 <li>Under <strong>NAI Realm List</strong> click the button to <strong>+ Add New Realm</strong>.  You will enter at least 3-4 and as many as 8-10 NAI Realms each with unique EAP settings.  The NAI Realms will be provided in your onboarding and activation emails.  Again, NAI Realms may only be configured once the network has been registered and approved for activation.</li>
