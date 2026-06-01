@@ -188,6 +188,7 @@ From the **SSID** tab hit the button to **+ Create New Wireless Network**
 - For **Security** choose the option for **WPA-Enterprise**
 - For the **RADIUS Profile** choose the **LongFi Connect RadSec** profile we created earlier
 - For the **NAS ID** choose **Custom** and enter the NAS ID that was registered during your onboarding and activation emails.  This will usually be a MAC address from one of your APs such as 11:22:33:AA:BB:CC
+
 - Enable **Load Balance**
 - Disable **Band Steering**
 - Set the **VLAN** to **Custom** and choose your **Guest/Passpoint Wi-Fi VLAN**
