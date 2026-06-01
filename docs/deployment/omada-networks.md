@@ -197,11 +197,11 @@ From the **SSID** tab hit the button to **+ Create New Wireless Network**
     - Please note: we used a 3rd party gateway while creating this guide, if you have an Omada gateway your VLAN settings may be different here.
 - Set the **WPA Mode** to **WPA3-Enterprise / Transition Mode-CCMP-128** (this mode is mostly backward compatible with WPA2 devices)
 
-![](/assets/images/Omada-13-Create-SSID-4.png)
+![](/assets/images/Omada-13-Create-SSID-4.png){ .img-lg }
 
 - Expand the **Hotspot 2.0** menu and set **Hotspot 2.0** to **Enable**
 - Set the **Network Type** to **Chargeable Public Network**
-- Under **PLMN ID**, enter all of the 3GPP MCC/MNC codes provided in your onboarding and activation emails.  
+- Under **PLMN ID**, enter all of the 3GPP MCC/MNC codes provided in your onboarding and activation emails.  (the PLMN IDs shown here are for demonstration purposes only and are not real PLMN IDs, refer to the email)
     - **\*Important Note:** PLMN IDs, RCOIs, and NAI Realms may only be configured once the network has been registered and approved for activation.  Activation of any unapproved sites constitutes a breach of your carrier offload agreement.
     - **\*Please Note:** We provide PLMN IDs in the 3GPP MCC|MNC format.  Most network vendors prefer this format, such as MCC: 123, MNC: 456.  TPLink Omada prefers the PLMN ID format.  The PLMN ID is simply the combination of those two codes such as 123456.  If you received the 3GPP MCC|MNC codes of 234 and 567, enter the PLMN ID of 234567
 - Under **Roaming Consortium Oi** enter all of the **RCOI** codes provided in your onboarding and activation emails.
@@ -214,6 +214,9 @@ From the **SSID** tab hit the button to **+ Create New Wireless Network**
 - Set the **Network Availability IPv4** to **Single NATed private IPv4 address available**
     - **\*Please Note:** if you are behind Double NAT (ie. firewall/router behind ISP modem/router) choose the option for **Double NATed**, but please take note that Double NAT is not recommended, is not considered Voice-Grade, and may result in traffic being rejected by the carriers
 - Set the **Network Availability IPv6** to **Address type not available**
+
+![](/assets/images/Omada-14-Hotspot-Profile-1.png){ .img-lg }
+
 - Under **Venue Info** choose an appropriate **Venue Group** and **Venue Type**, ie. **Assembly** and **Convention Center**
 - Under **Venue Name** give your venue a name
 - Under **NAI Realm List** click the button to **+ Add New Realm**.  You will enter at least 3-4 and as many as 8-10 NAI Realms each with unique EAP settings.  The NAI Realms will be provided in your onboarding and activation emails.  Again, NAI Realms may only be configured once the network has been registered and approved for activation.
