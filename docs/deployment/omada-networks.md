@@ -174,11 +174,11 @@ Scroll down to the **Accounting Server** settings
 
 From the Omada Dashboard, go to **Configuration > Network Config > Network Settings > WLAN**
 
-**IMAGE HERE of the main dashboard**
+![](/assets/images/Omada-10-Create-SSID-1.png){ .img-lg }
 
 From the **SSID** tab hit the button to **+ Create New Wireless Network**
 
-**IMAGE HERE of the SSID tab**
+![](/assets/images/Omada-11-Create-SSID-2.png){ .img-lg }
 
 - Under **Network Name (SSID)** set the name to **LongFi Passpoint**
 - Choose the appropriate Device Type (EAP or Gateway), we used EAP for this guide
