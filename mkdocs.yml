@@ -5,7 +5,26 @@ repo_url: https://github.com/LongFi-Solutions/longfi-solutions.github.io
 repo_name: LongFi-Solutions/longfi-solutions.github.io
 
 theme:
-  name: readthedocs
+  name: material
+  palette:
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - search.highlight
+    - content.code.copy
 
 extra_css:
   - assets/stylesheets/brand.css
