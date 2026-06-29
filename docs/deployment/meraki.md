@@ -12,6 +12,8 @@ For support please contact: [networks@longfisolutions.com](mailto:networks@longf
 
 LongFi Connect configuration requires the Passpoint protocol.  Please ensure your Meraki system is running version 14.0 or later, your AP models support Passpoint/Hotspot 2.0, and you have basic traffic routing working with existing SSID(s).
 
+Before you can activate Passpoint in your Meraki Organization, you will first need to complete the **RadSec with Meraki** section of this guide, and share your Meraki CA with LongFi engineers (see below).
+
 **You will also need:**
 
 1. The NAS ID and RadSec certificates obtained during your site Onboarding & Activation
@@ -23,6 +25,10 @@ LongFi Connect configuration requires the Passpoint protocol.  Please ensure you
 ## RadSec with Meraki
 
 LongFi now supports a hosted RadSec authentication model for Cisco Meraki networks.  This allows Meraki partners to connect to the LongFi network without hosting their own proxy or VPN, while maintaining carrier-grade security and data accuracy.
+
+For more information on configuring Meraki for RadSec, see:
+
+[https://documentation.meraki.com/Wireless/Design_and_Configure/Configuration_Guides/Encryption_and_Authentication/MR_RadSec](https://documentation.meraki.com/Wireless/Design_and_Configure/Configuration_Guides/Encryption_and_Authentication/MR_RadSec)
 
 ***
 
@@ -36,3 +42,20 @@ LongFi now supports a hosted RadSec authentication model for Cisco Meraki networ
 - Meraki org securely transports SIM client RADIUS messages through TCP and TLS
 
 **2. LongFi Connect AAA Servers → Carrier Networks**
+
+- LongFi establishes secure RadSec tunnels to Carrier Networks using Carrier certificates
+- Passpoint Client AAA messages are routed to Carrier Realms
+- Carrier Authenticated users are allowed to join Meraki org Wi-Fi via EAP and 802.1X
+
+**3. Offload, Authentication, & Accounting**
+
+- Authentication: NAS_ID + certificate CN must match LongFi’s records
+- Accounting: Offloaded Data maps to LongFi Partners via NAS_ID.
+
+***
+
+### Customer Setup
+
+- From the main dashboard in Meraki, go to **Organization > Certificates**
+- Click on **RADSEC**
+- Upload the **LongFi Connect CA certificates**
