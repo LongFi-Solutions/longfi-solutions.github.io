@@ -733,13 +733,14 @@
 <hr />
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <p>LongFi Connect configuration requires the Passpoint protocol.  Please ensure your Meraki system is running version 14.0 or later, your AP models support Passpoint/Hotspot 2.0, and you have basic traffic routing working with existing SSID(s).</p>
-<p>Before you can activate Passpoint in your Meraki Organization, you will first need to complete the <strong>RadSec with Meraki</strong> section of this guide, and share your Meraki CA with LongFi engineers (see below).</p>
+<p><strong>*Please Note:</strong> Before you can activate Passpoint in your Meraki Organization, you will first need to complete the <strong>RadSec with Meraki</strong> section of this guide, and share your Meraki CA with LongFi engineers (see below).</p>
 <p><strong>You will also need:</strong></p>
 <ol>
 <li>The NAS ID and RadSec certificates obtained during your site Onboarding &amp; Activation</li>
 <li>A guest VLAN with the appropriate network segmentation, security, traffic shaping, and firewall policies for your requirements.</li>
 <li>The guest VLAN needs a large DHCP pool with a short lease time.  Passpoint clients can automatically discover and join a network, and there will be many more "transient client" connections than a normal guest wifi network.</li>
 </ol>
+<p><strong>*Please Note:</strong> the NAS ID must be unique for every site.  If you are deploying a Passpoint SSID from the Organization Wide Configuration Templates in Meraki, you will not be able to use the Custom field for the NAS ID.  The best approach is to use the AP Tags setting for NAS ID, and apply the NAS ID as a tag for every site and AP.</p>
 <hr />
 <h2 id="radsec-with-meraki">RadSec with Meraki<a class="headerlink" href="#radsec-with-meraki" title="Permanent link">&para;</a></h2>
 <p>LongFi now supports a hosted RadSec authentication model for Cisco Meraki networks.  This allows Meraki partners to connect to the LongFi network without hosting their own proxy or VPN, while maintaining carrier-grade security and data accuracy.</p>
@@ -770,8 +771,13 @@
 <ul>
 <li>From the main dashboard in Meraki, go to <strong>Organization &gt; Certificates</strong></li>
 <li>Click on <strong>RADSEC</strong></li>
-<li>Upload the <strong>LongFi Connect CA certificates</strong></li>
+<li>Click on <strong>Upload CA certificate</strong></li>
+<li>Upload the <strong>LongFi Connect CA certificates</strong> provided in your onboarding and activation emails</li>
+<li>Under <strong>RadSec AP Certificates</strong> click on <strong>Download CA</strong></li>
+<li>Share your newly downloaded <strong>Meraki CA</strong> with your LongFi Connect onboarding contact</li>
 </ul>
+<p><strong>*Please Note:</strong> Meraki generates CA certificates at the Organization level.  If you are managing multiple sites from a single Organization, we only need one Meraki CA.  If you are an MSP managing multiple sites in multiple Meraki Organizations, we will need a Meraki CA certificate from each organization.  </p>
+<p>Please allow 2-3 days for us to upload your Meraki CA certificates to the LongFi Connect servers.  Once your site has been approved for activation, follow the remainder of this guide to implement Passpoint on your Meraki networks.</p>
 
 
 
