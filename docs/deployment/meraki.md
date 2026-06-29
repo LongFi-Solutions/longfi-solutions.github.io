@@ -21,7 +21,8 @@ LongFi Connect configuration requires the Passpoint protocol.  Please ensure you
 2. A guest VLAN with the appropriate network segmentation, security, traffic shaping, and firewall policies for your requirements.
 3. The guest VLAN needs a large DHCP pool with a short lease time.  Passpoint clients can automatically discover and join a network, and there will be many more "transient client" connections than a normal guest wifi network.
 
-**\*Please Note:** the NAS ID must be unique for every site.  If you are deploying a Passpoint SSID from the Organization Wide Configuration Templates in Meraki, you will not be able to use the Custom field for the NAS ID.  The best approach is to use the AP Tags setting for NAS ID, and apply the NAS ID as a tag for every site and AP.
+!!! info "the NAS ID must be unique for every site"
+    If you are deploying a Passpoint SSID from the Organization Wide Configuration Templates in Meraki, you will not be able to use the Custom field for the NAS ID.  The best approach is to use the AP Tags setting for NAS ID, and apply the NAS ID as a tag for every site and AP.
 
 ***
 
