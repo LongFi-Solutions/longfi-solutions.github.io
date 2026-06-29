@@ -743,7 +743,10 @@
 <li>A guest VLAN with the appropriate network segmentation, security, traffic shaping, and firewall policies for your requirements.</li>
 <li>The guest VLAN needs a large DHCP pool with a short lease time.  Passpoint clients can automatically discover and join a network, and there will be many more "transient client" connections than a normal guest wifi network.</li>
 </ol>
-<p><strong>*Please Note:</strong> the NAS ID must be unique for every site.  If you are deploying a Passpoint SSID from the Organization Wide Configuration Templates in Meraki, you will not be able to use the Custom field for the NAS ID.  The best approach is to use the AP Tags setting for NAS ID, and apply the NAS ID as a tag for every site and AP.</p>
+<div class="admonition info">
+<p class="admonition-title">the NAS ID must be unique for every site</p>
+<p>If you are deploying a Passpoint SSID from the Organization Wide Configuration Templates in Meraki, you will not be able to use the Custom field for the NAS ID.  The best approach is to use the AP Tags setting for NAS ID, and apply the NAS ID as a tag for every site and AP.</p>
+</div>
 <hr />
 <h2 id="radsec-with-meraki">RadSec with Meraki<a class="headerlink" href="#radsec-with-meraki" title="Permanent link">&para;</a></h2>
 <p>LongFi now supports a hosted RadSec authentication model for Cisco Meraki networks.  This allows Meraki partners to connect to the LongFi network without hosting their own proxy or VPN, while maintaining carrier-grade security and data accuracy.</p>
