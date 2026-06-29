@@ -23,7 +23,7 @@
     
     
       
-        <title>Meraki Configuration - LongFi Solutions Documentation</title>
+        <title>Meraki Passpoint Conversion Guide - LongFi Solutions Documentation</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#meraki-configuration" class="md-skip">
+        <a href="#meraki-passpoint-conversion-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Meraki Configuration
+              Meraki Passpoint Conversion Guide
             
           </span>
         </div>
@@ -655,6 +655,53 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#radsec-with-meraki" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RadSec with Meraki
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RadSec with Meraki">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -670,7 +717,30 @@
 
 
 
-<h1 id="meraki-configuration">Meraki Configuration<a class="headerlink" href="#meraki-configuration" title="Permanent link">&para;</a></h1>
+<h1 id="meraki-passpoint-conversion-guide">Meraki Passpoint Conversion Guide<a class="headerlink" href="#meraki-passpoint-conversion-guide" title="Permanent link">&para;</a></h1>
+<p>For support please contact: <a href="mailto:networks@longfisolutions.com">networks@longfisolutions.com</a></p>
+<hr />
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>LongFi Connect configuration requires the Passpoint protocol.  Please ensure your Meraki system is running version 14.0 or later, your AP models support Passpoint/Hotspot 2.0, and you have basic traffic routing working with existing SSID(s).</p>
+<p><strong>You will also need:</strong></p>
+<ol>
+<li>The NAS ID and RadSec certificates obtained during your site Onboarding &amp; Activation</li>
+<li>A guest VLAN with the appropriate network segmentation, security, traffic shaping, and firewall policies for your requirements.</li>
+<li>The guest VLAN needs a large DHCP pool with a short lease time.  Passpoint clients can automatically discover and join a network, and there will be many more "transient client" connections than a normal guest wifi network.</li>
+</ol>
+<hr />
+<h2 id="radsec-with-meraki">RadSec with Meraki<a class="headerlink" href="#radsec-with-meraki" title="Permanent link">&para;</a></h2>
+<p>LongFi now supports a hosted RadSec authentication model for Cisco Meraki networks.  This allows Meraki partners to connect to the LongFi network without hosting their own proxy or VPN, while maintaining carrier-grade security and data accuracy.</p>
+<hr />
+<h3 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h3>
+<p><strong>1. Meraki Controller → LongFi Connect AAA Servers</strong></p>
+<ul>
+<li>Each Meraki org downloads its CA certificate and shares it with LongFi engineers</li>
+<li>Each Meraki org uploads LongFi provided CA certificate to Meraki organization</li>
+<li>Shared certificates establish secure RadSec TLS tunnel via TCP on port 2083</li>
+<li>Meraki org securely transports SIM client RADIUS messages through TCP and TLS</li>
+</ul>
+<p><strong>2. LongFi Connect AAA Servers → Carrier Networks</strong></p>
 
 
 
