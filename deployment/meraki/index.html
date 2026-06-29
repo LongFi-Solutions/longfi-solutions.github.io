@@ -695,6 +695,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#customer-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customer Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -722,6 +733,7 @@
 <hr />
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <p>LongFi Connect configuration requires the Passpoint protocol.  Please ensure your Meraki system is running version 14.0 or later, your AP models support Passpoint/Hotspot 2.0, and you have basic traffic routing working with existing SSID(s).</p>
+<p>Before you can activate Passpoint in your Meraki Organization, you will first need to complete the <strong>RadSec with Meraki</strong> section of this guide, and share your Meraki CA with LongFi engineers (see below).</p>
 <p><strong>You will also need:</strong></p>
 <ol>
 <li>The NAS ID and RadSec certificates obtained during your site Onboarding &amp; Activation</li>
@@ -731,6 +743,8 @@
 <hr />
 <h2 id="radsec-with-meraki">RadSec with Meraki<a class="headerlink" href="#radsec-with-meraki" title="Permanent link">&para;</a></h2>
 <p>LongFi now supports a hosted RadSec authentication model for Cisco Meraki networks.  This allows Meraki partners to connect to the LongFi network without hosting their own proxy or VPN, while maintaining carrier-grade security and data accuracy.</p>
+<p>For more information on configuring Meraki for RadSec, see:</p>
+<p><a href="https://documentation.meraki.com/Wireless/Design_and_Configure/Configuration_Guides/Encryption_and_Authentication/MR_RadSec">https://documentation.meraki.com/Wireless/Design_and_Configure/Configuration_Guides/Encryption_and_Authentication/MR_RadSec</a></p>
 <hr />
 <h3 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h3>
 <p><strong>1. Meraki Controller → LongFi Connect AAA Servers</strong></p>
@@ -741,6 +755,23 @@
 <li>Meraki org securely transports SIM client RADIUS messages through TCP and TLS</li>
 </ul>
 <p><strong>2. LongFi Connect AAA Servers → Carrier Networks</strong></p>
+<ul>
+<li>LongFi establishes secure RadSec tunnels to Carrier Networks using Carrier certificates</li>
+<li>Passpoint Client AAA messages are routed to Carrier Realms</li>
+<li>Carrier Authenticated users are allowed to join Meraki org Wi-Fi via EAP and 802.1X</li>
+</ul>
+<p><strong>3. Offload, Authentication, &amp; Accounting</strong></p>
+<ul>
+<li>Authentication: NAS_ID + certificate CN must match LongFi’s records</li>
+<li>Accounting: Offloaded Data maps to LongFi Partners via NAS_ID.</li>
+</ul>
+<hr />
+<h3 id="customer-setup">Customer Setup<a class="headerlink" href="#customer-setup" title="Permanent link">&para;</a></h3>
+<ul>
+<li>From the main dashboard in Meraki, go to <strong>Organization &gt; Certificates</strong></li>
+<li>Click on <strong>RADSEC</strong></li>
+<li>Upload the <strong>LongFi Connect CA certificates</strong></li>
+</ul>
 
 
 
