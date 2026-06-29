@@ -12,7 +12,8 @@ For support please contact: [networks@longfisolutions.com](mailto:networks@longf
 
 LongFi Connect configuration requires the Passpoint protocol.  Please ensure your Meraki system is running version 14.0 or later, your AP models support Passpoint/Hotspot 2.0, and you have basic traffic routing working with existing SSID(s).
 
-!!! note Before you can activate Passpoint in your Meraki Organization, you will first need to complete the **RadSec with Meraki** section of this guide, and share your Meraki CA with LongFi engineers (see below).
+!!! note
+    Before you can activate Passpoint in your Meraki Organization, you will first need to complete the **RadSec with Meraki** section of this guide, and share your Meraki CA with LongFi engineers (see below).
 
 **You will also need:**
 
