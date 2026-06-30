@@ -88,6 +88,10 @@ Please allow 2-3 days for us to upload your Meraki CA certificates to the LongFi
 - Look for an **Unconfigured SSID X**
 - Click on the new SSID to edit
 
+![](/assets/images/Meraki-1-create-SSID-1.png)
+
+- Under **SSID (name)** give the SSID the name **LongFi Passpoint**
 - Select **Enabled**
-- Click **Save Changes**
--
+- Under **Security** choose **Enterprise with** and select **my RADIUS server**
+
+![](/assets/images/Meraki-2-create-SSID-2.png)
