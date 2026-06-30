@@ -29,9 +29,11 @@ LongFi Connect configuration requires the Passpoint protocol.  Please ensure you
 ## High Level Steps
 
 1. Submit NAS ID, Obtain RadSec Certificates, Share Meraki CA
-2. Configure new SSID
-3. Configure SSID to use RADIUS
+2. Configure the Passpoint Wi-Fi SSID
+3. Configure RADIUS for the Passpoint Wi-Fi SSID
 4. Build Hotspot 2.0 Profile
+
+***
 
 ## RadSec with Meraki
 
@@ -65,7 +67,7 @@ For more information on configuring Meraki for RadSec, see:
 
 ***
 
-## Customer Setup
+### Customer Setup
 
 - From the main dashboard in Meraki, go to **Organization > Certificates**
 - Click on **RADSEC**
@@ -80,4 +82,12 @@ Please allow 2-3 days for us to upload your Meraki CA certificates to the LongFi
 
 ***
 
-##
+## Configure the Passpoint Wi-Fi SSID
+
+- From the Meraki main dashboard, click on **Wireless > Configure > SSIDs**
+- Look for an **Unconfigured SSID X**
+- Click on the new SSID to edit
+
+- Select **Enabled**
+- Click **Save Changes**
+-
