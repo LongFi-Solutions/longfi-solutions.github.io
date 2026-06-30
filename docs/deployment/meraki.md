@@ -26,6 +26,13 @@ LongFi Connect configuration requires the Passpoint protocol.  Please ensure you
 
 ***
 
+## High Level Steps
+
+1. Submit NAS ID, Obtain RadSec Certificates, Share Meraki CA
+2. Configure new SSID
+3. Configure SSID to use RADIUS
+4. Build Hotspot 2.0 Profile
+
 ## RadSec with Meraki
 
 LongFi now supports a hosted RadSec authentication model for Cisco Meraki networks.  This allows Meraki partners to connect to the LongFi network without hosting their own proxy or VPN, while maintaining carrier-grade security and data accuracy.
@@ -58,7 +65,7 @@ For more information on configuring Meraki for RadSec, see:
 
 ***
 
-### Customer Setup
+## Customer Setup
 
 - From the main dashboard in Meraki, go to **Organization > Certificates**
 - Click on **RADSEC**
@@ -70,3 +77,7 @@ For more information on configuring Meraki for RadSec, see:
 **\*Please Note:** Meraki generates CA certificates at the Organization level.  If you are managing multiple sites from a single Organization, we only need one Meraki CA.  If you are an MSP managing multiple sites in multiple Meraki Organizations, we will need a Meraki CA certificate from each organization.  
 
 Please allow 2-3 days for us to upload your Meraki CA certificates to the LongFi Connect servers.  Once your site has been approved for activation, follow the remainder of this guide to implement Passpoint on your Meraki networks.
+
+***
+
+##
