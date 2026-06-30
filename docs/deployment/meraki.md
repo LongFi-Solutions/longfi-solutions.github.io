@@ -95,3 +95,8 @@ Please allow 2-3 days for us to upload your Meraki CA certificates to the LongFi
 - Under **Security** choose **Enterprise with** and select **my RADIUS server**
 
 ![](/assets/images/Meraki-2-create-SSID-2.png)
+
+- Scroll down to **WPA encryption** and choose **WPA3 only**
+
+!!! note
+    Depending on your AP models and support for 6GHz, you may want to choose WPA3 Transition Mode and change 802.11w Protected Management Frames from Required to Enabled  to allow support for legacy clients.  Please consult your vendor documentation to make the best decision.
