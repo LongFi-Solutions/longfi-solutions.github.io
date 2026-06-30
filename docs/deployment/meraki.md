@@ -100,3 +100,7 @@ Please allow 2-3 days for us to upload your Meraki CA certificates to the LongFi
 
 !!! note
     Depending on your AP models and support for 6GHz, you may want to choose WPA3 Transition Mode and change 802.11w Protected Management Frames from Required to Enabled  to allow support for legacy clients.  Please consult your vendor documentation to make the best decision.
+
+- Scroll down to **RADIUS** and click the side arrow to expand the RADIUS settings (this is hard to see, small arrow on the right side of the panel)
+
+![](/assets/images/Meraki-4-RADIUS-1.png)
