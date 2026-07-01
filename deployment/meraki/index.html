@@ -858,6 +858,25 @@
 <li>Scroll down to <strong>Advanced RADIUS settings</strong> and click the arrow button  on the right to expand the settings (this one is even harder to see than the last one)</li>
 </ul>
 <p><img alt="" src="/assets/images/Meraki-6-RADIUS-4.png" /></p>
+<ul>
+<li>Scroll down to <strong>NAS ID</strong></li>
+<li>Change the <strong>Category</strong> to <strong>Custom</strong></li>
+<li>In the <strong>Custom</strong> field, enter the NAS ID used to activate your site (this will be provided in your onboarding emails, and is normally a MAC address that you shared with us)</li>
+<li>Delete any additional NAS ID from the numbered list, you only need #1</li>
+</ul>
+<p><img alt="" src="/assets/images/Maraki-7-RADIUS-5.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">NAS ID formatting</p>
+<p>Meraki does not accept MAC address formatting in the <strong>Custom</strong> field, so we will remove any normal MAC formatting such as colons, dots, or dashes.  For example, f the MAC you submitted was AA:BB:CC:11:22:33, it will be registered as AABBCC112233</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">the NAS ID must be unique for every site</p>
+<p>If you are deploying the LongFi Passpoint SSID to multiple sites from an Organization level template, Meraki does not support a manual override of the NAS ID at the site level.  The best option is to use the <strong>AP tags</strong> option, and tag the site and APs with the NAS ID you registered during onboarding and activation.  Please contact us if you need assistance with this workaround</p>
+</div>
+<ul>
+<li>Apply any other settings required by your organization</li>
+<li>Scroll down to the bottom and click <strong>Save</strong> to save the new SSID</li>
+</ul>
 
 
 
