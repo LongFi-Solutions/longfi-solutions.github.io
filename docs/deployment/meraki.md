@@ -163,3 +163,22 @@ Please allow 2-3 days for us to upload your Meraki CA certificates to the LongFi
     - **freedomfi.com**
 - Under **Roaming Consortium OIs** add the following RCOIs:
     - **F4F5E8F5F4**
+
+![](/assets/images/Meraki-8-Hotspot-1.png)
+
+- Next to **NAI Realms** click **Create realm**
+- Under **Format** select **0**
+- Set the **Name** to **longfisolutions.com**
+- Click **Add an EAP method**
+- Under **Method ID** choose **13 EAP-TLS**
+- Under **Authentication Methods** select **Credentials > Certificate**
+- Repeat this process with all the exact same settings for these additional realms:
+    - **freedomfi.com**
+    - **hellohelium.com**
+
+![](/assets/images/Meraki-9-Hotspot-2.png)
+
+- Scroll down to the bottom and click **Save**
+- Your finished configuration should look like this:
+
+![](/assets/images/Meraki-10-Hotspot-3.png)
