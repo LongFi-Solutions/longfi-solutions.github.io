@@ -151,3 +151,10 @@ Please allow 2-3 days for us to upload your Meraki CA certificates to the LongFi
 - From the main dashboard in Meraki, click on **Wireless** and select **Hotspot 2.0**
 
 ![](/assets/images/Meraki-8-Hostpot-1.png)
+
+- From the **Hotspot 2.0** dashboard, set the **SSID** to the new LongFi Passpoint SSID
+- Set **Hotspot 2.0** to **Enabled**
+- Set the **Operator name** to **LONGFISOLUTIONS:US**
+- Set the **Venue name** to an appropriate name for your site
+- Set the **Venue type** to the appropriate venue type
+- Set the **Network type** to **Chargeable public network**
