@@ -143,3 +143,7 @@ Please allow 2-3 days for us to upload your Meraki CA certificates to the LongFi
 
 - Apply any other settings required by your organization
 - Scroll down to the bottom and click **Save** to save the new SSID
+
+***
+
+## Build Hotspot 2.0 Profile
