@@ -147,3 +147,7 @@ Please allow 2-3 days for us to upload your Meraki CA certificates to the LongFi
 ***
 
 ## Build Hotspot 2.0 Profile
+
+- From the main dashboard in Meraki, click on **Wireless** and select **Hotspot 2.0**
+
+![](/assets/images/Meraki-8-Hostpot-1.png)
