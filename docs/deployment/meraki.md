@@ -104,3 +104,22 @@ Please allow 2-3 days for us to upload your Meraki CA certificates to the LongFi
 - Scroll down to **RADIUS** and click the side arrow to expand the RADIUS settings (this is hard to see, small arrow on the right side of the panel)
 
 ![](/assets/images/Meraki-4-RADIUS-1.png)
+
+- Under **RADIUS servers** click **Add server**
+- For the **Host IP or FQDN** enter **meraki.connect.longfisolutions.com**
+- For the **Auth port** enter **2083**
+- For the **Secret** enter **radsec**
+- Check the box to enable **RadSec**
+- Click **Done** to add the new Authentication server
+
+![](/assets/images/Meraki-5-RADIUS-2.png)
+
+- Under **RADIUS accounting servers** click **Add server**
+- Repeat all the same settings as the authentication server
+- Set the **Accounting interim interval** to **5 minutes**
+
+![](/assets/images/Meraki-6-RADIUS-3.png)
+
+- Scroll down to **Advanced RADIUS settings** and click the arrow button  on the right to expand the settings (this one is even harder to see than the last one)
+
+![](/assets/images/Meraki-6-RADIUS-4.png)
