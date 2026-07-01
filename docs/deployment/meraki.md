@@ -158,3 +158,8 @@ Please allow 2-3 days for us to upload your Meraki CA certificates to the LongFi
 - Set the **Venue name** to an appropriate name for your site
 - Set the **Venue type** to the appropriate venue type
 - Set the **Network type** to **Chargeable public network**
+- Under **Domain list** add the following domains:
+    - **longfisolutions.com**
+    - **freedomfi.com**
+- Under **Roaming Consortium OIs** add the following RCOIs:
+    - **F4F5E8F5F4**
