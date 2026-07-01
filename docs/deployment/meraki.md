@@ -123,3 +123,19 @@ Please allow 2-3 days for us to upload your Meraki CA certificates to the LongFi
 - Scroll down to **Advanced RADIUS settings** and click the arrow button  on the right to expand the settings (this one is even harder to see than the last one)
 
 ![](/assets/images/Meraki-6-RADIUS-4.png)
+
+- Scroll down to **NAS ID**
+- Change the **Category** to **Custom**
+- In the **Custom** field, enter the NAS ID used to activate your site (this will be provided in your onboarding emails, and is normally a MAC address that you shared with us)
+- Delete any additional NAS ID from the numbered list, you only need #1
+
+![](/assets/images/Maraki-7-RADIUS-5.png)
+
+!!! note "NAS ID formatting"
+    Meraki does not accept MAC address formatting in the **Custom** field, so we will remove any normal MAC formatting such as colons, dots, or dashes.  For example, f the MAC you submitted was AA:BB:CC:11:22:33, it will be registered as AABBCC112233
+
+!!! info "the NAS ID must be unique for every site"
+    If you are deploying the LongFi Passpoint SSID to multiple sites from an Organization level template, Meraki does not support a manual override of the NAS ID at the site level.  The best option is to use the **AP tags** option, and tag the site and APs with the NAS ID you registered during onboarding and activation.  Please contact us if you need assistance with this workaround
+
+- Apply any other settings required by your organization
+- Scroll down to the bottom and click **Save** to save the new SSID
