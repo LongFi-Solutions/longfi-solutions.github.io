@@ -185,3 +185,5 @@ Please allow 2-3 days for us to upload your Meraki CA certificates to the LongFi
 
 !!! note "Additional RCOIs, Realms, and MCC/MNCs"
     The domains, RCOIs, and Realms we just entered can be configured and activated prior to carrier approval.  You will receive additional domains, RCOIs, Realms, and MCC/MNC codes in your onboarding and activation emails with unique EAP settings.  Please refer to the settings provided in your activation email.  These additional settings must be activated only on approved sites.
+
+Your LongFi Connect Passpoint Wi-Fi implementation is complete!  If you have applied the new SSID to your APs, the LongFi Passpoint SSID will be broadcasting and you can now perform testing and validation.
