@@ -163,6 +163,7 @@ Please allow 2-3 days for us to upload your Meraki CA certificates to the LongFi
     - **freedomfi.com**
 - Under **Roaming Consortium OIs** add the following RCOIs:
     - **F4F5E8F5F4**
+    - **2A2F830000**
 
 ![](/assets/images/Meraki-8-Hotspot-1.png)
 
