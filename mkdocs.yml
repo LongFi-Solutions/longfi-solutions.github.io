@@ -56,7 +56,7 @@ nav:
     # - Introduction: deployment/index.md
     - UniFi: deployment/unifi.md
     - Omada: deployment/omada-networks.md
-    # - Meraki: deployment/meraki.md
+    - Meraki: deployment/meraki.md
     # - Aruba: deployment/aruba.md
     # - Ruckus: deployment/ruckus.md
     # - Cambium: deployment/cambium.md
