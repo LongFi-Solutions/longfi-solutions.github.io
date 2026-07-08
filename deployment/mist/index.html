@@ -720,22 +720,16 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="RadSec with Mist">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upload-certificates" class="md-nav__link">
     <span class="md-ellipsis">
       
-        
+        Upload Certificates
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -774,7 +768,7 @@
 <hr />
 <h2 id="high-level-steps">High Level Steps<a class="headerlink" href="#high-level-steps" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Submit NAS ID, Obtain RadSec Certificates, Share Mist CA</li>
+<li>Submit NAS ID, Obtain RadSec Certificates</li>
 <li>Upload Certificates to Mist Organization</li>
 <li>Configure the Passpoint Wi-Fi SSID</li>
 <li>Build Hotspot 2.0 Profile</li>
@@ -786,7 +780,30 @@
 <p>For more information on configuring Mist for RadSec, see:</p>
 <p><a href="https://www.mist.com/documentation/radsec/">https://www.mist.com/documentation/radsec/</a></p>
 <hr />
-<h3 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h2 id="upload-certificates">Upload Certificates<a class="headerlink" href="#upload-certificates" title="Permanent link">&para;</a></h2>
+<p>You will be provided with a unique certificate bundle containing 3 certificate files:</p>
+<ul>
+<li>longficonnect.ca.pem</li>
+<li>example.cert.pem</li>
+<li>example.key.pem</li>
+</ul>
+<p>Open each file in a text editor, you will need to copy and paste the text of the certificates into Mist</p>
+<p>From the Juniper Mist dashboard go to <strong>Organization &gt; Settings</strong></p>
+<p><strong>(image here)</strong></p>
+<ul>
+<li>Under <strong>RadSec Certificates</strong> choose <strong>Add a RadSec certificate</strong></li>
+<li>Open the <strong>ca.pem</strong> certificate in a text editor</li>
+<li>You will notice more than one certificate in the <strong>longficonnect.ca.pem</strong> file in the text editor.  You will need to add them one at a time into Mist.</li>
+<li>Copy the first certificate all the way from -----BEGIN CERTIFICATE----- to -----END CERTIFICATE----- into the <strong>RadSec Certificate</strong> window in Mist</li>
+<li>Click <strong>Add</strong></li>
+<li>Click <strong>Add a RadSec certificate</strong> again and repeat this process for all certificates in the ca.pem file</li>
+<li>Under <strong>AP RadSec Certificate</strong> click <strong>Add AP RadSec certificate</strong></li>
+<li>Open the <strong>key.pem</strong> certificate in a text editor</li>
+<li>Copy and paste the text from the key.pem certificate file into the <strong>Private Key</strong> window in Mist</li>
+<li>Open the <strong>cert.pem</strong> certificate in a text editor</li>
+<li>Copy and paste the text from the key.pem certificate file into the <strong>Signed Certificate</strong> window in Mist</li>
+<li>Click <strong>Save</strong> to save the <strong>AP RadSec Certificate</strong></li>
+</ul>
 
 
 
