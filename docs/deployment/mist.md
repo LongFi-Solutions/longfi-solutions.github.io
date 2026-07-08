@@ -25,7 +25,7 @@ LongFi Connect configuration requires the Passpoint protocol.  Please ensure you
 
 ## High Level Steps
 
-1. Submit NAS ID, Obtain RadSec Certificates, Share Mist CA
+1. Submit NAS ID, Obtain RadSec Certificates
 2. Upload Certificates to Mist Organization
 3. Configure the Passpoint Wi-Fi SSID
 4. Build Hotspot 2.0 Profile
@@ -43,4 +43,30 @@ For more information on configuring Mist for RadSec, see:
 
 ***
 
-###
+## Upload Certificates
+
+You will be provided with a unique certificate bundle containing 3 certificate files:
+
+- longficonnect.ca.pem
+- example.cert.pem
+- example.key.pem
+
+
+Open each file in a text editor, you will need to copy and paste the text of the certificates into Mist
+
+From the Juniper Mist dashboard go to **Organization > Settings**
+
+**(image here)**
+
+- Under **RadSec Certificates** choose **Add a RadSec certificate**
+- Open the **ca.pem** certificate in a text editor
+- You will notice more than one certificate in the **longficonnect.ca.pem** file in the text editor.  You will need to add them one at a time into Mist.
+- Copy the first certificate all the way from -----BEGIN CERTIFICATE----- to -----END CERTIFICATE----- into the **RadSec Certificate** window in Mist
+- Click **Add**
+- Click **Add a RadSec certificate** again and repeat this process for all certificates in the ca.pem file
+- Under **AP RadSec Certificate** click **Add AP RadSec certificate**
+- Open the **key.pem** certificate in a text editor
+- Copy and paste the text from the key.pem certificate file into the **Private Key** window in Mist
+- Open the **cert.pem** certificate in a text editor
+- Copy and paste the text from the key.pem certificate file into the **Signed Certificate** window in Mist
+- Click **Save** to save the **AP RadSec Certificate**
