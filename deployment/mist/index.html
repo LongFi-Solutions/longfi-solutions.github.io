@@ -700,6 +700,56 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#high-level-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High Level Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#radsec-with-mist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RadSec with Mist
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RadSec with Mist">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customer-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customer Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -726,7 +776,59 @@
 <p class="admonition-title">Note</p>
 <p>Before you can activate Passpoint in your Mist Organization, you will first need to complete the <strong>RadSec with Mist</strong> section of this guide, and share your Mist CA with LongFi engineers (see below).</p>
 </div>
+<p><strong>You will also need:</strong></p>
+<ol>
+<li>The NAS ID and RadSec certificates obtained during your site Onboarding &amp; Activation</li>
+<li>A guest VLAN with the appropriate network segmentation, security, traffic shaping, and firewall policies for your requirements.</li>
+<li>The guest VLAN needs a large DHCP pool with a short lease time.  Passpoint clients can automatically discover and join a network, and there will be many more "transient client" connections than a normal guest wifi network.</li>
+</ol>
 <hr />
+<h2 id="high-level-steps">High Level Steps<a class="headerlink" href="#high-level-steps" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Submit NAS ID, Obtain RadSec Certificates, Share Mist CA</li>
+<li>Upload Certificates to Mist Organization</li>
+<li>Configure the Passpoint Wi-Fi SSID</li>
+<li>Build Hotspot 2.0 Profile</li>
+<li>Configure RADIUS for the Passpoint Wi-Fi SSID</li>
+<li></li>
+</ol>
+<hr />
+<h2 id="radsec-with-mist">RadSec with Mist<a class="headerlink" href="#radsec-with-mist" title="Permanent link">&para;</a></h2>
+<p>LongFi now supports a hosted RadSec authentication model for Mist networks.  This allows Mistpartners to connect to the LongFi network without hosting their own proxy or VPN, while maintaining carrier-grade security and data accuracy.</p>
+<p>For more information on configuring Mist for RadSec, see:</p>
+<p><a href="https://documentation.meraki.com/Wireless/Design_and_Configure/Configuration_Guides/Encryption_and_Authentication/MR_RadSec"></a></p>
+<hr />
+<h3 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h3>
+<p><strong>1. Mist APs → LongFi Connect AAA Servers</strong></p>
+<ul>
+<li>Each Mist org downloads its CA certificate and shares it with LongFi engineers</li>
+<li>Each Mist org uploads LongFi provided certificates to Mist organization</li>
+<li>Shared certificates establish secure RadSec TLS tunnel via TCP on port 2083</li>
+<li>Mist org securely transports SIM client RADIUS messages through TCP and TLS</li>
+</ul>
+<p><strong>2. LongFi Connect AAA Servers → Carrier Networks</strong></p>
+<ul>
+<li>LongFi establishes secure RadSec tunnels to Carrier Networks using Carrier certificates</li>
+<li>Passpoint Client AAA messages are routed to Carrier Realms</li>
+<li>Carrier Authenticated users are allowed to join Mist org Wi-Fi via EAP and 802.1X</li>
+</ul>
+<p><strong>3. Offload, Authentication, &amp; Accounting</strong></p>
+<ul>
+<li>Authentication: NAS_ID + certificate CN must match LongFi’s records</li>
+<li>Accounting: Offloaded Data maps to LongFi Partners via NAS_ID.</li>
+</ul>
+<hr />
+<h3 id="customer-setup">Customer Setup<a class="headerlink" href="#customer-setup" title="Permanent link">&para;</a></h3>
+<ul>
+<li>From the main dashboard in Meraki, go to <strong>Organization &gt; Certificates</strong></li>
+<li>Click on <strong>RADSEC</strong></li>
+<li>Click on <strong>Upload CA certificate</strong></li>
+<li>Upload the <strong>LongFi Connect CA certificates</strong> provided in your onboarding and activation emails</li>
+<li>Under <strong>RadSec AP Certificates</strong> click on <strong>Download CA</strong></li>
+<li>Share your newly downloaded <strong>Meraki CA</strong> with your LongFi Connect onboarding contact</li>
+</ul>
+<p><strong>*Please Note:</strong> Meraki generates CA certificates at the Organization level.  If you are managing multiple sites from a single Organization, we only need one Meraki CA.  If you are an MSP managing multiple sites in multiple Meraki Organizations, we will need a Meraki CA certificate from each organization.  </p>
+<p>Please allow 2-3 days for us to upload your Meraki CA certificates to the LongFi Connect servers.  Once your site has been approved for activation, follow the remainder of this guide to implement Passpoint on your Meraki networks.</p>
 
 
 
