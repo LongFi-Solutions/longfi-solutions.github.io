@@ -25,11 +25,10 @@ LongFi Connect configuration requires the Passpoint protocol.  Please ensure you
 
 ## High Level Steps
 
-1. Submit NAS ID, Obtain RadSec Certificates
-2. Upload Certificates to Mist Organization
-3. Configure the Passpoint Wi-Fi SSID
-4. Build Hotspot 2.0 Profile
-5. Configure RADIUS for the Passpoint Wi-Fi SSID
+1. Upload RadSec Certificates to Mist Organization
+2. Configure the Passpoint Wi-Fi SSID
+3. Build Hotspot 2.0 Profile
+4. Configure RADIUS for the Passpoint Wi-Fi SSID
 
 ***
 
@@ -40,6 +39,8 @@ LongFi now supports a hosted RadSec authentication model for Mist networks.  Thi
 For more information on configuring Mist for RadSec, see:
 
 [https://www.mist.com/documentation/radsec/](https://www.mist.com/documentation/radsec/)
+
+\*Note: the official Mist documentation states that "you will need to import the Mist CA certificate to your RADIUS server".  LongFi Connect Passpoint allows Mist APs to operate as RadSec Clients, without sharing your Mist CA with LongFi.  However, Mist only allows a single set of AP RadSec certificates per Organization.  If you are already using a separate set of AP RadSec certificates for another service, please contact us and we can arrange mutual CA exchange.
 
 ***
 
