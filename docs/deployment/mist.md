@@ -88,6 +88,9 @@ Click **Add WLAN**
 - Under **Security** set the **Security Type** to **WPA3** and **Enterprise (802.1X)**
 - Note: you may also use **WPA2** and **Enterprise (802.1X)** to provide better support for legacy clients, however to use WPA2 6 GHz and Wi-Fi 7 must be disabled
 
+!!!note
+    You can also deploy WLANs in Mist from Organizations > WLAN Templates.  The NAS Identifier must be unique for every site.  At this time we have not validated how to override the NAS ID at the site level when deploying the Passpoint SSID from an org-wide template.  Please contact us if you have this requirement.  This will most likely be done using Juniper Mist RADIUS Attributes and Using Site Variables to Add a Server
+
 ***
 
 ## **Build Passpoint/Hotspot 2.0 Profile**
