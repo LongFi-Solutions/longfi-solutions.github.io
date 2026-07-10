@@ -57,7 +57,7 @@ Open each file in a text editor, you will need to copy and paste the text of the
 
 From the Juniper Mist dashboard go to **Organization > Settings**
 
-**(image here)**
+**(image coming soon)**
 
 - Under **RadSec Certificates** choose **Add a RadSec certificate**
 - Open the **ca.pem** certificate in a text editor
@@ -78,11 +78,11 @@ From the Juniper Mist dashboard go to **Organization > Settings**
 
 From the Juniper Mist dashboard go to **Site > Wireless > WLANs**
 
-**(image here)**
+**(image coming soon)**
 
 Click **Add WLAN**
 
-**(image here)**
+**(image coming soon)**
 
 - Name the new WLAN **LongFi Passpoint**
 - Under **Security** set the **Security Type** to **WPA3** and **Enterprise (802.1X)**
@@ -107,6 +107,8 @@ Click **Add WLAN**
     - **freedomfi.com**
     - **hellohelium.com**
 
+**(image coming soon)**
+
 ***
 
 ## **Configure RADIUS for the Passpoint Wi-Fi SSID**
@@ -120,4 +122,18 @@ Click **Add WLAN**
 - Click the checkmark to save
 - Scroll back to the top of the new WLAN windows and click **Save**
 
+**(image coming soon)**
+
 ***
+
+## Other Recommended Settings
+
+- For general Wi-Fi configuration and optimization best-practices, please review our Best Practices guide.  Some of these settings will be unique to your individual network requirements.
+- For now we recommend disabling 2.4 GHz in the new WLAN settings
+- We also recommend enabling **Isolation** in the new WLAN settings
+- In the **Isolation** window set **Prohibit peer to peer communication** to **Same Subnet**
+- Make sure that the new **LongFi Passpoint** WLAN is applied to your site and APs.
+- You may now test Passpoint Wi-Fi and Carrier Offload
+- If Passpoint Clients can connect, you can verify connectivity, DHCP, DNS, and 802.1X Identity under the **Clients > Wi-Fi Clients** section in Mist
+
+**Congratulations!**  You have successfully configured LongFi Connect Passpoint for Carrier Offload in HPE Juniper Mist.
