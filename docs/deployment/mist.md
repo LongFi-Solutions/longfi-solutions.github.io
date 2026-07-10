@@ -77,3 +77,38 @@ From the Juniper Mist dashboard go to **Organization > Settings**
 ## Configure the Passpoint Wi-Fi SSID
 
 From the Juniper Mist dashboard go to **Site > Wireless > WLANs**
+
+**(image here)**
+
+Click **Add WLAN**
+
+**(image here)**
+
+- Name the new WLAN **LongFi Passpoint**
+- Under **Security** set the **Security Type** to **WPA3** and **Enterprise (802.1X)**
+- Note: you may also use **WPA2** and **Enterprise (802.1X)** to provide better support for legacy clients, however to use WPA2 6 GHz and Wi-Fi 7 must be disabled
+
+***
+
+## **Build Passpoint/Hotspot 2.0 Profile**
+
+**(image here)**
+
+- Scroll down to **Passpoint** and click **Enabled**
+- Under **Operators**, select the operators that have been approved for activation at your site.  Please reference your onboarding and activation emails.  Operators may be activated only at approved sites.
+- Under **Venue Name** enter an appropriate venue name (ie. LongFi Houston Office)
+- Click on the arrow **⌄** button to expand the Passpoint **Advanced Settings**
+- Under **Domain Name** enter the following domains separated by a comma and a space:
+    - **longfisolutions.com, freedomfi.com**
+- Under **Roaming Consortium ID** enter the following RCOI numbers separated by a comma and a space:
+    - **F4F5E8F5F4, 2A2F830000**
+- Under **NAI Realm** enter the following realms, all with the **EAP Type** set to **TLS:**
+    - **longfisolutions.com**
+    - **freedomfi.com**
+    - **hellohelium.com**
+
+***
+
+## **Configure RADIUS for the Passpoint Wi-Fi SSID**
+
+-
