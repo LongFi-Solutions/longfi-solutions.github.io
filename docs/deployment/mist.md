@@ -111,4 +111,13 @@ Click **Add WLAN**
 
 ## **Configure RADIUS for the Passpoint Wi-Fi SSID**
 
--
+- Staying in the new WLAN window, scroll down to **Authentication Servers**
+- From the drop down menu change RADIUS to **RadSec**
+- In the **Server Name** field enter **connect.longfisolutions.com**
+- Under **Server Addresses** click **Add Server**
+- In the **New Server** window, under **Hostname** enter **connect.longfisolutions.com**
+- Set the **Port** to **2083**
+- Click the checkmark to save
+- Scroll back to the top of the new WLAN windows and click **Save**
+
+***
