@@ -13,7 +13,7 @@ For support please contact: [support@longfisolutions.com](mailto:support@longfis
 LongFi Connect configuration requires the Passpoint protocol.  Please ensure your Mist system is running the latest firmware, your AP models support Passpoint/Hotspot 2.0, and you have basic traffic routing working with existing SSID(s) and VLANs.
 
 !!! note
-    Before you can activate Passpoint in your Mist Organization, you will first need to complete the **RadSec with Mist** section of this guide, and share your Mist CA with LongFi engineers (see below).
+    Before you can activate Passpoint in your Mist Organization, you will first need to register your site, provide a NAS ID, and obtain certificates.  Please review the **RadSec with Mist** section of this guide before proceeding with SSID and RADIUS configuration.
 
 **You will also need:**
 
@@ -50,7 +50,6 @@ You will be provided with a unique certificate bundle containing 3 certificate f
 - longficonnect.ca.pem
 - example.cert.pem
 - example.key.pem
-
 
 Open each file in a text editor, you will need to copy and paste the text of the certificates into Mist
 
