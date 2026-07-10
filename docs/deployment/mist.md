@@ -59,11 +59,17 @@ From the Juniper Mist dashboard go to **Organization > Settings**
 
 ![](/assets/images/Mist-1-Certificates-1.png)
 
-- Under **RadSec Certificates** choose **Add a RadSec certificate**
+Under **RadSec Certificates** choose **Add a RadSec certificate**
+
+![](/assets/images/Mist-2-Certificate-2.png)
+
 - Open the **ca.pem** certificate in a text editor
 - You will notice more than one certificate in the **longficonnect.ca.pem** file in the text editor.  You will need to add them one at a time into Mist.
 - Copy the first certificate all the way from -----BEGIN CERTIFICATE----- to -----END CERTIFICATE----- into the **RadSec Certificate** window in Mist
 - Click **Add**
+
+![](/assets/images/Mist-3-Certificates-3.png)
+
 - Click **Add a RadSec certificate** again and repeat this process for all certificates in the ca.pem file
 - Under **AP RadSec Certificate** click **Add AP RadSec certificate**
 - Open the **key.pem** certificate in a text editor
