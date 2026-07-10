@@ -57,7 +57,7 @@ nav:
     - UniFi: deployment/unifi.md
     - Omada: deployment/omada-networks.md
     - Meraki: deployment/meraki.md
-    # - Mist: deployment/mist.md
+    - Mist: deployment/mist.md
     # - Aruba: deployment/aruba.md
     # - Ruckus: deployment/ruckus.md
     # - Cambium: deployment/cambium.md
