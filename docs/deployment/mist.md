@@ -40,7 +40,8 @@ For more information on configuring Mist for RadSec, see:
 
 [https://www.mist.com/documentation/radsec/](https://www.mist.com/documentation/radsec/)
 
-\*Note: the official Mist documentation states that "you will need to import the Mist CA certificate to your RADIUS server".  LongFi Connect Passpoint allows Mist APs to operate as RadSec Clients, without sharing your Mist CA with LongFi.  However, Mist only allows a single set of AP RadSec certificates per Organization.  If you are already using a separate set of AP RadSec certificates for another service, please contact us and we can arrange mutual CA exchange.
+!!! note
+    The official Mist documentation states that "you will need to import the Mist CA certificate to your RADIUS server".  LongFi Connect Passpoint allows Mist APs to operate as RadSec Clients, without sharing your Mist CA with LongFi.  However, Mist only allows a single set of AP RadSec certificates per Organization.  If you are already using a separate set of AP RadSec certificates for another service, please contact us and we can arrange mutual CA exchange.
 
 ***
 
