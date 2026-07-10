@@ -766,6 +766,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#other-recommended-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Recommended Settings
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -825,7 +836,7 @@
 </ul>
 <p>Open each file in a text editor, you will need to copy and paste the text of the certificates into Mist</p>
 <p>From the Juniper Mist dashboard go to <strong>Organization &gt; Settings</strong></p>
-<p><strong>(image here)</strong></p>
+<p><strong>(image coming soon)</strong></p>
 <ul>
 <li>Under <strong>RadSec Certificates</strong> choose <strong>Add a RadSec certificate</strong></li>
 <li>Open the <strong>ca.pem</strong> certificate in a text editor</li>
@@ -843,9 +854,9 @@
 <hr />
 <h2 id="configure-the-passpoint-wi-fi-ssid">Configure the Passpoint Wi-Fi SSID<a class="headerlink" href="#configure-the-passpoint-wi-fi-ssid" title="Permanent link">&para;</a></h2>
 <p>From the Juniper Mist dashboard go to <strong>Site &gt; Wireless &gt; WLANs</strong></p>
-<p><strong>(image here)</strong></p>
+<p><strong>(image coming soon)</strong></p>
 <p>Click <strong>Add WLAN</strong></p>
-<p><strong>(image here)</strong></p>
+<p><strong>(image coming soon)</strong></p>
 <ul>
 <li>Name the new WLAN <strong>LongFi Passpoint</strong></li>
 <li>Under <strong>Security</strong> set the <strong>Security Type</strong> to <strong>WPA3</strong> and <strong>Enterprise (802.1X)</strong></li>
@@ -874,6 +885,7 @@
 </ul>
 </li>
 </ul>
+<p><strong>(image coming soon)</strong></p>
 <hr />
 <h2 id="configure-radius-for-the-passpoint-wi-fi-ssid"><strong>Configure RADIUS for the Passpoint Wi-Fi SSID</strong><a class="headerlink" href="#configure-radius-for-the-passpoint-wi-fi-ssid" title="Permanent link">&para;</a></h2>
 <ul>
@@ -886,7 +898,19 @@
 <li>Click the checkmark to save</li>
 <li>Scroll back to the top of the new WLAN windows and click <strong>Save</strong></li>
 </ul>
+<p><strong>(image coming soon)</strong></p>
 <hr />
+<h2 id="other-recommended-settings">Other Recommended Settings<a class="headerlink" href="#other-recommended-settings" title="Permanent link">&para;</a></h2>
+<ul>
+<li>For general Wi-Fi configuration and optimization best-practices, please review our Best Practices guide.  Some of these settings will be unique to your individual network requirements.</li>
+<li>For now we recommend disabling 2.4 GHz in the new WLAN settings</li>
+<li>We also recommend enabling <strong>Isolation</strong> in the new WLAN settings</li>
+<li>In the <strong>Isolation</strong> window set <strong>Prohibit peer to peer communication</strong> to <strong>Same Subnet</strong></li>
+<li>Make sure that the new <strong>LongFi Passpoint</strong> WLAN is applied to your site and APs.</li>
+<li>You may now test Passpoint Wi-Fi and Carrier Offload</li>
+<li>If Passpoint Clients can connect, you can verify connectivity, DHCP, DNS, and 802.1X Identity under the <strong>Clients &gt; Wi-Fi Clients</strong> section in Mist</li>
+</ul>
+<p><strong>Congratulations!</strong>  You have successfully configured LongFi Connect Passpoint for Carrier Offload in HPE Juniper Mist.</p>
 
 
 
