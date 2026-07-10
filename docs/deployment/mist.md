@@ -71,3 +71,9 @@ From the Juniper Mist dashboard go to **Organization > Settings**
 - Open the **cert.pem** certificate in a text editor
 - Copy and paste the text from the key.pem certificate file into the **Signed Certificate** window in Mist
 - Click **Save** to save the **AP RadSec Certificate**
+
+***
+
+## Configure the Passpoint Wi-Fi SSID
+
+From the Juniper Mist dashboard go to **Site > Wireless > WLANs**
