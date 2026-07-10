@@ -744,6 +744,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#build-passpointhotspot-20-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build Passpoint/Hotspot 2.0 Profile
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-radius-for-the-passpoint-wi-fi-ssid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure RADIUS for the Passpoint Wi-Fi SSID
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -821,6 +843,40 @@
 <hr />
 <h2 id="configure-the-passpoint-wi-fi-ssid">Configure the Passpoint Wi-Fi SSID<a class="headerlink" href="#configure-the-passpoint-wi-fi-ssid" title="Permanent link">&para;</a></h2>
 <p>From the Juniper Mist dashboard go to <strong>Site &gt; Wireless &gt; WLANs</strong></p>
+<p><strong>(image here)</strong></p>
+<p>Click <strong>Add WLAN</strong></p>
+<p><strong>(image here)</strong></p>
+<ul>
+<li>Name the new WLAN <strong>LongFi Passpoint</strong></li>
+<li>Under <strong>Security</strong> set the <strong>Security Type</strong> to <strong>WPA3</strong> and <strong>Enterprise (802.1X)</strong></li>
+<li>Note: you may also use <strong>WPA2</strong> and <strong>Enterprise (802.1X)</strong> to provide better support for legacy clients, however to use WPA2 6 GHz and Wi-Fi 7 must be disabled</li>
+</ul>
+<hr />
+<h2 id="build-passpointhotspot-20-profile"><strong>Build Passpoint/Hotspot 2.0 Profile</strong><a class="headerlink" href="#build-passpointhotspot-20-profile" title="Permanent link">&para;</a></h2>
+<p><strong>(image here)</strong></p>
+<ul>
+<li>Scroll down to <strong>Passpoint</strong> and click <strong>Enabled</strong></li>
+<li>Under <strong>Operators</strong>, select the operators that have been approved for activation at your site.  Please reference your onboarding and activation emails.  Operators may be activated only at approved sites.</li>
+<li>Under <strong>Venue Name</strong> enter an appropriate venue name (ie. LongFi Houston Office)</li>
+<li>Click on the arrow <strong>⌄</strong> button to expand the Passpoint <strong>Advanced Settings</strong></li>
+<li>Under <strong>Domain Name</strong> enter the following domains separated by a comma and a space:<ul>
+<li><strong>longfisolutions.com, freedomfi.com</strong></li>
+</ul>
+</li>
+<li>Under <strong>Roaming Consortium ID</strong> enter the following RCOI numbers separated by a comma and a space:<ul>
+<li><strong>F4F5E8F5F4, 2A2F830000</strong></li>
+</ul>
+</li>
+<li>Under <strong>NAI Realm</strong> enter the following realms, all with the <strong>EAP Type</strong> set to <strong>TLS:</strong><ul>
+<li><strong>longfisolutions.com</strong></li>
+<li><strong>freedomfi.com</strong></li>
+<li><strong>hellohelium.com</strong></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="configure-radius-for-the-passpoint-wi-fi-ssid"><strong>Configure RADIUS for the Passpoint Wi-Fi SSID</strong><a class="headerlink" href="#configure-radius-for-the-passpoint-wi-fi-ssid" title="Permanent link">&para;</a></h2>
+<p>-</p>
 
 
 
