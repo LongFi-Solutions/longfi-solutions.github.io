@@ -57,7 +57,7 @@ Open each file in a text editor, you will need to copy and paste the text of the
 
 From the Juniper Mist dashboard go to **Organization > Settings**
 
-**(image coming soon)**
+![](/assets/images/Mist-1-Certificates-1.png)
 
 - Under **RadSec Certificates** choose **Add a RadSec certificate**
 - Open the **ca.pem** certificate in a text editor
