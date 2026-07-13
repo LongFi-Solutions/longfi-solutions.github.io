@@ -107,6 +107,7 @@ Click **Add WLAN**
 
 - Scroll down to **Passpoint** and click **Enabled**
 - Under **Operators**, select the operators that have been approved for activation at your site.  Please reference your onboarding and activation emails.  Operators may be activated only at approved sites.
+- You must select a single **Operator** to save the SSID.  For now select **Google**
 - Under **Venue Name** enter an appropriate venue name (ie. LongFi Houston Office)
 - Click on the arrow **⌄** button to expand the Passpoint **Advanced Settings**
 - Under **Domain Name** enter the following domains separated by a comma and a space:
@@ -137,9 +138,11 @@ Click **Add WLAN**
 
 ![](/assets/images/Mist-8-RADIUS-1.png)
 
-- Scroll back to the top of the new WLAN windows and click **Save**
+- Scroll down to **Isolation** and select **Same Subnet**
 
-**(image coming soon)**
+![](/assets/images/Mist-9-Isolation-1.png)
+
+- Scroll back to the top of the new WLAN windows and click **Save**
 
 ***
 
