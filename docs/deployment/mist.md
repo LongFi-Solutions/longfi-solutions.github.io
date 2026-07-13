@@ -88,7 +88,7 @@ From the Juniper Mist dashboard go to **Site > Wireless > WLANs**
 
 Click **Add WLAN**
 
-**(image coming soon)**
+![](/assets/images/Mist-5-AddWLAN-2.png)
 
 - Name the new WLAN **LongFi Passpoint**
 - Under **Security** set the **Security Type** to **WPA3** and **Enterprise (802.1X)**
