@@ -132,8 +132,10 @@ Click **Add WLAN**
 - Set the **Port** to **2083**
 - Under **NAS Identifier** copy and paste the **NAS ID** used to register and activate your site (this is normally a MAC address)
 - Click the checkmark to save
+- Scroll down to the **VLAN** settings and select **Tagged**
+- Enter the **VLAN ID** you are using for your **Passpoint Wi-Fi VLAN** (or Pool or Dynamic if you have that requirement)
 
-**(image coming soon)**
+![](/assets/images/Mist-8-RADIUS-1.png)
 
 - Scroll back to the top of the new WLAN windows and click **Save**
 
