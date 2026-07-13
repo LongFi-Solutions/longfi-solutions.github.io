@@ -118,7 +118,7 @@ Click **Add WLAN**
     - **freedomfi.com**
     - **hellohelium.com**
 
-**(image coming soon)**
+![](/assets/images/Mist-7-AddWLAN-2.png)
 
 ***
 
