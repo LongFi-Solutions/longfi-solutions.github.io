@@ -142,7 +142,9 @@ Click **Add WLAN**
 
 ![](/assets/images/Mist-9-Isolation-1.png)
 
-- Scroll back to the top of the new WLAN windows and click **Save**
+- Scroll back to the top of the new WLAN windows and click **Create** to create the new **LongFi Passpoint WLAN**
+
+![](/assets/images/Mist-10-Create-WLAN.png)
 
 ***
 
