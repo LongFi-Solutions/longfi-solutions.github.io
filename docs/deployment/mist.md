@@ -84,7 +84,7 @@ Under **RadSec Certificates** choose **Add a RadSec certificate**
 
 From the Juniper Mist dashboard go to **Site > Wireless > WLANs**
 
-**(image coming soon)**
+![](/assets/images/Mist-4-AddWLAN-1.png)
 
 Click **Add WLAN**
 
