@@ -75,7 +75,7 @@ Under **RadSec Certificates** choose **Add a RadSec certificate**
 - Open the **key.pem** certificate in a text editor
 - Copy and paste the text from the key.pem certificate file into the **Private Key** window in Mist
 - Open the **cert.pem** certificate in a text editor
-- Copy and paste the text from the key.pem certificate file into the **Signed Certificate** window in Mist
+- Copy and paste the text from the cert.pem certificate file into the **Signed Certificate** window in Mist
 - Click **Save** to save the **AP RadSec Certificate**
 
 ***
@@ -102,8 +102,6 @@ Click **Add WLAN**
 ***
 
 ## **Build Passpoint/Hotspot 2.0 Profile**
-
-**(image here)**
 
 - Scroll down to **Passpoint** and click **Enabled**
 - Under **Operators**, select the operators that have been approved for activation at your site.  Please reference your onboarding and activation emails.  Operators may be activated only at approved sites.

@@ -4,7 +4,7 @@ title: Omada Networks by TP-Link
 
 # **LongFi Connect - Omada Networks by TP-Link Passpoint Implementation Guide**
 
-For support please contact: [networks@longfisolutions.com](emailto:networks@longfisolutions.com)
+For support please contact: [networks@longfisolutions.com](mailto:networks@longfisolutions.com)
 
 ***
 
