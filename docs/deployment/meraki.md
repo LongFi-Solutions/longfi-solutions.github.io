@@ -136,7 +136,7 @@ Please allow 2-3 days for us to upload your Meraki CA certificates to the LongFi
 ![](/assets/images/Maraki-7-RADIUS-5.png)
 
 !!! note "NAS ID formatting"
-    Meraki does not accept MAC address formatting in the **Custom** field, so we will remove any normal MAC formatting such as colons, dots, or dashes.  For example, if the MAC you submitted was AA:BB:CC:11:22:33, it will be registered as AABBCC112233
+    Meraki does not accept MAC address formatting in the **Custom** field, so we will remove any normal MAC formatting such as colons, dots, or dashes.  For example, f the MAC you submitted was AA:BB:CC:11:22:33, it will be registered as AABBCC112233
 
 !!! info "the NAS ID must be unique for every site"
     If you are deploying the LongFi Passpoint SSID to multiple sites from an Organization level template, Meraki does not support a manual override of the NAS ID at the site level.  The best option is to use the **AP tags** option, and tag the site and APs with the NAS ID you registered during onboarding and activation.  Please contact us if you need assistance with this workaround

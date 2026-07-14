@@ -88,6 +88,8 @@ Click **Add** to create the new RADIUS Profile.
 
 Navigate to the Settings in the sidebar, choose WiFi, then press Create New
 
+[IMAGE HERE]
+
 **Configure settings for the new SSID:**
 
 - Set the **Name** of the SSID to **LongFi Passpoint**
