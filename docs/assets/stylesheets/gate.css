@@ -1,0 +1,26 @@
+/* Courtesy password gate for the branded hub (whole-site, session-persistent) */
+html:not(.lf-unlocked) .md-header,
+html:not(.lf-unlocked) .md-tabs,
+html:not(.lf-unlocked) .md-main,
+html:not(.lf-unlocked) .md-footer,
+html:not(.lf-unlocked) .md-dialog { display: none !important; }
+
+#lf-gate { display: none; }
+html:not(.lf-unlocked) #lf-gate {
+  display: flex; position: fixed; inset: 0; z-index: 2000;
+  align-items: center; justify-content: center; padding: 24px;
+  background: linear-gradient(135deg, #2C2C6E 0%, #244899 100%);
+  font-family: "Nunito", system-ui, sans-serif;
+}
+#lf-gate .lf-gate-card {
+  background: #fff; border-radius: 20px; padding: 36px 32px; max-width: 420px; width: 100%;
+  box-shadow: 0 10px 40px rgba(18,23,48,.25); text-align: center;
+}
+#lf-gate img { height: 28px; margin-bottom: 18px; }
+#lf-gate h1 { font-family: "Poppins", sans-serif; font-weight: 800; font-size: 22px; color: #222B45; margin: 0 0 8px; }
+#lf-gate p { font-size: 14px; line-height: 1.5; color: #5C6275; margin: 0 0 22px; }
+#lf-gate input { width: 100%; padding: 12px 14px; font-size: 15px; border: 1.5px solid #D9DCE5; border-radius: 10px; font-family: inherit; outline: none; }
+#lf-gate input:focus { border-color: #244899; }
+#lf-gate button { margin-top: 14px; width: 100%; padding: 12px 14px; background: #244899; color: #fff; border: none; border-radius: 10px; font-size: 15px; font-weight: 700; font-family: "Poppins", sans-serif; cursor: pointer; }
+#lf-gate button:hover { background: #2C2C6E; }
+#lf-gate .lf-gate-err { margin-top: 12px; font-size: 13px; color: #B5283B; min-height: 18px; }
