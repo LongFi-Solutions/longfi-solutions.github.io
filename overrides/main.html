@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block extrahead %}
+  {{ super() }}
+  <script>
+    window.LF_DOCS_EXPECTED = "2ee5ebe5648ce129ea175bd5acd3792cf34ca766075a82f7659b124f34197b1e";
+    // Pre-paint: if already unlocked this browser, reveal immediately (no flash).
+    try { if (localStorage.getItem('lf-docs-gate') === window.LF_DOCS_EXPECTED) document.documentElement.classList.add('lf-unlocked'); } catch(e){}
+  </script>
+{% endblock %}
