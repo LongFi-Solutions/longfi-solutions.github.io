@@ -1,0 +1,17 @@
+# Branded, password-gated build for docs.longfisolutions.com (Vercel, no Pro plan needed).
+# Inherits the public mkdocs.yml and overrides ONLY branding, gate, and site_url, so the
+# public github.io site is unaffected. Build with:  mkdocs build -f mkdocs.brand.yml
+INHERIT: mkdocs.yml
+site_url: https://docs.longfisolutions.com
+extra_css:
+  - assets/stylesheets/brand.css
+  - assets/stylesheets/brand-hub.css
+  - assets/stylesheets/gate.css
+extra_javascript:
+  - assets/js/gate.js
+theme:
+  name: material
+  custom_dir: overrides
+  font:
+    text: Nunito
+    code: Roboto Mono
