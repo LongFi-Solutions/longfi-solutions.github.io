@@ -69,6 +69,28 @@ def url_and_out(mdpath):
     stem = p[:-3]
     return "/" + stem + "/", stem + "/index.html"
 
+def rewrite_md_links(html, page_src):
+    """Rewrite relative *.md links in rendered HTML to clean directory URLs.
+
+    MkDocs resolves inter-page links relative to the current source file; the
+    hub uses use_directory_urls, so a source link like ``deployment/index.md``
+    must become ``/deployment/``. External (scheme:), absolute (/) and pure
+    anchor (#) links are left untouched.
+    """
+    import posixpath
+    base = posixpath.dirname(page_src.replace("\\", "/"))
+    def repl(m):
+        head, href, tail = m.group(1), m.group(2), m.group(3)
+        if re.match(r'^(?:[a-z][a-z0-9+.\-]*:|#|//|/)', href, re.I):
+            return m.group(0)
+        path, sep, frag = href.partition("#")
+        if not path.endswith(".md"):
+            return m.group(0)
+        target = posixpath.normpath(posixpath.join(base, path)) if base else path
+        url, _ = url_and_out(target)
+        return head + url + (sep + frag if sep else "") + tail
+    return re.sub(r'(<a\b[^>]*?\shref=")([^"]+)("[^>]*>)', repl, html)
+
 def render_markdown(md_text, extensions, configs):
     import markdown
     md = markdown.Markdown(extensions=extensions, extension_configs=configs)
@@ -141,6 +163,7 @@ def main(argv=None):
     template = open(os.path.join(HERE, "templates", "page.html"), encoding="utf-8").read()
 
     # ---- parse nav into sections ----
+    import posixpath
     nav = mkdocs.get("nav") or []
     sections = []   # {label, url, pages:[{title,src,url,out}]}
     for entry in nav:
@@ -156,6 +179,18 @@ def main(argv=None):
                 u, o = url_and_out(cpath)
                 pages.append({"title": ctitle, "src": cpath, "url": u, "out": o})
             if pages:
+                # If the children share one directory and that directory has an
+                # index.md on disk (a MkDocs section landing page that may be
+                # omitted from nav), render it as the section's landing page so
+                # /<dir>/ resolves instead of 404ing.
+                child_dirs = {posixpath.dirname(p["src"].replace("\\", "/")) for p in pages}
+                if len(child_dirs) == 1:
+                    d = next(iter(child_dirs))
+                    cand = (d + "/index.md") if d else "index.md"
+                    have = any(p["src"].replace("\\", "/") == cand for p in pages)
+                    if not have and os.path.exists(os.path.join(docs, "docs", cand)):
+                        lu, lo = url_and_out(cand)
+                        pages = [{"title": label, "src": cand, "url": lu, "out": lo}] + pages
                 sections.append({"label": label, "url": pages[0]["url"], "pages": pages})
 
     # ---- top nav html ----
@@ -185,6 +220,7 @@ def main(argv=None):
             raw = open(src, encoding="utf-8").read()
             text, meta = strip_front_matter(raw)
             body, toc = render_markdown(text, extensions, configs)
+            body = rewrite_md_links(body, page["src"])
             title = meta.get("title") or page["title"]
             hero_title, lead, article, toc_html, plain, headings = build_body(body, toc, title)
 
