@@ -190,7 +190,7 @@ def main(argv=None):
                     have = any(p["src"].replace("\\", "/") == cand for p in pages)
                     if not have and os.path.exists(os.path.join(docs, "docs", cand)):
                         lu, lo = url_and_out(cand)
-                        pages = [{"title": label, "src": cand, "url": lu, "out": lo}] + pages
+                        pages = [{"title": label, "src": cand, "url": lu, "out": lo, "landing": True}] + pages
                 sections.append({"label": label, "url": pages[0]["url"], "pages": pages})
 
     # ---- top nav html ----
@@ -227,7 +227,7 @@ def main(argv=None):
             eyebrow = "LongFi Connect Documentation" if sec["url"] == "/" else sec["label"]
             sidenav = ""
             if multi:
-                links = "".join('<a href="%s"%s>%s</a>' % (p["url"], ' class="active"' if p["url"] == page["url"] else "", htmllib.escape(p["title"])) for p in sec["pages"])
+                links = "".join('<a href="%s"%s>%s</a>' % (p["url"], ' class="active"' if p["url"] == page["url"] else "", htmllib.escape(p["title"])) for p in sec["pages"] if not p.get("landing"))
                 sidenav = '<nav class="sidenav" aria-label="%s"><div class="sidenav-title">%s</div>%s</nav>' % (htmllib.escape(sec["label"]), htmllib.escape(sec["label"]), links)
 
             html_out = fill(template, {
