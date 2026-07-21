@@ -27,9 +27,9 @@ a{color:var(--accent)}
 /* Top bar */
 .topbar{position:sticky;top:0;z-index:60;display:flex;align-items:center;gap:20px;padding:12px 20px;
   background:var(--paper);border-bottom:1px solid var(--line);box-shadow:var(--shadow-soft)}
-.brand{display:flex;align-items:center;flex:0 0 auto}
-.brand img{height:26px;display:block}
-[data-theme="dark"] .brand img{filter:brightness(0) invert(1)}
+.brand{display:flex;align-items:center;gap:9px;flex:0 0 auto;text-decoration:none}
+.brand-mark{height:26px;width:auto;display:block}
+.brand-name{font-family:var(--head);font-weight:700;font-size:18px;color:var(--ink);white-space:nowrap}
 .topnav{display:flex;gap:6px;flex:1 1 auto;flex-wrap:wrap}
 .topnav a{font-size:13.5px;font-weight:600;color:var(--body);text-decoration:none;padding:8px 12px;border-radius:8px;white-space:nowrap}
 .topnav a:hover{background:var(--accent-soft);color:var(--accent)}
