@@ -726,9 +726,10 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="High Level Steps:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#configure-radius-profile" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -738,8 +739,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#configure-wi-fi-operator-profile" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -749,8 +750,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#configure-identity-provider-profile" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -758,6 +759,83 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Configure Identity Provider Profile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-the-identity-provider-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create the Identity Provider Profile:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-identity-provider-nai-realms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure Identity Provider NAI Realms:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-identity-provider-plmn-ids" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure Identity Provider PLMN IDs:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-roaming-consortium-ois-rcois" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure Roaming Consortium OIs (RCOIs):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-aaa-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure AAA Settings:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-the-wi-fi-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure the Wi-Fi Network
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -794,7 +872,7 @@
 <li>Configure Wi-Fi Network</li>
 </ol>
 <hr />
-<h2 id="configure-radius-profile"><strong>Configure RADIUS Profile</strong><a class="headerlink" href="#configure-radius-profile" title="Permanent link">&para;</a></h2>
+<h3 id="configure-radius-profile"><strong>Configure RADIUS Profile</strong><a class="headerlink" href="#configure-radius-profile" title="Permanent link">&para;</a></h3>
 <p>First, we will configure the RADIUS Profile used to authenticate Passpoint clients to the LongFi Connect AAA Servers based on their SIM identity.  </p>
 <ul>
 <li>From the left side menu in the R1 dashboard, go to <strong>Network Control &gt; Service Catalog</strong></li>
@@ -822,7 +900,7 @@
 <li>Hit <strong>Add</strong> to save the new RADIUS Accounting Server</li>
 </ul>
 <hr />
-<h2 id="configure-wi-fi-operator-profile"><strong>Configure Wi-Fi Operator Profile</strong><a class="headerlink" href="#configure-wi-fi-operator-profile" title="Permanent link">&para;</a></h2>
+<h3 id="configure-wi-fi-operator-profile"><strong>Configure Wi-Fi Operator Profile</strong><a class="headerlink" href="#configure-wi-fi-operator-profile" title="Permanent link">&para;</a></h3>
 <p>Next, we will configure the Wi-Fi Operator Profile</p>
 <ul>
 <li>From the left side menu in the R1 dashboard, go to <strong>Network Control &gt; Service Catalog</strong></li>
@@ -842,8 +920,9 @@
 <li>At the bottom of the screen click <strong>Add</strong> to add the new operator profile</li>
 </ul>
 <hr />
-<h2 id="configure-identity-provider-profile"><strong>Configure Identity Provider Profile</strong><a class="headerlink" href="#configure-identity-provider-profile" title="Permanent link">&para;</a></h2>
+<h3 id="configure-identity-provider-profile"><strong>Configure Identity Provider Profile</strong><a class="headerlink" href="#configure-identity-provider-profile" title="Permanent link">&para;</a></h3>
 <p>Next, we will configure the Identity Provider Profile.  Some of the settings for this section of the configuration do not require activation approval and will be provided in this guide.  Some of the settings for the IDP configuration require activation approval, and will be provided in your onboarding and activation emails.  These will include NAI Realms, PLMN IDs (3gpp, MCC, MNC), and EAP settings.  Please have that information ready, you will add the Realms and PLMNs from your activation email after adding the realms, PLMN IDs, and Roaming Consortium OIs (RCOIs) shown in this guide.</p>
+<h4 id="create-the-identity-provider-profile">Create the Identity Provider Profile:<a class="headerlink" href="#create-the-identity-provider-profile" title="Permanent link">&para;</a></h4>
 <ul>
 <li>From the left side menu in the R1 dashboard, go to <strong>Network Control &gt; Service Catalog</strong></li>
 <li>Search the Service Catalog for <strong>Identity Provider</strong></li>
@@ -854,7 +933,7 @@
 <li>From the <strong>Identity Provider &gt; Hotspot 2.0</strong> screen, click the <strong>Add HS2.0 IdP</strong> in the top right hand corner</li>
 <li>On the next screen under <strong>Network Identifier</strong> set the <strong>Profile Name</strong> to <strong>LongFi IDP</strong></li>
 </ul>
-<p>Configure Identity Provider NAI Realms:</p>
+<h4 id="configure-identity-provider-nai-realms">Configure Identity Provider NAI Realms:<a class="headerlink" href="#configure-identity-provider-nai-realms" title="Permanent link">&para;</a></h4>
 <ul>
 <li>From the same <strong>Add Identity Provider</strong> screen, under <strong>NAI Realm</strong> click on <strong>Add Realm</strong></li>
 <li>From the <strong>Add Realm</strong> window set the <strong>Realm Name</strong> to <strong>longfisolutions.com</strong></li>
@@ -892,7 +971,7 @@
 <li>The additional NAI Realms will (almost) always have the EAP Method set to <strong>EAP-AKA Authentication</strong> and no submethods.  Be careful to use <strong>EAP-AKA Authentication</strong> and not <strong>EAP-AKA’</strong></li>
 <li>Follow the same steps as above to add the additional NAI Realms using the specified EAP methods and click <strong>Add</strong> when you are done</li>
 </ul>
-<p>Configure Identity Provider PLMN IDs:</p>
+<h4 id="configure-identity-provider-plmn-ids">Configure Identity Provider PLMN IDs:<a class="headerlink" href="#configure-identity-provider-plmn-ids" title="Permanent link">&para;</a></h4>
 <ul>
 <li>From the same <strong>Add Identity Provider</strong> screen, scroll down to <strong>PLMN</strong> and click <strong>Add PLMN</strong></li>
 <li>The Carrier <strong>PLMN</strong> IDs will be provided in your onboarding and activation emails</li>
@@ -902,7 +981,7 @@
 <li>Check the box at the bottom for <strong>Add another PLMN</strong> and click <strong>Add</strong></li>
 <li>Repeat this process until you have added all PLMNs that are approved for activation at your site.  There will normally be 4 PLMN MCC/MNC lines</li>
 </ul>
-<p>Configure Roaming Consortium OIs (RCOIs)</p>
+<h4 id="configure-roaming-consortium-ois-rcois">Configure Roaming Consortium OIs (RCOIs):<a class="headerlink" href="#configure-roaming-consortium-ois-rcois" title="Permanent link">&para;</a></h4>
 <ul>
 <li>From the same <strong>Add Identity Provider</strong> screen, scroll down to <strong>Roaming Consortium OI</strong> and click <strong>Add OI</strong></li>
 <li>From the <strong>Add Roaming Consortium OI</strong> set the <strong>OI name</strong> to <strong>Orion</strong></li>
@@ -916,7 +995,7 @@
 <li>Click <strong>Add</strong> to add the Uplink OI</li>
 <li>If you want to add OpenRoaming to your network, repeat this process using the OpenRoaming RCOIs (inquire by email for more information)</li>
 </ul>
-<p>Configure AAA Settings</p>
+<h4 id="configure-aaa-settings">Configure AAA Settings:<a class="headerlink" href="#configure-aaa-settings" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Once you have added all Realms, PLMNs, and RCOIs, at the bottom of the screen click <strong>Next</strong> to proceed to <strong>AAA Settings</strong></li>
 <li>From the <strong>AAA Settings</strong> window, under <strong>Authentication Server</strong> select the <strong>LongFi RADIUS Authentication</strong> server we created earlier</li>
@@ -926,7 +1005,7 @@
 <li>From the bottom of the screen click <strong>Add</strong> to add the new Identity Provider</li>
 </ul>
 <hr />
-<p><strong>Configure the Wi-Fi Network</strong></p>
+<h3 id="configure-the-wi-fi-network"><strong>Configure the Wi-Fi Network</strong><a class="headerlink" href="#configure-the-wi-fi-network" title="Permanent link">&para;</a></h3>
 <p>Next we will configure the Wi-Fi Network.  Please note that this guide only covers settings specific to Passpoint/Hotspot 2.0.  For any settings such as roaming protocols, Wi-Fi channels, radio transmit power, etc, please consult our Best Practices guide for general recommendations and consideration.  And please follow the requirements of your organization, vendor recommendations, and industry best practices based on your unique environment.</p>
 <ul>
 <li>From the R1 main dashboard, in the left menu bar go to <strong>Wi-Fi &gt; Wi-Fi Networks List</strong></li>
@@ -952,8 +1031,12 @@
 <li>At the bottom of the screen click <strong>Apply/Save/Next</strong> to save the new Passpoint Wi-Fi Network</li>
 <li>If the Wi-Fi network has been applied to a Venue, AP Groups, and APs and is broadcasting, you may now test Passpoint Wi-Fi with compatible SIM based clients</li>
 </ul>
+<hr />
 <p>Congratulations, you have successfully activated LongFi Connect Passpoint on your Ruckus One Network!</p>
-<p><strong>*Please Note</strong>: The NAS ID must be unique for every site.  You are able to deploy a Wi-Fi Network to multiple sites/venues in R1.  If you are deploying the Wi-Fi Network configuration to multiple sites, you can set the site-unique NAS ID for each Venue.  To do this go to <strong>Venues</strong> on the left menu bar, select the Venue you want to activate, and click <strong>Configure.</strong>  Go to <strong>Wi-Fi Configuration &gt; Networking</strong> and scroll down to <strong>RADIUS Service</strong>.  Enable the option <strong>Override the RADIUS options in active networks</strong>.  Under <strong>NAS ID</strong> select <strong>User-defined</strong> from the drop down menu.  You may now copy paste the NAS ID for your site into the <strong>Custom NAS ID</strong> box and click <strong>Save</strong> at the bottom of the page</p>
+<div class="admonition note">
+<p class="admonition-title">The NAS ID must be unique for every site</p>
+<p>You are able to deploy a Wi-Fi Network to multiple sites/venues in R1.  If you are deploying the Wi-Fi Network configuration to multiple sites, you can set the site-unique NAS ID for each Venue.  To do this go to <strong>Venues</strong> on the left menu bar, select the Venue you want to activate, and click <strong>Configure.</strong>  Go to <strong>Wi-Fi Configuration &gt; Networking</strong> and scroll down to <strong>RADIUS Service</strong>.  Enable the option <strong>Override the RADIUS options in active networks</strong>.  Under <strong>NAS ID</strong> select <strong>User-defined</strong> from the drop down menu.  You may now copy paste the NAS ID for your site into the <strong>Custom NAS ID</strong> box and click <strong>Save</strong> at the bottom of the page</p>
+</div>
 
 
 
