@@ -23,7 +23,7 @@
     
     
       
-        <title>Ruckus Configuration - LongFi Solutions Documentation</title>
+        <title>Ruckus One Configuration - LongFi Solutions Documentation</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ruckus-configuration" class="md-skip">
+        <a href="#ruckus-one-passpoint-conversion-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ruckus Configuration
+              Ruckus One Configuration
             
           </span>
         </div>
@@ -711,6 +711,58 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#high-level-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High Level Steps:
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-radius-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure RADIUS Profile
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-wi-fi-operator-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure Wi-Fi Operator Profile
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-identity-provider-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure Identity Provider Profile
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -726,11 +778,182 @@
 
 
 
-<h1 id="ruckus-configuration">Ruckus Configuration<a class="headerlink" href="#ruckus-configuration" title="Permanent link">&para;</a></h1>
+<h1 id="ruckus-one-passpoint-conversion-guide">Ruckus One Passpoint Conversion Guide<a class="headerlink" href="#ruckus-one-passpoint-conversion-guide" title="Permanent link">&para;</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Coming Soon</p>
-<p>This guide is currently being written. Please contact <a href="https://www.longfisolutions.com/">LongFi Solutions</a> for assistance in the meantime.</p>
+<p>Step by Step guide with Screenshots coming soon.  For now this guide covers the basic settings.  Please contact us for server IP addresses, shared secrets, and carrier activation info</p>
 </div>
+<hr />
+<p>For support please contact: <a href="mailto:support@longfisolutions.com">support@longfisolutions.com</a></p>
+<hr />
+<h2 id="high-level-steps"><strong>High Level Steps:</strong><a class="headerlink" href="#high-level-steps" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Configure RADIUS Profile</li>
+<li>Configure Wi-Fi Operator Profile</li>
+<li>Configure Identity Provider Profile</li>
+<li>Configure Wi-Fi Network</li>
+</ol>
+<hr />
+<h2 id="configure-radius-profile"><strong>Configure RADIUS Profile</strong><a class="headerlink" href="#configure-radius-profile" title="Permanent link">&para;</a></h2>
+<p>First, we will configure the RADIUS Profile used to authenticate Passpoint clients to the LongFi Connect AAA Servers based on their SIM identity.  </p>
+<ul>
+<li>From the left side menu in the R1 dashboard, go to <strong>Network Control &gt; Service Catalog</strong></li>
+<li>Search the Service Catalog for <strong>RADIUS Server</strong></li>
+<li>Click <strong>Add</strong> to add the <strong>RADIUS Server</strong> to your <strong>My Services</strong> dashboard</li>
+<li>From the left side menu in the R1 dashboard, go to <strong>Network Control &gt; My Services</strong></li>
+<li>Click on <strong>RADIUS Server</strong> to open the RADIUS Server dashboard</li>
+<li>From the RADIUS Server dashboard, click <strong>Add RADIUS Server</strong> in the top right corner</li>
+<li>From the <strong>Add RADIUS Server</strong> screen, set the <strong>Profile Name</strong> to <strong>LongFi RADIUS Authentication</strong></li>
+<li>For <strong>Type</strong> select <strong>Authentication RADIUS Server</strong></li>
+<li>For <strong>Server Address Type</strong> select <strong>IP Address</strong></li>
+<li>Under <strong>Primary Server</strong> set the <strong>IP Address</strong> to <strong>34.174.99.2</strong></li>
+<li>Set the <strong>Port</strong> to <strong>1812</strong></li>
+<li>Set the <strong>Shared Secret</strong> to the secret provided in your onboarding and activation emails</li>
+<li>*Please note: the shared secret link will expire after one click, please be ready to save the shared secret to your secure password keeper before you click on the link.</li>
+<li>Click <strong>Add</strong> to save the new RADIUS Authentication Server</li>
+<li>From the <strong>RADIUS Server</strong> screen, click <strong>Add RADIUS Server</strong> again to add an accounting server </li>
+<li>From the <strong>Add RADIUS Server</strong> screen, set the <strong>Profile Name</strong> to <strong>LongFi RADIUS Accounting</strong></li>
+<li>For <strong>Type</strong> select <strong>Accounting RADIUS Server</strong></li>
+<li>For <strong>Server Address Type</strong> select <strong>IP Address</strong></li>
+<li>Under <strong>Primary Server</strong> set the <strong>IP Address</strong> to <strong>34.174.99.2</strong></li>
+<li>Set the <strong>Port</strong> to <strong>1813</strong></li>
+<li>Set the <strong>Shared Secret</strong> to the secret provided in your onboarding and activation emails</li>
+<li>*Please note: the shared secret link will expire after one click, please be ready to save the shared secret to your secure password keeper before you click on the link.</li>
+<li>Hit <strong>Add</strong> to save the new RADIUS Accounting Server</li>
+</ul>
+<hr />
+<h2 id="configure-wi-fi-operator-profile"><strong>Configure Wi-Fi Operator Profile</strong><a class="headerlink" href="#configure-wi-fi-operator-profile" title="Permanent link">&para;</a></h2>
+<p>Next, we will configure the Wi-Fi Operator Profile</p>
+<ul>
+<li>From the left side menu in the R1 dashboard, go to <strong>Network Control &gt; Service Catalog</strong></li>
+<li>Search the Service Catalog for <strong>Wi-Fi Operator</strong></li>
+<li>Click <strong>Add</strong> to add <strong>Wi-Fi Operator</strong> to your <strong>My Services</strong> dashboard</li>
+<li>From the left side menu in the R1 dashboard, go to <strong>Network Control &gt; My Services</strong></li>
+<li>Click on <strong>Wi-Fi Operator</strong> to open the Wi-Fi Operator dashboard</li>
+<li>From the <strong>Wi-Fi Operator</strong> dashboard click <strong>Add Wi-Fi Operator</strong></li>
+<li>On the next screen set the <strong>Profile Name</strong> to <strong>LongFi Wi-Fi Operator</strong></li>
+<li>Under <strong>Domain</strong> enter the following domains (one domain per line):<ul>
+<li><a href="http://longfisolutions.com">longfisolutions.com</a></li>
+<li><a href="http://freedomfi.com">freedomfi.com</a></li>
+</ul>
+</li>
+<li>Under <strong>Operator Friendly Name</strong> set the <strong>Language</strong> to <strong>English</strong></li>
+<li>Set the <strong>Friendly Name</strong> to <strong>LONGFISOLUTIONS:US</strong></li>
+<li>At the bottom of the screen click <strong>Add</strong> to add the new operator profile</li>
+</ul>
+<hr />
+<h2 id="configure-identity-provider-profile"><strong>Configure Identity Provider Profile</strong><a class="headerlink" href="#configure-identity-provider-profile" title="Permanent link">&para;</a></h2>
+<p>Next, we will configure the Identity Provider Profile.  Some of the settings for this section of the configuration do not require activation approval and will be provided in this guide.  Some of the settings for the IDP configuration require activation approval, and will be provided in your onboarding and activation emails.  These will include NAI Realms, PLMN IDs (3gpp, MCC, MNC), and EAP settings.  Please have that information ready, you will add the Realms and PLMNs from your activation email after adding the realms, PLMN IDs, and Roaming Consortium OIs (RCOIs) shown in this guide.</p>
+<ul>
+<li>From the left side menu in the R1 dashboard, go to <strong>Network Control &gt; Service Catalog</strong></li>
+<li>Search the Service Catalog for <strong>Identity Provider</strong></li>
+<li>Click <strong>Add</strong> to add <strong>Identity Provider</strong> to your <strong>My Services</strong> dashboard</li>
+<li>From the left side menu in the R1 dashboard, go to <strong>Network Control &gt; My Services</strong></li>
+<li>Click on <strong>Identity Provider</strong> to open the Identity Provider dashboard</li>
+<li>From the <strong>Identity Provider</strong> dashboard, select <strong>Hotspot 2.0</strong> (next to SAML) to open the Hotspot 2.0 IDP list</li>
+<li>From the <strong>Identity Provider &gt; Hotspot 2.0</strong> screen, click the <strong>Add HS2.0 IdP</strong> in the top right hand corner</li>
+<li>On the next screen under <strong>Network Identifier</strong> set the <strong>Profile Name</strong> to <strong>LongFi IDP</strong></li>
+</ul>
+<p>Configure Identity Provider NAI Realms:</p>
+<ul>
+<li>From the same <strong>Add Identity Provider</strong> screen, under <strong>NAI Realm</strong> click on <strong>Add Realm</strong></li>
+<li>From the <strong>Add Realm</strong> window set the <strong>Realm Name</strong> to <strong>longfisolutions.com</strong></li>
+<li>Under <strong>EAP Methods</strong> click <strong>Add EAP Method</strong></li>
+<li>From the <strong>EAP Method</strong> pull down menu, select <strong>EAP-TLS</strong></li>
+<li>Click <strong>Add another Auth</strong> </li>
+<li>From the <strong>Auth Type</strong> pull down menu select <strong>Credential</strong></li>
+<li>From the <strong>SubType</strong> pull down menu select <strong>Certificate</strong></li>
+<li>Click <strong>Add</strong> in the bottom right hand corner of the EAP window</li>
+<li>From the <strong>Add Realm</strong> window, check the box at the bottom to <strong>Add another Realm</strong></li>
+<li>Click the <strong>Add</strong> button in the bottom right corner to add the new realm</li>
+<li>You will see the same <strong>Add Realm</strong> screen again</li>
+<li>The next two realms will have the exact same settings (EAP-TLS, Credential &gt; Certificate) with a different realm name</li>
+<li>From the <strong>Add Realm</strong> window set the <strong>Realm Name</strong> to <strong>freedomfi.com</strong></li>
+<li>Under <strong>EAP Methods</strong> click <strong>Add EAP Method</strong></li>
+<li>From the <strong>EAP Method</strong> pull down menu, select <strong>EAP-TLS</strong></li>
+<li>Click <strong>Add another Auth</strong> </li>
+<li>From the <strong>Auth Type</strong> pull down menu select <strong>Credential</strong></li>
+<li>From the <strong>SubType</strong> pull down menu select <strong>Certificate</strong></li>
+<li>Click <strong>Add</strong> in the bottom right hand corner of the EAP window</li>
+<li>From the <strong>Add Realm</strong> window, check the box at the bottom to <strong>Add another Realm</strong></li>
+<li>Click the <strong>Add</strong> button in the bottom right corner to add the new realm</li>
+<li>You will see the same <strong>Add Realm</strong> screen again</li>
+<li>From the <strong>Add Realm</strong> window set the <strong>Realm Name</strong> to <strong>hellohelium.com</strong></li>
+<li>Under <strong>EAP Methods</strong> click <strong>Add EAP Method</strong></li>
+<li>From the <strong>EAP Method</strong> pull down menu, select <strong>EAP-TLS</strong></li>
+<li>Click <strong>Add another Auth</strong> </li>
+<li>From the <strong>Auth Type</strong> pull down menu select <strong>Credential</strong></li>
+<li>From the <strong>SubType</strong> pull down menu select <strong>Certificate</strong></li>
+<li>Click <strong>Add</strong> in the bottom right hand corner of the EAP window</li>
+<li>From the <strong>Add Realm</strong> window, check the box at the bottom to <strong>Add another Realm</strong></li>
+<li>Click the <strong>Add</strong> button in the bottom right corner to add the new realm</li>
+<li>You will see the same <strong>Add Realm</strong> screen again</li>
+<li>Now you can enter the additional NAI Realms provided in your onboarding and activation email.  If you have not yet been approved for multiple carriers, you may not be provided additional realms yet and you can proceed to the PLMN steps.</li>
+<li>The additional NAI Realms will (almost) always have the EAP Method set to <strong>EAP-AKA Authentication</strong> and no submethods.  Be careful to use <strong>EAP-AKA Authentication</strong> and not <strong>EAP-AKA’</strong></li>
+<li>Follow the same steps as above to add the additional NAI Realms using the specified EAP methods and click <strong>Add</strong> when you are done</li>
+</ul>
+<p>Configure Identity Provider PLMN IDs:</p>
+<ul>
+<li>From the same <strong>Add Identity Provider</strong> screen, scroll down to <strong>PLMN</strong> and click <strong>Add PLMN</strong></li>
+<li>The Carrier <strong>PLMN</strong> IDs will be provided in your onboarding and activation emails</li>
+<li>Each PLMN will have an MCC number and an MNC number</li>
+<li>Copy and paste the MCC numbers into the <strong>MCC</strong> box</li>
+<li>Copy and paste the MNC numbers into the <strong>MNC</strong> box</li>
+<li>Check the box at the bottom for <strong>Add another PLMN</strong> and click <strong>Add</strong></li>
+<li>Repeat this process until you have added all PLMNs that are approved for activation at your site.  There will normally be 4 PLMN MCC/MNC lines</li>
+</ul>
+<p>Configure Roaming Consortium OIs (RCOIs)</p>
+<ul>
+<li>From the same <strong>Add Identity Provider</strong> screen, scroll down to <strong>Roaming Consortium OI</strong> and click <strong>Add OI</strong></li>
+<li>From the <strong>Add Roaming Consortium OI</strong> set the <strong>OI name</strong> to <strong>Orion</strong></li>
+<li>Under <strong>Organization ID</strong> select <strong>5 hex</strong></li>
+<li>Enter the following RCOI into the 5 hex windows 2 characters at a time <strong>F4F5E8F5F4</strong></li>
+<li>Click <strong>Add another OI</strong> at the bottom of the window</li>
+<li>Click <strong>Add</strong> to add another OI</li>
+<li>From the <strong>Add Roaming Consortium OI</strong> set the <strong>OI name</strong> to <strong>Uplink</strong></li>
+<li>Under <strong>Organization ID</strong> select <strong>5 hex</strong></li>
+<li>Enter the following RCOI into the 5 hex windows 2 characters at a time <strong>2A2F830000</strong></li>
+<li>Click <strong>Add</strong> to add the Uplink OI</li>
+<li>If you want to add OpenRoaming to your network, repeat this process using the OpenRoaming RCOIs (inquire by email for more information)</li>
+</ul>
+<p>Configure AAA Settings</p>
+<ul>
+<li>Once you have added all Realms, PLMNs, and RCOIs, at the bottom of the screen click <strong>Next</strong> to proceed to <strong>AAA Settings</strong></li>
+<li>From the <strong>AAA Settings</strong> window, under <strong>Authentication Server</strong> select the <strong>LongFi RADIUS Authentication</strong> server we created earlier</li>
+<li>Click the button to enable <strong>Accounting Service</strong></li>
+<li>Under <strong>Accounting Server</strong> select the <strong>LongFi RADIUS Accounting</strong> server we created earlier</li>
+<li>From the bottom of the screen click the <strong>Next</strong> button to review the <strong>Summary</strong> of the <strong>Add Identity Provider</strong> configuration</li>
+<li>From the bottom of the screen click <strong>Add</strong> to add the new Identity Provider</li>
+</ul>
+<hr />
+<p><strong>Configure the Wi-Fi Network</strong></p>
+<p>Next we will configure the Wi-Fi Network.  Please note that this guide only covers settings specific to Passpoint/Hotspot 2.0.  For any settings such as roaming protocols, Wi-Fi channels, radio transmit power, etc, please consult our Best Practices guide for general recommendations and consideration.  And please follow the requirements of your organization, vendor recommendations, and industry best practices based on your unique environment.</p>
+<ul>
+<li>From the R1 main dashboard, in the left menu bar go to <strong>Wi-Fi &gt; Wi-Fi Networks List</strong></li>
+<li>In the top right corner click <strong>Add Wi-Fi Network</strong></li>
+<li>In the <strong>Create New Network</strong> screen, under <strong>Network Details &gt; Network Name</strong>, set the name to <strong>LongFi Passpoint</strong></li>
+<li>You may use a different SSID name if you like, the SSID name does not matter in Passpoint/Hotspot 2.0, clients look for their SIM identity in the Wi-Fi beacon</li>
+<li>Under <strong>Network Type</strong> select <strong>Hotspot 2.0 Access</strong></li>
+<li>At the bottom of the screen hit <strong>Next</strong></li>
+<li>Under <strong>Hotspot 2.0 Settings &gt; Security Protocol</strong> select <strong>WPA2</strong> to support the most possible clients</li>
+<li>If you have 6GHz capable APs, you must select <strong>WPA3</strong> as WPA3 is mandatory in 6 GHz</li>
+<li>LongFi recommends enabling 6 GHz where capable, and choosing WPA3.  We find that almost all Passpoint capable clients can now support WPA3 Enterprise with a mixed 5+6 GHz SSID with no issues</li>
+<li>We do not recommend enabling 2.4 GHz on Passpoint Wi-Fi</li>
+<li>Under <strong>Wi-Fi Operator</strong> select the <strong>LongFi Wi-Fi Operator</strong> profile we created earlier in the Network Control Services</li>
+<li>Under <strong>Identity Provider</strong> select the <strong>LongFi IDP</strong> identity provider profile we created earlier in the Network Control Services</li>
+<li>At the bottom middle of the main window, click <strong>Show more settings</strong></li>
+<li>Under <strong>VLAN &gt; VLAN ID</strong> you can set your access VLAN for the Passpoint SSID</li>
+<li>Under the <strong>Network Control</strong> enable <strong>Client Isolation</strong></li>
+<li>Under the <strong>Networking</strong> tab scroll down to <strong>RADIUS Options</strong></li>
+<li>Under <strong>RADIUS Options &gt; NAS ID</strong> select <strong>User-defined</strong> from the drop down menu</li>
+<li>Copy and paste the NAS ID you provided to register and activate your site.  This is usually a MAC address.  You can find your NAS ID in the onboarding and activation emails.  <strong>*Important: see notes below for instructions on deploying the Wi-Fi Network to multiple sites and setting site-unique NAS IDs</strong></li>
+<li>At the bottom of the screen click <strong>Next</strong></li>
+<li>On the <strong>Venues</strong> screen click the <strong>Activated</strong> button to activate the Passpoint Wi-Fi Network at your specified Venue</li>
+<li>At the bottom of the screen click <strong>Apply/Save/Next</strong> to save the new Passpoint Wi-Fi Network</li>
+<li>If the Wi-Fi network has been applied to a Venue, AP Groups, and APs and is broadcasting, you may now test Passpoint Wi-Fi with compatible SIM based clients</li>
+</ul>
+<p>Congratulations, you have successfully activated LongFi Connect Passpoint on your Ruckus One Network!</p>
+<p><strong>*Please Note</strong>: The NAS ID must be unique for every site.  You are able to deploy a Wi-Fi Network to multiple sites/venues in R1.  If you are deploying the Wi-Fi Network configuration to multiple sites, you can set the site-unique NAS ID for each Venue.  To do this go to <strong>Venues</strong> on the left menu bar, select the Venue you want to activate, and click <strong>Configure.</strong>  Go to <strong>Wi-Fi Configuration &gt; Networking</strong> and scroll down to <strong>RADIUS Service</strong>.  Enable the option <strong>Override the RADIUS options in active networks</strong>.  Under <strong>NAS ID</strong> select <strong>User-defined</strong> from the drop down menu.  You may now copy paste the NAS ID for your site into the <strong>Custom NAS ID</strong> box and click <strong>Save</strong> at the bottom of the page</p>
 
 
 
