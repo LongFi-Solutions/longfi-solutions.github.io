@@ -22,7 +22,7 @@ For support please contact: [support@longfisolutions.com](mailto:support@longfis
 
 ***
 
-## **Configure RADIUS Profile**
+### **Configure RADIUS Profile**
 
 First, we will configure the RADIUS Profile used to authenticate Passpoint clients to the LongFi Connect AAA Servers based on their SIM identity.  
 
@@ -52,7 +52,7 @@ First, we will configure the RADIUS Profile used to authenticate Passpoint clien
 
 ***
 
-## **Configure Wi-Fi Operator Profile**
+### **Configure Wi-Fi Operator Profile**
 
 Next, we will configure the Wi-Fi Operator Profile
 
@@ -72,9 +72,11 @@ Next, we will configure the Wi-Fi Operator Profile
 
 ***
 
-## **Configure Identity Provider Profile**
+### **Configure Identity Provider Profile**
 
 Next, we will configure the Identity Provider Profile.  Some of the settings for this section of the configuration do not require activation approval and will be provided in this guide.  Some of the settings for the IDP configuration require activation approval, and will be provided in your onboarding and activation emails.  These will include NAI Realms, PLMN IDs (3gpp, MCC, MNC), and EAP settings.  Please have that information ready, you will add the Realms and PLMNs from your activation email after adding the realms, PLMN IDs, and Roaming Consortium OIs (RCOIs) shown in this guide.
+
+#### Create the Identity Provider Profile:
 
 - From the left side menu in the R1 dashboard, go to **Network Control > Service Catalog**
 - Search the Service Catalog for **Identity Provider**
@@ -85,7 +87,7 @@ Next, we will configure the Identity Provider Profile.  Some of the settings fo
 - From the **Identity Provider > Hotspot 2.0** screen, click the **Add HS2.0 IdP** in the top right hand corner
 - On the next screen under **Network Identifier** set the **Profile Name** to **LongFi IDP**
 
-Configure Identity Provider NAI Realms:
+#### Configure Identity Provider NAI Realms:
 
 - From the same **Add Identity Provider** screen, under **NAI Realm** click on **Add Realm**
 - From the **Add Realm** window set the **Realm Name** to **longfisolutions.com**
@@ -123,7 +125,7 @@ Configure Identity Provider NAI Realms:
 - The additional NAI Realms will (almost) always have the EAP Method set to **EAP-AKA Authentication** and no submethods.  Be careful to use **EAP-AKA Authentication** and not **EAP-AKA’**
 - Follow the same steps as above to add the additional NAI Realms using the specified EAP methods and click **Add** when you are done
 
-Configure Identity Provider PLMN IDs:
+#### Configure Identity Provider PLMN IDs:
 
 - From the same **Add Identity Provider** screen, scroll down to **PLMN** and click **Add PLMN**
 - The Carrier **PLMN** IDs will be provided in your onboarding and activation emails
@@ -133,7 +135,7 @@ Configure Identity Provider PLMN IDs:
 - Check the box at the bottom for **Add another PLMN** and click **Add**
 - Repeat this process until you have added all PLMNs that are approved for activation at your site.  There will normally be 4 PLMN MCC/MNC lines
 
-Configure Roaming Consortium OIs (RCOIs)
+#### Configure Roaming Consortium OIs (RCOIs):
 
 - From the same **Add Identity Provider** screen, scroll down to **Roaming Consortium OI** and click **Add OI**
 - From the **Add Roaming Consortium OI** set the **OI name** to **Orion**
@@ -147,7 +149,7 @@ Configure Roaming Consortium OIs (RCOIs)
 - Click **Add** to add the Uplink OI
 - If you want to add OpenRoaming to your network, repeat this process using the OpenRoaming RCOIs (inquire by email for more information)
 
-Configure AAA Settings
+#### Configure AAA Settings:
 
 - Once you have added all Realms, PLMNs, and RCOIs, at the bottom of the screen click **Next** to proceed to **AAA Settings**
 - From the **AAA Settings** window, under **Authentication Server** select the **LongFi RADIUS Authentication** server we created earlier
@@ -156,11 +158,9 @@ Configure AAA Settings
 - From the bottom of the screen click the **Next** button to review the **Summary** of the **Add Identity Provider** configuration
 - From the bottom of the screen click **Add** to add the new Identity Provider
 
-
 ***
 
-
-**Configure the Wi-Fi Network**
+### **Configure the Wi-Fi Network**
 
 Next we will configure the Wi-Fi Network.  Please note that this guide only covers settings specific to Passpoint/Hotspot 2.0.  For any settings such as roaming protocols, Wi-Fi channels, radio transmit power, etc, please consult our Best Practices guide for general recommendations and consideration.  And please follow the requirements of your organization, vendor recommendations, and industry best practices based on your unique environment.
 
@@ -187,6 +187,9 @@ Next we will configure the Wi-Fi Network.  Please note that this guide only cov
 - At the bottom of the screen click **Apply/Save/Next** to save the new Passpoint Wi-Fi Network
 - If the Wi-Fi network has been applied to a Venue, AP Groups, and APs and is broadcasting, you may now test Passpoint Wi-Fi with compatible SIM based clients
 
+***
+
 Congratulations, you have successfully activated LongFi Connect Passpoint on your Ruckus One Network!
 
-**\*Please Note**: The NAS ID must be unique for every site.  You are able to deploy a Wi-Fi Network to multiple sites/venues in R1.  If you are deploying the Wi-Fi Network configuration to multiple sites, you can set the site-unique NAS ID for each Venue.  To do this go to **Venues** on the left menu bar, select the Venue you want to activate, and click **Configure.**  Go to **Wi-Fi Configuration > Networking** and scroll down to **RADIUS Service**.  Enable the option **Override the RADIUS options in active networks**.  Under **NAS ID** select **User-defined** from the drop down menu.  You may now copy paste the NAS ID for your site into the **Custom NAS ID** box and click **Save** at the bottom of the page
+!!! note "The NAS ID must be unique for every site"
+    You are able to deploy a Wi-Fi Network to multiple sites/venues in R1.  If you are deploying the Wi-Fi Network configuration to multiple sites, you can set the site-unique NAS ID for each Venue.  To do this go to **Venues** on the left menu bar, select the Venue you want to activate, and click **Configure.**  Go to **Wi-Fi Configuration > Networking** and scroll down to **RADIUS Service**.  Enable the option **Override the RADIUS options in active networks**.  Under **NAS ID** select **User-defined** from the drop down menu.  You may now copy paste the NAS ID for your site into the **Custom NAS ID** box and click **Save** at the bottom of the page
