@@ -187,9 +187,14 @@ Next we will configure the Wi-Fi Network.  Please note that this guide only cov
 - At the bottom of the screen click **Apply/Save/Next** to save the new Passpoint Wi-Fi Network
 - If the Wi-Fi network has been applied to a Venue, AP Groups, and APs and is broadcasting, you may now test Passpoint Wi-Fi with compatible SIM based clients
 
+!!! note "The NAS ID must be unique for every site"
+    You are able to deploy a Wi-Fi Network to multiple sites/venues in R1.  If you are deploying the Wi-Fi Network configuration to multiple sites, you can set the site-unique NAS ID for each Venue.  To do this go to **Venues** on the left menu bar, select the Venue you want to activate, and click **Configure.**  Go to **Wi-Fi Configuration > Networking** and scroll down to **RADIUS Service**.  Enable the option **Override the RADIUS options in active networks**.  Under **NAS ID** select **User-defined** from the drop down menu.  You may now copy paste the NAS ID for your site into the **Custom NAS ID** box and click **Save** at the bottom of the page
+
 ***
 
-Congratulations, you have successfully activated LongFi Connect Passpoint on your Ruckus One Network!
+#### Congratulations!
+
+You have successfully activated LongFi Connect Passpoint on your Ruckus One Network!
 
 !!! note "The NAS ID must be unique for every site"
     You are able to deploy a Wi-Fi Network to multiple sites/venues in R1.  If you are deploying the Wi-Fi Network configuration to multiple sites, you can set the site-unique NAS ID for each Venue.  To do this go to **Venues** on the left menu bar, select the Venue you want to activate, and click **Configure.**  Go to **Wi-Fi Configuration > Networking** and scroll down to **RADIUS Service**.  Enable the option **Override the RADIUS options in active networks**.  Under **NAS ID** select **User-defined** from the drop down menu.  You may now copy paste the NAS ID for your site into the **Custom NAS ID** box and click **Save** at the bottom of the page
