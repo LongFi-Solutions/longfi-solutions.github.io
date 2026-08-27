@@ -44,42 +44,25 @@ You will be provided with a JSON configuration file that has 90% of what is requ
 - Under Configuration file, select the JSON Config file provided by LongFi
 - Click Import to import the config
 
-
 ***
 
 **Change the Access VLAN, AAA Servers, and any other SSID settings**
 
 After importing the JSON Config File into CNMaestro, you will see it in the WI-FI Profile list.
 
-
 Click on the newly created WLAN and change the following:
 
 - SSID Broadcast Name (if you like)
 - SSID Enable (disabled by default, enable when ready)
 - VLAN - set the access VLAN for an isolated VLAN for your guest/passpoint network segment
-
-
-
 - Band - enable 6 GHz if required; the JSON config has 5 GHz only (we do not recommend 2.4 GHz)
-
-
-
 - AAA Servers - Set the Authentication Server Host IP to the IP of your Local RadSecproxy VM
 - AAA Servers - Set the Secret to the secret you created when deploying your Local RadSecproxy VM
 - AAA Servers - Set the Accounting Server Host IP to the IP of your Local RadSecproxy VM
 - AAA Servers - Set the Secret to the secret you created when deploying your Local RadSecproxy VM
-
-
-
 - AAA Servers > Advanced Settings - Set the NAS-Identifier to Custom and copy paste the NAS ID you used to activate the site.  This is normally a MAC address and will be included in your onboarding and activation emails.
-
-
-
 - Passpoint > NAI Realms - add any additional NAI Realms that were approved for activation for your site.  These will be provided in your onboarding and activation emails.  Include the EAP methods specified in the emails.
 - Passpoint > 3GPP Cellular Network Configuration - add any 3GPP PLMN IDs that were activated for your site.  These will be provided in your onboarding and activation emails.
-
-
-
 - Set any other SSID settings per your design and requirements
 - Save the WLAN and deploy it to the required APs and AP Groups for your site
 
