@@ -2,7 +2,7 @@
 title: Cambium Configuration
 ---
 
-# Cambium Configuration
+![](/assets/images/LongFi-Line-Color.png)
 
 **Cambium Passpoint Conversion - Basic Settings**
 
@@ -66,7 +66,6 @@ Click on the newly created WLAN and change the following:
 
 ![](/assets/images/Cambium%206%20-%20Bands.png)
 
-
 - AAA Servers - Set the Authentication Server Host IP to the IP of your Local RadSecproxy VM
 - AAA Servers - Set the Secret to the secret you created when deploying your Local RadSecproxy VM
 - AAA Servers - Set the Accounting Server Host IP to the IP of your Local RadSecproxy VM
@@ -74,11 +73,9 @@ Click on the newly created WLAN and change the following:
 
 ![](/assets/images/Cambium%207%20-%20AAA%20Servers.png)
 
-
 - AAA Servers > Advanced Settings - Set the NAS-Identifier to Custom and copy paste the NAS ID you used to activate the site.  This is normally a MAC address and will be included in your onboarding and activation emails.
 
 ![](/assets/images/Cambium%208%20-%20NAS%20ID.png)
-
 
 - Passpoint > NAI Realms - add any additional NAI Realms that were approved for activation for your site.  These will be provided in your onboarding and activation emails.  Include the EAP methods specified in the emails.
 - Passpoint > 3GPP Cellular Network Configuration - add any 3GPP PLMN IDs that were activated for your site.  These will be provided in your onboarding and activation emails.
