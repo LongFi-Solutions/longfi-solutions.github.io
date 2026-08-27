@@ -756,22 +756,39 @@
 <li>Under Configuration file, select the JSON Config file provided by LongFi</li>
 <li>Click Import to import the config</li>
 </ul>
+<p><img alt="" src="/assets/images/Cambium%202.png" /></p>
 <hr />
 <p><strong>Change the Access VLAN, AAA Servers, and any other SSID settings</strong></p>
 <p>After importing the JSON Config File into CNMaestro, you will see it in the WI-FI Profile list.</p>
 <p>Click on the newly created WLAN and change the following:</p>
+<p><img alt="" src="/assets/images/Cambium%204.png" /></p>
 <ul>
 <li>SSID Broadcast Name (if you like)</li>
 <li>SSID Enable (disabled by default, enable when ready)</li>
 <li>VLAN - set the access VLAN for an isolated VLAN for your guest/passpoint network segment</li>
+</ul>
+<p><img alt="" src="/assets/images/Cambium%205.png" /></p>
+<ul>
 <li>Band - enable 6 GHz if required; the JSON config has 5 GHz only (we do not recommend 2.4 GHz)</li>
+</ul>
+<p><img alt="" src="/assets/images/Cambium%206%20-%20Bands.png" /></p>
+<ul>
 <li>AAA Servers - Set the Authentication Server Host IP to the IP of your Local RadSecproxy VM</li>
 <li>AAA Servers - Set the Secret to the secret you created when deploying your Local RadSecproxy VM</li>
 <li>AAA Servers - Set the Accounting Server Host IP to the IP of your Local RadSecproxy VM</li>
 <li>AAA Servers - Set the Secret to the secret you created when deploying your Local RadSecproxy VM</li>
+</ul>
+<p><img alt="" src="/assets/images/Cambium%207%20-%20AAA%20Servers.png" /></p>
+<ul>
 <li>AAA Servers &gt; Advanced Settings - Set the NAS-Identifier to Custom and copy paste the NAS ID you used to activate the site.  This is normally a MAC address and will be included in your onboarding and activation emails.</li>
+</ul>
+<p><img alt="" src="/assets/images/Cambium%208%20-%20NAS%20ID.png" /></p>
+<ul>
 <li>Passpoint &gt; NAI Realms - add any additional NAI Realms that were approved for activation for your site.  These will be provided in your onboarding and activation emails.  Include the EAP methods specified in the emails.</li>
 <li>Passpoint &gt; 3GPP Cellular Network Configuration - add any 3GPP PLMN IDs that were activated for your site.  These will be provided in your onboarding and activation emails.</li>
+</ul>
+<p><img alt="" src="/assets/images/Cambium%209%20-%20NAI.png" /></p>
+<ul>
 <li>Set any other SSID settings per your design and requirements</li>
 <li>Save the WLAN and deploy it to the required APs and AP Groups for your site</li>
 </ul>
