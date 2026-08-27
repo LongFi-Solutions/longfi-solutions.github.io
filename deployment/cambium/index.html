@@ -763,32 +763,16 @@
 <ul>
 <li>SSID Broadcast Name (if you like)</li>
 <li>SSID Enable (disabled by default, enable when ready)</li>
-<li>
-<p>VLAN - set the access VLAN for an isolated VLAN for your guest/passpoint network segment</p>
-</li>
-<li>
-<p>Band - enable 6 GHz if required; the JSON config has 5 GHz only (we do not recommend 2.4 GHz)</p>
-</li>
-<li>
-<p>AAA Servers - Set the Authentication Server Host IP to the IP of your Local RadSecproxy VM</p>
-</li>
+<li>VLAN - set the access VLAN for an isolated VLAN for your guest/passpoint network segment</li>
+<li>Band - enable 6 GHz if required; the JSON config has 5 GHz only (we do not recommend 2.4 GHz)</li>
+<li>AAA Servers - Set the Authentication Server Host IP to the IP of your Local RadSecproxy VM</li>
 <li>AAA Servers - Set the Secret to the secret you created when deploying your Local RadSecproxy VM</li>
 <li>AAA Servers - Set the Accounting Server Host IP to the IP of your Local RadSecproxy VM</li>
-<li>
-<p>AAA Servers - Set the Secret to the secret you created when deploying your Local RadSecproxy VM</p>
-</li>
-<li>
-<p>AAA Servers &gt; Advanced Settings - Set the NAS-Identifier to Custom and copy paste the NAS ID you used to activate the site.  This is normally a MAC address and will be included in your onboarding and activation emails.</p>
-</li>
-<li>
-<p>Passpoint &gt; NAI Realms - add any additional NAI Realms that were approved for activation for your site.  These will be provided in your onboarding and activation emails.  Include the EAP methods specified in the emails.</p>
-</li>
-<li>
-<p>Passpoint &gt; 3GPP Cellular Network Configuration - add any 3GPP PLMN IDs that were activated for your site.  These will be provided in your onboarding and activation emails.</p>
-</li>
-<li>
-<p>Set any other SSID settings per your design and requirements</p>
-</li>
+<li>AAA Servers - Set the Secret to the secret you created when deploying your Local RadSecproxy VM</li>
+<li>AAA Servers &gt; Advanced Settings - Set the NAS-Identifier to Custom and copy paste the NAS ID you used to activate the site.  This is normally a MAC address and will be included in your onboarding and activation emails.</li>
+<li>Passpoint &gt; NAI Realms - add any additional NAI Realms that were approved for activation for your site.  These will be provided in your onboarding and activation emails.  Include the EAP methods specified in the emails.</li>
+<li>Passpoint &gt; 3GPP Cellular Network Configuration - add any 3GPP PLMN IDs that were activated for your site.  These will be provided in your onboarding and activation emails.</li>
+<li>Set any other SSID settings per your design and requirements</li>
 <li>Save the WLAN and deploy it to the required APs and AP Groups for your site</li>
 </ul>
 <p><strong>*Important Note:</strong> The NAS-Identifier (NAS ID) must be unique for every site.  Cambium CnMaestro will allow you to clone the WLAN, give it a new name, and set the unique NAS ID under AAA Servers &gt; Advanced Settings &gt; NAS-Identifier.  There may be a workflow for deploying a single WLAN to multiple sites, and using the Templates or User-Defined Overrides in CnMaestro to set the NAS ID to the unique value for each site.  LongFi has not tested this workflow at the time of writing this guide.  It may look something like this:</p>
