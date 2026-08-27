@@ -46,8 +46,6 @@ You will be provided with a JSON configuration file that has 90% of what is requ
 
 ![](/assets/images/Cambium%202.png)
 
-***
-
 **Change the Access VLAN, AAA Servers, and any other SSID settings**
 
 After importing the JSON Config File into CNMaestro, you will see it in the WI-FI Profile list.
