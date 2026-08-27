@@ -2,15 +2,13 @@
 title: Cambium Configuration
 ---
 
-![](/assets/images/LongFi-Line-Color.png)
-
-**Cambium Passpoint Conversion - Basic Settings**
+#  Cambium Passpoint Conversion - Basic Settings
 
 For support, please contact: [support@longfisolutions.com](mailto:support@longfisolutions.com)
 
 ***
 
-**High-Level Steps:**
+###  High-Level Steps:
 
 1. Deploy Local RadSecProxy
 2. Import LongFi WLAN JSON Config File into Cambium CnMaestro
@@ -19,7 +17,7 @@ For support, please contact: [support@longfisolutions.com](mailto:support@longfi
 
 ***
 
-**Deploy Local RadSecProxy**
+###  Deploy Local RadSecProxy
 
 Cambium does not support RadSec natively, so we need a Local RadSecProxy running on a Virtual Machine on-site, or in a cloud VM that can be accessed via a VPN tunnel from the local network.  Please visit our public GitHub repository for instructions on deploying the local radsecproxy:
 
@@ -31,7 +29,7 @@ Take note of the IP address and shared secret of your Local RadSecProxy deployme
 
 ***
 
-**Import LongFi WLAN JSON Config File into Cambium CnMaestro**
+### Import LongFi WLAN JSON Config File into Cambium CnMaestro
 
 You will be provided with a JSON configuration file that has 90% of what is required pre-configured for a new WLAN in Cambium CnMaestro.  This will be attached to your onboarding and activation emails.
 
@@ -46,7 +44,7 @@ You will be provided with a JSON configuration file that has 90% of what is requ
 
 ![](/assets/images/Cambium%202.png)
 
-**Change the Access VLAN, AAA Servers, and any other SSID settings**
+###  Change the Access VLAN, AAA Servers, and any other SSID settings
 
 After importing the JSON Config File into CNMaestro, you will see it in the WI-FI Profile list.
 
