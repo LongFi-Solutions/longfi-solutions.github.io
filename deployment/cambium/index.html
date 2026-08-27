@@ -711,75 +711,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#high-level-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        High Level Steps:
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deploy-radsec-proxy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Deploy Radsec Proxy:
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Deploy Radsec Proxy:">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 1
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 3
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -796,25 +727,77 @@
 
 
 <h1 id="cambium-configuration">Cambium Configuration<a class="headerlink" href="#cambium-configuration" title="Permanent link">&para;</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Coming Soon</p>
-<p>This guide is currently being written. Please contact <a href="https://www.longfisolutions.com/">LongFi Solutions</a> for assistance in the meantime.</p>
-</div>
-<p>:)<img alt="" class="img-sm" src="/assets/images/757530615011.jpg" /></p>
+<p><strong>Cambium Passpoint Conversion - Basic Settings</strong></p>
+<p>For support, please contact: <a href="mailto:support@longfisolutions.com">support@longfisolutions.com</a></p>
 <hr />
-<h2 id="high-level-steps"><strong>High Level Steps:</strong><a class="headerlink" href="#high-level-steps" title="Permanent link">&para;</a></h2>
-<ul>
+<p><strong>High-Level Steps:</strong></p>
+<ol>
 <li>Deploy Local RadSecProxy</li>
 <li>Import LongFi WLAN JSON Config File into Cambium CnMaestro</li>
 <li>Change the Access VLAN, AAA Servers, and any other SSID settings</li>
 <li>Enable SSID, deploy WLAN to AP Groups, Test Validate</li>
+</ol>
+<hr />
+<p><strong>Deploy Local RadSecProxy</strong></p>
+<p>Cambium does not support RadSec natively, so we need a Local RadSecProxy running on a Virtual Machine on-site, or in a cloud VM that can be accessed via a VPN tunnel from the local network.  Please visit our public GitHub repository for instructions on deploying the local radsecproxy:</p>
+<p><a href="https://github.com/LongFi-Solutions/longfi-radsecproxy">https://github.com/LongFi-Solutions/longfi-radsecproxy</a></p>
+<p>Take note of the IP address and shared secret of your Local RadSecProxy deployment.  You will need this to configure the AAA RADIUS servers in the Passpoint/Hotspot 2.0 WLAN.</p>
+<p>*Please note that Cambium has native RadSec support on their roadmap, with a planned OS and firmware update in the fall of 2026</p>
+<hr />
+<p><strong>Import LongFi WLAN JSON Config File into Cambium CnMaestro</strong></p>
+<p>You will be provided with a JSON configuration file that has 90% of what is required pre-configured for a new WLAN in Cambium CnMaestro.  This will be attached to your onboarding and activation emails.</p>
+<ul>
+<li>To import the JSON Config file, from the CnMaestro main dashboard, on the left menu bar go to Configuration &gt; Wi-Fi Profiles</li>
+<li>Click the button to Import a Wi-Fi Profile</li>
+</ul>
+<p><img alt="" src="/assets/images/Cambium%201.png" /></p>
+<ul>
+<li>In the Import WLAN window, give the Wi-Fi Profile a Name</li>
+<li>Under Configuration file, select the JSON Config file provided by LongFi</li>
+<li>Click Import to import the config</li>
 </ul>
 <hr />
-<h2 id="deploy-radsec-proxy"><strong>Deploy Radsec Proxy:</strong><a class="headerlink" href="#deploy-radsec-proxy" title="Permanent link">&para;</a></h2>
-<h3 id="step-1">Step 1<a class="headerlink" href="#step-1" title="Permanent link">&para;</a></h3>
-<p>Go to config</p>
-<h3 id="step-2">Step 2<a class="headerlink" href="#step-2" title="Permanent link">&para;</a></h3>
-<h3 id="step-3">Step 3<a class="headerlink" href="#step-3" title="Permanent link">&para;</a></h3>
+<p><strong>Change the Access VLAN, AAA Servers, and any other SSID settings</strong></p>
+<p>After importing the JSON Config File into CNMaestro, you will see it in the WI-FI Profile list.</p>
+<p>Click on the newly created WLAN and change the following:</p>
+<ul>
+<li>SSID Broadcast Name (if you like)</li>
+<li>SSID Enable (disabled by default, enable when ready)</li>
+<li>
+<p>VLAN - set the access VLAN for an isolated VLAN for your guest/passpoint network segment</p>
+</li>
+<li>
+<p>Band - enable 6 GHz if required; the JSON config has 5 GHz only (we do not recommend 2.4 GHz)</p>
+</li>
+<li>
+<p>AAA Servers - Set the Authentication Server Host IP to the IP of your Local RadSecproxy VM</p>
+</li>
+<li>AAA Servers - Set the Secret to the secret you created when deploying your Local RadSecproxy VM</li>
+<li>AAA Servers - Set the Accounting Server Host IP to the IP of your Local RadSecproxy VM</li>
+<li>
+<p>AAA Servers - Set the Secret to the secret you created when deploying your Local RadSecproxy VM</p>
+</li>
+<li>
+<p>AAA Servers &gt; Advanced Settings - Set the NAS-Identifier to Custom and copy paste the NAS ID you used to activate the site.  This is normally a MAC address and will be included in your onboarding and activation emails.</p>
+</li>
+<li>
+<p>Passpoint &gt; NAI Realms - add any additional NAI Realms that were approved for activation for your site.  These will be provided in your onboarding and activation emails.  Include the EAP methods specified in the emails.</p>
+</li>
+<li>
+<p>Passpoint &gt; 3GPP Cellular Network Configuration - add any 3GPP PLMN IDs that were activated for your site.  These will be provided in your onboarding and activation emails.</p>
+</li>
+<li>
+<p>Set any other SSID settings per your design and requirements</p>
+</li>
+<li>Save the WLAN and deploy it to the required APs and AP Groups for your site</li>
+</ul>
+<p><strong>*Important Note:</strong> The NAS-Identifier (NAS ID) must be unique for every site.  Cambium CnMaestro will allow you to clone the WLAN, give it a new name, and set the unique NAS ID under AAA Servers &gt; Advanced Settings &gt; NAS-Identifier.  There may be a workflow for deploying a single WLAN to multiple sites, and using the Templates or User-Defined Overrides in CnMaestro to set the NAS ID to the unique value for each site.  LongFi has not tested this workflow at the time of writing this guide.  It may look something like this:</p>
+<p>{</p>
+<p>"radiusServers": {</p>
+<p>"nas_id": "custom",</p>
+<p>"nas_id_custom": "${NAS_ID}"</p>
+<p>}</p>
+<p>}</p>
 
 
 
