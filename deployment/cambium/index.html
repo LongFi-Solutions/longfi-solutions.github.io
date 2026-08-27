@@ -75,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#cambium-passpoint-conversion-basic-settings" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -703,6 +708,60 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#high-level-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High-Level Steps:
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-local-radsecproxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deploy Local RadSecProxy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import-longfi-wlan-json-config-file-into-cambium-cnmaestro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Import LongFi WLAN JSON Config File into Cambium CnMaestro
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change-the-access-vlan-aaa-servers-and-any-other-ssid-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Change the Access VLAN, AAA Servers, and any other SSID settings
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -719,13 +778,10 @@
 
 
 
-  <h1>Cambium Configuration</h1>
-
-<p><img alt="" src="/assets/images/LongFi-Line-Color.png" /></p>
-<p><strong>Cambium Passpoint Conversion - Basic Settings</strong></p>
+<h1 id="cambium-passpoint-conversion-basic-settings">Cambium Passpoint Conversion - Basic Settings<a class="headerlink" href="#cambium-passpoint-conversion-basic-settings" title="Permanent link">&para;</a></h1>
 <p>For support, please contact: <a href="mailto:support@longfisolutions.com">support@longfisolutions.com</a></p>
 <hr />
-<p><strong>High-Level Steps:</strong></p>
+<h3 id="high-level-steps">High-Level Steps:<a class="headerlink" href="#high-level-steps" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Deploy Local RadSecProxy</li>
 <li>Import LongFi WLAN JSON Config File into Cambium CnMaestro</li>
@@ -733,13 +789,13 @@
 <li>Enable SSID, deploy WLAN to AP Groups, Test Validate</li>
 </ol>
 <hr />
-<p><strong>Deploy Local RadSecProxy</strong></p>
+<h3 id="deploy-local-radsecproxy">Deploy Local RadSecProxy<a class="headerlink" href="#deploy-local-radsecproxy" title="Permanent link">&para;</a></h3>
 <p>Cambium does not support RadSec natively, so we need a Local RadSecProxy running on a Virtual Machine on-site, or in a cloud VM that can be accessed via a VPN tunnel from the local network.  Please visit our public GitHub repository for instructions on deploying the local radsecproxy:</p>
 <p><a href="https://github.com/LongFi-Solutions/longfi-radsecproxy">https://github.com/LongFi-Solutions/longfi-radsecproxy</a></p>
 <p>Take note of the IP address and shared secret of your Local RadSecProxy deployment.  You will need this to configure the AAA RADIUS servers in the Passpoint/Hotspot 2.0 WLAN.</p>
 <p>*Please note that Cambium has native RadSec support on their roadmap, with a planned OS and firmware update in the fall of 2026</p>
 <hr />
-<p><strong>Import LongFi WLAN JSON Config File into Cambium CnMaestro</strong></p>
+<h3 id="import-longfi-wlan-json-config-file-into-cambium-cnmaestro">Import LongFi WLAN JSON Config File into Cambium CnMaestro<a class="headerlink" href="#import-longfi-wlan-json-config-file-into-cambium-cnmaestro" title="Permanent link">&para;</a></h3>
 <p>You will be provided with a JSON configuration file that has 90% of what is required pre-configured for a new WLAN in Cambium CnMaestro.  This will be attached to your onboarding and activation emails.</p>
 <ul>
 <li>To import the JSON Config file, from the CnMaestro main dashboard, on the left menu bar go to Configuration &gt; Wi-Fi Profiles</li>
@@ -752,7 +808,7 @@
 <li>Click Import to import the config</li>
 </ul>
 <p><img alt="" src="/assets/images/Cambium%202.png" /></p>
-<p><strong>Change the Access VLAN, AAA Servers, and any other SSID settings</strong></p>
+<h3 id="change-the-access-vlan-aaa-servers-and-any-other-ssid-settings">Change the Access VLAN, AAA Servers, and any other SSID settings<a class="headerlink" href="#change-the-access-vlan-aaa-servers-and-any-other-ssid-settings" title="Permanent link">&para;</a></h3>
 <p>After importing the JSON Config File into CNMaestro, you will see it in the WI-FI Profile list.</p>
 <p>Click on the newly created WLAN and change the following:</p>
 <p><img alt="" src="/assets/images/Cambium%204.png" /></p>
