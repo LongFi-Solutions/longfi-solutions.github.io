@@ -96,7 +96,9 @@ Click on the newly created WLAN and change the following:
 
     The NAS-Identifier (NAS ID) must be unique for every site. Cambium CnMaestro will allow you to clone the WLAN, give it a new name, and set the unique NAS ID under **AAA Servers > Advanced Settings > NAS-Identifier**. There may be a workflow for deploying a single WLAN to multiple sites, and using the Templates or User-Defined Overrides in CnMaestro to set the NAS ID to the unique value for each site. LongFi has not tested this workflow at the time of writing this guide. It may look something like this:
 
-   {
+ !!!   
+
+    {
       "radiusServers": {
         "nas_id": "custom",
         "nas_id_custom": "${NAS_ID}"
