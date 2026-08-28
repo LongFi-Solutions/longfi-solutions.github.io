@@ -36,13 +36,13 @@ You will be provided with a JSON configuration file that has 90% of what is requ
 - To import the JSON Config file, from the CnMaestro main dashboard, on the left menu bar go to Configuration > Wi-Fi Profiles
 - Click the button to Import a Wi-Fi Profile
 
-![](/assets/images/Cambium%201.png)
+![](/assets/images/Cambium%20Maestro%201%20-%20WIFI%20Profiles.png)
 
 - In the Import WLAN window, give the Wi-Fi Profile a Name
 - Under Configuration file, select the JSON Config file provided by LongFi
 - Click Import to import the config
 
-![](/assets/images/Cambium%202.png)
+![](/assets/images/Cambium%20Maestro%202%20-%20JSON.png)
 
 ###  Change the Access VLAN, AAA Servers, and any other SSID settings
 
@@ -50,33 +50,44 @@ After importing the JSON Config File into CNMaestro, you will see it in the WI-F
 
 Click on the newly created WLAN and change the following:
 
-![](/assets/images/Cambium%204.png)
+![](/assets/images/Cambium%20Maestro%203%20-%20WLAN.png)
 
 - SSID Broadcast Name (if you like)
 - SSID Enable (disabled by default, enable when ready)
 - VLAN - set the access VLAN for an isolated VLAN for your guest/passpoint network segment
 
-![](/assets/images/Cambium%205.png)
+![](/assets/images/Cambium%20Maestro%204%20-%20SSID.png)
 
 - Band - enable 6 GHz if required; the JSON config has 5 GHz only (we do not recommend 2.4 GHz)
 
-![](/assets/images/Cambium%206%20-%20Bands.png)
+![](/assets/images/Cambium%20Maestro%205%20-%20Band.png)
 
 - AAA Servers - Set the Authentication Server Host IP to the IP of your Local RadSecproxy VM
 - AAA Servers - Set the Secret to the secret you created when deploying your Local RadSecproxy VM
 - AAA Servers - Set the Accounting Server Host IP to the IP of your Local RadSecproxy VM
 - AAA Servers - Set the Secret to the secret you created when deploying your Local RadSecproxy VM
 
-![](/assets/images/Cambium%207%20-%20AAA%20Servers.png)
+![](/assets/images/Cambium%20Maestro%206%20-%20AAA.png)
 
 - AAA Servers > Advanced Settings - Set the NAS-Identifier to Custom and copy paste the NAS ID you used to activate the site.  This is normally a MAC address and will be included in your onboarding and activation emails.
 
-![](/assets/images/Cambium%208%20-%20NAS%20ID.png)
+![](/assets/images/Cambium%20Maestro%207%20-%20NAS.png)
 
-- Passpoint > NAI Realms - add any additional NAI Realms that were approved for activation for your site.  These will be provided in your onboarding and activation emails.  Include the EAP methods specified in the emails.
+- Click on Passpoint, then expand the **NAI (Network Access Identifier) Realm List,** and click on **Add New.**
+
+![](/assets/images/Cambium%20Maestro%208%20-%20NAI.png)
+
+- Add any additional NAI Realms that were approved for activation for your site.  These will be provided in your onboarding and activation emails.  Include the EAP methods specified in the emails. Click on Add, then Save.
+
+![](/assets/images/Cambium%20Maestro%209%20-%20NAI%201.png)
+
+* Expand the **3GPP Cellular Network Information,** and click on **Add New.**
+
+![](/assets/images/Cambium%20Maestro%2010%20-%203GPP.png)
+
 - Passpoint > 3GPP Cellular Network Configuration - add any 3GPP PLMN IDs that were activated for your site.  These will be provided in your onboarding and activation emails.
 
-![](/assets/images/Cambium%209%20-%20NAI.png)
+![](/assets/images/Cambium%20Maestro%2011%20-%203GPP%201.png)
 
 - Set any other SSID settings per your design and requirements
 - Save the WLAN and deploy it to the required APs and AP Groups for your site
