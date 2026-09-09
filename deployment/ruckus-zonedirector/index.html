@@ -780,6 +780,7 @@
 </li>
 <li>Click <strong>OK</strong></li>
 </ol>
+<p><img alt="" src="/assets/images/ZoneDirector%20-%201%20AAA.png" /></p>
 <p><strong>Step 2: Configure AAA Server Accounting</strong></p>
 <ol>
 <li>Navigate to <strong>Configure</strong> → <strong>AAA Servers</strong></li>
@@ -794,6 +795,7 @@
 </li>
 <li>Click <strong>OK</strong></li>
 </ol>
+<p><img alt="" src="/assets/images/ZoneDirector%20-%202%20AAA%20Acc.png" /></p>
 <p><strong>Step 3: Configure Hotspot 2.0 Services</strong></p>
 <ol>
 <li>Navigate to <strong>Configure</strong> → <strong>Hotspot 2.0 Services</strong></li>
@@ -808,46 +810,50 @@
 <p>3.3 – Click in Advanced Options and under <strong>Roaming Consortium List,</strong> Click <strong>Create New and add the following:</strong></p>
 <p>Name: Orion - Organization ID: F4F5E8F5F4</p>
 <p>Name: Uplink - Organization ID: 2A2F830000</p>
-<p>3.4 – The configuration under <strong>NAI Realm List and under 3GPP Cellular Network information will be provided in your Carrier Offload Approval Email. These may only be activated for approved sites.</strong></p>
-<p><strong>3.5 – Click OK</strong></p>
-<p><strong>Step 4: Configure Hotspot 2.0 Services</strong></p>
+<p><img alt="" src="/assets/images/ZoneDirector%20-%203%20hotspot.png" /></p>
+<p>3.4 – NAI Realm and 3GPP Cellular Network - Use the values provided in your Carrier Offload Approval Email. These settings may only be activated for approved sites.</p>
+<p>3.5  Click OK to save the profile.
+ 
+<strong>Step 4: Configure Hotspot 2.0 Services</strong></p>
 <ol>
 <li>Navigate to <strong>Configure</strong> → <strong>Hotspot 2.0 Services</strong></li>
 <li>Under <strong>Operator Profiles,</strong> Click <strong>Create New</strong></li>
 <li>Configure:</li>
 </ol>
-<p>3.1 - Add a Name</p>
-<p>3.2 – Venue information. Specify the Group and Type as the option that best matches your site.</p>
+<p>3.1 – Name - Enter a descriptive operator profile name.</p>
+<p>3.2 – Venue information. Select the Group and Type that best match the site.</p>
 <p>3.3 – Internet Option - Enable the Specified with connectivity to internet option</p>
 <p>3.4 - <strong>Access Network Type – Chargeable Public</strong></p>
 <p><strong>3.5 - IP Address Type – IPv4 Address - Single NATed private address</strong></p>
 <p><strong>3.6 -  IP Address Type – IPv6 Address – Not Available</strong></p>
-<p><strong>3.7 - Operator Friendly Name – Click in Create NEW, chose Englis under Language and under Name add LONGFISOLUTIONS:US. Click Save</strong></p>
-<p><strong>3.8 - Service Provider Profiles – Enable the Service Provider Profile previously created.</strong></p>
-<p><strong>3.9 – Click OK</strong></p>
+<p><strong>3.7 - Operator Friendly Name – Click Create NEW, choose English under Language, and under Name add LONGFISOLUTIONS:US. Click Save</strong></p>
+<p><strong>3.8 - Service Provider Profiles – Enable the Service Provider Profile created in Step 3.</strong></p>
+<p><strong>3.9 – Click OK to save the profile.</strong></p>
+<p><img alt="" src="/assets/images/ZoneDirector%20-%204%20profiles.png" /></p>
 <p><strong>Step 5: Create WLAN</strong></p>
 <ol>
 <li>Navigate to <strong>Configure</strong> → <strong>WLANs</strong></li>
 <li>Under WLANs, Click <strong>Create New</strong></li>
 <li>Configure:</li>
 </ol>
-<p><strong>3.1 Name – Add the WLAN name</strong></p>
-<p><strong>3.2 ESSID – Add the SSID name</strong></p>
+<p><strong>3.1 Name – Enter the WLAN name</strong></p>
+<p><strong>3.2 ESSID – Enter the SSID name</strong></p>
 <p><strong>3.3 Type - Hotspot 2.0</strong></p>
 <p><strong>3.4 Method - 802.1x EAP</strong></p>
-<p><strong>3.5 Fast BSS Transition – Enable Enable 802.11r FT Roaming</strong></p>
+<p><strong>3.5 Fast BSS Transition – Enable 802.11r FT Roaming</strong></p>
 <p><strong>3.6 Encryption Options – Enable WPA2 and AES</strong></p>
-<p><strong>3.7 Hotspot 2.0 Operator – Choose the previously created Operator</strong></p>
-<p><strong>3.8 Authentication Server - Choose the previously created Radius Server</strong></p>
-<p><strong>3.9 Wireless Client Isolation – Enable  Isolate wireless client traffic from other clients on the same AP &amp;  Isolate wireless client traffic from all hosts on the same VLAN/subnet. Choose the Gateway &amp; DNS option</strong></p>
-<p><strong>3.10 Under</strong> <a href="https://10.0.161.100/admin/conf_wlans.jsp"><strong>Advanced Options</strong></a><strong>, next to Accounting Server, choose the previously created Radius Accounting Server</strong></p>
+<p><strong>3.7 Hotspot 2.0 Operator – Select the Operator Profile created in Step 4.</strong></p>
+<p><strong>3.8 Authentication Server - Select the RADIUS server created in Step 1.</strong></p>
+<p><strong>3.9 Wireless Client Isolation – Enable both client-isolation options. For VLAN/subnet isolation, select Gateway &amp; DNS.</strong></p>
+<p><strong>3.10  Accounting Server - Under Advanced Options, select the RADIUS Accounting server created in Step 2.</strong></p>
 <p><strong>3.11 Proxy ARP – Enable Proxy ARP</strong></p>
 <p><strong>3.12 Inactivity Timeout - Terminate idle user session after 5 minutes of inactivity</strong></p>
 <p><strong>3.13 Radio Resource Management - Enable 802.11k Neighbor-list Report</strong></p>
+<p><img alt="" src="/assets/images/ZoneDirector%20-%205%20WLAN.png" /></p>
 <p><strong>Step 6: Create WLAN Group</strong></p>
 <ol>
 <li>Under WLAN Groups, Click <strong>Create New</strong></li>
-<li><strong>Choose the previously created passpoint WLAN and add other members as needed.</strong></li>
+<li>Select the Passpoint WLAN created in Step 5 and add any other WLAN members required for the site.</li>
 </ol>
 
 
