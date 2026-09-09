@@ -133,7 +133,7 @@ Name: Uplink - Organization ID: 2A2F830000
 
 **3.4 Method - 802.1x EAP**
 
-**3.5 Fast BSS Transition – Enable 802.11r FT Roaming**
+**3.5 Fast BSS Transition – Do NOT Enable 802.11r FT Roaming**
 
 **3.6 Encryption Options – Enable WPA2 and AES**
 
@@ -145,11 +145,11 @@ Name: Uplink - Organization ID: 2A2F830000
 
 **3.10  Accounting Server -** Under **Advanced Options,** select the **RADIUS Accounting server** created in Step 2.
 
-**3.11 Proxy ARP – Enable Proxy ARP**
+**3.11 Access VLAN – Enter the correct VLAN for this SSID**
 
-**3.12 Inactivity Timeout - Terminate idle user session after 5 minutes of inactivity**
+**3.12 Proxy ARP – Enable Proxy ARP**
 
-**3.13 Radio Resource Management - Enable 802.11k Neighbor-list Report**
+**3.13 Inactivity Timeout - Terminate idle user session after 5 minutes of inactivity**
 
  ![](/assets/images/ZoneDirector%20-%205%20WLAN.png)
 
