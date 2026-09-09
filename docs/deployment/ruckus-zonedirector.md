@@ -37,6 +37,8 @@ Take note of the IP address and shared secret of your Local RadSecProxy deployme
     - **Shared Secret**: {Secret}
 4. Click **OK**
 
+![](/assets/images/ZoneDirector%20-%201%20AAA.png)
+
 **Step 2: Configure AAA Server Accounting**
 
 1. Navigate to **Configure** → **AAA Servers**
@@ -48,6 +50,8 @@ Take note of the IP address and shared secret of your Local RadSecProxy deployme
     - **Port**: {AUTH_PORT}
     - **Shared Secret**: {Secret}
 4. Click **OK**
+
+![](/assets/images/ZoneDirector%20-%202%20AAA%20Acc.png)
 
 **Step 3: Configure Hotspot 2.0 Services**
 
@@ -71,19 +75,21 @@ Name: Orion - Organization ID: F4F5E8F5F4
 
 Name: Uplink - Organization ID: 2A2F830000
 
-3.4 – The configuration under **NAI Realm List and under 3GPP Cellular Network information will be provided in your Carrier Offload Approval Email. These may only be activated for approved sites.**
+![](/assets/images/ZoneDirector%20-%203%20hotspot.png)
 
-**3.5 – Click OK**
+3.4 – NAI Realm and 3GPP Cellular Network - Use the values provided in your Carrier Offload Approval Email. These settings may only be activated for approved sites.
 
+3.5  Click OK to save the profile.
+ 
 **Step 4: Configure Hotspot 2.0 Services**
 
 1. Navigate to **Configure** → **Hotspot 2.0 Services**
 2. Under **Operator Profiles,** Click **Create New**
 3. Configure:
 
-3.1 - Add a Name
+3.1 – Name - Enter a descriptive operator profile name.
 
-3.2 – Venue information. Specify the Group and Type as the option that best matches your site.
+3.2 – Venue information. Select the Group and Type that best match the site.
 
 3.3 – Internet Option - Enable the Specified with connectivity to internet option
 
@@ -93,37 +99,40 @@ Name: Uplink - Organization ID: 2A2F830000
 
 **3.6 -  IP Address Type – IPv6 Address – Not Available**
 
-**3.7 - Operator Friendly Name – Click in Create NEW, chose Englis under Language and under Name add LONGFISOLUTIONS:US. Click Save**
+**3.7 - Operator Friendly Name – Click Create NEW, choose English under Language, and under Name add LONGFISOLUTIONS:US. Click Save**
 
-**3.8 - Service Provider Profiles – Enable the Service Provider Profile previously created.**
+**3.8 - Service Provider Profiles – Enable the Service Provider Profile created in Step 3.**
 
-**3.9 – Click OK**
+**3.9 – Click OK to save the profile.**
 
+ ![](/assets/images/ZoneDirector%20-%204%20profiles.png)
+
+ 
 **Step 5: Create WLAN**
 
 1. Navigate to **Configure** → **WLANs**
 2. Under WLANs, Click **Create New**
 3. Configure:
 
-**3.1 Name – Add the WLAN name**
+**3.1 Name – Enter the WLAN name**
 
-**3.2 ESSID – Add the SSID name**
+**3.2 ESSID – Enter the SSID name**
 
 **3.3 Type - Hotspot 2.0**
 
 **3.4 Method - 802.1x EAP**
 
-**3.5 Fast BSS Transition – Enable Enable 802.11r FT Roaming**
+**3.5 Fast BSS Transition – Enable 802.11r FT Roaming**
 
 **3.6 Encryption Options – Enable WPA2 and AES**
 
-**3.7 Hotspot 2.0 Operator – Choose the previously created Operator**
+**3.7 Hotspot 2.0 Operator – Select the Operator Profile created in Step 4.**
 
-**3.8 Authentication Server - Choose the previously created Radius Server**
+**3.8 Authentication Server - Select the RADIUS server created in Step 1.**
 
-**3.9 Wireless Client Isolation – Enable  Isolate wireless client traffic from other clients on the same AP &  Isolate wireless client traffic from all hosts on the same VLAN/subnet. Choose the Gateway & DNS option**
+**3.9 Wireless Client Isolation – Enable both client-isolation options. For VLAN/subnet isolation, select Gateway & DNS.**
 
-**3.10 Under** [**Advanced Options**](https://10.0.161.100/admin/conf_wlans.jsp)**, next to Accounting Server, choose the previously created Radius Accounting Server**
+**3.10  Accounting Server - Under Advanced Options, select the RADIUS Accounting server created in Step 2.**
 
 **3.11 Proxy ARP – Enable Proxy ARP**
 
@@ -131,7 +140,9 @@ Name: Uplink - Organization ID: 2A2F830000
 
 **3.13 Radio Resource Management - Enable 802.11k Neighbor-list Report**
 
+ ![](/assets/images/ZoneDirector%20-%205%20WLAN.png)
+
 **Step 6: Create WLAN Group**
 
 1. Under WLAN Groups, Click **Create New**
-2. **Choose the previously created passpoint WLAN and add other members as needed.**
+2. Select the Passpoint WLAN created in Step 5 and add any other WLAN members required for the site.
