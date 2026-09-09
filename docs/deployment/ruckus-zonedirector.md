@@ -6,7 +6,9 @@ Ruckus Zone Director Passpoint Conversion - Basic Settings[¶](https://longfi-so
 
 For support, please contact: [support@longfisolutions.com](mailto:support@longfisolutions.com)
 
-High-Level Steps:[¶](https://longfi-solutions.github.io/deployment/cambium/#high-level-steps "Permanent link")
+***
+
+## High-Level Steps:[¶](https://longfi-solutions.github.io/deployment/cambium/#high-level-steps "Permanent link")
 
 1. Deploy Local RadSecProxy
 2. ZoneDirector Configuration
@@ -25,7 +27,9 @@ Ruckus ZoneDirector does not support RadSec natively, so we need a Local RadSecP
 
 Take note of the IP address and shared secret of your Local RadSecProxy deployment.  You will need this to configure the AAA RADIUS servers in Zone Director.
 
-**Step 1: Configure AAA Server**
+***
+
+### **Step 1: Configure AAA Server**
 
 1. Navigate to **Configure** → **AAA Servers**
 2. Click **Create New**
@@ -39,7 +43,9 @@ Take note of the IP address and shared secret of your Local RadSecProxy deployme
 
 ![](/assets/images/ZoneDirector%20-%201%20AAA.png)
 
-**Step 2: Configure AAA Server Accounting**
+***
+
+### **Step 2: Configure AAA Server Accounting**
 
 1. Navigate to **Configure** → **AAA Servers**
 2. Click **Create New**
@@ -53,7 +59,9 @@ Take note of the IP address and shared secret of your Local RadSecProxy deployme
 
 ![](/assets/images/ZoneDirector%20-%202%20AAA%20Acc.png)
 
-**Step 3: Configure Hotspot 2.0 Services**
+***
+
+### **Step 3: Configure Hotspot 2.0 Services**
 
 1. Navigate to **Configure** → **Hotspot 2.0 Services**
 2. Under **Service Provider Profiles,** Click **Create New**
@@ -81,7 +89,9 @@ Name: Uplink - Organization ID: 2A2F830000
 
 3.5  Click **OK** to save the profile.
 
-**Step 4: Configure Hotspot 2.0 Services**
+***
+
+### **Step 4: Configure Hotspot 2.0 Services**
 
 1. Navigate to **Configure** → **Hotspot 2.0 Services**
 2. Under **Operator Profiles,** Click **Create New**
@@ -107,7 +117,9 @@ Name: Uplink - Organization ID: 2A2F830000
 
  ![](/assets/images/ZoneDirector%20-%204%20profiles.png)
 
-**Step 5: Create WLAN**
+***
+
+### **Step 5: Create WLAN**
 
 1. Navigate to **Configure** → **WLANs**
 2. Under **WLANs**, Click **Create New**
@@ -141,7 +153,9 @@ Name: Uplink - Organization ID: 2A2F830000
 
  ![](/assets/images/ZoneDirector%20-%205%20WLAN.png)
 
-**Step 6: Create WLAN Group**
+***
+
+### **Step 6: Create WLAN Group**
 
 1. Under **WLAN** Groups, Click **Create New**
 2. Select the **Passpoint WLAN** created in **Step 5** and add any other WLAN members required for the site.
