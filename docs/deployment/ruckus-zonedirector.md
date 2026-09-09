@@ -70,17 +70,18 @@ Take note of the IP address and shared secret of your Local RadSecProxy deployme
 - 3.1 – **Name** - Enter a descriptive profile name.
 - 3.2 - Under **Domain Name List,** Click **Create New and add the following domains:**
 
-        freedomfi.com
-
-        hellohelium.com
-
-        longfisolutions.com
+```text title="Domain Name List"
+freedomfi.com
+hellohelium.com
+longfisolutions.com
+```
 
 - 3.3 – Click Advanced Options and, under **Roaming Consortium List,** Click **Create New** and add the following:
 
+```text
 Name: Orion - Organization ID: F4F5E8F5F4
-
 Name: Uplink - Organization ID: 2A2F830000
+```
 
 ![](/assets/images/ZoneDirector%20-%203%20hotspot.png)
 
