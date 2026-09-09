@@ -2,13 +2,13 @@
 title: Ruckus ZoneDirector
 ---
 
-Ruckus Zone Director Passpoint Conversion - Basic Settings[¶](https://longfi-solutions.github.io/deployment/cambium/#cambium-passpoint-conversion-basic-settings "Permanent link")
+Ruckus Zone Director Passpoint Conversion - Basic Settings
 
 For support, please contact: [support@longfisolutions.com](mailto:support@longfisolutions.com)
 
 ***
 
-## High-Level Steps:[¶](https://longfi-solutions.github.io/deployment/cambium/#high-level-steps "Permanent link")
+## High-Level Steps:
 
 1. Deploy Local RadSecProxy
 2. ZoneDirector Configuration
@@ -19,7 +19,7 @@ For support, please contact: [support@longfisolutions.com](mailto:support@longf
 7. Create WLAN Group
 8. Test & Validate
 
-Deploy Local RadSecProxy[¶](https://longfi-solutions.github.io/deployment/cambium/#deploy-local-radsecproxy "Permanent link")
+Deploy Local RadSecProxy
 
 Ruckus ZoneDirector does not support RadSec natively, so we need a Local RadSecProxy running on a Virtual Machine on-site, or in a cloud VM that can be accessed via a VPN tunnel from the local network.  Please visit our public GitHub repository for instructions on deploying the local radsecproxy:
 
