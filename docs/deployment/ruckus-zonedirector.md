@@ -67,17 +67,16 @@ Take note of the IP address and shared secret of your Local RadSecProxy deployme
 2. Under **Service Provider Profiles,** Click **Create New**
 3. Configure:
 
-3.1 – **Name** - Enter a descriptive profile name.
+- 3.1 – **Name** - Enter a descriptive profile name.
+- 3.2 - Under **Domain Name List,** Click **Create New and add the following domains:**
 
-3.2 - Under **Domain Name List,** Click **Create New and add the following domains:**
+        freedomfi.com
 
-freedomfi.com
+        hellohelium.com
 
-hellohelium.com
+        longfisolutions.com
 
-longfisolutions.com
-
-3.3 – Click Advanced Options and, under **Roaming Consortium List,** Click **Create New** and add the following:
+- 3.3 – Click Advanced Options and, under **Roaming Consortium List,** Click **Create New** and add the following:
 
 Name: Orion - Organization ID: F4F5E8F5F4
 
