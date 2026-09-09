@@ -755,11 +755,11 @@
 <ol>
 <li>Deploy Local RadSecProxy</li>
 <li>ZoneDirector Configuration</li>
-<li><strong>Configure AAA Server</strong></li>
-<li><strong>Configure AAA Server Accounting</strong></li>
-<li><strong>Configure Hotspot 2.0 Services</strong></li>
-<li><strong>Create WLAN</strong></li>
-<li><strong>Create WLAN Group</strong></li>
+<li>Configure AAA Server</li>
+<li>Configure AAA Server Accounting</li>
+<li>Configure Hotspot 2.0 Services</li>
+<li>Create WLAN</li>
+<li>Create WLAN Group</li>
 <li>Test &amp; Validate</li>
 </ol>
 <p>Deploy Local RadSecProxy<a href="https://longfi-solutions.github.io/deployment/cambium/#deploy-local-radsecproxy" title="Permanent link">¶</a></p>
@@ -802,58 +802,57 @@
 <li>Under <strong>Service Provider Profiles,</strong> Click <strong>Create New</strong></li>
 <li>Configure:</li>
 </ol>
-<p>3.1 – Name: Enter a descriptive profile name.</p>
+<p>3.1 – <strong>Name</strong> - Enter a descriptive profile name.</p>
 <p>3.2 - Under <strong>Domain Name List,</strong> Click <strong>Create New and add the following domains:</strong></p>
 <p>freedomfi.com</p>
 <p>hellohelium.com</p>
 <p>longfisolutions.com</p>
-<p>3.3 – Click in Advanced Options and under <strong>Roaming Consortium List,</strong> Click <strong>Create New and add the following:</strong></p>
+<p>3.3 – Click Advanced Options and, under <strong>Roaming Consortium List,</strong> Click <strong>Create New</strong> and add the following:</p>
 <p>Name: Orion - Organization ID: F4F5E8F5F4</p>
 <p>Name: Uplink - Organization ID: 2A2F830000</p>
 <p><img alt="" src="/assets/images/ZoneDirector%20-%203%20hotspot.png" /></p>
 <p>3.4 – NAI Realm and 3GPP Cellular Network - Use the values provided in your Carrier Offload Approval Email. These settings may only be activated for approved sites.</p>
-<p>3.5  Click OK to save the profile.
- 
-<strong>Step 4: Configure Hotspot 2.0 Services</strong></p>
+<p>3.5  Click <strong>OK</strong> to save the profile.</p>
+<p><strong>Step 4: Configure Hotspot 2.0 Services</strong></p>
 <ol>
 <li>Navigate to <strong>Configure</strong> → <strong>Hotspot 2.0 Services</strong></li>
 <li>Under <strong>Operator Profiles,</strong> Click <strong>Create New</strong></li>
 <li>Configure:</li>
 </ol>
-<p>3.1 – Name - Enter a descriptive operator profile name.</p>
-<p>3.2 – Venue information. Select the Group and Type that best match the site.</p>
-<p>3.3 – Internet Option - Enable the Specified with connectivity to internet option</p>
+<p>3.1 – <strong>Name</strong> - Enter a descriptive operator profile name.</p>
+<p>3.2 – <strong>Venue information</strong> - Select the Group and Type that best match the site.</p>
+<p>3.3 – <strong>Internet Option</strong> - Enable the Specified with connectivity to internet option</p>
 <p>3.4 - <strong>Access Network Type – Chargeable Public</strong></p>
 <p><strong>3.5 - IP Address Type – IPv4 Address - Single NATed private address</strong></p>
 <p><strong>3.6 -  IP Address Type – IPv6 Address – Not Available</strong></p>
-<p><strong>3.7 - Operator Friendly Name – Click Create NEW, choose English under Language, and under Name add LONGFISOLUTIONS:US. Click Save</strong></p>
-<p><strong>3.8 - Service Provider Profiles – Enable the Service Provider Profile created in Step 3.</strong></p>
-<p><strong>3.9 – Click OK to save the profile.</strong></p>
+<p><strong>3.7 - Operator Friendly Name –</strong> Click <strong>Create NEW,</strong> choose <strong>English</strong> under <strong>Language,</strong> and under <strong>Name</strong> add <strong>LONGFISOLUTIONS:US.</strong> Click <strong>Save</strong></p>
+<p><strong>3.8 - Service Provider Profiles –</strong> Enable the <strong>Service Provider Profile</strong> created in <strong>Step 3.</strong></p>
+<p><strong>3.9 –</strong> Click <strong>OK</strong> to save the profile.</p>
 <p><img alt="" src="/assets/images/ZoneDirector%20-%204%20profiles.png" /></p>
 <p><strong>Step 5: Create WLAN</strong></p>
 <ol>
 <li>Navigate to <strong>Configure</strong> → <strong>WLANs</strong></li>
-<li>Under WLANs, Click <strong>Create New</strong></li>
+<li>Under <strong>WLANs</strong>, Click <strong>Create New</strong></li>
 <li>Configure:</li>
 </ol>
-<p><strong>3.1 Name – Enter the WLAN name</strong></p>
-<p><strong>3.2 ESSID – Enter the SSID name</strong></p>
+<p><strong>3.1 Name</strong> – Enter the WLAN name</p>
+<p><strong>3.2 ESSID</strong> – Enter the SSID name</p>
 <p><strong>3.3 Type - Hotspot 2.0</strong></p>
 <p><strong>3.4 Method - 802.1x EAP</strong></p>
 <p><strong>3.5 Fast BSS Transition – Enable 802.11r FT Roaming</strong></p>
 <p><strong>3.6 Encryption Options – Enable WPA2 and AES</strong></p>
-<p><strong>3.7 Hotspot 2.0 Operator – Select the Operator Profile created in Step 4.</strong></p>
-<p><strong>3.8 Authentication Server - Select the RADIUS server created in Step 1.</strong></p>
-<p><strong>3.9 Wireless Client Isolation – Enable both client-isolation options. For VLAN/subnet isolation, select Gateway &amp; DNS.</strong></p>
-<p><strong>3.10  Accounting Server - Under Advanced Options, select the RADIUS Accounting server created in Step 2.</strong></p>
+<p><strong>3.7 Hotspot 2.0 Operator –</strong> Select the <strong>Operator Profile</strong> created in <strong>Step 4.</strong></p>
+<p><strong>3.8 Authentication Server -</strong> Select the <strong>RADIUS server</strong> created in <strong>Step 1.</strong></p>
+<p><strong>3.9 Wireless Client Isolation –</strong> Enable both <strong>client-isolation options.</strong> For VLAN/subnet isolation, select <strong>Gateway &amp; DNS.</strong></p>
+<p><strong>3.10  Accounting Server -</strong> Under <strong>Advanced Options,</strong> select the <strong>RADIUS Accounting server</strong> created in Step 2.</p>
 <p><strong>3.11 Proxy ARP – Enable Proxy ARP</strong></p>
 <p><strong>3.12 Inactivity Timeout - Terminate idle user session after 5 minutes of inactivity</strong></p>
 <p><strong>3.13 Radio Resource Management - Enable 802.11k Neighbor-list Report</strong></p>
 <p><img alt="" src="/assets/images/ZoneDirector%20-%205%20WLAN.png" /></p>
 <p><strong>Step 6: Create WLAN Group</strong></p>
 <ol>
-<li>Under WLAN Groups, Click <strong>Create New</strong></li>
-<li>Select the Passpoint WLAN created in Step 5 and add any other WLAN members required for the site.</li>
+<li>Under <strong>WLAN</strong> Groups, Click <strong>Create New</strong></li>
+<li>Select the <strong>Passpoint WLAN</strong> created in <strong>Step 5</strong> and add any other WLAN members required for the site.</li>
 </ol>
 
 
