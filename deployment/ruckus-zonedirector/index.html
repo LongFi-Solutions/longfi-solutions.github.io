@@ -749,7 +749,106 @@
 
   <h1>Ruckus ZoneDirector</h1>
 
-<p>Ruckus ZoneDirector</p>
+<p>Ruckus Zone Director Passpoint Conversion - Basic Settings<a href="https://longfi-solutions.github.io/deployment/cambium/#cambium-passpoint-conversion-basic-settings" title="Permanent link">¶</a></p>
+<p>For support, please contact: <a href="mailto:support@longfisolutions.com">support@longfisolutions.com</a></p>
+<p>High-Level Steps:<a href="https://longfi-solutions.github.io/deployment/cambium/#high-level-steps" title="Permanent link">¶</a></p>
+<ol>
+<li>Deploy Local RadSecProxy</li>
+<li>ZoneDirector Configuration</li>
+<li><strong>Configure AAA Server</strong></li>
+<li><strong>Configure AAA Server Accounting</strong></li>
+<li><strong>Configure Hotspot 2.0 Services</strong></li>
+<li><strong>Create WLAN</strong></li>
+<li><strong>Create WLAN Group</strong></li>
+<li>Test &amp; Validate</li>
+</ol>
+<p>Deploy Local RadSecProxy<a href="https://longfi-solutions.github.io/deployment/cambium/#deploy-local-radsecproxy" title="Permanent link">¶</a></p>
+<p>Ruckus ZoneDirector does not support RadSec natively, so we need a Local RadSecProxy running on a Virtual Machine on-site, or in a cloud VM that can be accessed via a VPN tunnel from the local network.  Please visit our public GitHub repository for instructions on deploying the local radsecproxy:</p>
+<p><a href="https://github.com/LongFi-Solutions/longfi-radsecproxy">https://github.com/LongFi-Solutions/longfi-radsecproxy</a></p>
+<p>Take note of the IP address and shared secret of your Local RadSecProxy deployment.  You will need this to configure the AAA RADIUS servers in Zone Director.</p>
+<p><strong>Step 1: Configure AAA Server</strong></p>
+<ol>
+<li>Navigate to <strong>Configure</strong> → <strong>AAA Servers</strong></li>
+<li>Click <strong>Create New</strong></li>
+<li>Configure:<ul>
+<li><strong>Name</strong>: LongFi Proxy</li>
+<li><strong>Type</strong>: RADIUS</li>
+<li><strong>Auth Server Address</strong>: {Primary IP}</li>
+<li><strong>Port</strong>: {AUTH_PORT}</li>
+<li><strong>Shared Secret</strong>: {Secret}</li>
+</ul>
+</li>
+<li>Click <strong>OK</strong></li>
+</ol>
+<p><strong>Step 2: Configure AAA Server Accounting</strong></p>
+<ol>
+<li>Navigate to <strong>Configure</strong> → <strong>AAA Servers</strong></li>
+<li>Click <strong>Create New</strong></li>
+<li>Configure:<ul>
+<li><strong>Name</strong>: LongFi Accounting</li>
+<li><strong>Type</strong>: RADIUS Accounting</li>
+<li><strong>Auth Server Address</strong>: {Primary IP}</li>
+<li><strong>Port</strong>: {AUTH_PORT}</li>
+<li><strong>Shared Secret</strong>: {Secret}</li>
+</ul>
+</li>
+<li>Click <strong>OK</strong></li>
+</ol>
+<p><strong>Step 3: Configure Hotspot 2.0 Services</strong></p>
+<ol>
+<li>Navigate to <strong>Configure</strong> → <strong>Hotspot 2.0 Services</strong></li>
+<li>Under <strong>Service Provider Profiles,</strong> Click <strong>Create New</strong></li>
+<li>Configure:</li>
+</ol>
+<p>3.1 – Name: Enter a descriptive profile name.</p>
+<p>3.2 - Under <strong>Domain Name List,</strong> Click <strong>Create New and add the following domains:</strong></p>
+<p>freedomfi.com</p>
+<p>hellohelium.com</p>
+<p>longfisolutions.com</p>
+<p>3.3 – Click in Advanced Options and under <strong>Roaming Consortium List,</strong> Click <strong>Create New and add the following:</strong></p>
+<p>Name: Orion - Organization ID: F4F5E8F5F4</p>
+<p>Name: Uplink - Organization ID: 2A2F830000</p>
+<p>3.4 – The configuration under <strong>NAI Realm List and under 3GPP Cellular Network information will be provided in your Carrier Offload Approval Email. These may only be activated for approved sites.</strong></p>
+<p><strong>3.5 – Click OK</strong></p>
+<p><strong>Step 4: Configure Hotspot 2.0 Services</strong></p>
+<ol>
+<li>Navigate to <strong>Configure</strong> → <strong>Hotspot 2.0 Services</strong></li>
+<li>Under <strong>Operator Profiles,</strong> Click <strong>Create New</strong></li>
+<li>Configure:</li>
+</ol>
+<p>3.1 - Add a Name</p>
+<p>3.2 – Venue information. Specify the Group and Type as the option that best matches your site.</p>
+<p>3.3 – Internet Option - Enable the Specified with connectivity to internet option</p>
+<p>3.4 - <strong>Access Network Type – Chargeable Public</strong></p>
+<p><strong>3.5 - IP Address Type – IPv4 Address - Single NATed private address</strong></p>
+<p><strong>3.6 -  IP Address Type – IPv6 Address – Not Available</strong></p>
+<p><strong>3.7 - Operator Friendly Name – Click in Create NEW, chose Englis under Language and under Name add LONGFISOLUTIONS:US. Click Save</strong></p>
+<p><strong>3.8 - Service Provider Profiles – Enable the Service Provider Profile previously created.</strong></p>
+<p><strong>3.9 – Click OK</strong></p>
+<p><strong>Step 5: Create WLAN</strong></p>
+<ol>
+<li>Navigate to <strong>Configure</strong> → <strong>WLANs</strong></li>
+<li>Under WLANs, Click <strong>Create New</strong></li>
+<li>Configure:</li>
+</ol>
+<p><strong>3.1 Name – Add the WLAN name</strong></p>
+<p><strong>3.2 ESSID – Add the SSID name</strong></p>
+<p><strong>3.3 Type - Hotspot 2.0</strong></p>
+<p><strong>3.4 Method - 802.1x EAP</strong></p>
+<p><strong>3.5 Fast BSS Transition – Enable Enable 802.11r FT Roaming</strong></p>
+<p><strong>3.6 Encryption Options – Enable WPA2 and AES</strong></p>
+<p><strong>3.7 Hotspot 2.0 Operator – Choose the previously created Operator</strong></p>
+<p><strong>3.8 Authentication Server - Choose the previously created Radius Server</strong></p>
+<p><strong>3.9 Wireless Client Isolation – Enable  Isolate wireless client traffic from other clients on the same AP &amp;  Isolate wireless client traffic from all hosts on the same VLAN/subnet. Choose the Gateway &amp; DNS option</strong></p>
+<p><strong>3.10 Under</strong> <a href="https://10.0.161.100/admin/conf_wlans.jsp"><strong>Advanced Options</strong></a><strong>, next to Accounting Server, choose the previously created Radius Accounting Server</strong></p>
+<p><strong>3.11 Proxy ARP – Enable Proxy ARP</strong></p>
+<p><strong>3.12 Inactivity Timeout - Terminate idle user session after 5 minutes of inactivity</strong></p>
+<p><strong>3.13 Radio Resource Management - Enable 802.11k Neighbor-list Report</strong></p>
+<p><strong>Step 6: Create WLAN Group</strong></p>
+<ol>
+<li>Under WLAN Groups, Click <strong>Create New</strong></li>
+<li><strong>Choose the previously created passpoint WLAN and add other members as needed.</strong></li>
+</ol>
 
 
 
