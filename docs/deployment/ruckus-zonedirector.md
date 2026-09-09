@@ -10,11 +10,11 @@ High-Level Steps:[¶](https://longfi-solutions.github.io/deployment/cambium/#hig
 
 1. Deploy Local RadSecProxy
 2. ZoneDirector Configuration
-3. **Configure AAA Server**
-4. **Configure AAA Server Accounting**
-5. **Configure Hotspot 2.0 Services**
-6. **Create WLAN**
-7. **Create WLAN Group**
+3. Configure AAA Server
+4. Configure AAA Server Accounting
+5. Configure Hotspot 2.0 Services
+6. Create WLAN
+7. Create WLAN Group
 8. Test & Validate
 
 Deploy Local RadSecProxy[¶](https://longfi-solutions.github.io/deployment/cambium/#deploy-local-radsecproxy "Permanent link")
@@ -59,7 +59,7 @@ Take note of the IP address and shared secret of your Local RadSecProxy deployme
 2. Under **Service Provider Profiles,** Click **Create New**
 3. Configure:
 
-3.1 – Name: Enter a descriptive profile name.
+3.1 – **Name** - Enter a descriptive profile name.
 
 3.2 - Under **Domain Name List,** Click **Create New and add the following domains:**
 
@@ -69,7 +69,7 @@ hellohelium.com
 
 longfisolutions.com
 
-3.3 – Click in Advanced Options and under **Roaming Consortium List,** Click **Create New and add the following:**
+3.3 – Click Advanced Options and, under **Roaming Consortium List,** Click **Create New** and add the following:
 
 Name: Orion - Organization ID: F4F5E8F5F4
 
@@ -79,19 +79,19 @@ Name: Uplink - Organization ID: 2A2F830000
 
 3.4 – NAI Realm and 3GPP Cellular Network - Use the values provided in your Carrier Offload Approval Email. These settings may only be activated for approved sites.
 
-3.5  Click OK to save the profile.
- 
+3.5  Click **OK** to save the profile.
+
 **Step 4: Configure Hotspot 2.0 Services**
 
 1. Navigate to **Configure** → **Hotspot 2.0 Services**
 2. Under **Operator Profiles,** Click **Create New**
 3. Configure:
 
-3.1 – Name - Enter a descriptive operator profile name.
+3.1 – **Name** - Enter a descriptive operator profile name.
 
-3.2 – Venue information. Select the Group and Type that best match the site.
+3.2 – **Venue information** - Select the Group and Type that best match the site.
 
-3.3 – Internet Option - Enable the Specified with connectivity to internet option
+3.3 – **Internet Option** - Enable the Specified with connectivity to internet option
 
 3.4 - **Access Network Type – Chargeable Public**
 
@@ -99,24 +99,23 @@ Name: Uplink - Organization ID: 2A2F830000
 
 **3.6 -  IP Address Type – IPv6 Address – Not Available**
 
-**3.7 - Operator Friendly Name – Click Create NEW, choose English under Language, and under Name add LONGFISOLUTIONS:US. Click Save**
+**3.7 - Operator Friendly Name –** Click **Create NEW,** choose **English** under **Language,** and under **Name** add **LONGFISOLUTIONS:US.** Click **Save**
 
-**3.8 - Service Provider Profiles – Enable the Service Provider Profile created in Step 3.**
+**3.8 - Service Provider Profiles –** Enable the **Service Provider Profile** created in **Step 3.**
 
-**3.9 – Click OK to save the profile.**
+**3.9 –** Click **OK** to save the profile.
 
  ![](/assets/images/ZoneDirector%20-%204%20profiles.png)
 
- 
 **Step 5: Create WLAN**
 
 1. Navigate to **Configure** → **WLANs**
-2. Under WLANs, Click **Create New**
+2. Under **WLANs**, Click **Create New**
 3. Configure:
 
-**3.1 Name – Enter the WLAN name**
+**3.1 Name** – Enter the WLAN name
 
-**3.2 ESSID – Enter the SSID name**
+**3.2 ESSID** – Enter the SSID name
 
 **3.3 Type - Hotspot 2.0**
 
@@ -126,13 +125,13 @@ Name: Uplink - Organization ID: 2A2F830000
 
 **3.6 Encryption Options – Enable WPA2 and AES**
 
-**3.7 Hotspot 2.0 Operator – Select the Operator Profile created in Step 4.**
+**3.7 Hotspot 2.0 Operator –** Select the **Operator Profile** created in **Step 4.**
 
-**3.8 Authentication Server - Select the RADIUS server created in Step 1.**
+**3.8 Authentication Server -** Select the **RADIUS server** created in **Step 1.**
 
-**3.9 Wireless Client Isolation – Enable both client-isolation options. For VLAN/subnet isolation, select Gateway & DNS.**
+**3.9 Wireless Client Isolation –** Enable both **client-isolation options.** For VLAN/subnet isolation, select **Gateway & DNS.**
 
-**3.10  Accounting Server - Under Advanced Options, select the RADIUS Accounting server created in Step 2.**
+**3.10  Accounting Server -** Under **Advanced Options,** select the **RADIUS Accounting server** created in Step 2.
 
 **3.11 Proxy ARP – Enable Proxy ARP**
 
@@ -144,5 +143,5 @@ Name: Uplink - Organization ID: 2A2F830000
 
 **Step 6: Create WLAN Group**
 
-1. Under WLAN Groups, Click **Create New**
-2. Select the Passpoint WLAN created in Step 5 and add any other WLAN members required for the site.
+1. Under **WLAN** Groups, Click **Create New**
+2. Select the **Passpoint WLAN** created in **Step 5** and add any other WLAN members required for the site.
