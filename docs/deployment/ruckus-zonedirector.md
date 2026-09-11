@@ -180,6 +180,17 @@ Once connected to the ZoneDirector CLI, configure the **NAS ID** for the **Passp
 
 The NAS ID should be set to the **MAC address provided in the Carrier Offload Approval email**.
 
+Example of the CLI commands :
+
+```text
+ruckus> enable
+ruckus# config
+ruckus(config)# wlan "LongFi Passpoint"
+ruckus(config-wlan)# nasid-type user-define 11:22:33:AA:BB:CC
+ruckus(config-wlan)# end
+ruckus(config)# exit
+```
+
 The configuration will look like this in the Ruckus CLI:
 
 ![](/assets/images/ZoneDirector%20-%206%20NAS%20ID.png)
