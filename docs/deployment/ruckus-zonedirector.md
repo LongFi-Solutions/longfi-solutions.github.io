@@ -162,46 +162,113 @@ Name: Uplink - Organization ID: 2A2F830000
 
 ### **Step 7: Add the NAS ID**
 
-1. SSH into the ZoneDirector, as you can't do this via the GUI.
+1. SSH into the ZoneDirector
 
-Legacy SSH commands: ssh -o HostKeyAlgorithms=+ssh-rsa,ssh-dss -o PubkeyAcceptedKeyTypes=+ssh-rsa,ssh-dss admin@<YOUR-ZD-IP-HERE>
+This configuration cannot be performed through the ZoneDirector GUI, so you will need to connect to the ZoneDirector via SSH.
+
+For older ZoneDirector versions that use legacy SSH algorithms, use:
+
+```plain
+ssh -o HostKeyAlgorithms=+ssh-rsa,ssh-dss -o PubkeyAcceptedKeyTypes=+ssh-rsa,ssh-dss admin@<YOUR-ZD-IP-HERE>
+```
+
+Replace `<YOUR-ZD-IP-HERE>` with the management IP address of your ZoneDirector.
 
 2. Configure the NAS ID
 
-In the CLI, configure the NAS ID under the WLAN you created in step 5.
+Once connected to the ZoneDirector CLI, configure the **NAS ID** for the **Passpoint WLAN** created earlier in this guide.
 
-This is what it looks like in Ruckus CLI:  
+The NAS ID should be set to the **MAC address provided in the Carrier Offload Approval email**.
 
-,,,
+The configuration will look like this in the Ruckus CLI:
 
-Welcome to the Ruckus Wireless ZoneDirector 3000 Command Line Interface
+![](/assets/images/ZoneDirector%20-%206%20NAS%20ID.png)
 
-ruckus>
+**Important:** Make sure the NAS ID exactly matches the MAC address provided in the Carrier Offload Approval email.
 
-ruckus> enable
+3. Confirm the configuration was applied correctly to the WLAN.
 
-ruckus# config
+The configuration will look like this in the Ruckus CLI:
 
-You have all rights in this mode.
-
-ruckus(config)# wlan "LongFi Passpoint"
-
-The WLAN service 'LongFi Passpoint' has been loaded. To save the WLAN service, type 'end' or 'exit'.
-
-ruckus(config-wlan)# nasid-type user-define <YOUR-NAS-ID-HERE>
-
-The command was executed successfully. To save the changes, type 'end' or 'exit'.
-
-ruckus(config-wlan)# end
-
-The WLAN service 'LongFi Passpoint' has been updated and saved.
-
-Your changes have been saved.
-
-ruckus(config)# exit
-
-Your changes have been saved.
-
+```text
+ruckus# show wlan name "LongFi Passpoint"
+WLAN Service:
+  ID:
+    9:
+      NAME = LongFi Passpoint
+      Tx. Rate of Management Frame(2.4GHz) = 2.0Mbps
+      Tx. Rate of Management Frame(5GHz)   = 6.0Mbps
+      Beacon Interval = 100ms
+      SSID = LongFi Passpoint
+      Description = LongFi Helium Passpoint Mobile Offloading Wi-Fi
+      Type = Hotspot 2.0
+      Hotspot 2.0 operator name = LongFi Operator
+      Authentication = 802.1x-eap
+      Encryption = wpa2
+      Algorithm = aes
+      Passphrase =
+      FT Roaming = Disabled
+      802.11k Neighbor report = Disabled
+      Web Authentication = Disabled
+      Authentication Server = LongFi Radsecproxy
+      Accounting Server = LongFi Radsecproxy Accounting
+      Interim-Update = 10 Minutes
+      Called-Station-Id type = wlan-bssid
+      Tunnel Mode = Disabled
+      Background Scanning = Enabled
+      Max. Clients = 50
+      Isolation per AP = Enabled
+      Isolation across AP = Enabled
+      Zero-IT Activation = Disabled
+      Priority = High
+      Load Balancing = Disabled
+      Band Balancing = Disabled
+      Dynamic PSK = Disabled
+      Rate Limiting Uplink = 10.00Mbps
+      Rate Limiting Downlink = 10.00Mbps
+      Auto-Proxy configuration:
+        Status = Disabled
+      Inactivity Timeout:
+          Status = Enabled
+          Timeout = 5 Minutes
+      VLAN-ID = 1
+      Dynamic VLAN = Disabled
+      Closed System = Disabled
+      Https Redirection = Disabled
+      OFDM-Only State = Disabled
+      Multicast Filter State = Disabled
+      802.11d State = Enabled
+      Force DHCP State = Enabled
+      Force DHCP Timeout = 15
+      DHCP Option82:
+          Status = Disabled
+          Option82 sub-Option1 = Disabled
+          Option82 sub-Option2 = Disabled
+          Option82 sub-Option150 = Disabled
+          Option82 sub-Option151 = Disabled
+      Ignore unauthorized client statistic = Disabled
+      STA Info Extraction State = Enabled
+      BSS Minrate = Disabled
+      Call Admission Control State = Disabled
+      PMK Cache Timeout= 720 minutes
+      PMK Cache for Reconnect= Enabled
+      NAS-ID Type= user-define
+  >>> NAS-ID String= 11:22:33:AA:BB:CC <<<
+      Roaming Acct-Interim-Update= Disabled
+      PAP Message Authenticator = Enabled
+      Send EAP-Failure = Enabled
+      L2/MAC = No ACLS
+      L3/L4/IP Address = No ACLS
+      L3/L4/IPv6 Address = No ACLS
+      Precedence = Default
+      Disable DGAF = Disabled
+      Proxy ARP = Enabled
+      Device Policy = No ACLS
+      Vlan Pool = No Pools
+      Role based Access Control Policy = Disabled
+      SmartRoam = Disabled  Roam-factor = 1
+      White List = Gateway & DNS
+      Application Visibility = disabled
+      Apply Policy Group = No_Denys
 ruckus#
-
-,,,
+```
