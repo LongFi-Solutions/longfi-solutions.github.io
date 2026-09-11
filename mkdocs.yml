@@ -58,6 +58,6 @@ nav:
     - Omada: deployment/omada-networks.md
     - Meraki: deployment/meraki.md
     - Mist: deployment/mist.md
-    # - Aruba: deployment/aruba.md
-    # - Ruckus: deployment/ruckus.md
+    - Ruckus: deployment/ruckus.md
+    - Ruckus ZoneDirector: deployment/ruckus-zonedirector.md
     - Cambium: deployment/cambium.md
