@@ -159,3 +159,49 @@ Name: Uplink - Organization ID: 2A2F830000
 
 1. Under **WLAN** Groups, Click **Create New**
 2. Select the **Passpoint WLAN** created in **Step 5** and add any other WLAN members required for the site.
+
+### **Step 7: Add the NAS ID**
+
+1. SSH into the ZoneDirector, as you can't do this via the GUI.
+
+Legacy SSH commands: ssh -o HostKeyAlgorithms=+ssh-rsa,ssh-dss -o PubkeyAcceptedKeyTypes=+ssh-rsa,ssh-dss admin@<YOUR-ZD-IP-HERE>
+
+2. Configure the NAS ID
+
+In the CLI, configure the NAS ID under the WLAN you created in step 5.
+
+This is what it looks like in Ruckus CLI:  
+
+,,,
+
+Welcome to the Ruckus Wireless ZoneDirector 3000 Command Line Interface
+
+ruckus>
+
+ruckus> enable
+
+ruckus# config
+
+You have all rights in this mode.
+
+ruckus(config)# wlan "LongFi Passpoint"
+
+The WLAN service 'LongFi Passpoint' has been loaded. To save the WLAN service, type 'end' or 'exit'.
+
+ruckus(config-wlan)# nasid-type user-define <YOUR-NAS-ID-HERE>
+
+The command was executed successfully. To save the changes, type 'end' or 'exit'.
+
+ruckus(config-wlan)# end
+
+The WLAN service 'LongFi Passpoint' has been updated and saved.
+
+Your changes have been saved.
+
+ruckus(config)# exit
+
+Your changes have been saved.
+
+ruckus#
+
+,,,
