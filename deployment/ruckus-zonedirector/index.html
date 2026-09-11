@@ -990,6 +990,14 @@
 </ol>
 <p>Once connected to the ZoneDirector CLI, configure the <strong>NAS ID</strong> for the <strong>Passpoint WLAN</strong> created earlier in this guide.</p>
 <p>The NAS ID should be set to the <strong>MAC address provided in the Carrier Offload Approval email</strong>.</p>
+<p>Example of the CLI commands :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ruckus&gt; enable
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>ruckus# config
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>ruckus(config)# wlan "LongFi Passpoint"
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>ruckus(config-wlan)# nasid-type user-define 11:22:33:AA:BB:CC
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>ruckus(config-wlan)# end
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>ruckus(config)# exit
+</code></pre></div>
 <p>The configuration will look like this in the Ruckus CLI:</p>
 <p><img alt="" src="/assets/images/ZoneDirector%20-%206%20NAS%20ID.png" /></p>
 <p><strong>Important:</strong> Make sure the NAS ID exactly matches the MAC address provided in the Carrier Offload Approval email.</p>
@@ -997,86 +1005,86 @@
 <li>Confirm the configuration was applied correctly to the WLAN.</li>
 </ol>
 <p>The configuration will look like this in the Ruckus CLI:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ruckus# show wlan name "LongFi Passpoint"
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>WLAN Service:
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  ID:
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    9:
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>      NAME = LongFi Passpoint
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>      Tx. Rate of Management Frame(2.4GHz) = 2.0Mbps
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>      Tx. Rate of Management Frame(5GHz)   = 6.0Mbps
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>      Beacon Interval = 100ms
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>      SSID = LongFi Passpoint
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>      Description = LongFi Helium Passpoint Mobile Offloading Wi-Fi
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>      Type = Hotspot 2.0
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>      Hotspot 2.0 operator name = LongFi Operator
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>      Authentication = 802.1x-eap
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>      Encryption = wpa2
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>      Algorithm = aes
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>      Passphrase =
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>      FT Roaming = Disabled
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>      802.11k Neighbor report = Disabled
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>      Web Authentication = Disabled
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>      Authentication Server = LongFi Radsecproxy
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>      Accounting Server = LongFi Radsecproxy Accounting
-<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>      Interim-Update = 10 Minutes
-<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>      Called-Station-Id type = wlan-bssid
-<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>      Tunnel Mode = Disabled
-<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>      Background Scanning = Enabled
-<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>      Max. Clients = 50
-<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>      Isolation per AP = Enabled
-<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>      Isolation across AP = Enabled
-<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>      Zero-IT Activation = Disabled
-<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>      Priority = High
-<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>      Load Balancing = Disabled
-<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>      Band Balancing = Disabled
-<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>      Dynamic PSK = Disabled
-<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>      Rate Limiting Uplink = 10.00Mbps
-<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>      Rate Limiting Downlink = 10.00Mbps
-<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>      Auto-Proxy configuration:
-<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>        Status = Disabled
-<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>      Inactivity Timeout:
-<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>          Status = Enabled
-<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>          Timeout = 5 Minutes
-<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>      VLAN-ID = 1
-<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>      Dynamic VLAN = Disabled
-<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>      Closed System = Disabled
-<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>      Https Redirection = Disabled
-<a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a>      OFDM-Only State = Disabled
-<a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a>      Multicast Filter State = Disabled
-<a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a>      802.11d State = Enabled
-<a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a>      Force DHCP State = Enabled
-<a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a>      Force DHCP Timeout = 15
-<a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a>      DHCP Option82:
-<a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a>          Status = Disabled
-<a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a>          Option82 sub-Option1 = Disabled
-<a id="__codelineno-3-53" name="__codelineno-3-53" href="#__codelineno-3-53"></a>          Option82 sub-Option2 = Disabled
-<a id="__codelineno-3-54" name="__codelineno-3-54" href="#__codelineno-3-54"></a>          Option82 sub-Option150 = Disabled
-<a id="__codelineno-3-55" name="__codelineno-3-55" href="#__codelineno-3-55"></a>          Option82 sub-Option151 = Disabled
-<a id="__codelineno-3-56" name="__codelineno-3-56" href="#__codelineno-3-56"></a>      Ignore unauthorized client statistic = Disabled
-<a id="__codelineno-3-57" name="__codelineno-3-57" href="#__codelineno-3-57"></a>      STA Info Extraction State = Enabled
-<a id="__codelineno-3-58" name="__codelineno-3-58" href="#__codelineno-3-58"></a>      BSS Minrate = Disabled
-<a id="__codelineno-3-59" name="__codelineno-3-59" href="#__codelineno-3-59"></a>      Call Admission Control State = Disabled
-<a id="__codelineno-3-60" name="__codelineno-3-60" href="#__codelineno-3-60"></a>      PMK Cache Timeout= 720 minutes
-<a id="__codelineno-3-61" name="__codelineno-3-61" href="#__codelineno-3-61"></a>      PMK Cache for Reconnect= Enabled
-<a id="__codelineno-3-62" name="__codelineno-3-62" href="#__codelineno-3-62"></a>      NAS-ID Type= user-define
-<a id="__codelineno-3-63" name="__codelineno-3-63" href="#__codelineno-3-63"></a>  &gt;&gt;&gt; NAS-ID String= 11:22:33:AA:BB:CC &lt;&lt;&lt;
-<a id="__codelineno-3-64" name="__codelineno-3-64" href="#__codelineno-3-64"></a>      Roaming Acct-Interim-Update= Disabled
-<a id="__codelineno-3-65" name="__codelineno-3-65" href="#__codelineno-3-65"></a>      PAP Message Authenticator = Enabled
-<a id="__codelineno-3-66" name="__codelineno-3-66" href="#__codelineno-3-66"></a>      Send EAP-Failure = Enabled
-<a id="__codelineno-3-67" name="__codelineno-3-67" href="#__codelineno-3-67"></a>      L2/MAC = No ACLS
-<a id="__codelineno-3-68" name="__codelineno-3-68" href="#__codelineno-3-68"></a>      L3/L4/IP Address = No ACLS
-<a id="__codelineno-3-69" name="__codelineno-3-69" href="#__codelineno-3-69"></a>      L3/L4/IPv6 Address = No ACLS
-<a id="__codelineno-3-70" name="__codelineno-3-70" href="#__codelineno-3-70"></a>      Precedence = Default
-<a id="__codelineno-3-71" name="__codelineno-3-71" href="#__codelineno-3-71"></a>      Disable DGAF = Disabled
-<a id="__codelineno-3-72" name="__codelineno-3-72" href="#__codelineno-3-72"></a>      Proxy ARP = Enabled
-<a id="__codelineno-3-73" name="__codelineno-3-73" href="#__codelineno-3-73"></a>      Device Policy = No ACLS
-<a id="__codelineno-3-74" name="__codelineno-3-74" href="#__codelineno-3-74"></a>      Vlan Pool = No Pools
-<a id="__codelineno-3-75" name="__codelineno-3-75" href="#__codelineno-3-75"></a>      Role based Access Control Policy = Disabled
-<a id="__codelineno-3-76" name="__codelineno-3-76" href="#__codelineno-3-76"></a>      SmartRoam = Disabled  Roam-factor = 1
-<a id="__codelineno-3-77" name="__codelineno-3-77" href="#__codelineno-3-77"></a>      White List = Gateway &amp; DNS
-<a id="__codelineno-3-78" name="__codelineno-3-78" href="#__codelineno-3-78"></a>      Application Visibility = disabled
-<a id="__codelineno-3-79" name="__codelineno-3-79" href="#__codelineno-3-79"></a>      Apply Policy Group = No_Denys
-<a id="__codelineno-3-80" name="__codelineno-3-80" href="#__codelineno-3-80"></a>ruckus#
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ruckus# show wlan name "LongFi Passpoint"
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>WLAN Service:
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>  ID:
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    9:
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>      NAME = LongFi Passpoint
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>      Tx. Rate of Management Frame(2.4GHz) = 2.0Mbps
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>      Tx. Rate of Management Frame(5GHz)   = 6.0Mbps
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>      Beacon Interval = 100ms
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>      SSID = LongFi Passpoint
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>      Description = LongFi Helium Passpoint Mobile Offloading Wi-Fi
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>      Type = Hotspot 2.0
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>      Hotspot 2.0 operator name = LongFi Operator
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>      Authentication = 802.1x-eap
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>      Encryption = wpa2
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>      Algorithm = aes
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>      Passphrase =
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>      FT Roaming = Disabled
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>      802.11k Neighbor report = Disabled
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>      Web Authentication = Disabled
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>      Authentication Server = LongFi Radsecproxy
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>      Accounting Server = LongFi Radsecproxy Accounting
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>      Interim-Update = 10 Minutes
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>      Called-Station-Id type = wlan-bssid
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>      Tunnel Mode = Disabled
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>      Background Scanning = Enabled
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>      Max. Clients = 50
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>      Isolation per AP = Enabled
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>      Isolation across AP = Enabled
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>      Zero-IT Activation = Disabled
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>      Priority = High
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>      Load Balancing = Disabled
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>      Band Balancing = Disabled
+<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a>      Dynamic PSK = Disabled
+<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>      Rate Limiting Uplink = 10.00Mbps
+<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a>      Rate Limiting Downlink = 10.00Mbps
+<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a>      Auto-Proxy configuration:
+<a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a>        Status = Disabled
+<a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a>      Inactivity Timeout:
+<a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a>          Status = Enabled
+<a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a>          Timeout = 5 Minutes
+<a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a>      VLAN-ID = 1
+<a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a>      Dynamic VLAN = Disabled
+<a id="__codelineno-4-43" name="__codelineno-4-43" href="#__codelineno-4-43"></a>      Closed System = Disabled
+<a id="__codelineno-4-44" name="__codelineno-4-44" href="#__codelineno-4-44"></a>      Https Redirection = Disabled
+<a id="__codelineno-4-45" name="__codelineno-4-45" href="#__codelineno-4-45"></a>      OFDM-Only State = Disabled
+<a id="__codelineno-4-46" name="__codelineno-4-46" href="#__codelineno-4-46"></a>      Multicast Filter State = Disabled
+<a id="__codelineno-4-47" name="__codelineno-4-47" href="#__codelineno-4-47"></a>      802.11d State = Enabled
+<a id="__codelineno-4-48" name="__codelineno-4-48" href="#__codelineno-4-48"></a>      Force DHCP State = Enabled
+<a id="__codelineno-4-49" name="__codelineno-4-49" href="#__codelineno-4-49"></a>      Force DHCP Timeout = 15
+<a id="__codelineno-4-50" name="__codelineno-4-50" href="#__codelineno-4-50"></a>      DHCP Option82:
+<a id="__codelineno-4-51" name="__codelineno-4-51" href="#__codelineno-4-51"></a>          Status = Disabled
+<a id="__codelineno-4-52" name="__codelineno-4-52" href="#__codelineno-4-52"></a>          Option82 sub-Option1 = Disabled
+<a id="__codelineno-4-53" name="__codelineno-4-53" href="#__codelineno-4-53"></a>          Option82 sub-Option2 = Disabled
+<a id="__codelineno-4-54" name="__codelineno-4-54" href="#__codelineno-4-54"></a>          Option82 sub-Option150 = Disabled
+<a id="__codelineno-4-55" name="__codelineno-4-55" href="#__codelineno-4-55"></a>          Option82 sub-Option151 = Disabled
+<a id="__codelineno-4-56" name="__codelineno-4-56" href="#__codelineno-4-56"></a>      Ignore unauthorized client statistic = Disabled
+<a id="__codelineno-4-57" name="__codelineno-4-57" href="#__codelineno-4-57"></a>      STA Info Extraction State = Enabled
+<a id="__codelineno-4-58" name="__codelineno-4-58" href="#__codelineno-4-58"></a>      BSS Minrate = Disabled
+<a id="__codelineno-4-59" name="__codelineno-4-59" href="#__codelineno-4-59"></a>      Call Admission Control State = Disabled
+<a id="__codelineno-4-60" name="__codelineno-4-60" href="#__codelineno-4-60"></a>      PMK Cache Timeout= 720 minutes
+<a id="__codelineno-4-61" name="__codelineno-4-61" href="#__codelineno-4-61"></a>      PMK Cache for Reconnect= Enabled
+<a id="__codelineno-4-62" name="__codelineno-4-62" href="#__codelineno-4-62"></a>      NAS-ID Type= user-define
+<a id="__codelineno-4-63" name="__codelineno-4-63" href="#__codelineno-4-63"></a>  &gt;&gt;&gt; NAS-ID String= 11:22:33:AA:BB:CC &lt;&lt;&lt;
+<a id="__codelineno-4-64" name="__codelineno-4-64" href="#__codelineno-4-64"></a>      Roaming Acct-Interim-Update= Disabled
+<a id="__codelineno-4-65" name="__codelineno-4-65" href="#__codelineno-4-65"></a>      PAP Message Authenticator = Enabled
+<a id="__codelineno-4-66" name="__codelineno-4-66" href="#__codelineno-4-66"></a>      Send EAP-Failure = Enabled
+<a id="__codelineno-4-67" name="__codelineno-4-67" href="#__codelineno-4-67"></a>      L2/MAC = No ACLS
+<a id="__codelineno-4-68" name="__codelineno-4-68" href="#__codelineno-4-68"></a>      L3/L4/IP Address = No ACLS
+<a id="__codelineno-4-69" name="__codelineno-4-69" href="#__codelineno-4-69"></a>      L3/L4/IPv6 Address = No ACLS
+<a id="__codelineno-4-70" name="__codelineno-4-70" href="#__codelineno-4-70"></a>      Precedence = Default
+<a id="__codelineno-4-71" name="__codelineno-4-71" href="#__codelineno-4-71"></a>      Disable DGAF = Disabled
+<a id="__codelineno-4-72" name="__codelineno-4-72" href="#__codelineno-4-72"></a>      Proxy ARP = Enabled
+<a id="__codelineno-4-73" name="__codelineno-4-73" href="#__codelineno-4-73"></a>      Device Policy = No ACLS
+<a id="__codelineno-4-74" name="__codelineno-4-74" href="#__codelineno-4-74"></a>      Vlan Pool = No Pools
+<a id="__codelineno-4-75" name="__codelineno-4-75" href="#__codelineno-4-75"></a>      Role based Access Control Policy = Disabled
+<a id="__codelineno-4-76" name="__codelineno-4-76" href="#__codelineno-4-76"></a>      SmartRoam = Disabled  Roam-factor = 1
+<a id="__codelineno-4-77" name="__codelineno-4-77" href="#__codelineno-4-77"></a>      White List = Gateway &amp; DNS
+<a id="__codelineno-4-78" name="__codelineno-4-78" href="#__codelineno-4-78"></a>      Application Visibility = disabled
+<a id="__codelineno-4-79" name="__codelineno-4-79" href="#__codelineno-4-79"></a>      Apply Policy Group = No_Denys
+<a id="__codelineno-4-80" name="__codelineno-4-80" href="#__codelineno-4-80"></a>ruckus#
 </code></pre></div>
 
 
