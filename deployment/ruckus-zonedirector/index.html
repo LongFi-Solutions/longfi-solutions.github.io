@@ -821,6 +821,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#step-7-add-the-nas-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7: Add the NAS ID
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -965,6 +976,33 @@
 <li>Under <strong>WLAN</strong> Groups, Click <strong>Create New</strong></li>
 <li>Select the <strong>Passpoint WLAN</strong> created in <strong>Step 5</strong> and add any other WLAN members required for the site.</li>
 </ol>
+<h3 id="step-7-add-the-nas-id"><strong>Step 7: Add the NAS ID</strong><a class="headerlink" href="#step-7-add-the-nas-id" title="Permanent link">&para;</a></h3>
+<ol>
+<li>SSH into the ZoneDirector, as you can't do this via the GUI.</li>
+</ol>
+<p>Legacy SSH commands: ssh -o HostKeyAlgorithms=+ssh-rsa,ssh-dss -o PubkeyAcceptedKeyTypes=+ssh-rsa,ssh-dss admin@<YOUR-ZD-IP-HERE></p>
+<ol>
+<li>Configure the NAS ID</li>
+</ol>
+<p>In the CLI, configure the NAS ID under the WLAN you created in step 5.</p>
+<p>This is what it looks like in Ruckus CLI:  </p>
+<p>,,,</p>
+<p>Welcome to the Ruckus Wireless ZoneDirector 3000 Command Line Interface</p>
+<p>ruckus&gt;</p>
+<p>ruckus&gt; enable</p>
+<p>ruckus# config</p>
+<p>You have all rights in this mode.</p>
+<p>ruckus(config)# wlan "LongFi Passpoint"</p>
+<p>The WLAN service 'LongFi Passpoint' has been loaded. To save the WLAN service, type 'end' or 'exit'.</p>
+<p>ruckus(config-wlan)# nasid-type user-define <YOUR-NAS-ID-HERE></p>
+<p>The command was executed successfully. To save the changes, type 'end' or 'exit'.</p>
+<p>ruckus(config-wlan)# end</p>
+<p>The WLAN service 'LongFi Passpoint' has been updated and saved.</p>
+<p>Your changes have been saved.</p>
+<p>ruckus(config)# exit</p>
+<p>Your changes have been saved.</p>
+<p>ruckus#</p>
+<p>,,,</p>
 
 
 
