@@ -54,10 +54,13 @@ nav:
     - Best Practices & Considerations for Passpoint: best-practices/index.md
   - Deployment Guides:
     # - Introduction: deployment/index.md
-    - UniFi: deployment/unifi.md
-    - Omada: deployment/omada-networks.md
+    - Alta-Labs: deployment/alta-labs.md
+    - Cambium: deployment/cambium.md
     - Meraki: deployment/meraki.md
     - Mist: deployment/mist.md
+    - Omada: deployment/omada-networks.md
     - Ruckus: deployment/ruckus.md
     - Ruckus ZoneDirector: deployment/ruckus-zonedirector.md
-    - Cambium: deployment/cambium.md
+    - UniFi: deployment/unifi.md
+    
+    
