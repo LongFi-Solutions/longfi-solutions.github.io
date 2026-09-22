@@ -70,9 +70,10 @@ Click on the newly created WLAN and change the following:
 ![](/assets/images/Cambium%20Maestro%206%20-%20AAA.png)
 
 - AAA Servers > Accounting Mode - Set Accounting Mode to Start-Interim-Stop.
+- AAA Servers > Enable Accounting Packet
 - AAA Servers > Interim Update Interval - Set it to 300
 
-![](/assets/images/Cambium%20Maestro%2012%20-%20Accounting.png)
+![](/assets/images/Cambium%20Maestro%2012%20-%20Accounting%202.jpg)
 
 - AAA Servers > Advanced Settings - Set the NAS-Identifier to Custom and copy paste the NAS ID you used to activate the site.  This is normally a MAC address and will be included in your onboarding and activation emails.
 
