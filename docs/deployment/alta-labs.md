@@ -18,11 +18,12 @@ Create a new SSID in the Alta Labs controller. Go to Settings > WiFi > Add New. 
 - Select Enterprise security
 - Enter the RADIUS server settings shown below
 
-```
-IP Address: 136.107.123.32
-Authentication / Accounting Port: 2083
+```plain
+IP Address: 127.0.0.1
+Auth. Port 1812 / Acct. Port: 1813
 Shared Secret: radsec
 ```
+
 ![](/assets/images/AltaLabs%20-%202%20Radius.png)
 
 ***
