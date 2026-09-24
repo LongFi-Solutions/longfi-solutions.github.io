@@ -98,6 +98,10 @@ def render_markdown(md_text, extensions, configs):
 
 def build_body(body, toc, fallback_title):
     """Return (hero_title, lead_html, article_html, toc_html, plain_text, headings_text)."""
+    # Drop empty headings (e.g. a stray "#" line left by the CMS editor) so they
+    # can't be mistaken for the page title or break section parsing.
+    # With toc permalink enabled, an "empty" heading still carries a headerlink anchor.
+    body = re.sub(r'<h([1-6])\b[^>]*>\s*(?:<a\b[^>]*class="headerlink"[^>]*>[^<]*</a>\s*)?</h\1>', '', body)
     h1 = re.search(r'<h1[^>]*>(.*?)</h1>', body, re.S)
     if h1:
         hero_title = clean(h1.group(1)); after = body[h1.end():]

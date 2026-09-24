@@ -4,7 +4,7 @@ title: Alta Labs
 
 ## **Alta Labs Passpoint Conversion - Basic Settings**
 
- For support please contact: [support@longfisolutions.com](mailto:support@longfisolutions.com)
+ For support please contact: [support@longfisolutions.com](mailto:support@longfisolutions.com)
 
 ***
 
@@ -47,10 +47,8 @@ Under Sites, select the site where this configuration will be used and choose th
 - For **NAS ID**, select Custom and enter the MAC address provided during onboarding
 - Enable **Power-User**
 
-You will be provided with a JSON configuration file that has what is required pre-configured for a new WLAN in Alta.  This will be attached to your onboarding and activation emails.
+You will be provided with a JSON configuration file that has what is required pre-configured for a new WLAN in Alta.  This will be attached to your onboarding and activation emails.
 
 You will add the JSON configuration under Power-User Settings, then click on the Save button at the bottom of the page.
 
 ![](/assets/images/AltaLabs%20-%205%20JSON.png)
-
-#
