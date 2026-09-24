@@ -1,0 +1,51 @@
+# Checks that the branded docs hub (docs.longfisolutions.com) still builds.
+#
+# Vercel builds the hub on every push to main, but when that build fails the
+# site silently keeps serving the last good version, and Vercel's failure
+# alert only goes to whoever it credits as the deployment creator. This check
+# runs the same build in GitHub Actions so a failure shows a red X on the
+# commit and GitHub emails the person who pushed it (e.g. whoever saved a
+# guide in the Sveltia CMS). It does not deploy anything.
+
+name: Hub build check
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/**'
+      - 'mkdocs.yml'
+      - 'tools/hub/**'
+      - 'requirements.txt'
+      - '.github/workflows/hub-build-check.yml'
+
+jobs:
+  build-hub:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+
+      - run: pip install -r requirements.txt
+
+      - name: Build docs.longfisolutions.com hub
+        run: |
+          set -o pipefail
+          if ! python tools/hub/build.py --docs-dir . --out hub_site 2>&1 | tee build.log; then
+            {
+              echo "## docs.longfisolutions.com build failed"
+              echo
+              echo "The branded docs site will stay on its last good version until this is fixed."
+              echo "Build output:"
+              echo
+              echo '```'
+              cat build.log
+              echo '```'
+            } >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
