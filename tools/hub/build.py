@@ -91,6 +91,50 @@ def rewrite_md_links(html, page_src):
         return head + url + (sep + frag if sep else "") + tail
     return re.sub(r'(<a\b[^>]*?\shref=")([^"]+)("[^>]*>)', repl, html)
 
+LIST_ITEM = re.compile(r'^\s*[-*+]\s+')
+MD_LINK = re.compile(r'\]\(([^)#\s]+\.md)(?:#[^)]*)?\)')
+
+def sync_landing_list(md_text, landing_src, pages):
+    """Keep a section landing page's guide list in step with the nav.
+
+    Finds the first Markdown bullet list on the landing page that links to .md
+    files and rewrites it so it contains exactly the section's nav pages, in nav
+    order. Existing bullets are kept word for word (so hand-written descriptions
+    survive); nav pages with no bullet get a plain "- **[Title](file.md)**" line;
+    bullets for pages no longer in the nav are dropped. If the page has no such
+    list, an "Available Guides" list is appended.
+    """
+    import posixpath
+    base = posixpath.dirname(landing_src.replace("\\", "/"))
+    def rel(src):
+        src = src.replace("\\", "/")
+        return posixpath.relpath(src, base) if base else src
+    wanted = [(rel(p["src"]), p["title"]) for p in pages if not p.get("landing")]
+    if not wanted: return md_text
+
+    lines = md_text.split("\n")
+    start = end = None
+    for i, ln in enumerate(lines):
+        if LIST_ITEM.match(ln) and MD_LINK.search(ln):
+            start = i
+            while start > 0 and LIST_ITEM.match(lines[start - 1]): start -= 1
+            end = i
+            while end + 1 < len(lines) and LIST_ITEM.match(lines[end + 1]): end += 1
+            break
+
+    existing = {}
+    if start is not None:
+        for ln in lines[start:end + 1]:
+            m = MD_LINK.search(ln)
+            if m:
+                key = posixpath.normpath(m.group(1))
+                existing.setdefault(key, ln)
+    new_items = [existing.get(posixpath.normpath(href), "- **[%s](%s)**" % (title, href)) for href, title in wanted]
+
+    if start is None:
+        return md_text.rstrip("\n") + "\n\n## Available Guides\n\n" + "\n".join(new_items) + "\n"
+    return "\n".join(lines[:start] + new_items + lines[end + 1:])
+
 def render_markdown(md_text, extensions, configs):
     import markdown
     md = markdown.Markdown(extensions=extensions, extension_configs=configs)
@@ -223,6 +267,8 @@ def main(argv=None):
             if not os.path.exists(src): die("missing source: %s" % src)
             raw = open(src, encoding="utf-8").read()
             text, meta = strip_front_matter(raw)
+            if page.get("landing"):
+                text = sync_landing_list(text, page["src"], sec["pages"])
             body, toc = render_markdown(text, extensions, configs)
             body = rewrite_md_links(body, page["src"])
             title = meta.get("title") or page["title"]

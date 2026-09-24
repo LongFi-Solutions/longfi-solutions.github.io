@@ -29,8 +29,12 @@ redeploys.** There is nothing to run or upload by hand.
    rebuild on their own. The new guide appears in the top nav, the left
    sidebar, and the search index automatically.
 
-Optional: add a bullet for it on the landing page (`docs/deployment/index.md`)
-so it also shows in the "Available Guides" list.
+The "Available Guides" list on the landing page (`docs/deployment/index.md`)
+updates itself on the hub: every guide in the nav is listed, in nav order. To
+give a guide a one-line description there, add a bullet for it in that file
+(e.g. `- **[Aruba](aruba.md)** — HPE Aruba access points`); guides without a
+bullet are listed by title only, and bullets for guides removed from the nav
+are dropped.
 
 ## Editing existing content
 
