@@ -75,3 +75,24 @@ title: Nomadix Configuration
 * Expand the Advanced Settings and scroll down to the Cellular section. Complete the settings as per the description below:
 
 ![](/assets/images/20261005-221937.png)
+
+* Scroll down to the end of the settings and click Save.
+* Click on the Maintenance tab at in the top menu bar, expand the System section in the left-hand navigation menu and select Web Console:
+
+![](/assets/images/20261005-222609.png)
+
+- Using the command input box, send the sequence of commands shown below to configure the NAS-Identifier:
+
+configure 
+
+wlan-config 1 
+
+nas-id <nas-identifier provided during onboarding> 
+
+exit 
+
+exit 
+
+wr
+
+![](/assets/images/20261005-222749.png)
