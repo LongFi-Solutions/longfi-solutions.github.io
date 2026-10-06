@@ -83,16 +83,13 @@ title: Nomadix Configuration
 
 - Using the command input box, send the sequence of commands shown below to configure the NAS-Identifier:
 
+```json
 configure 
-
 wlan-config 1 
-
 nas-id <nas-identifier provided during onboarding> 
-
 exit 
-
 exit 
-
 wr
+```
 
 ![](/assets/images/20261005-222749.png)
