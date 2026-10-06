@@ -23,7 +23,7 @@
     
     
       
-        <title>Nomadix Configuration - LongFi Solutions Documentation</title>
+        <title>Nomadix - LongFi Solutions Documentation</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#nomadix-passpoint-conversion-basic-settings" class="md-skip">
+        <a href="#nomadix-passpoint-configuration-basic-settings" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Nomadix Configuration
+              Nomadix
             
           </span>
         </div>
@@ -901,112 +901,121 @@
 
 
 
-<h1 id="nomadix-passpoint-conversion-basic-settings">Nomadix Passpoint Conversion - Basic Settings<a class="headerlink" href="#nomadix-passpoint-conversion-basic-settings" title="Permanent link">&para;</a></h1>
-<p>For support, please contact: <a href="mailto:support@longfisolutions.com">support@longfisolutions.com</a></p>
+<h1 id="nomadix-passpoint-configuration-basic-settings">Nomadix Passpoint Configuration – Basic Settings<a class="headerlink" href="#nomadix-passpoint-configuration-basic-settings" title="Permanent link">&para;</a></h1>
+<p>This guide provides the basic steps required to configure Passpoint on a Nomadix WLAN controller for use with LongFi carrier offload services.</p>
+<p>For support, please contact: <a href="mailto:support@longfisolutions.com"><strong>support@longfisolutions.com</strong></a></p>
 <hr />
 <h3 id="high-level-steps">High-Level Steps:<a class="headerlink" href="#high-level-steps" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Configure the WLAN</li>
-<li>Configure the Radsec server</li>
-<li>Configure the Hotspot 2.0</li>
-<li>Configure the NAS ID</li>
+<li>Configure the RadSec servers</li>
+<li>Configure Hotspot 2.0</li>
+<li>Configure the NAS Identifier (NAS-ID)</li>
 </ol>
 <hr />
 <h3 id="1-configure-the-wlan">1 - Configure the WLAN<a class="headerlink" href="#1-configure-the-wlan" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Log into the Nomadix WLAN controller using your credentials:</li>
-<li>Click on the Config tab at the top of the screen, expand the WLAN section and select Add WiFi from the left-hand navigation menu.</li>
-<li>Click on Add WiFi/WLAN in the content area:</li>
+<li>Log in to the Nomadix WLAN controller using your administrator credentials.</li>
+<li>Click the <strong>Config</strong> tab at the top of the screen.</li>
+<li>Expand the <strong>WLAN</strong> section in the left-hand navigation menu and select <strong>Add WiFi</strong>.</li>
+<li>Click <strong>Add WiFi/WLAN</strong>.</li>
 </ul>
 <p><img alt="" src="/assets/images/Nomadix%20-%201.jpg" /></p>
 <ul>
-<li>Enter the required information, being sure to select WPA2-802.1X for encryption type. </li>
+<li>Enter the required WLAN information. For the encryption type, select <strong>WPA2-802.1X</strong>.</li>
 </ul>
 <p><img alt="" src="/assets/images/20261005-214053.png" /></p>
 <ul>
-<li>Expand the Advanced Settings option and enter the <strong>NAS ID</strong> you provided during registration and onboarding. This can also be found in your Carrier Offload Approval Email.</li>
+<li>Expand <strong>Advanced Settings</strong> and enter the <strong>NAS-ID</strong> provided during the LongFi registration and onboarding process. You can also find your NAS-ID in your <strong>Carrier Offload Approval Email</strong>.</li>
 </ul>
 <p><img alt="" src="/assets/images/20261005-214344.png" /></p>
 <ul>
-<li>Click Next and specify the AP Group and other information to apply the new WLAN.</li>
-<li>In the Network Type option, choose 5G. We normally don't recommend enabling 2.4 GHz in all but the highest density environments (large public venue) as most modern clients will avoid 2.4, and this band is not voice-grade.</li>
-<li>In that same window, you can choose the VLAN ID.</li>
-<li>Under Support Radio, choose ALL</li>
+<li>Click <strong>Next</strong> and select the appropriate <strong>AP Group</strong> and other settings for the new WLAN.</li>
+<li>Under <strong>Network Type</strong>, select <strong>5G</strong>.
+LongFi generally recommends using the <strong>5 GHz band</strong> for Passpoint deployments. We recommend enabling 2.4 GHz only when there is a specific coverage or deployment requirement, such as certain high-density or large public environments. Most modern mobile devices prefer 5 GHz when adequate coverage is available, and 5 GHz generally provides better performance and capacity for carrier offload.</li>
+<li>Select the appropriate <strong>VLAN ID</strong> for the Passpoint WLAN.</li>
+<li>Under <strong>Support Radio</strong>, select <strong>ALL</strong>.</li>
 </ul>
 <p><img alt="" src="/assets/images/20261005-214943.png" /></p>
 <ul>
-<li>Click Finish.</li>
+<li>Review the configuration and click <strong>Finish</strong>.</li>
 </ul>
 <h3 id="2-configure-the-radsec-server">2 - Configure the Radsec server<a class="headerlink" href="#2-configure-the-radsec-server" title="Permanent link">&para;</a></h3>
 <ul>
-<li>The newly created WLAN is going to show up on the list. Click on Edit.</li>
+<li>Locate the newly created WLAN in the WLAN list and click <strong>Edit</strong>.</li>
 </ul>
 <p><img alt="" src="/assets/images/20261005-215703.png" /></p>
 <ul>
-<li>Click [Radius Server Settings]</li>
+<li>Select <strong>Radius Server Settings</strong>.</li>
 </ul>
 <p><img alt="" src="/assets/images/20261005-215822.png" /></p>
 <ul>
-<li>Click on the Radsec Server tab, then click on Add Server</li>
+<li>Open the <strong>Radsec Server</strong> tab and click <strong>Add Server</strong>.</li>
 </ul>
 <p><img alt="" src="/assets/images/20261005-220029.png" /></p>
 <ul>
-<li>Fill in the RadSec server information.<ul>
-<li>Radsec ID: Any number, usually 1 or 2</li>
-<li>Server IP: 34.176.6.104</li>
-<li>Server Port: 2083 </li>
-<li>TLS Timeout(s): 5</li>
+<li>Primary RadSec Server</li>
 </ul>
-</li>
-<li>Click Save</li>
+<p>Enter the following information:</p>
+<ul>
+<li><strong>RadSec ID:</strong> A unique numeric ID, typically <code>1</code></li>
+<li><strong>Server IP:</strong> <code>34.176.6.104</code></li>
+<li><strong>Server Port:</strong> <code>2083</code></li>
+<li><strong>TLS Timeout:</strong> <code>5</code> seconds</li>
 </ul>
+<p>Click <strong>Save</strong>.</p>
 <p><img alt="" src="/assets/images/20261005-220342.png" /></p>
 <ul>
-<li>Click Add Server again to add the secondary Radsec server.<ul>
-<li>Radsec ID: Any number, usually 1 or 2</li>
-<li>Server IP: <strong>136.107.123.32</strong></li>
-<li>Server Port: 2083 </li>
-<li>TLS Timeout(s): 5</li>
+<li>Secondary RadSec Server</li>
 </ul>
-</li>
-<li>Click Save</li>
-<li>Click on Local Certificate Info</li>
+<p>Click <strong>Add Server</strong> again and enter the secondary server information:</p>
+<ul>
+<li><strong>RadSec ID:</strong> A different unique numeric ID, typically <code>2</code></li>
+<li><strong>Server IP:</strong> <code>136.107.123.32</code></li>
+<li><strong>Server Port:</strong> <code>2083</code></li>
+<li><strong>TLS Timeout:</strong> <code>5</code> seconds</li>
 </ul>
+<p>Click <strong>Save</strong>.</p>
 <p><img alt="" src="/assets/images/20261005-220731.png" /></p>
 <ul>
-<li>Upload the Certificates provided during registration and onboarding. <ul>
-<li>Click on Certificate to upload the <strong>.cert</strong> file</li>
-<li>Click on Private Key to upload the <strong>.key</strong> file</li>
-<li>Enter the Password which is <strong>radsec</strong></li>
-<li>Click on CA to upload the <strong>.ca</strong> file</li>
+<li>Upload the RadSec Certificates</li>
+<li>Click <strong>Local Certificate Info</strong>.</li>
+<li>Upload the certificates provided during the LongFi registration and onboarding process:<ul>
+<li><strong>Certificate:</strong> Upload the <code>.cert</code> file.</li>
+<li><strong>Private Key:</strong> Upload the <code>.key</code> file.</li>
+<li><strong>Password:</strong> Enter <code>radsec</code>.</li>
+<li><strong>CA:</strong> Upload the <code>.ca</code> file.</li>
 </ul>
 </li>
+<li>Click <strong>Upload &amp; Load</strong>.</li>
 </ul>
+<p>The Nomadix controller should now have the client certificate, private key, and CA certificate required to establish secure RadSec connections with the LongFi authentication servers.</p>
 <p><img alt="" src="/assets/images/20261005-221348.png" /></p>
-<ul>
-<li>Click  Upload &amp; Load</li>
-</ul>
 <h3 id="3-configure-the-hotspot-20">3 - Configure the Hotspot 2.0<a class="headerlink" href="#3-configure-the-hotspot-20" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Expand the AP section in the left-hand navigation menu and select Hotspot2.0:</li>
-<li>Enter a template name such as Passpoint and select the SSID that was created in the previous steps from the drop-down list:</li>
+<li>Expand the <strong>AP</strong> section in the left-hand navigation menu and select <strong>Hotspot2.0</strong>.</li>
+<li>Enter a descriptive template name, such as <strong>Passpoint</strong>.</li>
+<li>From the SSID drop-down menu, select the WLAN created in the previous steps.</li>
 </ul>
 <p><img alt="" src="/assets/images/20261005-221736.png" /></p>
 <ul>
-<li>Click Advanced Settings</li>
-<li>Expand the Advanced Settings and scroll down to the Cellular section. Complete the settings as per the description below:</li>
+<li>Click <strong>Advanced Settings</strong>.</li>
+<li>Expand <strong>Advanced Settings</strong> and scroll to the <strong>Cellular</strong> section.</li>
+<li>Configure the Cellular settings using the values provided by LongFi during onboarding, as shown in the example below.</li>
 </ul>
 <p><img alt="" src="/assets/images/20261005-221937.png" /></p>
 <ul>
-<li>Scroll down to the end of the settings and click Save.</li>
+<li>Review the configuration, scroll to the bottom of the page, and click <strong>Save</strong>.</li>
 </ul>
 <h3 id="4-configure-the-nas-id">4 - Configure the NAS ID<a class="headerlink" href="#4-configure-the-nas-id" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Click on the Maintenance tab at in the top menu bar, expand the System section in the left-hand navigation menu and select Web Console:</li>
+<li>The NAS Identifier must also be configured through the Nomadix Web Console.</li>
+<li>Click the <strong>Maintenance</strong> tab in the top menu.</li>
+<li>Expand <strong>System</strong> in the left-hand navigation menu and select <strong>Web Console</strong>.</li>
 </ul>
 <p><img alt="" src="/assets/images/20261005-222609.png" /></p>
 <ul>
-<li>Using the command input box, send the sequence of commands shown below to configure the NAS-Identifier:</li>
+<li>In the command input box, enter the following commands, line by line:</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="err">co</span><span class="kc">nf</span><span class="err">igure</span><span class="w"> </span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="err">wla</span><span class="kc">n</span><span class="mi">-</span><span class="err">co</span><span class="kc">nf</span><span class="err">ig</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span>
@@ -1015,6 +1024,11 @@
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="err">exi</span><span class="kc">t</span><span class="w"> </span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="err">wr</span>
 </code></pre></div>
+<p>Replace <code>&lt;NAS-ID provided during onboarding&gt;</code> with the NAS Identifier assigned to your deployment.</p>
+<blockquote>
+<p><strong>Important:</strong> Make sure you are modifying the correct WLAN configuration. The <code>wlan-config 1</code> value must correspond to the WLAN configured for LongFi Passpoint service.</p>
+</blockquote>
+<p>The Passpoint WLAN is now configured with the LongFi RadSec servers, certificates, Hotspot 2.0 settings, and NAS Identifier.</p>
 <p><img alt="" src="/assets/images/20261005-222749.png" /></p>
 
 
