@@ -66,3 +66,7 @@ title: Nomadix Configuration
 ![](/assets/images/20261005-221348.png)
 
 * Click  Upload & Load
+* Expand the AP section in the left-hand navigation menu and select Hotspot2.0:
+* Enter a template name such as Passpoint and select the SSID that was created in the previous steps from the drop-down list:
+
+![](/assets/images/20261005-221736.png)
