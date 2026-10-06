@@ -70,3 +70,8 @@ title: Nomadix Configuration
 * Enter a template name such as Passpoint and select the SSID that was created in the previous steps from the drop-down list:
 
 ![](/assets/images/20261005-221736.png)
+
+* Click Advanced Settings
+* Expand the Advanced Settings and scroll down to the Cellular section. Complete the settings as per the description below:
+
+![](/assets/images/20261005-221937.png)
