@@ -56,3 +56,13 @@ title: Nomadix Configuration
 * Click on Local Certificate Info
 
 ![](/assets/images/20261005-220731.png)
+
+* Upload the Certificates provided during registration and onboarding. 
+    - Click on Certificate to upload the **.cert** file
+    - Click on Private Key to upload the **.key** file
+    - Enter the Password which is **radsec**
+    - Click on CA to upload the **.ca** file
+
+![](/assets/images/20261005-221348.png)
+
+* Click  Upload & Load
