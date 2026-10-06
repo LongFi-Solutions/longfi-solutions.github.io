@@ -2,7 +2,7 @@
 title: Nomadix Configuration
 ---
 
-1 - Configure the WLAN
+### 1 - Configure the WLAN
 
 * Log into the Nomadix WLAN controller using your credentials:
 * Click on the Config tab at the top of the screen, expand the WLAN section and select Add WiFi from the left-hand navigation menu.
@@ -27,7 +27,7 @@ title: Nomadix Configuration
 
 * Click Finish.
 
-2- Configure the Radsec server
+### 2 - Configure the Radsec server
 
 - The newly created WLAN is going to show up on the list. Click on Edit.
 
@@ -70,7 +70,7 @@ title: Nomadix Configuration
 
 * Click  Upload & Load
 
-3 - Configure the Hotspot 2.0
+### 3 - Configure the Hotspot 2.0
 
 - Expand the AP section in the left-hand navigation menu and select Hotspot2.0:
 - Enter a template name such as Passpoint and select the SSID that was created in the previous steps from the drop-down list:
@@ -84,7 +84,7 @@ title: Nomadix Configuration
 
 * Scroll down to the end of the settings and click Save.
 
-4 - Configure the NAS ID
+### 4 - Configure the NAS ID
 
 - Click on the Maintenance tab at in the top menu bar, expand the System section in the left-hand navigation menu and select Web Console:
 
