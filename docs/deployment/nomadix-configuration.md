@@ -26,7 +26,10 @@ title: Nomadix Configuration
 ![](/assets/images/20261005-214943.png)
 
 * Click Finish.
-* The newly created WLAN is going to show up on the list. Click on Edit.
+
+2- Configure the Radsec server
+
+- The newly created WLAN is going to show up on the list. Click on Edit.
 
 ![](/assets/images/20261005-215703.png)
 
@@ -66,8 +69,11 @@ title: Nomadix Configuration
 ![](/assets/images/20261005-221348.png)
 
 * Click  Upload & Load
-* Expand the AP section in the left-hand navigation menu and select Hotspot2.0:
-* Enter a template name such as Passpoint and select the SSID that was created in the previous steps from the drop-down list:
+
+3 - Configure the Hotspot 2.0
+
+- Expand the AP section in the left-hand navigation menu and select Hotspot2.0:
+- Enter a template name such as Passpoint and select the SSID that was created in the previous steps from the drop-down list:
 
 ![](/assets/images/20261005-221736.png)
 
@@ -77,7 +83,10 @@ title: Nomadix Configuration
 ![](/assets/images/20261005-221937.png)
 
 * Scroll down to the end of the settings and click Save.
-* Click on the Maintenance tab at in the top menu bar, expand the System section in the left-hand navigation menu and select Web Console:
+
+4 - Configure the NAS ID
+
+- Click on the Maintenance tab at in the top menu bar, expand the System section in the left-hand navigation menu and select Web Console:
 
 ![](/assets/images/20261005-222609.png)
 
