@@ -2,6 +2,21 @@
 title: Nomadix Configuration
 ---
 
+# Nomadix Passpoint Conversion - Basic Settings
+
+For support, please contact: [support@longfisolutions.com](mailto:support@longfisolutions.com)
+
+***
+
+###  High-Level Steps:
+
+1. Configure the WLAN
+2. Configure the Radsec server
+3. Configure the Hotspot 2.0
+4. Configure the NAS ID
+
+***
+
 ### 1 - Configure the WLAN
 
 * Log into the Nomadix WLAN controller using your credentials:
