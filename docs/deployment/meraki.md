@@ -70,10 +70,19 @@ For more information on configuring Meraki for RadSec, see:
 ### Customer Setup
 
 - From the main dashboard in Meraki, go to **Organization > Certificates**
+
+![](/assets/images/20261012-182332.png)
+
 - Click on **RADSEC**
 - Click on **Upload CA certificate**
 - Upload the **LongFi Connect CA certificates** provided in your onboarding and activation emails
-- Under **RadSec AP Certificates** click on **Download CA**
+
+![](/assets/images/20261012-182504.png)
+
+- Under **RadSec PureCA certificates** click on **Download CA Chain**
+
+![](/assets/images/20261012-183031.png)
+
 - Share your newly downloaded **Meraki CA** with your LongFi Connect onboarding contact
 
 **\*Please Note:** Meraki generates CA certificates at the Organization level.  If you are managing multiple sites from a single Organization, we only need one Meraki CA.  If you are an MSP managing multiple sites in multiple Meraki Organizations, we will need a Meraki CA certificate from each organization.  
