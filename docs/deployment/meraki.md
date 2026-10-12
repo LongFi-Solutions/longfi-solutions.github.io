@@ -69,12 +69,14 @@ For more information on configuring Meraki for RadSec, see:
 
 ### Customer Setup
 
+Radsec PureCA certificates can only be used by networks running on **MR 33.1.2 firmware version or higher.**
+
 - From the main dashboard in Meraki, go to **Organization > Certificates**
 
 ![](/assets/images/20261012-182332.png)
 
 - Click on **RADSEC**
-- Click on **Upload CA certificate**
+- Under RADIUS CA certificates, click on **Upload CA certificate**
 - Upload the **LongFi Connect CA certificates** provided in your onboarding and activation emails
 
 ![](/assets/images/20261012-182504.png)
@@ -83,7 +85,7 @@ For more information on configuring Meraki for RadSec, see:
 
 ![](/assets/images/20261012-183031.png)
 
-- Share your newly downloaded **Meraki CA** with your LongFi Connect onboarding contact
+- Share your newly downloaded **Meraki CA** with your LongFi Connect onboarding contact.
 
 **\*Please Note:** Meraki generates CA certificates at the Organization level.  If you are managing multiple sites from a single Organization, we only need one Meraki CA.  If you are an MSP managing multiple sites in multiple Meraki Organizations, we will need a Meraki CA certificate from each organization.  
 
