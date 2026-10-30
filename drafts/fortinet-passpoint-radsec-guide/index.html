@@ -1,0 +1,1275 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Deployment guides, vendor configuration, and best practices for LongFi Passpoint and OpenRoaming infrastructure.">
+      
+      
+      
+        <link rel="canonical" href="https://longfi-solutions.github.io/drafts/fortinet-passpoint-radsec-guide/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/LongFi-Icon-Only-PNG.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>LongFi Passpoint + RadSec on FortiGate & FortiAP — Configuration Guide (DRAFT) - LongFi Solutions Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/brand.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#longfi-passpoint-radsec-on-fortigate-fortiap-configuration-guide-draft" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="LongFi Solutions Documentation" class="md-header__button md-logo" aria-label="LongFi Solutions Documentation" data-md-component="logo">
+      
+  <img src="../../assets/images/LongFi-Icon-Only-PNG.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LongFi Solutions Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              LongFi Passpoint + RadSec on FortiGate &amp; FortiAP — Configuration Guide (DRAFT)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../overview/" class="md-tabs__link">
+          
+  
+  
+  Overview
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../best-practices/" class="md-tabs__link">
+          
+  
+  
+  Best Practices
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../deployment/alta-labs/" class="md-tabs__link">
+          
+  
+  
+  Deployment Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="LongFi Solutions Documentation" class="md-nav__button md-logo" aria-label="LongFi Solutions Documentation" data-md-component="logo">
+      
+  <img src="../../assets/images/LongFi-Icon-Only-PNG.png" alt="logo">
+
+    </a>
+    LongFi Solutions Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Overview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Best Practices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Best Practices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../best-practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Best Practices & Considerations for Passpoint
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deployment Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deployment/alta-labs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alta-Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deployment/cambium/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cambium
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deployment/meraki/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Meraki
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deployment/mist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deployment/omada-networks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Omada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deployment/ruckus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ruckus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deployment/ruckus-zonedirector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ruckus ZoneDirector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deployment/unifi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UniFi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-configured-where" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is configured where
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-upgrade-fortios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 — Upgrade FortiOS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-import-certificates-gui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 — Import certificates (GUI)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-configure-the-radsec-server-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Configure the RadSec server (CLI)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-hotspot-20-profiles-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4 — Hotspot 2.0 profiles (CLI)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-create-the-passpoint-ssid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5 — Create the Passpoint SSID
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-broadcast-on-the-fortiaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6 — Broadcast on the FortiAPs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-verify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7 — Verify
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="longfi-passpoint-radsec-on-fortigate-fortiap-configuration-guide-draft">LongFi Passpoint + RadSec on FortiGate &amp; FortiAP — Configuration Guide (DRAFT)<a class="headerlink" href="#longfi-passpoint-radsec-on-fortigate-fortiap-configuration-guide-draft" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Status:</strong> Internal draft. Staged in <code>wlan-configs</code>. Once lab-validated it will be
+published to longfi-solutions.github.io → docs.longfisolutions.com.</p>
+</blockquote>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>This guide configures a FortiGate (firewall + wireless controller) and its managed
+FortiAPs to broadcast a LongFi Passpoint (Hotspot 2.0) SSID. Subscriber devices
+authenticate automatically with EAP-TLS; the FortiGate carries RADIUS to LongFi
+over <strong>RadSec</strong> (RADIUS over TLS, TCP 2083) to <code>connect.longfisolutions.com</code>.</p>
+<p><strong>No radsecproxy is required.</strong> Older Fortinet deployments (FortiOS 7.0–7.4)
+used a local radsecproxy because FortiOS could only send plain UDP RADIUS for
+Wi-Fi. FortiOS 7.6.0 added native RadSec for WPA2/WPA3-Enterprise SSIDs.</p>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FortiOS</td>
+<td><strong>7.6.0 or later</strong> (7.6.4+ recommended). 7.4.x supports RadSec for firewall/admin auth only, not Wi-Fi.</td>
+</tr>
+<tr>
+<td>FortiAP firmware</td>
+<td>Supported by your FortiOS release (see Fortinet compatibility matrix)</td>
+</tr>
+<tr>
+<td>Outbound access</td>
+<td>FortiGate → <code>connect.longfisolutions.com</code> TCP <strong>2083</strong></td>
+</tr>
+<tr>
+<td>DNS</td>
+<td>FortiGate must resolve <code>connect.longfisolutions.com</code></td>
+</tr>
+<tr>
+<td>From LongFi</td>
+<td>LongFi CA certificate chain, a site client certificate + private key, and a NAS-ID</td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-is-configured-where">What is configured where<a class="headerlink" href="#what-is-configured-where" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th style="text-align: center;">GUI</th>
+<th style="text-align: center;">CLI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Firmware upgrade</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>Import CA and client certificates</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>RADIUS server (RadSec / TLS options, client cert)</td>
+<td style="text-align: center;">partial</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>Hotspot 2.0 / ANQP profiles</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✅ (CLI only)</td>
+</tr>
+<tr>
+<td>SSID (VAP) + attach Hotspot 2.0 profile</td>
+<td style="text-align: center;">partial</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>SSID addressing, DHCP, firewall policy</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>Assign SSID to FortiAP profile</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+</tr>
+</tbody>
+</table>
+<h2 id="step-1-upgrade-fortios">Step 1 — Upgrade FortiOS<a class="headerlink" href="#step-1-upgrade-fortios" title="Permanent link">&para;</a></h2>
+<p><strong>System → Firmware &amp; Registration.</strong> Upgrade to FortiOS 7.6.x following Fortinet's
+upgrade path tool, then upgrade FortiAPs (<strong>WiFi &amp; Switch Controller → Managed FortiAPs</strong>).</p>
+<h2 id="step-2-import-certificates-gui">Step 2 — Import certificates (GUI)<a class="headerlink" href="#step-2-import-certificates-gui" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>System → Certificates → Create/Import → CA Certificate → File</strong> — import the
+   LongFi Root CA (and Intermediate CA, if provided). FortiOS names it <code>CA_Cert_N</code>.</li>
+<li><strong>System → Certificates → Create/Import → Certificate → Import Certificate</strong> —
+   choose <strong>PKCS #12</strong> (or Certificate + key), upload the site certificate LongFi
+   provided, and name it <code>&lt;SITE_ID&gt;</code>.</li>
+</ol>
+<blockquote>
+<p>If <strong>Certificates</strong> is missing from the menu, enable it under
+<strong>System → Feature Visibility → Certificates</strong>.</p>
+</blockquote>
+<h2 id="step-3-configure-the-radsec-server-cli">Step 3 — Configure the RadSec server (CLI)<a class="headerlink" href="#step-3-configure-the-radsec-server-cli" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>config user radius
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    edit "LongFi-RadSec"
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        set server "connect.longfisolutions.com"
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        set secret radsec
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        set radius-port 2083
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        set transport-protocol tls
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        set ca-cert "&lt;CA_CERT_NAME&gt;"
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        set client-cert "&lt;SITE_ID&gt;"
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        set server-identity-check enable
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        set tls-min-proto-version TLSv1-2
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>        set nas-id-type custom
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        set nas-id "&lt;NAS_ID&gt;"
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        set acct-interim-interval 300
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>        config accounting-server
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>            edit 1
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>                set status enable
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>                set server "connect.longfisolutions.com"
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>                set secret radsec
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>                set port 2083
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>            next
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>        end
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>    next
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>end
+</code></pre></div>
+<p>Test reachability: <code>execute telnet connect.longfisolutions.com 2083</code></p>
+<h2 id="step-4-hotspot-20-profiles-cli">Step 4 — Hotspot 2.0 profiles (CLI)<a class="headerlink" href="#step-4-hotspot-20-profiles-cli" title="Permanent link">&para;</a></h2>
+<p>Paste STEP 2 and STEP 3 from the template. These create:</p>
+<table>
+<thead>
+<tr>
+<th>Object</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>anqp-roaming-consortium</code></td>
+<td>Roaming Consortium OIs advertised in beacons</td>
+</tr>
+<tr>
+<td><code>anqp-nai-realm</code></td>
+<td>Realms <code>longfisolutions.com</code>, <code>freedomfi.com</code>, <code>hellohelium.com</code> — EAP-TLS, certificate</td>
+</tr>
+<tr>
+<td><code>anqp-3gpp-cellular</code></td>
+<td>AT&amp;T PLMN IDs: 310-410, 310-280, 310-150, 313-100</td>
+</tr>
+<tr>
+<td><code>anqp-ip-address-type</code></td>
+<td>IPv4 single-NATed private</td>
+</tr>
+<tr>
+<td><code>anqp-venue-name</code> / <code>anqp-venue-url</code></td>
+<td>Venue info shown on devices</td>
+</tr>
+<tr>
+<td><code>h2qp-operator-name</code></td>
+<td>Operator friendly name (site-specific)</td>
+</tr>
+<tr>
+<td><code>h2qp-wan-metric</code></td>
+<td>Backhaul speed</td>
+</tr>
+<tr>
+<td><code>hs-profile</code></td>
+<td>Combines the above</td>
+</tr>
+</tbody>
+</table>
+<h2 id="step-5-create-the-passpoint-ssid">Step 5 — Create the Passpoint SSID<a class="headerlink" href="#step-5-create-the-passpoint-ssid" title="Permanent link">&para;</a></h2>
+<p>Paste STEP 4 (VAP) and STEP 5 (interface, DHCP, firewall policy) from the template.
+Tunnel mode is the default: client traffic returns to the FortiGate and is NATed.
+For local-bridge mode, see the comments in the template.</p>
+<h2 id="step-6-broadcast-on-the-fortiaps">Step 6 — Broadcast on the FortiAPs<a class="headerlink" href="#step-6-broadcast-on-the-fortiaps" title="Permanent link">&para;</a></h2>
+<p>Paste STEP 6, or in the GUI: <strong>WiFi &amp; Switch Controller → FortiAP Profiles → <profile></strong>,
+for Radio 1 and Radio 2 set <strong>SSIDs → Manual</strong> and add the Passpoint SSID
+alongside existing SSIDs.</p>
+<p><strong>6 GHz (FortiAP 431G and other 6E models):</strong> WPA2-Enterprise SSIDs don't broadcast
+on 6 GHz. To offer Passpoint on 6 GHz, create a second VAP with
+<code>set security wpa3-only-enterprise</code> and <code>set pmf enable</code> using the same
+<code>hotspot20-profile</code> and <code>radius-server</code>, and assign it to radio-3.</p>
+<h2 id="step-7-verify">Step 7 — Verify<a class="headerlink" href="#step-7-verify" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>diagnose debug application fnbamd -1
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>diagnose debug enable
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>#  connect a Passpoint device; look for "proto: TCP over TLS" and Access-Accept
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>diagnose debug disable
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>diagnose debug reset
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>diagnose wireless-controller wlac -d sta online
+</code></pre></div>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Check</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TLS handshake fails</td>
+<td>Wrong/missing CA cert; client cert not issued by LongFi CA; system clock wrong (check NTP)</td>
+</tr>
+<tr>
+<td>"server identity check" errors</td>
+<td>Server name must match the cert CN/SAN. Use the FQDN, not an IP. As a last resort <code>set server-identity-check disable</code></td>
+</tr>
+<tr>
+<td>No TCP connection on 2083</td>
+<td>Upstream firewall/ISP blocking outbound 2083; DNS resolution</td>
+</tr>
+<tr>
+<td>Device doesn't auto-join</td>
+<td>Verify the device has a LongFi Passpoint profile; confirm RCOIs/realms in the hs-profile; confirm SSID is broadcasting (<code>diagnose wireless-controller wlac -c vap</code>)</td>
+</tr>
+<tr>
+<td>Wi-Fi Calling fails</td>
+<td>Ensure UDP 500/4500 and ESP aren't blocked on the SSID policy</td>
+</tr>
+</tbody>
+</table>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://docs.fortinet.com/document/fortigate/7.6.0/new-features/300051/support-radsec-on-wpa2-wpa3-enterprise-ssid">FortiOS 7.6.0 — Support RADSEC on WPA2/WPA3-Enterprise SSID</a></li>
+<li><a href="https://docs.fortinet.com/document/fortigate/7.6.4/administration-guide/729374/configuring-a-radsec-client">FortiOS 7.6.4 — Configuring a RADSEC client</a></li>
+<li><a href="https://docs.fortinet.com/document/fortiap/7.6.4/fortiwifi-and-fortiap-configuration-guide/657393/hotspot-2-0-anqp-configuration">FortiAP 7.6.4 — Hotspot 2.0 ANQP configuration</a></li>
+</ul>
+<p>https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/Fortinet_Product_Matrix.pdf</p>
+<p>https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/Fortinet_Wireless_Product_Matrix.pdf</p>
+<p>https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/pdf/fortiswitch-secure-access-series.pdf#page=9</p>
+<p>https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/pdf/fortiap-series.pdf#page=4</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
