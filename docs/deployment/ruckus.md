@@ -81,6 +81,8 @@ Next, we will configure the Wi-Fi Operator Profile
 - Set the **Friendly Name** to **LONGFISOLUTIONS:US**
 - At the bottom of the screen click **Add** to add the new operator profile
 
+![](/assets/images/20261029-214636.png)
+
 ***
 
 ### **Configure Identity Provider Profile**
