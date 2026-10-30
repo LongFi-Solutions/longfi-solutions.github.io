@@ -103,6 +103,8 @@ Next, we will configure the Identity Provider Profile.  Some of the settings fo
 - From the **Identity Provider > Hotspot 2.0** screen, click **Add HS2.0 IdP** in the top right-hand corner
 - On the next screen, under **Network Identifier** set the **Profile Name** to **LongFi IDP**
 
+![](/assets/images/20261029-215022.png)
+
 #### Configure Identity Provider NAI Realms:
 
 - From the same **Add Identity Provider** screen, under **NAI Realm** click on **Add Realm**
