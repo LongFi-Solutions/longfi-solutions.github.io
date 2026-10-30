@@ -67,6 +67,9 @@ Next, we will configure the Wi-Fi Operator Profile
 - From the left side menu in the R1 dashboard, go to **Network Control > Service Catalog**
 - Search the Service Catalog for **Wi-Fi Operator**
 - Click **Add** to add **Wi-Fi Operator** to your **My Services** dashboard
+
+![](/assets/images/20261029-214112.png)
+
 - From the left side menu in the R1 dashboard, go to **Network Control > My Services**
 - Click on **Wi-Fi Operator** to open the Wi-Fi Operator dashboard
 - From the **Wi-Fi Operator** dashboard click **Add Wi-Fi Operator**
