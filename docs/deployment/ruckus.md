@@ -29,6 +29,10 @@ First, we will configure the RADIUS Profile used to authenticate Passpoint clien
 - From the left side menu in the R1 dashboard, go to **Network Control > Service Catalog**
 - Search the Service Catalog for **RADIUS Server**
 - Click **Add** to add the **RADIUS Server** to your **My Services** dashboard
+
+![](/assets/images/20261029-212624.png)
+
+
 - From the left side menu in the R1 dashboard, go to **Network Control > My Services**
 - Click on **RADIUS Server** to open the RADIUS Server dashboard
 - From the RADIUS Server dashboard, click **Add RADIUS Server** in the top right corner
