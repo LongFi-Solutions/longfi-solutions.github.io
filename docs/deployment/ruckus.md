@@ -30,8 +30,6 @@ First, we will configure the RADIUS Profile used to authenticate Passpoint clien
 - Search the Service Catalog for **RADIUS Server**
 - Click **Add** to add the **RADIUS Server** to your **My Services** dashboard
 
-![](/assets/images/20261029-212624.png)
-
 - From the left side menu in the R1 dashboard, go to **Network Control > My Services**
 - Click on **RADIUS Server** to open the RADIUS Server dashboard
 - From the RADIUS Server dashboard, click **Add RADIUS Server** in the top right corner
@@ -44,8 +42,6 @@ First, we will configure the RADIUS Profile used to authenticate Passpoint clien
 - \*Please note: the shared secret link will expire after one click, please be ready to save the shared secret to your secure password keeper before you click on the link.
 - Click **Add** to save the new RADIUS Authentication Server
 
-![](/assets/images/20261029-213713.png)
-
 - From the **RADIUS Server** screen, click **Add RADIUS Server** again to add an accounting server 
 - From the **Add RADIUS Server** screen, set the **Profile Name** to **LongFi RADIUS Accounting**
 - For **Type** select **Accounting RADIUS Server**
@@ -55,8 +51,6 @@ First, we will configure the RADIUS Profile used to authenticate Passpoint clien
 - Set the **Shared Secret** to the secret provided in your onboarding and activation emails
 - \*Please note: the shared secret link will expire after one click, please be ready to save the shared secret to your secure password keeper before you click on the link.
 - Hit **Add** to save the new RADIUS Accounting Server
-
-![](/assets/images/20261029-213914.png)
 
 ***
 
@@ -68,8 +62,6 @@ Next, we will configure the Wi-Fi Operator Profile
 - Search the Service Catalog for **Wi-Fi Operator**
 - Click **Add** to add **Wi-Fi Operator** to your **My Services** dashboard
 
-![](/assets/images/20261029-214112.png)
-
 - From the left side menu in the R1 dashboard, go to **Network Control > My Services**
 - Click on **Wi-Fi Operator** to open the Wi-Fi Operator dashboard
 - From the **Wi-Fi Operator** dashboard click **Add Wi-Fi Operator**
@@ -80,8 +72,6 @@ Next, we will configure the Wi-Fi Operator Profile
 - Under **Operator Friendly Name** set the **Language** to **English**
 - Set the **Friendly Name** to **LONGFISOLUTIONS:US**
 - At the bottom of the screen click **Add** to add the new operator profile
-
-![](/assets/images/20261029-214636.png)
 
 ***
 
@@ -95,15 +85,11 @@ Next, we will configure the Identity Provider Profile.  Some of the settings fo
 - Search the Service Catalog for **Identity Provider**
 - Click **Add** to add **Identity Provider** to your **My Services** dashboard
 
-![](/assets/images/20261029-214738.png)
-
 - From the left side menu in the R1 dashboard, go to **Network Control > My Services**
 - Click on **Identity Provider** to open the Identity Provider dashboard
 - From the **Identity Provider** dashboard, select **Hotspot 2.0** (next to SAML) to open the Hotspot 2.0 IDP list
 - From the **Identity Provider > Hotspot 2.0** screen, click **Add HS2.0 IdP** in the top right-hand corner
 - On the next screen, under **Network Identifier** set the **Profile Name** to **LongFi IDP**
-
-![](/assets/images/20261029-215022.png)
 
 #### Configure Identity Provider NAI Realms:
 
