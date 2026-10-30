@@ -32,7 +32,6 @@ First, we will configure the RADIUS Profile used to authenticate Passpoint clien
 
 ![](/assets/images/20261029-212624.png)
 
-
 - From the left side menu in the R1 dashboard, go to **Network Control > My Services**
 - Click on **RADIUS Server** to open the RADIUS Server dashboard
 - From the RADIUS Server dashboard, click **Add RADIUS Server** in the top right corner
@@ -44,6 +43,9 @@ First, we will configure the RADIUS Profile used to authenticate Passpoint clien
 - Set the **Shared Secret** to the secret provided in your onboarding and activation emails
 - \*Please note: the shared secret link will expire after one click, please be ready to save the shared secret to your secure password keeper before you click on the link.
 - Click **Add** to save the new RADIUS Authentication Server
+
+![](/assets/images/20261029-213713.png)
+
 - From the **RADIUS Server** screen, click **Add RADIUS Server** again to add an accounting server 
 - From the **Add RADIUS Server** screen, set the **Profile Name** to **LongFi RADIUS Accounting**
 - For **Type** select **Accounting RADIUS Server**
@@ -53,6 +55,8 @@ First, we will configure the RADIUS Profile used to authenticate Passpoint clien
 - Set the **Shared Secret** to the secret provided in your onboarding and activation emails
 - \*Please note: the shared secret link will expire after one click, please be ready to save the shared secret to your secure password keeper before you click on the link.
 - Hit **Add** to save the new RADIUS Accounting Server
+
+![](/assets/images/20261029-213914.png)
 
 ***
 
