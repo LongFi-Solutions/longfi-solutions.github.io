@@ -111,11 +111,17 @@ Description: Uplink
 
 3. For **3GPP Cellular Network** enter the MCC/MNC codes provided by Longfi during onboarding.  MCC/MNC pairs.
 
+The following screenshot is just an example:
+
+![](/assets/images/20261112-214810.png)
+
 ### Network Characteristics tab
 
 1. **IP Address Type Availability**: IPv4 **Single NAT**, IPv6 **Not Available**.
-2. **WLAN Metrics**: enter the venue's uplink and downlink speeds.
+2. **WLAN Metrics**: optional. Enter the venue's uplink and downlink speeds if necessary.
 3. **Connection Capability**: optional. If used, list the ports that are open (up to 16) rather than leaving them Unknown.
+
+![](/assets/images/20261112-214930.png)
 
 ### Online Signup tab
 
@@ -131,20 +137,11 @@ Each Device Group holds one AP model, so repeat this for every model that will c
 2. Open the **Device Groups** tab and select the device group.
 3. Next to **Profile**, select the **edit** icon.
 4. Open the **Networks** tab.
-5. For `LongFi_Secure_WiFi`, select the **2.4 GHz** and **5 GHz** radios. Leave **6 GHz** unselected; the controller rejects WPA2 networks there.
+5. For `LongFi Passpoint`, select the **5 GHz** radios. We don't recommend leaving 2.4 GHz on. Leave **6 GHz** unselected; the controller rejects WPA2 networks there.
 6. If the controller warns that the change affects a radio's **primary BSSID**, stop: that radio will reset and drop its clients. Pick a time when that's acceptable, or assign the SSID so it isn't the primary BSSID.
 7. Select **Save**. The controller pushes the change to the APs in that group; they don't reboot.
 
-## Step 6: Test and verify
-
-The pilot passes when a phone with a LongFi Passpoint profile joins on its own and LongFi receives its accounting.
-
-- The LongFi RadSec servers show as reachable in the controller's RADIUS diagnostics (TLS session up on TCP 2083).
-- A Wi-Fi scanner shows the `LongFi` SSID with Interworking and Hotspot 2.0 elements in the beacon, on 2.4 and 5 GHz only.
-- A provisioned phone that never joined this SSID connects automatically within about 30 seconds.
-- Interim accounting reaches LongFi about every 300 seconds.
-- Clients on the venue's other SSIDs on the pilot AP were not dropped.
-- After the pilot passes, assign the WLAN to the remaining device groups.
+## 
 
 ## Sources
 
