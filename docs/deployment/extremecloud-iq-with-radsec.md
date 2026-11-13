@@ -16,12 +16,9 @@ Collect every value below before touching the controller.
 | --- | --- | --- |
 | Client certificate and private key (.p12/.pfx, or separate files) and its password | Step 1 | Issued by LongFi |
 | LongFi CA certificate (PEM) | Step 1 | Issued by LongFi |
-| Primary RadSec server | Step 3 | `50.18.227.41`, TCP 2083 |
-| Secondary RadSec server | Step 3 | `54.219.71.206`, TCP 2083 |
+| Primary RadSec server | Step 3 | 136.107.123.32 Port: 2083 |
+| Secondary RadSec server | Step 3 | 34.174.6.104 Port: 2083 |
 | RadSec shared secret | Step 3 | `radsec` (RadSec default) unless LongFi specifies another |
-| Passpoint domain | Step 4 | `<LongFi domain>` |
-| NAI realm and EAP method | Step 4 | `<LongFi realm>`, EAP-TTLS with MSCHAPv2 |
-| Roaming Consortium OIs, if used | Step 4 | `<LongFi RCOI>` |
 
 **Firewall:** at a Centralized site the controller handles session management, so RadSec is expected to leave from the controller, not the APs. Allow TCP 2083 outbound from **both controller VMs** (HA pair) to both LongFi servers. Confirm the source in the controller's RADIUS diagnostics during the pilot.
 
@@ -41,8 +38,8 @@ RadSec can't be selected on a RADIUS server until a Trust Point exists.
 ## Step 2: Create the WLAN with Hotspot enabled
 
 1. Go to **Configure** > **Networks** > **WLANs** and select **Add**.
-2. Set **Network Name** to `LongFi_Secure_WiFi` (internal name).
-3. Set **SSID** to the name clients will see, such as `LongFi` (up to 32 characters, case-sensitive).
+2. Set **Network Name** to `LongFi Passpoint` (internal name).
+3. Set **SSID** to the name clients will see, such as `LongFi Passpoint` (up to 32 characters, case-sensitive).
 4. Set **Status** to **Enabled**.
 5. Set **Hotspot** to **Enabled**. A **Configure** button appears; leave it for Step 4.
 6. Set **Auth Type** to **WPA2-Enterprise (802.1X/EAP)**.
@@ -60,15 +57,15 @@ Create a **new** AAA policy. An existing policy can't be switched to NAI routing
 4. Set **Accounting Type** to **Start-Interim-Stop**.
 5. Set **Accounting Interim Interval** to `300` seconds (default 60).
 6. Set **RADIUS Authentication Servers Mode** to **Failover**.
-7. Optional: set **Operator Name** if LongFi provides one (namespace Realm, Tadig, E212, OneCC or WBAID).
+7. Sset **Operator Name** to **LONGFISOLUTIONS:US**.
 8. Under authentication servers, select **Add** and enter the primary server:
     - **Type**: **Secure (RADSEC)**
-    - **Server Address**: `50.18.227.41` (can't be changed after saving)
+    - **Server Address**: `136.107.123.32`
     - **Port**: `2083`
     - **Trust Point**: `LongFi_RadSec`
     - **Shared Secret**: `radsec` unless LongFi gave another
     - Leave **Peer Discovery** off
-9. Repeat step 8 for the secondary server `54.219.71.206`.
+9. Repeat step 8 for the secondary server `34.174.6.104`
 10. Add the same two servers as **accounting** servers.
 11. Save the AAA policy. It is now selected on the WLAN.
 
@@ -79,21 +76,40 @@ On the WLAN page, select **Configure** next to **Hotspot**. Fill in every requir
 ### Main settings
 
 1. **HESSID**: leave the default (the controller's Ethernet MAC). It must be unique per WLAN; if you set it by hand, use an AP BSSID.
-2. **Access Network**: **Private network with guest access** (default is Chargeable public network).
+2. **Access Network**: Chargeable public network.
 3. **DGAF Disabled**: leave checked (default).
+
+![](/assets/images/20261112-213107.png)
 
 ### Hotspot Identification tab
 
-1. **Domain**: enter `<LongFi domain>`. Add sub-domains if LongFi provides them.
-2. **Venue Info**: pick the venue group, then the venue type (for a casino, the Assembly or Mercantile group, whichever LongFi specifies).
-3. Select **New** and enter **Operator Name** `LongFi-Operator`, the **Venue Name**, and **Language** English. Up to four languages per venue.
+1. **Domain**: enter `longfisolutions.com`. Add sub-domains such as `freedomfi.com`.
+2. **Venue Info**: pick the venue group, then the venue type. Choose the option that best matches your site.
+3. Select **New** and enter **Operator Name** `LONGFISOLUTIONS:US`, the **Venue Name**, and **Language** English.
 
 ### SP Identification tab
 
-1. Under **Realm**, select **New** and enter `<LongFi realm>`.
-2. Select the EAP method **EAP-TTLS** with inner authentication **MSCHAPv2** (up to four EAP methods per realm).
-3. Under **Roaming Consortium**, add the LongFi OIs if used (up to 8; AP39xx only advertises the first 2).
-4. Leave **3GPP Cellular Network** empty unless LongFi supplies MCC/MNC pairs.
+1. Under **Realm**, select **New** and enter the following: 
+
+**Realm:** longfisolutions.com | EAP Method: **EAP-TLS** with inner authentication **Certificate** if available
+
+**Realm:** freedomfi.com | EAP Method: **EAP-TLS** with inner authentication **Certificate** if available
+
+**Realm:** hellohelium.com | EAP Method: **EAP-TLS** with inner authentication **Certificate** if available
+
+**Realm:** wifi.fi.google.com | EAP Method: **EAP-TLS** with inner authentication **Certificate** if available
+
+2. Under **Roaming Consortium**, add the following: 
+
+Consortium: F4F5E8F5F4
+
+Description: Orion 
+
+Consortium: 2A2F830000
+
+Description: Uplink
+
+3. For **3GPP Cellular Network** enter the MCC/MNC codes provided by Longfi during onboarding.  MCC/MNC pairs.
 
 ### Network Characteristics tab
 
