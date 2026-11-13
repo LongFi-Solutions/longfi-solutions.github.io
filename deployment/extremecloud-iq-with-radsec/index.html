@@ -968,10 +968,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-6-test-and-verify" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 6: Test and verify
+        
       
     </span>
   </a>
@@ -1130,12 +1130,15 @@
 <ol>
 <li>For <strong>3GPP Cellular Network</strong> enter the MCC/MNC codes provided by Longfi during onboarding.  MCC/MNC pairs.</li>
 </ol>
+<p>The following screenshot is just an example:</p>
+<p><img alt="" src="/assets/images/20261112-214810.png" /></p>
 <h3 id="network-characteristics-tab">Network Characteristics tab<a class="headerlink" href="#network-characteristics-tab" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>IP Address Type Availability</strong>: IPv4 <strong>Single NAT</strong>, IPv6 <strong>Not Available</strong>.</li>
-<li><strong>WLAN Metrics</strong>: enter the venue's uplink and downlink speeds.</li>
+<li><strong>WLAN Metrics</strong>: optional. Enter the venue's uplink and downlink speeds if necessary.</li>
 <li><strong>Connection Capability</strong>: optional. If used, list the ports that are open (up to 16) rather than leaving them Unknown.</li>
 </ol>
+<p><img alt="" src="/assets/images/20261112-214930.png" /></p>
 <h3 id="online-signup-tab">Online Signup tab<a class="headerlink" href="#online-signup-tab" title="Permanent link">&para;</a></h3>
 <p>Leave unconfigured. LongFi profiles are provisioned on the device, so no OSU network is needed.</p>
 <p>Select <strong>OK</strong>, then <strong>Save</strong> the WLAN. From here, Hotspot can't be turned off on this WLAN.</p>
@@ -1146,20 +1149,11 @@
 <li>Open the <strong>Device Groups</strong> tab and select the device group.</li>
 <li>Next to <strong>Profile</strong>, select the <strong>edit</strong> icon.</li>
 <li>Open the <strong>Networks</strong> tab.</li>
-<li>For <code>LongFi_Secure_WiFi</code>, select the <strong>2.4 GHz</strong> and <strong>5 GHz</strong> radios. Leave <strong>6 GHz</strong> unselected; the controller rejects WPA2 networks there.</li>
+<li>For <code>LongFi Passpoint</code>, select the <strong>5 GHz</strong> radios. We don't recommend leaving 2.4 GHz on. Leave <strong>6 GHz</strong> unselected; the controller rejects WPA2 networks there.</li>
 <li>If the controller warns that the change affects a radio's <strong>primary BSSID</strong>, stop: that radio will reset and drop its clients. Pick a time when that's acceptable, or assign the SSID so it isn't the primary BSSID.</li>
 <li>Select <strong>Save</strong>. The controller pushes the change to the APs in that group; they don't reboot.</li>
 </ol>
-<h2 id="step-6-test-and-verify">Step 6: Test and verify<a class="headerlink" href="#step-6-test-and-verify" title="Permanent link">&para;</a></h2>
-<p>The pilot passes when a phone with a LongFi Passpoint profile joins on its own and LongFi receives its accounting.</p>
-<ul>
-<li>The LongFi RadSec servers show as reachable in the controller's RADIUS diagnostics (TLS session up on TCP 2083).</li>
-<li>A Wi-Fi scanner shows the <code>LongFi</code> SSID with Interworking and Hotspot 2.0 elements in the beacon, on 2.4 and 5 GHz only.</li>
-<li>A provisioned phone that never joined this SSID connects automatically within about 30 seconds.</li>
-<li>Interim accounting reaches LongFi about every 300 seconds.</li>
-<li>Clients on the venue's other SSIDs on the pilot AP were not dropped.</li>
-<li>After the pilot passes, assign the WLAN to the remaining device groups.</li>
-</ul>
+<h2 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h2 id="sources">Sources<a class="headerlink" href="#sources" title="Permanent link">&para;</a></h2>
 <p>ExtremeCloud IQ Controller v10.19.01 User Guide:</p>
 <ul>
