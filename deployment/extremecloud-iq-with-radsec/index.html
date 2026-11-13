@@ -1033,32 +1033,17 @@
 <tr>
 <td>Primary RadSec server</td>
 <td>Step 3</td>
-<td><code>50.18.227.41</code>, TCP 2083</td>
+<td>136.107.123.32 Port: 2083</td>
 </tr>
 <tr>
 <td>Secondary RadSec server</td>
 <td>Step 3</td>
-<td><code>54.219.71.206</code>, TCP 2083</td>
+<td>34.174.6.104 Port: 2083</td>
 </tr>
 <tr>
 <td>RadSec shared secret</td>
 <td>Step 3</td>
 <td><code>radsec</code> (RadSec default) unless LongFi specifies another</td>
-</tr>
-<tr>
-<td>Passpoint domain</td>
-<td>Step 4</td>
-<td><code>&lt;LongFi domain&gt;</code></td>
-</tr>
-<tr>
-<td>NAI realm and EAP method</td>
-<td>Step 4</td>
-<td><code>&lt;LongFi realm&gt;</code>, EAP-TTLS with MSCHAPv2</td>
-</tr>
-<tr>
-<td>Roaming Consortium OIs, if used</td>
-<td>Step 4</td>
-<td><code>&lt;LongFi RCOI&gt;</code></td>
 </tr>
 </tbody>
 </table>
@@ -1080,8 +1065,8 @@
 <h2 id="step-2-create-the-wlan-with-hotspot-enabled">Step 2: Create the WLAN with Hotspot enabled<a class="headerlink" href="#step-2-create-the-wlan-with-hotspot-enabled" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Go to <strong>Configure</strong> &gt; <strong>Networks</strong> &gt; <strong>WLANs</strong> and select <strong>Add</strong>.</li>
-<li>Set <strong>Network Name</strong> to <code>LongFi_Secure_WiFi</code> (internal name).</li>
-<li>Set <strong>SSID</strong> to the name clients will see, such as <code>LongFi</code> (up to 32 characters, case-sensitive).</li>
+<li>Set <strong>Network Name</strong> to <code>LongFi Passpoint</code> (internal name).</li>
+<li>Set <strong>SSID</strong> to the name clients will see, such as <code>LongFi Passpoint</code> (up to 32 characters, case-sensitive).</li>
 <li>Set <strong>Status</strong> to <strong>Enabled</strong>.</li>
 <li>Set <strong>Hotspot</strong> to <strong>Enabled</strong>. A <strong>Configure</strong> button appears; leave it for Step 4.</li>
 <li>Set <strong>Auth Type</strong> to <strong>WPA2-Enterprise (802.1X/EAP)</strong>.</li>
@@ -1098,17 +1083,17 @@
 <li>Set <strong>Accounting Type</strong> to <strong>Start-Interim-Stop</strong>.</li>
 <li>Set <strong>Accounting Interim Interval</strong> to <code>300</code> seconds (default 60).</li>
 <li>Set <strong>RADIUS Authentication Servers Mode</strong> to <strong>Failover</strong>.</li>
-<li>Optional: set <strong>Operator Name</strong> if LongFi provides one (namespace Realm, Tadig, E212, OneCC or WBAID).</li>
+<li>Sset <strong>Operator Name</strong> to <strong>LONGFISOLUTIONS:US</strong>.</li>
 <li>Under authentication servers, select <strong>Add</strong> and enter the primary server:<ul>
 <li><strong>Type</strong>: <strong>Secure (RADSEC)</strong></li>
-<li><strong>Server Address</strong>: <code>50.18.227.41</code> (can't be changed after saving)</li>
+<li><strong>Server Address</strong>: <code>136.107.123.32</code></li>
 <li><strong>Port</strong>: <code>2083</code></li>
 <li><strong>Trust Point</strong>: <code>LongFi_RadSec</code></li>
 <li><strong>Shared Secret</strong>: <code>radsec</code> unless LongFi gave another</li>
 <li>Leave <strong>Peer Discovery</strong> off</li>
 </ul>
 </li>
-<li>Repeat step 8 for the secondary server <code>54.219.71.206</code>.</li>
+<li>Repeat step 8 for the secondary server <code>34.174.6.104</code></li>
 <li>Add the same two servers as <strong>accounting</strong> servers.</li>
 <li>Save the AAA policy. It is now selected on the WLAN.</li>
 </ol>
@@ -1117,21 +1102,33 @@
 <h3 id="main-settings">Main settings<a class="headerlink" href="#main-settings" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>HESSID</strong>: leave the default (the controller's Ethernet MAC). It must be unique per WLAN; if you set it by hand, use an AP BSSID.</li>
-<li><strong>Access Network</strong>: <strong>Private network with guest access</strong> (default is Chargeable public network).</li>
+<li><strong>Access Network</strong>: Chargeable public network.</li>
 <li><strong>DGAF Disabled</strong>: leave checked (default).</li>
 </ol>
+<p><img alt="" src="/assets/images/20261112-213107.png" /></p>
 <h3 id="hotspot-identification-tab">Hotspot Identification tab<a class="headerlink" href="#hotspot-identification-tab" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>Domain</strong>: enter <code>&lt;LongFi domain&gt;</code>. Add sub-domains if LongFi provides them.</li>
-<li><strong>Venue Info</strong>: pick the venue group, then the venue type (for a casino, the Assembly or Mercantile group, whichever LongFi specifies).</li>
-<li>Select <strong>New</strong> and enter <strong>Operator Name</strong> <code>LongFi-Operator</code>, the <strong>Venue Name</strong>, and <strong>Language</strong> English. Up to four languages per venue.</li>
+<li><strong>Domain</strong>: enter <code>longfisolutions.com</code>. Add sub-domains such as <code>freedomfi.com</code>.</li>
+<li><strong>Venue Info</strong>: pick the venue group, then the venue type. Choose the option that best matches your site.</li>
+<li>Select <strong>New</strong> and enter <strong>Operator Name</strong> <code>LONGFISOLUTIONS:US</code>, the <strong>Venue Name</strong>, and <strong>Language</strong> English.</li>
 </ol>
 <h3 id="sp-identification-tab">SP Identification tab<a class="headerlink" href="#sp-identification-tab" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Under <strong>Realm</strong>, select <strong>New</strong> and enter <code>&lt;LongFi realm&gt;</code>.</li>
-<li>Select the EAP method <strong>EAP-TTLS</strong> with inner authentication <strong>MSCHAPv2</strong> (up to four EAP methods per realm).</li>
-<li>Under <strong>Roaming Consortium</strong>, add the LongFi OIs if used (up to 8; AP39xx only advertises the first 2).</li>
-<li>Leave <strong>3GPP Cellular Network</strong> empty unless LongFi supplies MCC/MNC pairs.</li>
+<li>Under <strong>Realm</strong>, select <strong>New</strong> and enter the following: </li>
+</ol>
+<p><strong>Realm:</strong> longfisolutions.com | EAP Method: <strong>EAP-TLS</strong> with inner authentication <strong>Certificate</strong> if available</p>
+<p><strong>Realm:</strong> freedomfi.com | EAP Method: <strong>EAP-TLS</strong> with inner authentication <strong>Certificate</strong> if available</p>
+<p><strong>Realm:</strong> hellohelium.com | EAP Method: <strong>EAP-TLS</strong> with inner authentication <strong>Certificate</strong> if available</p>
+<p><strong>Realm:</strong> wifi.fi.google.com | EAP Method: <strong>EAP-TLS</strong> with inner authentication <strong>Certificate</strong> if available</p>
+<ol>
+<li>Under <strong>Roaming Consortium</strong>, add the following: </li>
+</ol>
+<p>Consortium: F4F5E8F5F4</p>
+<p>Description: Orion </p>
+<p>Consortium: 2A2F830000</p>
+<p>Description: Uplink</p>
+<ol>
+<li>For <strong>3GPP Cellular Network</strong> enter the MCC/MNC codes provided by Longfi during onboarding.  MCC/MNC pairs.</li>
 </ol>
 <h3 id="network-characteristics-tab">Network Characteristics tab<a class="headerlink" href="#network-characteristics-tab" title="Permanent link">&para;</a></h3>
 <ol>
