@@ -64,8 +64,6 @@ If **Certificates** is missing from the menu, enable it under **System → Featu
 
 ![](/assets/images/20261119-203346.png)
 
-
-
 ## Step 3 — Configure the RadSec server (CLI)
 
 ```plain
@@ -73,21 +71,19 @@ config user radius
     edit "LongFi-RadSec"
         set server "connect.longfisolutions.com"
         set secret radsec
-        set radius-port 2083
-        set transport-protocol tls
-        set ca-cert "<CA_CERT_NAME>"
-        set client-cert "<SITE_ID>"
-        set server-identity-check enable
-        set tls-min-proto-version TLSv1-2
         set nas-id-type custom
         set nas-id "<NAS_ID>"
         set acct-interim-interval 300
+        set radius-port 2083
+        set transport-protocol tls
+        set tls-min-proto-version TLSv1-2
+        set ca-cert "<CA_CERT_NAME>"
+        set client-cert "<SITE_ID>"
         config accounting-server
             edit 1
                 set status enable
                 set server "connect.longfisolutions.com"
                 set secret radsec
-                set port 2083
             next
         end
     next
