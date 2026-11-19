@@ -1093,25 +1093,23 @@ upgrade path tool, then upgrade FortiAPs (<strong>WiFi &amp; Switch Controller â
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    edit "LongFi-RadSec"
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        set server "connect.longfisolutions.com"
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        set secret radsec
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        set radius-port 2083
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        set transport-protocol tls
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        set ca-cert "&lt;CA_CERT_NAME&gt;"
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        set client-cert "&lt;SITE_ID&gt;"
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        set server-identity-check enable
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        set nas-id-type custom
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        set nas-id "&lt;NAS_ID&gt;"
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        set acct-interim-interval 300
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        set radius-port 2083
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        set transport-protocol tls
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        set tls-min-proto-version TLSv1-2
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>        set nas-id-type custom
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        set nas-id "&lt;NAS_ID&gt;"
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        set acct-interim-interval 300
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>        config accounting-server
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>            edit 1
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>                set status enable
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>                set server "connect.longfisolutions.com"
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>                set secret radsec
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>                set port 2083
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>            next
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>        end
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>    next
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>end
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>        set ca-cert "&lt;CA_CERT_NAME&gt;"
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        set client-cert "&lt;SITE_ID&gt;"
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        config accounting-server
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>            edit 1
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>                set status enable
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>                set server "connect.longfisolutions.com"
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>                set secret radsec
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>            next
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>        end
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>    next
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>end
 </code></pre></div>
 <p>Test reachability: <code>execute telnet connect.longfisolutions.com 2083</code></p>
 <h2 id="step-4-hotspot-20-profiles-cli">Step 4 â€” Hotspot 2.0 profiles (CLI)<a class="headerlink" href="#step-4-hotspot-20-profiles-cli" title="Permanent link">&para;</a></h2>
