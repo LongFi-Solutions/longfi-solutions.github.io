@@ -21,7 +21,7 @@ Wi-Fi. FortiOS 7.6.0 added native RadSec for WPA2/WPA3-Enterprise SSIDs.
 ## Requirements
 
 | Item | Requirement |
-|---|---|
+| --- | --- |
 | FortiOS | **7.6.0 or later** (7.6.4+ recommended). 7.4.x supports RadSec for firewall/admin auth only, not Wi-Fi. |
 | FortiAP firmware | Supported by your FortiOS release (see Fortinet compatibility matrix) |
 | Outbound access | FortiGate → `connect.longfisolutions.com` TCP **2083** |
@@ -31,11 +31,11 @@ Wi-Fi. FortiOS 7.6.0 added native RadSec for WPA2/WPA3-Enterprise SSIDs.
 ## What is configured where
 
 | Task | GUI | CLI |
-|---|:-:|:-:|
-| Firmware upgrade | ✅ | |
-| Import CA and client certificates | ✅ | |
+| --- | :---: | :---: |
+| Firmware upgrade | ✅ |  |
+| Import CA and client certificates | ✅ |  |
 | RADIUS server (RadSec / TLS options, client cert) | partial | ✅ |
-| Hotspot 2.0 / ANQP profiles | | ✅ (CLI only) |
+| Hotspot 2.0 / ANQP profiles |  | ✅ (CLI only) |
 | SSID (VAP) + attach Hotspot 2.0 profile | partial | ✅ |
 | SSID addressing, DHCP, firewall policy | ✅ | ✅ |
 | Assign SSID to FortiAP profile | ✅ | ✅ |
@@ -47,18 +47,28 @@ upgrade path tool, then upgrade FortiAPs (**WiFi & Switch Controller → Managed
 
 ## Step 2 — Import certificates (GUI)
 
-1. **System → Certificates → Create/Import → CA Certificate → File** — import the
-   LongFi Root CA (and Intermediate CA, if provided). FortiOS names it `CA_Cert_N`.
-2. **System → Certificates → Create/Import → Certificate → Import Certificate** —
-   choose **PKCS #12** (or Certificate + key), upload the site certificate LongFi
-   provided, and name it `<SITE_ID>`.
+1. Check if the **Certificate** option is available in the left menu by clicking on **System**, then **Certificates.** 
 
-> If **Certificates** is missing from the menu, enable it under
-> **System → Feature Visibility → Certificates**.
+If **Certificates** is missing from the menu, enable it under **System → Feature Visibility → Certificates**.
+
+![](/assets/images/20261119-202431.png)
+
+**Importing the Certificates**
+
+1. **System → Certificates → Create/Import → CA Certificate → File** — Click on the Upload button and import the LongFi Root CA (and Intermediate CA, if provided). FortiOS names it `CA_Cert_N`.
+
+![](/assets/images/20261119-203119.png)
+
+1. **System → Certificates → Create/Import → Certificate → Import Certificate**  —
+   choose **PKCS #12** or **Certificate + key**, upload the site certificate LongFi provided:
+
+![](/assets/images/20261119-203346.png)
+
+
 
 ## Step 3 — Configure the RadSec server (CLI)
 
-```
+```plain
 config user radius
     edit "LongFi-RadSec"
         set server "connect.longfisolutions.com"
@@ -91,7 +101,7 @@ Test reachability: `execute telnet connect.longfisolutions.com 2083`
 Paste STEP 2 and STEP 3 from the template. These create:
 
 | Object | Purpose |
-|---|---|
+| --- | --- |
 | `anqp-roaming-consortium` | Roaming Consortium OIs advertised in beacons |
 | `anqp-nai-realm` | Realms `longfisolutions.com`, `freedomfi.com`, `hellohelium.com` — EAP-TLS, certificate |
 | `anqp-3gpp-cellular` | AT&T PLMN IDs: 310-410, 310-280, 310-150, 313-100 |
@@ -120,7 +130,7 @@ on 6 GHz. To offer Passpoint on 6 GHz, create a second VAP with
 
 ## Step 7 — Verify
 
-```
+```plain
 diagnose debug application fnbamd -1
 diagnose debug enable
 #  connect a Passpoint device; look for "proto: TCP over TLS" and Access-Accept
@@ -133,7 +143,7 @@ diagnose wireless-controller wlac -d sta online
 ## Troubleshooting
 
 | Symptom | Check |
-|---|---|
+| --- | --- |
 | TLS handshake fails | Wrong/missing CA cert; client cert not issued by LongFi CA; system clock wrong (check NTP) |
 | "server identity check" errors | Server name must match the cert CN/SAN. Use the FQDN, not an IP. As a last resort `set server-identity-check disable` |
 | No TCP connection on 2083 | Upstream firewall/ISP blocking outbound 2083; DNS resolution |
