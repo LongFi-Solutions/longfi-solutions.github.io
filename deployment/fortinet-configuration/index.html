@@ -1074,16 +1074,20 @@ Wi-Fi. FortiOS 7.6.0 added native RadSec for WPA2/WPA3-Enterprise SSIDs.</p>
 upgrade path tool, then upgrade FortiAPs (<strong>WiFi &amp; Switch Controller → Managed FortiAPs</strong>).</p>
 <h2 id="step-2-import-certificates-gui">Step 2 — Import certificates (GUI)<a class="headerlink" href="#step-2-import-certificates-gui" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>System → Certificates → Create/Import → CA Certificate → File</strong> — import the
-   LongFi Root CA (and Intermediate CA, if provided). FortiOS names it <code>CA_Cert_N</code>.</li>
-<li><strong>System → Certificates → Create/Import → Certificate → Import Certificate</strong> —
-   choose <strong>PKCS #12</strong> (or Certificate + key), upload the site certificate LongFi
-   provided, and name it <code>&lt;SITE_ID&gt;</code>.</li>
+<li>Check if the <strong>Certificate</strong> option is available in the left menu by clicking on <strong>System</strong>, then <strong>Certificates.</strong> </li>
 </ol>
-<blockquote>
-<p>If <strong>Certificates</strong> is missing from the menu, enable it under
-<strong>System → Feature Visibility → Certificates</strong>.</p>
-</blockquote>
+<p>If <strong>Certificates</strong> is missing from the menu, enable it under <strong>System → Feature Visibility → Certificates</strong>.</p>
+<p><img alt="" src="/assets/images/20261119-202431.png" /></p>
+<p><strong>Importing the Certificates</strong></p>
+<ol>
+<li><strong>System → Certificates → Create/Import → CA Certificate → File</strong> — Click on the Upload button and import the LongFi Root CA (and Intermediate CA, if provided). FortiOS names it <code>CA_Cert_N</code>.</li>
+</ol>
+<p><img alt="" src="/assets/images/20261119-203119.png" /></p>
+<ol>
+<li><strong>System → Certificates → Create/Import → Certificate → Import Certificate</strong>  —
+   choose <strong>PKCS #12</strong> or <strong>Certificate + key</strong>, upload the site certificate LongFi provided:</li>
+</ol>
+<p><img alt="" src="/assets/images/20261119-203346.png" /></p>
 <h2 id="step-3-configure-the-radsec-server-cli">Step 3 — Configure the RadSec server (CLI)<a class="headerlink" href="#step-3-configure-the-radsec-server-cli" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>config user radius
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    edit "LongFi-RadSec"
