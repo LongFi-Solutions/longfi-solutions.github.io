@@ -206,8 +206,14 @@ config wireless-controller hotspot20 hs-profile
         set venue-type <set per site>
     next
 end
+```
 
-#### 7. SSID ####
+## Step 5 — Create the Passpoint SSID
+
+## 
+
+```plain
+
 config wireless-controller vap
     edit "LongFi-PP"
         set ssid "<SSID>"
@@ -218,21 +224,17 @@ config wireless-controller vap
         set hotspot20-profile "LongFi-HS20"
     next
 end
-
-
 ```
 
-## Step 5 — Create the Passpoint SSID
-
-Paste STEP 4 (VAP) and STEP 5 (interface, DHCP, firewall policy) from the template.
 Tunnel mode is the default: client traffic returns to the FortiGate and is NATed.
 For local-bridge mode, see the comments in the template.
 
 ## Step 6 — Broadcast on the FortiAPs
 
-Paste STEP 6, or in the GUI: **WiFi & Switch Controller → FortiAP Profiles → <profile>**,
-for Radio 1 and Radio 2 set **SSIDs → Manual** and add the Passpoint SSID
-alongside existing SSIDs.
+In the GUI, click on  **WiFi & Switch Controller → FortiAP Profiles → <profile>**,
+Radio 1 is the 2.4 GHz band, and Radio 2 is the 5 GHz band. We recommend disabling 2.4Ghz to avoid interference.
+
+![](/assets/images/20261119-214846.png)
 
 **6 GHz (FortiAP 431G and other 6E models):** WPA2-Enterprise SSIDs don't broadcast
 on 6 GHz. To offer Passpoint on 6 GHz, create a second VAP with
