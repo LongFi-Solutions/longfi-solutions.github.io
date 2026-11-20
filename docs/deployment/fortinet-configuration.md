@@ -213,7 +213,6 @@ end
 ## 
 
 ```plain
-
 config wireless-controller vap
     edit "LongFi-PP"
         set ssid "<SSID>"
@@ -239,7 +238,20 @@ Radio 1 is the 2.4 GHz band, and Radio 2 is the 5 GHz band. We recommend disabli
 **6 GHz (FortiAP 431G and other 6E models):** WPA2-Enterprise SSIDs don't broadcast
 on 6 GHz. To offer Passpoint on 6 GHz, create a second VAP with
 `set security wpa3-only-enterprise` and `set pmf enable` using the same
-`hotspot20-profile` and `radius-server`, and assign it to radio-3.
+`hotspot20-profile` and `radius-server.`
+
+```plain
+config wireless-controller vap
+    edit "LongFi-PP6"
+        set ssid "<SSID>"
+        set security wpa3-only-enterprise
+        set pmf optional
+        set auth radius
+        set radius-server "LongFi-RadSec"
+        set hotspot20-profile "LongFi-HS20"
+    next
+end
+```
 
 ## Step 7 — Verify
 
