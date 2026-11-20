@@ -34,9 +34,9 @@ Wi-Fi. FortiOS 7.6.0 added native RadSec for WPA2/WPA3-Enterprise SSIDs.
 | --- | :---: | :---: |
 | Firmware upgrade | ✅ |  |
 | Import CA and client certificates | ✅ |  |
-| RADIUS server (RadSec / TLS options, client cert) | partial | ✅ |
-| Hotspot 2.0 / ANQP profiles |  | ✅ (CLI only) |
-| SSID (VAP) + attach Hotspot 2.0 profile | partial | ✅ |
+| RADIUS server (RadSec / TLS options, client cert) |  | ✅ |
+| Hotspot 2.0 / ANQP profiles |  | ✅ |
+| SSID (VAP) + attach Hotspot 2.0 profile |  | ✅ |
 | SSID addressing, DHCP, firewall policy | ✅ | ✅ |
 | Assign SSID to FortiAP profile | ✅ | ✅ |
 
@@ -106,6 +106,136 @@ Paste STEP 2 and STEP 3 from the template. These create:
 | `h2qp-operator-name` | Operator friendly name (site-specific) |
 | `h2qp-wan-metric` | Backhaul speed |
 | `hs-profile` | Combines the above |
+
+## 
+
+```plain
+#### 2. NAI realms ####
+config wireless-controller hotspot20 anqp-nai-realm
+    edit "LongFi-NAI"
+        config nai-list
+            edit "longfi"
+                set nai-realm "longfisolutions.com"
+                config eap-method
+                    edit 1
+                        set method eap-tls
+                        config auth-param
+                            edit 1
+                                set id credential
+                                set val cred-certificate
+                            next
+                        end
+                    next
+                end
+            next
+            edit "freedomfi"
+                set nai-realm "freedomfi.com"
+                config eap-method
+                    edit 1
+                        set method eap-tls
+                        config auth-param
+                            edit 1
+                                set id credential
+                                set val cred-certificate
+                            next
+                        end
+                    next
+                end
+            next
+            edit "helium"
+                set nai-realm "hellohelium.com"
+                config eap-method
+                    edit 1
+                        set method eap-tls
+                        config auth-param
+                            edit 1
+                                set id credential
+                                set val cred-certificate
+                            next
+                        end
+                    next
+                end
+            end
+
+
+#### 3. AT&T 3GPP cellular (PLMN) list ####
+config wireless-controller hotspot20 anqp-3gpp-cellular
+    edit "ATT-PLMN"
+        config mcc-mnc-list
+            edit 1
+                set mcc "310"
+                set mnc "410"
+            next
+            edit 2
+                set mcc "310"
+                set mnc "280"
+            next
+            edit 3
+                set mcc "310"
+                set mnc "150"
+            next
+            edit 4
+                set mcc "313"
+                set mnc "100"
+            next
+        end
+    next
+end
+
+
+#### 4. Roaming consortium ####
+config wireless-controller hotspot20 anqp-roaming-consortium
+    edit "LongFi-RCOI"
+        config oi-list
+            edit 1
+                set oi "F4F5E8F5F4"
+                set comment "Orion"
+            next
+            edit 2
+                set oi "2A2F830000"
+                set comment "Uplink"
+            next
+        end
+    next
+end
+
+#### 5. IP address type ####
+config wireless-controller hotspot20 anqp-ip-address-type
+    edit "LongFi-IP"
+        set ipv4-address-type single-NATed-private
+        set ipv6-address-type not-available
+    next
+end
+
+#### 6. Hotspot profile ####
+config wireless-controller hotspot20 hs-profile
+    edit "LongFi-HS20"
+        set access-network-type chargeable-public-network
+        set access-network-internet enable
+        set domain-name "longfisolutions.com,wifi.fi.google.com,freedomfi.com"
+        set nai-realm "LongFi-NAI"
+        set 3gpp-plmn "ATT-PLMN"
+        set roaming-consortium "LongFi-RCOI"
+        set ip-addr-type "LongFi-IP"
+        set venue-group <set per site>
+        set venue-type <set per site>
+    next
+end
+
+#### 7. SSID ####
+config wireless-controller vap
+    edit "LongFi-PP"
+        set ssid "<SSID>"
+        set security wpa2-only-enterprise
+        set pmf optional
+        set auth radius
+        set radius-server "LongFi-RadSec"
+        set hotspot20-profile "LongFi-HS20"
+    next
+end
+
+
+```
 
 ## Step 5 — Create the Passpoint SSID
 
