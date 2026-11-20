@@ -918,6 +918,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#step-6-broadcast-on-the-fortiaps" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1224,39 +1235,38 @@ upgrade path tool, then upgrade FortiAPs (<strong>WiFi &amp; Switch Controller �
 <a id="__codelineno-1-109" name="__codelineno-1-109" href="#__codelineno-1-109"></a>        set venue-type &lt;set per site&gt;
 <a id="__codelineno-1-110" name="__codelineno-1-110" href="#__codelineno-1-110"></a>    next
 <a id="__codelineno-1-111" name="__codelineno-1-111" href="#__codelineno-1-111"></a>end
-<a id="__codelineno-1-112" name="__codelineno-1-112" href="#__codelineno-1-112"></a>
-<a id="__codelineno-1-113" name="__codelineno-1-113" href="#__codelineno-1-113"></a>#### 7. SSID ####
-<a id="__codelineno-1-114" name="__codelineno-1-114" href="#__codelineno-1-114"></a>config wireless-controller vap
-<a id="__codelineno-1-115" name="__codelineno-1-115" href="#__codelineno-1-115"></a>    edit "LongFi-PP"
-<a id="__codelineno-1-116" name="__codelineno-1-116" href="#__codelineno-1-116"></a>        set ssid "&lt;SSID&gt;"
-<a id="__codelineno-1-117" name="__codelineno-1-117" href="#__codelineno-1-117"></a>        set security wpa2-only-enterprise
-<a id="__codelineno-1-118" name="__codelineno-1-118" href="#__codelineno-1-118"></a>        set pmf optional
-<a id="__codelineno-1-119" name="__codelineno-1-119" href="#__codelineno-1-119"></a>        set auth radius
-<a id="__codelineno-1-120" name="__codelineno-1-120" href="#__codelineno-1-120"></a>        set radius-server "LongFi-RadSec"
-<a id="__codelineno-1-121" name="__codelineno-1-121" href="#__codelineno-1-121"></a>        set hotspot20-profile "LongFi-HS20"
-<a id="__codelineno-1-122" name="__codelineno-1-122" href="#__codelineno-1-122"></a>    next
-<a id="__codelineno-1-123" name="__codelineno-1-123" href="#__codelineno-1-123"></a>end
 </code></pre></div>
 <h2 id="step-5-create-the-passpoint-ssid">Step 5 — Create the Passpoint SSID<a class="headerlink" href="#step-5-create-the-passpoint-ssid" title="Permanent link">&para;</a></h2>
-<p>Paste STEP 4 (VAP) and STEP 5 (interface, DHCP, firewall policy) from the template.
-Tunnel mode is the default: client traffic returns to the FortiGate and is NATed.
+<h2 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>config wireless-controller vap
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    edit "LongFi-PP"
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>        set ssid "&lt;SSID&gt;"
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        set security wpa2-only-enterprise
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        set pmf optional
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        set auth radius
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        set radius-server "LongFi-RadSec"
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>        set hotspot20-profile "LongFi-HS20"
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    next
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>end
+</code></pre></div>
+<p>Tunnel mode is the default: client traffic returns to the FortiGate and is NATed.
 For local-bridge mode, see the comments in the template.</p>
 <h2 id="step-6-broadcast-on-the-fortiaps">Step 6 — Broadcast on the FortiAPs<a class="headerlink" href="#step-6-broadcast-on-the-fortiaps" title="Permanent link">&para;</a></h2>
-<p>Paste STEP 6, or in the GUI: <strong>WiFi &amp; Switch Controller → FortiAP Profiles → <profile></strong>,
-for Radio 1 and Radio 2 set <strong>SSIDs → Manual</strong> and add the Passpoint SSID
-alongside existing SSIDs.</p>
+<p>In the GUI, click on  <strong>WiFi &amp; Switch Controller → FortiAP Profiles → <profile></strong>,
+Radio 1 is the 2.4 GHz band, and Radio 2 is the 5 GHz band. We recommend disabling 2.4Ghz to avoid interference.</p>
+<p><img alt="" src="/assets/images/20261119-214846.png" /></p>
 <p><strong>6 GHz (FortiAP 431G and other 6E models):</strong> WPA2-Enterprise SSIDs don't broadcast
 on 6 GHz. To offer Passpoint on 6 GHz, create a second VAP with
 <code>set security wpa3-only-enterprise</code> and <code>set pmf enable</code> using the same
 <code>hotspot20-profile</code> and <code>radius-server</code>, and assign it to radio-3.</p>
 <h2 id="step-7-verify">Step 7 — Verify<a class="headerlink" href="#step-7-verify" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>diagnose debug application fnbamd -1
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>diagnose debug enable
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>#  connect a Passpoint device; look for "proto: TCP over TLS" and Access-Accept
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>diagnose debug disable
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>diagnose debug reset
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>diagnose wireless-controller wlac -d sta online
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>diagnose debug application fnbamd -1
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>diagnose debug enable
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>#  connect a Passpoint device; look for "proto: TCP over TLS" and Access-Accept
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>diagnose debug disable
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>diagnose debug reset
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>diagnose wireless-controller wlac -d sta online
 </code></pre></div>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <table>
