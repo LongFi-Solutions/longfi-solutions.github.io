@@ -907,6 +907,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#step-5-create-the-passpoint-ssid" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1044,17 +1055,17 @@ Wi-Fi. FortiOS 7.6.0 added native RadSec for WPA2/WPA3-Enterprise SSIDs.</p>
 </tr>
 <tr>
 <td>RADIUS server (RadSec / TLS options, client cert)</td>
-<td style="text-align: center;">partial</td>
+<td style="text-align: center;"></td>
 <td style="text-align: center;">✅</td>
 </tr>
 <tr>
 <td>Hotspot 2.0 / ANQP profiles</td>
 <td style="text-align: center;"></td>
-<td style="text-align: center;">✅ (CLI only)</td>
+<td style="text-align: center;">✅</td>
 </tr>
 <tr>
 <td>SSID (VAP) + attach Hotspot 2.0 profile</td>
-<td style="text-align: center;">partial</td>
+<td style="text-align: center;"></td>
 <td style="text-align: center;">✅</td>
 </tr>
 <tr>
@@ -1156,6 +1167,131 @@ upgrade path tool, then upgrade FortiAPs (<strong>WiFi &amp; Switch Controller �
 </tr>
 </tbody>
 </table>
+<h2 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>#### 2. NAI realms ####
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>config wireless-controller hotspot20 anqp-nai-realm
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    edit "LongFi-NAI"
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        config nai-list
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>            edit "longfi"
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>                set nai-realm "longfisolutions.com"
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>                config eap-method
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>                    edit 1
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>                        set method eap-tls
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>                        config auth-param
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>                            edit 1
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>                                set id credential
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>                                set val cred-certificate
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>                            next
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>                        end
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>                    next
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>                end
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>            next
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>            edit "freedomfi"
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>                set nai-realm "freedomfi.com"
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>                config eap-method
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>                    edit 1
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>                        set method eap-tls
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>                        config auth-param
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>                            edit 1
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>                                set id credential
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>                                set val cred-certificate
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>                            next
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>                        end
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>                    next
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>                end
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>            next
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>            edit "helium"
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>                set nai-realm "hellohelium.com"
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>                config eap-method
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>                    edit 1
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>                        set method eap-tls
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>                        config auth-param
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>                            edit 1
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>                                set id credential
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>                                set val cred-certificate
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>                            next
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>                        end
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>                    next
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>                end
+<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>            end
+<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>
+<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>
+<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>#### 3. AT&amp;T 3GPP cellular (PLMN) list ####
+<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>config wireless-controller hotspot20 anqp-3gpp-cellular
+<a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>    edit "ATT-PLMN"
+<a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>        config mcc-mnc-list
+<a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a>            edit 1
+<a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>                set mcc "310"
+<a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a>                set mnc "410"
+<a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a>            next
+<a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a>            edit 2
+<a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a>                set mcc "310"
+<a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a>                set mnc "280"
+<a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a>            next
+<a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a>            edit 3
+<a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a>                set mcc "310"
+<a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a>                set mnc "150"
+<a id="__codelineno-1-64" name="__codelineno-1-64" href="#__codelineno-1-64"></a>            next
+<a id="__codelineno-1-65" name="__codelineno-1-65" href="#__codelineno-1-65"></a>            edit 4
+<a id="__codelineno-1-66" name="__codelineno-1-66" href="#__codelineno-1-66"></a>                set mcc "313"
+<a id="__codelineno-1-67" name="__codelineno-1-67" href="#__codelineno-1-67"></a>                set mnc "100"
+<a id="__codelineno-1-68" name="__codelineno-1-68" href="#__codelineno-1-68"></a>            next
+<a id="__codelineno-1-69" name="__codelineno-1-69" href="#__codelineno-1-69"></a>        end
+<a id="__codelineno-1-70" name="__codelineno-1-70" href="#__codelineno-1-70"></a>    next
+<a id="__codelineno-1-71" name="__codelineno-1-71" href="#__codelineno-1-71"></a>end
+<a id="__codelineno-1-72" name="__codelineno-1-72" href="#__codelineno-1-72"></a>
+<a id="__codelineno-1-73" name="__codelineno-1-73" href="#__codelineno-1-73"></a>
+<a id="__codelineno-1-74" name="__codelineno-1-74" href="#__codelineno-1-74"></a>#### 4. Roaming consortium ####
+<a id="__codelineno-1-75" name="__codelineno-1-75" href="#__codelineno-1-75"></a>config wireless-controller hotspot20 anqp-roaming-consortium
+<a id="__codelineno-1-76" name="__codelineno-1-76" href="#__codelineno-1-76"></a>    edit "LongFi-RCOI"
+<a id="__codelineno-1-77" name="__codelineno-1-77" href="#__codelineno-1-77"></a>        config oi-list
+<a id="__codelineno-1-78" name="__codelineno-1-78" href="#__codelineno-1-78"></a>            edit 1
+<a id="__codelineno-1-79" name="__codelineno-1-79" href="#__codelineno-1-79"></a>                set oi "F4F5E8F5F4"
+<a id="__codelineno-1-80" name="__codelineno-1-80" href="#__codelineno-1-80"></a>                set comment "Orion"
+<a id="__codelineno-1-81" name="__codelineno-1-81" href="#__codelineno-1-81"></a>            next
+<a id="__codelineno-1-82" name="__codelineno-1-82" href="#__codelineno-1-82"></a>            edit 2
+<a id="__codelineno-1-83" name="__codelineno-1-83" href="#__codelineno-1-83"></a>                set oi "2A2F830000"
+<a id="__codelineno-1-84" name="__codelineno-1-84" href="#__codelineno-1-84"></a>                set comment "Uplink"
+<a id="__codelineno-1-85" name="__codelineno-1-85" href="#__codelineno-1-85"></a>            next
+<a id="__codelineno-1-86" name="__codelineno-1-86" href="#__codelineno-1-86"></a>        end
+<a id="__codelineno-1-87" name="__codelineno-1-87" href="#__codelineno-1-87"></a>    next
+<a id="__codelineno-1-88" name="__codelineno-1-88" href="#__codelineno-1-88"></a>end
+<a id="__codelineno-1-89" name="__codelineno-1-89" href="#__codelineno-1-89"></a>
+<a id="__codelineno-1-90" name="__codelineno-1-90" href="#__codelineno-1-90"></a>#### 5. IP address type ####
+<a id="__codelineno-1-91" name="__codelineno-1-91" href="#__codelineno-1-91"></a>config wireless-controller hotspot20 anqp-ip-address-type
+<a id="__codelineno-1-92" name="__codelineno-1-92" href="#__codelineno-1-92"></a>    edit "LongFi-IP"
+<a id="__codelineno-1-93" name="__codelineno-1-93" href="#__codelineno-1-93"></a>        set ipv4-address-type single-NATed-private
+<a id="__codelineno-1-94" name="__codelineno-1-94" href="#__codelineno-1-94"></a>        set ipv6-address-type not-available
+<a id="__codelineno-1-95" name="__codelineno-1-95" href="#__codelineno-1-95"></a>    next
+<a id="__codelineno-1-96" name="__codelineno-1-96" href="#__codelineno-1-96"></a>end
+<a id="__codelineno-1-97" name="__codelineno-1-97" href="#__codelineno-1-97"></a>
+<a id="__codelineno-1-98" name="__codelineno-1-98" href="#__codelineno-1-98"></a>#### 6. Hotspot profile ####
+<a id="__codelineno-1-99" name="__codelineno-1-99" href="#__codelineno-1-99"></a>config wireless-controller hotspot20 hs-profile
+<a id="__codelineno-1-100" name="__codelineno-1-100" href="#__codelineno-1-100"></a>    edit "LongFi-HS20"
+<a id="__codelineno-1-101" name="__codelineno-1-101" href="#__codelineno-1-101"></a>        set access-network-type chargeable-public-network
+<a id="__codelineno-1-102" name="__codelineno-1-102" href="#__codelineno-1-102"></a>        set access-network-internet enable
+<a id="__codelineno-1-103" name="__codelineno-1-103" href="#__codelineno-1-103"></a>        set domain-name "longfisolutions.com,wifi.fi.google.com,freedomfi.com"
+<a id="__codelineno-1-104" name="__codelineno-1-104" href="#__codelineno-1-104"></a>        set nai-realm "LongFi-NAI"
+<a id="__codelineno-1-105" name="__codelineno-1-105" href="#__codelineno-1-105"></a>        set 3gpp-plmn "ATT-PLMN"
+<a id="__codelineno-1-106" name="__codelineno-1-106" href="#__codelineno-1-106"></a>        set roaming-consortium "LongFi-RCOI"
+<a id="__codelineno-1-107" name="__codelineno-1-107" href="#__codelineno-1-107"></a>        set ip-addr-type "LongFi-IP"
+<a id="__codelineno-1-108" name="__codelineno-1-108" href="#__codelineno-1-108"></a>        set venue-group &lt;set per site&gt;
+<a id="__codelineno-1-109" name="__codelineno-1-109" href="#__codelineno-1-109"></a>        set venue-type &lt;set per site&gt;
+<a id="__codelineno-1-110" name="__codelineno-1-110" href="#__codelineno-1-110"></a>    next
+<a id="__codelineno-1-111" name="__codelineno-1-111" href="#__codelineno-1-111"></a>end
+<a id="__codelineno-1-112" name="__codelineno-1-112" href="#__codelineno-1-112"></a>
+<a id="__codelineno-1-113" name="__codelineno-1-113" href="#__codelineno-1-113"></a>#### 7. SSID ####
+<a id="__codelineno-1-114" name="__codelineno-1-114" href="#__codelineno-1-114"></a>config wireless-controller vap
+<a id="__codelineno-1-115" name="__codelineno-1-115" href="#__codelineno-1-115"></a>    edit "LongFi-PP"
+<a id="__codelineno-1-116" name="__codelineno-1-116" href="#__codelineno-1-116"></a>        set ssid "&lt;SSID&gt;"
+<a id="__codelineno-1-117" name="__codelineno-1-117" href="#__codelineno-1-117"></a>        set security wpa2-only-enterprise
+<a id="__codelineno-1-118" name="__codelineno-1-118" href="#__codelineno-1-118"></a>        set pmf optional
+<a id="__codelineno-1-119" name="__codelineno-1-119" href="#__codelineno-1-119"></a>        set auth radius
+<a id="__codelineno-1-120" name="__codelineno-1-120" href="#__codelineno-1-120"></a>        set radius-server "LongFi-RadSec"
+<a id="__codelineno-1-121" name="__codelineno-1-121" href="#__codelineno-1-121"></a>        set hotspot20-profile "LongFi-HS20"
+<a id="__codelineno-1-122" name="__codelineno-1-122" href="#__codelineno-1-122"></a>    next
+<a id="__codelineno-1-123" name="__codelineno-1-123" href="#__codelineno-1-123"></a>end
+</code></pre></div>
 <h2 id="step-5-create-the-passpoint-ssid">Step 5 — Create the Passpoint SSID<a class="headerlink" href="#step-5-create-the-passpoint-ssid" title="Permanent link">&para;</a></h2>
 <p>Paste STEP 4 (VAP) and STEP 5 (interface, DHCP, firewall policy) from the template.
 Tunnel mode is the default: client traffic returns to the FortiGate and is NATed.
@@ -1169,13 +1305,13 @@ on 6 GHz. To offer Passpoint on 6 GHz, create a second VAP with
 <code>set security wpa3-only-enterprise</code> and <code>set pmf enable</code> using the same
 <code>hotspot20-profile</code> and <code>radius-server</code>, and assign it to radio-3.</p>
 <h2 id="step-7-verify">Step 7 — Verify<a class="headerlink" href="#step-7-verify" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>diagnose debug application fnbamd -1
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>diagnose debug enable
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>#  connect a Passpoint device; look for "proto: TCP over TLS" and Access-Accept
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>diagnose debug disable
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>diagnose debug reset
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>diagnose wireless-controller wlac -d sta online
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>diagnose debug application fnbamd -1
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>diagnose debug enable
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>#  connect a Passpoint device; look for "proto: TCP over TLS" and Access-Accept
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>diagnose debug disable
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>diagnose debug reset
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>diagnose wireless-controller wlac -d sta online
 </code></pre></div>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <table>
