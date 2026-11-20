@@ -94,21 +94,6 @@ Test reachability: `execute telnet connect.longfisolutions.com 2083`
 
 ## Step 4 — Hotspot 2.0 profiles (CLI)
 
-Paste STEP 2 and STEP 3 from the template. These create:
-
-| Object | Purpose |
-| --- | --- |
-| `anqp-roaming-consortium` | Roaming Consortium OIs advertised in beacons |
-| `anqp-nai-realm` | Realms `longfisolutions.com`, `freedomfi.com`, `hellohelium.com` — EAP-TLS, certificate |
-| `anqp-3gpp-cellular` | AT&T PLMN IDs: 310-410, 310-280, 310-150, 313-100 |
-| `anqp-ip-address-type` | IPv4 single-NATed private |
-| `anqp-venue-name` / `anqp-venue-url` | Venue info shown on devices |
-| `h2qp-operator-name` | Operator friendly name (site-specific) |
-| `h2qp-wan-metric` | Backhaul speed |
-| `hs-profile` | Combines the above |
-
-## 
-
 ```plain
 #### 2. NAI realms ####
 config wireless-controller hotspot20 anqp-nai-realm
@@ -212,7 +197,7 @@ config wireless-controller hotspot20 hs-profile
     edit "LongFi-HS20"
         set access-network-type chargeable-public-network
         set access-network-internet enable
-        set domain-name "longfisolutions.com,wifi.fi.google.com,freedomfi.com"
+        set domain-name "longfisolutions.com,freedomfi.com"
         set nai-realm "LongFi-NAI"
         set 3gpp-plmn "ATT-PLMN"
         set roaming-consortium "LongFi-RCOI"
