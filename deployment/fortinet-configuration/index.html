@@ -1258,15 +1258,26 @@ Radio 1 is the 2.4 GHz band, and Radio 2 is the 5 GHz band. We recommend disabli
 <p><strong>6 GHz (FortiAP 431G and other 6E models):</strong> WPA2-Enterprise SSIDs don't broadcast
 on 6 GHz. To offer Passpoint on 6 GHz, create a second VAP with
 <code>set security wpa3-only-enterprise</code> and <code>set pmf enable</code> using the same
-<code>hotspot20-profile</code> and <code>radius-server</code>, and assign it to radio-3.</p>
+<code>hotspot20-profile</code> and <code>radius-server.</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>config wireless-controller vap
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    edit "LongFi-PP6"
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>        set ssid "&lt;SSID&gt;"
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        set security wpa3-only-enterprise
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>        set pmf optional
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        set auth radius
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>        set radius-server "LongFi-RadSec"
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>        set hotspot20-profile "LongFi-HS20"
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    next
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>end
+</code></pre></div>
 <h2 id="step-7-verify">Step 7 — Verify<a class="headerlink" href="#step-7-verify" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>diagnose debug application fnbamd -1
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>diagnose debug enable
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>#  connect a Passpoint device; look for "proto: TCP over TLS" and Access-Accept
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>diagnose debug disable
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>diagnose debug reset
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>diagnose wireless-controller wlac -d sta online
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>diagnose debug application fnbamd -1
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>diagnose debug enable
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>#  connect a Passpoint device; look for "proto: TCP over TLS" and Access-Accept
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>diagnose debug disable
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>diagnose debug reset
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>diagnose wireless-controller wlac -d sta online
 </code></pre></div>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <table>
