@@ -1095,10 +1095,14 @@ upgrade path tool, then upgrade FortiAPs (<strong>WiFi &amp; Switch Controller �
 </ol>
 <p><img alt="" src="/assets/images/20261119-203119.png" /></p>
 <ol>
-<li><strong>System → Certificates → Create/Import → Certificate → Import Certificate</strong>  —
-   choose <strong>PKCS #12</strong> or <strong>Certificate + key</strong>, upload the site certificate LongFi provided:</li>
+<li><strong>System → Certificates → Create/Import → Certificate → Import Certificate</strong>  — choose <strong>PKCS #12</strong> or <strong>Certificate + key</strong>, upload the site certificate LongFi provided.  </li>
 </ol>
 <p><img alt="" src="/assets/images/20261119-203346.png" /></p>
+<ol>
+<li>Once the certificate is uploaded, you should be able to see it on the list under <strong>Remote CA Certificates</strong>. Fortinet calls the certificates CA_Cert_N. </li>
+<li>The certificate name is going to be necessary for the next step. </li>
+</ol>
+<p><img alt="" src="/assets/images/20261120-224001.png" /></p>
 <h2 id="step-3-configure-the-radsec-server-cli">Step 3 — Configure the RadSec server (CLI)<a class="headerlink" href="#step-3-configure-the-radsec-server-cli" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>config user radius
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    edit "LongFi-RadSec"
