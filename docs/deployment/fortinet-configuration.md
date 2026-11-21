@@ -59,10 +59,14 @@ If **Certificates** is missing from the menu, enable it under **System → Featu
 
 ![](/assets/images/20261119-203119.png)
 
-1. **System → Certificates → Create/Import → Certificate → Import Certificate**  —
-   choose **PKCS #12** or **Certificate + key**, upload the site certificate LongFi provided:
+1. **System → Certificates → Create/Import → Certificate → Import Certificate**  — choose **PKCS #12** or **Certificate + key**, upload the site certificate LongFi provided.  
 
 ![](/assets/images/20261119-203346.png)
+
+1. Once the certificate is uploaded, you should be able to see it on the list under **Remote CA Certificates**. Fortinet calls the certificates CA_Cert_N. 
+2. The certificate name is going to be necessary for the next step. 
+
+![](/assets/images/20261120-224001.png)
 
 ## Step 3 — Configure the RadSec server (CLI)
 
